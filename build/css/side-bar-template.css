@@ -3,13 +3,14 @@
   padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: lightgreen;
+  background-color: #329344;
+  color: black;
 
 }
 
 .side-bar {
   position: fixed;
-  background-color: orange;
+  background-color: #EE9344;
 }
 
 .nav-pills li {
@@ -19,6 +20,6 @@
   padding-bottom: 2px;
 }
 .nav-pills li a:hover{
-  background-color: green;
+  background-color: #DFFFDF;
   box-shadow: 1px 1px 5px #555 inset
 }
