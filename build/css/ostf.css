@@ -25,7 +25,7 @@ background-color: #329344
 
 .side-bar {
   padding-top: 50px;
-  position: fixed;
+  position: relative;
   background-color: #DFFFDF/*#EE9344;*/
 }
 

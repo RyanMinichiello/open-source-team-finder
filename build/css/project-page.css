@@ -1,0 +1,92 @@
+h1,h2,h3{
+  color: #EE9344;
+}
+
+.project-zone{
+  position: relative;
+  margin-top: 50px;
+  height: 670px;
+  background-color: #DFFFDF;
+  border-left: 2px solid black;
+}
+
+.project-header{
+  position: relative;
+  height:25%;
+  border-bottom: 1px solid #329344;
+}
+
+.header-buttons{
+  position: absolute;
+  right: 8%;
+  bottom: 0;
+}
+
+.header-button{
+  position: relative;
+  height:40px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+.project-banner{
+  position: absolute;
+  z-index: 1;
+  height: 15%;
+  width: 40%;
+  top: 19%;
+  right: 30.8%;
+  overflow: hidden;
+  border: 2px solid #329344;
+  background-color: #DFFFDF;
+}
+
+.project-container{
+  position: relative;
+  height: 100%;
+}
+
+.project-description{
+  height: 100%;
+  border-right: 2px solid #329344;
+}
+.skill-item{
+  position: relative;
+  float: left;
+  border: 1px solid #EE9344;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: #EE9344;
+}
+
+.project-message{
+  height: 100%;
+  margin-top: 4%;
+}
+
+.message-item{
+  border: 2px solid darkgreen;
+  position:relative;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #EE9344;
+}
+
+.message-date{
+  position:absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.project-positions{
+  height: 100%;
+  margin-top: 4%;
+  border-left: 2px solid darkgreen;
+}
+
+.position-item{
+
+}
