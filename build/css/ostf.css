@@ -1,6 +1,6 @@
 .navbar-default{
 /*  background-color: #227830 */
-background-color: #329344
+  background-color: #329344
 }
 
 .btn-default{
@@ -27,6 +27,7 @@ background-color: #329344
   padding-top: 50px;
   position: fixed;
   background-color: #DFFFDF/*#EE9344;*/
+
 }
 
 .nav-pills li {

@@ -1,0 +1,16 @@
+.main-feed {
+  background-color: lightblue;
+  position: relative;
+}
+
+.main-feed-header {
+  position: fixed;;
+  top: 50px;
+  padding-left: 5px;
+  background-color: red;
+  width: 100%;
+}
+
+.main-feed-posts {
+  padding-top: 200px;
+}
