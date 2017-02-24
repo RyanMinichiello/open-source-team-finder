@@ -1,0 +1,70 @@
+.btn-default{
+  background-color: #DFFFDF
+}
+
+.glyphicon-home{
+  color: #EE9344
+}
+
+.job-feed {
+  background-color: #329344;
+  float:right;
+  height:auto;
+  margin-top: 3%;
+}
+
+.panel {
+  margin-top: 20px;
+  background-color: #DFFFDF;
+  width:90%;
+}
+
+button.tag_list {
+  border-radius: 45%;
+  background-color: #EE9344;
+}
+
+button.tag_title {
+  background-color: white;
+}
+
+.job-title {
+  margin-top:-2%;
+}
+
+.navbar-default{
+/*  background-color: #227830 */
+background-color: #329344
+}
+
+.nav-pills li {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.nav-pills li a{
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: #329344;
+  color: black;
+}
+
+.nav-pills li a:hover{
+  background-color: #DFFFDF;
+  box-shadow: 1px 1px 5px #555 inset
+}
+
+.orange-btn{
+  background-color: #EE9344
+}
+
+.side-bar {
+  padding-top: 50px;
+  padding-left: 40px;
+  position: fixed;
+  background-color: #DFFFDF/*#EE9344;*/
+}
