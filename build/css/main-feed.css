@@ -6,11 +6,47 @@
 .main-feed-header {
   position: fixed;;
   top: 50px;
-  padding-left: 5px;
-  background-color: red;
+  padding-left: 10px;
+  background-color: lightgreen;
   width: 100%;
 }
 
 .main-feed-posts {
   padding-top: 200px;
+}
+
+.main-feed-row {
+  padding-top: 80px;
+}
+.checkbox {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.job-title {
+  margin-top:-2%;
+}
+
+.job-feed {
+  background-color: #329344;
+  height:auto;
+  margin-top: 3%;
+  float: left;
+  width: auto;
+  height: 100%;
+  padding-top: 5px;
+  position: absolute;;
+}
+
+.btn-default{
+  background-color: #DFFFDF
+}
+
+button.tag_list {
+  border-radius: 45%;
+  background-color: #EE9344;
+}
+
+button.tag_title {
+  background-color: white;
 }
