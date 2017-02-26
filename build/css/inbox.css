@@ -1,0 +1,105 @@
+.navbar-default{
+/*  background-color: #227830 */
+background-color: #329344
+}
+
+body{
+  padding-top:50px;
+  height: auto !important;
+  height: 100%;
+  width: 100%;
+}
+
+.btn-default{
+  background-color: #DFFFDF
+}
+.orange-btn{
+  background-color: #EE9344
+}
+
+.glyphicon-home{
+  color: #EE9344
+}
+.nav-pills li a{
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: #329344;
+  color: black;
+
+}
+
+.side-bar {
+
+  position: fixed;
+  background-color: #DFFFDF/*#EE9344;*/
+}
+
+.nav-pills li {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.nav-pills li a:hover{
+  background-color: #DFFFDF;
+  box-shadow: 1px 1px 5px #555 inset
+}
+
+
+
+.inbox-zone{
+  border-left: 2px solid #0D5D00;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  background-color: #e6e6e6;
+  overflow-y: scroll;
+  margin-top:40px;
+  height:522px;
+
+}
+
+.inbox-head{
+  border-left: 2px solid #0D5D00;
+  background-color: #66C858;
+  height: 40px;
+  padding-top: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  position: fixed;
+  width: inherit;
+}
+
+.message-zone{
+  border-left: 2px solid #0D5D00;
+  border-right: 2px solid #0D5D00;
+  background-color: #e6e6e6;
+  overflow-y: scroll;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  margin-top:40px;
+  height:452px;
+
+
+}
+
+.message-head{
+  border-left: 2px solid #0D5D00;
+  border-right: 2px solid #0D5D00;
+  background-color: #66c858;
+  height: 40px;
+  padding-top: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  position: fixed;
+  width: inherit;
+
+}
+
+.col-md-5{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
