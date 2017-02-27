@@ -68,8 +68,10 @@ background-color: #329344
 .header-button{
   position: relative;
 }
+.mid-col{
+    padding-top: 45px;
+}
 .project-banner{
-  background-color: lightgreen;
   position: absolute;
   z-index: 1;
   height: 25%;
