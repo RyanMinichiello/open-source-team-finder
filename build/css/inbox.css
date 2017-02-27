@@ -1,12 +1,12 @@
 .navbar-default{
 /*  background-color: #227830 */
-background-color: #329344
+background-color: #4caf50
 }
 
 body{
   padding-top:50px;
-  height = 1080px;
-  width = 1920px;
+  background:#DFFFDF
+
 }
 
 .divclass{
@@ -28,7 +28,7 @@ height = 80%;
   padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: #329344;
+  background-color: #4caf50;
   color: black;
 
 }
@@ -64,7 +64,7 @@ height = 80%;
 }
 
 .inbox-head{
-  background-color: #66c858;
+  background-color: #329344;
   height: 40px;
   padding-top: 5px;
   padding-left: 10px;
@@ -73,6 +73,7 @@ height = 80%;
   position: fixed;
   width: inherit;
   border-right: 2px solid #0D5D00;
+  z-index: 5;
 }
 
 .message-zone{
@@ -81,14 +82,13 @@ height = 80%;
   padding-right: 0px !important;
   padding-left: 0px !important;
   margin-top:40px;
-  height:100%;
   height:452px;
 
 
 }
 
 .message-head{
-  background-color: #66c858;
+  background-color: #329344;
   height: 40px;
   padding-top: 5px;
   padding-left: 10px;
@@ -96,6 +96,7 @@ height = 80%;
   font-weight: bold;
   position: fixed;
   width: inherit;
+  z-index: 5;
 
 }
 
@@ -128,4 +129,53 @@ a, a:visited{
   color: black;
   font-weight: bold;
   text-decoration: none !important;
+}
+
+.message-text{
+  height: 70px;
+}
+
+.form-control{
+
+  padding: 2px;
+}
+
+.media{
+  margin-bottom: 10px;
+}
+
+textarea{
+  resize: none;
+
+}
+
+.message-talk{
+  margin:10px;
+  position: relative;
+}
+
+.message-current{
+  background-color: #DFFFDF;
+  margin:5px;
+
+}
+
+.row{
+  padding:5px;
+  width:100%;
+
+}
+
+.col{
+  height:100%;
+}
+
+.file-panel{
+  height:90px;
+}
+
+.jpg-glyph{
+  font-size: 50px;
+  padding-left: 50px;
+
 }
