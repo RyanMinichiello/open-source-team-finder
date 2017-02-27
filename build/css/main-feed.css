@@ -1,4 +1,7 @@
-
+body {
+  width: auto;
+  height: auto;
+}
 
 .main-feed-header {
   position: fixed;
@@ -9,6 +12,7 @@
   z-index: 1;
 }
 
+
 .main-feed-posts {
   position: absolute;
   z-index: 2;
@@ -17,6 +21,7 @@
 
 .main-feed-row {
   padding-top: 70px;
+
 }
 .checkbox {
   display: inline-block;
@@ -36,9 +41,14 @@
   margin-top: 5%;
   float: left;
   width: 100%;
-  height: 100%;
+  height:auto;
   padding-top: 15px;
-  position: absolute;;
+  position: absolute;
+}
+
+.panel{
+  border-width: medium;
+  border-color: #EE9344;
 }
 
 .btn-default{

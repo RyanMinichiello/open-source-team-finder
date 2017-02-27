@@ -2,7 +2,9 @@
 /*  background-color: #227830 */
   background-color: #329344
 }
-
+.navbar {
+  border-color: inherit;
+}
 .btn-default{
   background-color: #DFFFDF
 }
