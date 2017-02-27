@@ -60,6 +60,16 @@ h1,h2,h3{
   margin: 5px;
   border-radius: 10px;
   background-color: #EE9344;
+  border: 3px solid #4caf50;
+}
+
+.project-member{
+  margin: 5px;
+  font-size: 20px;
+  background-color: #EE9344;
+  border-radius: 10px;
+  padding: 5px;
+  border: 3px solid #4caf50;
 }
 
 .project-message{
@@ -68,7 +78,8 @@ h1,h2,h3{
 }
 
 .message-item{
-  border: 2px solid darkgreen;
+  border: 3px solid #4caf50;
+  padding: 5px;
   position:relative;
   width: 95%;
   margin: auto;
@@ -94,4 +105,5 @@ h1,h2,h3{
   margin: 5px;
   border-radius: 10px;
   background-color: #EE9344;
+  border: 3px solid #4caf50;
 }
