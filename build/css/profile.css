@@ -3,7 +3,7 @@ body{
 }
 .navbar-default{
 /*  background-color: #227830 */
-background-color: #329344
+background-color: #4caf50
 }
 .side-bar {
   padding-top: 50px;
@@ -13,7 +13,7 @@ background-color: #329344
   background-color: #DFFFDF
 }
 #nav-color{
-    background-color: #329344 !important;
+    background-color: ##4caf50 !important;
 }
 #nav-btn{
     background-color: #DFFFDF !important;
@@ -40,7 +40,7 @@ background-color: #329344
   padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: #329344;
+  background-color: #4caf50;
   color: black;
 }
 .nav-pills li a:hover{
@@ -57,7 +57,7 @@ background-color: #329344
   position: relative;
   height:25%;
   background-color:#DFFFDF;
-  border-bottom: 1px solid #329344;
+  border-bottom: 1px solid #4caf50;
 }
 .header-buttons{
   position: absolute;
@@ -88,14 +88,14 @@ background-color: #329344
 .project-description{
   height: 100%;
   background-color: #DFFFDF;
-  border-left: 1px solid #329344;
+  border-left: 1px solid #4caf50;
 }
 .project-message{
   height: 100%;
   background-color: #DFFFDF;
   overflow: scroll;
   text-align: center;
-  border-left: 1px solid #329344;
+  border-left: 1px solid #4caf50;
 
 }
 .message-item{
@@ -115,5 +115,5 @@ background-color: #329344
   height: 100%;
   background-color: lightblue;
   background-color: #DFFFDF;
-  border-left: 1px solid #329344;
+  border-left: 1px solid #4caf50;
 }
