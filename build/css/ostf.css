@@ -1,11 +1,12 @@
 .navbar-default{
 /*  background-color: #227830 */
-background-color: #329344
+  background-color: #4caf50
 }
 
 .btn-default{
   background-color: #DFFFDF
 }
+
 .orange-btn{
   background-color: #EE9344
 }
@@ -18,7 +19,7 @@ background-color: #329344
   padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: #329344;
+  background-color: #4caf50;
   color: black;
 
 }
@@ -38,4 +39,21 @@ background-color: #329344
 .nav-pills li a:hover{
   background-color: #DFFFDF;
   box-shadow: 1px 1px 5px #555 inset
+}
+
+.best-fit-ico {
+  height: 24px;
+  width: 24px;
+}
+
+.gold-button {
+  background-color: #FFD700;
+}
+
+.silver-button {
+  background-color: #C0C0C0;
+}
+
+.bronze-button {
+  background-color: #cd7f32;
 }
