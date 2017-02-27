@@ -127,8 +127,14 @@ height = 80%;
 
 a, a:visited{
   color: black;
-  font-weight: bold;
+
   text-decoration: none !important;
+}
+
+.save-open{
+  color:blue;
+  font-weight: normal;
+
 }
 
 .message-text{
@@ -178,4 +184,22 @@ textarea{
   font-size: 50px;
   padding-left: 50px;
 
+}
+
+.change-color{
+  color:navy;
+}
+
+.chat-name{
+  padding-left:5px;
+}
+
+.read{
+  font-size: 18px;
+  color: #4caf50;
+}
+
+.unread{
+  font-size: 18px;
+  color: #EE9344;
 }
