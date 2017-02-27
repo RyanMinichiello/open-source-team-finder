@@ -30,6 +30,7 @@ body {
 
 .job-title {
   margin-top:-2%;
+
 }
 
 .glyphicon {
@@ -37,7 +38,7 @@ body {
 }
 
 .job-feed {
-  background-color: #329344;
+  background-color: #4caf50;
   margin-top: 5%;
   float: left;
   width: 100%;
@@ -59,6 +60,9 @@ body {
   background-color: #DFFFDF;
 }
 
+button a {
+  color: black;
+}
 button.tag_list {
   border-radius: 45%;
   background-color: #EE9344;
@@ -68,6 +72,18 @@ button.tag_title {
   background-color: white;
 }
 
-.orange-btn{
+.orange-btn {
   background-color: #EE9344
+}
+
+.gold-button {
+  background-color: #FFD700;
+}
+
+.silver-button {
+  background-color: #C0C0C0;
+}
+
+.bronze-button {
+  background-color: #cd7f32;
 }

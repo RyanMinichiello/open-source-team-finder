@@ -1,10 +1,8 @@
 .navbar-default{
 /*  background-color: #227830 */
-  background-color: #329344
+  background-color: #4caf50
 }
-.navbar {
-  border-color: inherit;
-}
+
 .btn-default{
   background-color: #DFFFDF
 }
@@ -21,7 +19,7 @@
   padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: #329344;
+  background-color: #4caf50;
   color: black;
 
 }
@@ -30,7 +28,6 @@
   padding-top: 50px;
   position: fixed;
   background-color: #DFFFDF/*#EE9344;*/
-
 }
 
 .nav-pills li {
@@ -42,4 +39,21 @@
 .nav-pills li a:hover{
   background-color: #DFFFDF;
   box-shadow: 1px 1px 5px #555 inset
+}
+
+.best-fit-ico {
+  height: 24px;
+  width: 24px;
+}
+
+.gold-button {
+  background-color: #FFD700;
+}
+
+.silver-button {
+  background-color: #C0C0C0;
+}
+
+.bronze-button {
+  background-color: #cd7f32;
 }
