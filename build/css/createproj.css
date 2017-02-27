@@ -141,3 +141,10 @@ input{
   margin-left: 8%;
   margin-bottom: 2%;
 }
+
+#logo{
+  margin-top: -8% !important;
+  margin-left: -6%;
+  height: 50%;
+  width: auto;
+}
