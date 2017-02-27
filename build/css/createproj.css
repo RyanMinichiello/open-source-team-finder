@@ -48,19 +48,27 @@ width: 99%;
   box-shadow: 1px 1px 5px #555 inset
 }
 #create-project-title{
-  margin-left: 50%;
+  margin-left: 60%;
   z-index: 2;
   text-align: center;
-  font-size: 150%;
+  font-size: 170%;
   margin-bottom: 3%;
+  padding-top: 3%;
   padding-bottom: 1.5%;
+  background-color: #EE9344;
+  margin-top: -2.85%;
+  height:10%;
+  border-bottom: 2px solid #DFFFDF;
+  border-left: 2px solid #DFFFDF;
+  border-right: 2px solid #DFFFDF;
 }
 
 #positions{
   margin-top: 11.5%;
 }
 .leftmain{
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   padding: 1%;
   margin-top: 4%;
   background-color: #4caf50;
@@ -68,19 +76,21 @@ width: 99%;
   margin-left: 17.25%;
   float: right;
     height:100%;
-  width: 40%;
+  width: 38%;
+
 }
 .rightmain{
   z-index: -1;
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   padding: 1%;
   margin-top: 4%;
   background-color: #4caf50;
   position: absolute;
-  margin-left: 57%;
+  margin-left: 55.5%;
   float: right;
     height:100%;
-  width: 42%;
+  width: 43.5%;
 }
 
 .attribute{
@@ -89,7 +99,7 @@ width: 99%;
 
 #add-more-btn{
 margin-bottom: 5%;
-margin-left: 1%;
+margin-left: 8%;
 }
 
 #create{
@@ -128,6 +138,6 @@ input{
 
   padding-top: 2%;
   padding-left: 4%;
-  margin-left: 1%;
+  margin-left: 8%;
   margin-bottom: 2%;
 }
