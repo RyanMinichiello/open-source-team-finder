@@ -10,7 +10,7 @@
   background-color: #329344;
   float:right;
   height:auto;
-  margin-top: 3%;
+  margin-top: 1.5%;
 }
 
 .panel {
@@ -19,17 +19,32 @@
   width:90%;
 }
 
-button.tag_list {
+button.tag-list {
   border-radius: 45%;
   background-color: #EE9344;
 }
 
-button.tag_title {
+button.tag-list {
+  color: white;
+}
+
+button.tag-title {
   background-color: white;
+}
+
+.filter-title {
+  line-height: 48px;
 }
 
 .job-title {
   margin-top:-2%;
+}
+
+.tag-bar {
+  background-color: #DFFFDF;
+  width: 102.7%;
+  margin-top: 2.5%;
+  margin-left: -1.30%;
 }
 
 .navbar-default{
@@ -66,5 +81,5 @@ background-color: #329344
   padding-top: 50px;
   padding-left: 40px;
   position: fixed;
-  background-color: #DFFFDF/*#EE9344;*/
+  background-color: #DFFFDF;/*#EE9344;*/
 }
