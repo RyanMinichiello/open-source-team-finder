@@ -43,7 +43,7 @@ body {
   float: left;
   width: 100%;
   height:auto;
-  padding-top: 15px;
+  padding-top: 20px;
   position: absolute;
 }
 
@@ -86,4 +86,17 @@ button.tag_title {
 
 .bronze-button {
   background-color: #cd7f32;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  position: relative;
+}
+
+.navbar-brand {
+  position: relative;
+  bottom: 21px;
+  right: 35px;
+  vertical-align: bottom;
 }
