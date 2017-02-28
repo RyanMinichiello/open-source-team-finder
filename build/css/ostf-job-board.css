@@ -85,3 +85,15 @@ button a {
   width: 44px;
 
 }
+.logo {
+  width: 120px;
+  height: auto;
+  position: relative;
+}
+
+.navbar-brand {
+  position: relative;
+  bottom: 21px;
+  right: 35px;
+  vertical-align: bottom;
+}
