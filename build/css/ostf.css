@@ -39,3 +39,16 @@ background-color: #4caf50
   background-color: #DFFFDF;
   box-shadow: 1px 1px 5px #555 inset
 }
+
+.logo {
+  width: 120px;
+  height: auto;
+  position: relative;
+}
+
+.navbar-brand {
+  position: relative;
+  bottom: 21px;
+  right: 35px;
+  vertical-align: bottom;
+}
