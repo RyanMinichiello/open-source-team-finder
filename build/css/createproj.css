@@ -36,6 +36,18 @@ width: 99%;
   position: fixed;
   background-color: #DFFFDF/*#EE9344;*/
 }
+    .logo {
+    width: 120px;
+    height: auto;
+    position: relative;
+    }
+
+    .navbar-brand {
+        position: relative;
+        bottom: 21px;
+        right: 35px;
+        vertical-align: bottom;
+      }
 
 .nav-pills li {
   padding-left: 5px;
