@@ -25,6 +25,7 @@ body {
   border-right: 1px solid black;
   z-index: 1;
   padding-top:5px;
+  left: 220px;
 }
 
 .filter-tags {
@@ -96,4 +97,8 @@ button a {
   bottom: 21px;
   right: 35px;
   vertical-align: bottom;
+}
+
+.envelope-btn {
+  height: 34px;
 }
