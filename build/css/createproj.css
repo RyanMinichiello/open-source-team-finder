@@ -1,0 +1,162 @@
+body{
+  width: auto;
+  height: auto;
+}
+
+.navbar-default{
+/*  background-color: #227830 */
+background-color: #4caf50;
+width: 99%;
+
+
+}
+
+.btn-default{
+  background-color: #DFFFDF;
+}
+.orange-btn{
+  background-color: #EE9344;
+}
+
+.glyphicon-home{
+  color: #EE9344
+}
+.nav-pills li a{
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: #4caf50;
+  color: black;
+
+}
+
+.side-bar {
+  padding-top: 50px;
+  position: fixed;
+  background-color: #DFFFDF/*#EE9344;*/
+}
+    .logo {
+    width: 120px;
+    height: auto;
+    position: relative;
+    }
+
+    .navbar-brand {
+        position: relative;
+        bottom: 21px;
+        right: 35px;
+        vertical-align: bottom;
+      }
+
+.nav-pills li {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.nav-pills li a:hover{
+  background-color: #DFFFDF;
+  box-shadow: 1px 1px 5px #555 inset
+}
+#create-project-title{
+  margin-left: 60%;
+  z-index: 2;
+  text-align: center;
+  font-size: 170%;
+  margin-bottom: 3%;
+  padding-top: 3%;
+  padding-bottom: 1.5%;
+  background-color: #EE9344;
+  margin-top: -2.85%;
+  height:10%;
+  border-bottom: 2px solid #DFFFDF;
+  border-left: 2px solid #DFFFDF;
+  border-right: 2px solid #DFFFDF;
+}
+
+#positions{
+  margin-top: 11.5%;
+}
+.leftmain{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 1%;
+  margin-top: 4%;
+  background-color: #4caf50;
+  position: absolute;
+  margin-left: 17.25%;
+  float: right;
+    height:100%;
+  width: 38%;
+
+}
+.rightmain{
+  z-index: -1;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 1%;
+  margin-top: 4%;
+  background-color: #4caf50;
+  position: absolute;
+  margin-left: 55.5%;
+  float: right;
+    height:100%;
+  width: 43.5%;
+}
+
+.attribute{
+  font-size: 120%;
+}
+
+#add-more-btn{
+margin-bottom: 5%;
+margin-left: 8%;
+}
+
+#create{
+  margin-left: 54%;
+  background-color: #EE9344;
+  width: 30%;
+  margin-top: -16%;
+  height: 7%;
+  font-size: 130%;
+}
+#progress-checkbox{
+  margin-left: -25%;
+  padding-bottom: 1%;
+}
+
+.date{
+  padding-bottom: -1%;
+}
+
+input{
+  width: 60%;
+  margin-bottom: 5%;
+  padding-left: auto;
+  margin-right: 5%;
+}
+
+.progress{
+  padding-bottom: 6%;
+  width: 31% !important;
+}
+
+.attribute-box{
+  width: 84%;
+  border-radius: 10px;
+  background-color: #DFFFDF;
+
+  padding-top: 2%;
+  padding-left: 4%;
+  margin-left: 8%;
+  margin-bottom: 2%;
+}
+
+#logo{
+  margin-top: -8% !important;
+  margin-left: -6%;
+  height: 50%;
+  width: auto;
+}
