@@ -7,7 +7,8 @@ background-color: #4caf50
 }
 .side-bar {
   padding-top: 50px;
-  background-color: #DFFFDF/*#EE9344;*/
+  background-color: #DFFFDF/*#EE9344;*/;
+  left: 15px;
 }
 .btn-default{
   background-color: #DFFFDF
