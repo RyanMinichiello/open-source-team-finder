@@ -17,16 +17,18 @@ body {
 .filter-bar {
   background-color: #DFFFDF;
   position: fixed;
-  width: 102.7%;
+  width: inherit;
   margin-top: 1%;
   margin-left: -0.77%;
   border-bottom: 1px solid black;
   border-left: 1px solid black;
   border-right: 1px solid black;
   z-index: 1;
+  padding-top:5px;
 }
 
 .filter-tags {
+  padding-top:10px;
   margin-left: 75%;
 }
 
@@ -42,6 +44,10 @@ body {
   margin-top: 20px;
   background-color: #DFFFDF;
   width:90%;
+}
+
+.first-panel{
+  margin-top: 100px;
 }
 
 button.tag-title {
