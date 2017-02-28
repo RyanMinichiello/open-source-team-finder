@@ -26,7 +26,7 @@
 
 .side-bar {
   padding-top: 50px;
-  position: fixed;
+  position: relative;
   background-color: #DFFFDF/*#EE9344;*/
 }
 
@@ -40,6 +40,7 @@
   background-color: #DFFFDF;
   box-shadow: 1px 1px 5px #555 inset
 }
+
 
 .best-fit-ico {
   height: 24px;

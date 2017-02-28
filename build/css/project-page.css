@@ -1,0 +1,115 @@
+h1,h2,h3{
+  color: #EE9344;
+}
+
+.logo{
+  width: 16%;
+}
+
+.project-zone{
+  position: relative;
+  margin-top: 50px;
+  height: 800px;
+  background-color: #DFFFDF;
+  border-left: 2px solid black;
+  overflow: hidden;
+}
+
+.project-header{
+  position: relative;
+  height:18%;
+  border-bottom: 1px solid #4caf50;
+}
+
+.header-buttons{
+  position: absolute;
+  right: 8%;
+  bottom: 0;
+}
+
+.header-button{
+  position: relative;
+  height:40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #EE9344;
+  border: 3px solid #4caf50;
+}
+
+.project-banner{
+  position: absolute;
+  z-index: 1;
+  height: 15%;
+  width: 40%;
+  top: 11%;
+  right: 30.8%;
+  overflow: hidden;
+  border: 2px solid #4caf50;
+  background-color: #DFFFDF;
+}
+
+.project-container{
+  position: relative;
+  height: 100%;
+}
+
+.project-description{
+  height: 100%;
+  border-right: 2px solid #4caf50;
+}
+.skill-item{
+  position: relative;
+  float: left;
+  border: 1px solid #EE9344;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: #EE9344;
+  border: 3px solid #4caf50;
+}
+
+.project-member{
+  margin: 5px;
+  font-size: 20px;
+  background-color: #EE9344;
+  border-radius: 10px;
+  padding: 5px;
+  border: 3px solid #4caf50;
+}
+
+.project-message{
+  height: 100%;
+  margin-top: 4%;
+}
+
+.message-item{
+  border: 3px solid #4caf50;
+  padding: 5px;
+  position:relative;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #EE9344;
+}
+
+.message-date{
+  position:absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.project-positions{
+  height: 100%;
+  margin-top: 4%;
+  border-left: 2px solid darkgreen;
+}
+
+.position-item{
+  border: 1px solid #EE9344;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: #EE9344;
+  border: 3px solid #4caf50;
+}
