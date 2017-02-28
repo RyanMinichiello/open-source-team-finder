@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>OSTF</title>
+      <!-- Bootstrap's CSS -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- Profile Page css file-->
+      <link href="css/profile.css" rel="stylesheet">
+   </head>
+   <body>
+      <nav class="navbar navbar-default navbar-fixed-top">
+
+      </nav>
+      <nav class="navbar navbar-fixed-top navbar-default" id="nav-color">
+         <div class="container">
+            <!-- This code is only active when viewing the site on mobile. We will not
+               cover responsive design, but we'll leave this in, as it's part of the
+               example code.-->
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                  data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <!-- Use a "home" glyphicon as a logo. -->
+               <a class="navbar-brand" href="#">
+                  <!-- This is how you display a glyphicon. -->
+                                    <span><img src="img/logo_notext.png" class="logo pull-left"></img></span>
+               </a>
+            </div>
+            <!-- On mobile, this div is hidden by default. The user hits the button
+               in the `navbar-header` to see the content of the div.
+               On desktop, this div is visible all of the time. -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <form class="navbar-form navbar-left" role="search">
+                  <!-- Left-aligned items. -->
+                  <div class="input-group">
+                     <input type="text fb-search" class="form-control" placeholder="Search OSTF">
+                     <span class="input-group-btn">
+                     <button type="submit" class="btn btn-default">
+                     <span class="glyphicon glyphicon-search"></span>
+                     </button>
+                     </span>
+                  </div>
+               </form>
+               <div class="nav navbar-nav navbar-right">
+                  <!-- Right-aligned items -->
+                  <div class="btn-toolbar pull-right" role="toolbar">
+                     <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default navbar-btn" id="nav-btn">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Jane
+                        </button>
+                     </div>
+                     <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default navbar-btn" id="nav-btn">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                        </button>
+                     </div>
+                     <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
+                        +Create Project
+                        </button>
+                     </div>
+                     <div class="btn-group" role="group">
+                        <div class="btn-group" role="group">
+                           <button type="button" class="btn btn-default navbar-btn" id="nav-btn">
+                           Sign Out
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- /.navbar-collapse -->
+         </div>
+         <!-- /.container -->
+      </nav>
+      <div>
+         <div class="row">
+            <!-- Left Sidebar -->
+            <div class="col-md-2 side-bar">
+               <!-- List of Projects -->
+               <ul class="nav nav-pills nav-stacked">
+                  <li role="presentation">PROJECTS</li>
+                  <li role="presentation"><a href="#"> Project 1 </a> </li>
+                  <li role="presentation"><a href="#"> Project 2 </a> </li>
+                  <li role="presentation"><a href="#"> Project 3 </a> </li>
+                  <li role="presentation"><a href="#"> Project 4 </a> </li>
+                  <li role="presentation"><a href="#"><span class="glyphicon glyphicon-stats"></span>
+                     Job Board</a>
+                  </li>
+               </ul>
+            </div>
+            <!-- Project Page HTML -->
+            <!-- Div for project page container -->
+            <div class="project-zone col-md-10">
+              <!-- Div for the header bar for project-->
+              <div class="project-header row">
+                  <img src="img/new_banner.jpg" width="100%" height="100%"/>
+                <!-- Div for buttons -->
+                <div class="header-buttons">
+                  <!-- Header Buttons -->
+                  <div class="container pull-right">
+                      <!-- Trigger the modal with a button -->
+                      <button type="button" class="btn btn-info btn-lg pull-right"  id= "chat-pop" data-toggle="modal" data-target="#myModal">Message</button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Message</h4>
+                            </div>
+                            <div class="modal-body">
+                              <p>Hi Lynda, I'm Jane working with the Okra Project.  We are very impressed by your skillset and are hoping you'll join our team!</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Send</button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                </div>
+                <!-- End Div for buttons -->
+              </div>
+              <!-- END header for prject-->
+              <div class="project-banner">
+                  <img style="height: 100%; width: 100%" src="img/jane.png"/>
+              </div>
+              <!-- START project container -->
+              <div class="project-container row">
+                <!-- START project-description -->
+                <div class="project-description col-md-4">
+                  <h3>Bio</h3>
+                  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim cursus, vestibulum eros vel, suscipit lorem. Phasellus eget lacus ante. Fusce orci est, vestibulum et gravida vitae, feugiat eget est. Donec nulla tellus, suscipit non enim vitae, condimentum consequat nisl. Suspendisse potenti. Pellentesque accumsan tortor quis tellus vulputate bibendum. Quisque sit amet nulla vehicula, laoreet metus quis, hendrerit nunc.</div>
+                  <h3>Contact</h3>
+                  <div class="skill-item">myemail@gmail.com
+                  </div>
+                  <div class="skill-item">linkedin.com/lynda
+                  </div>
+                </div>
+                <!-- END project-description -->
+                <!-- START Messages for Project -->
+                <div class="project-message col-md-4 mid-col">
+                  <h3>
+                      Lynda Doe
+                  </h3>
+                  <h3>Skills</h3>
+                  <button type="button" class="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
+                  Agile Development
+                  </button>
+                  <button type="button" class="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
+                  Javascript
+                  </button>
+                  <button type="button" class="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
+                  Scala
+                  </button>
+                  <button type="button" class="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
+                  Node.js
+                  </button>
+                  <h3>Interests</h3>
+                  <button type="button" class="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
+                  Clean Energy
+                  </button>
+                  <button type="button" class="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
+                  Finance
+                  </button>
+
+                </div>
+                <!-- END Messages for Project -->
+                <!-- START Positions for project -->
+                <div class="project-positions col-md-4">
+                  <h3>Current Projects</h3>
+                  <ul class="nav nav-pills nav-stacked">
+                     <li role="presentation"><a href="#"> Lime Team </a> </li>
+                  </ul>
+                  <h3>Previous Projects</h3>
+                  <ul class="nav nav-pills nav-stacked">
+                     <li role="presentation"><a href="#"> Pear Team </a> </li>
+                     <li role="presentation"><a href="#"> Mango Team</a> </li>
+                  </ul>
+                </div>
+                <!--END Positions for project-->
+              </div>
+              <!-- END project container -->
+            </div>
+            <!-- End project page container -->
+         </div>
+      </div>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="js/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- App code -->
+      <script src="js/bundle.js"></script>
+   </body>
+</html>
