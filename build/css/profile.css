@@ -117,3 +117,14 @@ background-color: #4caf50
   background-color: #DFFFDF;
   border-left: 1px solid #4caf50;
 }
+.logo{
+  width:120px;
+  height:auto;
+  position:relative;
+}
+.navbar-brand{
+  position: relative;
+  bottom:21px;
+  right:35px;
+  vertical-align:bottom;
+}

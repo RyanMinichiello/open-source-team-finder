@@ -203,3 +203,16 @@ textarea{
   font-size: 18px;
   color: #EE9344;
 }
+
+.logo{
+  width:120px;
+  height:auto;
+  position:relative;
+}
+
+.navbar-brand{
+  position: relative;
+  bottom:21px;
+  right:35px;
+  vertical-align:bottom;
+}
