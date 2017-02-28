@@ -1,0 +1,99 @@
+body {
+  width: auto;
+  height: auto;
+  background-color: #4caf50;
+}
+
+.job-feed {
+  float:right;
+  height:auto;
+  margin-top: 1.5%;
+}
+
+.filter-title {
+  line-height: 48px;
+}
+
+.filter-bar {
+  background-color: #DFFFDF;
+  position: fixed;
+  width: inherit;
+  margin-top: 1%;
+  margin-left: -0.77%;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  z-index: 1;
+  padding-top:5px;
+}
+
+.filter-tags {
+  padding-top:10px;
+  margin-left: 75%;
+}
+
+.job-title {
+  margin-top:-2%;
+}
+
+.job-list {
+  margin-top: 6%;
+}
+
+.panel {
+  margin-top: 20px;
+  background-color: #DFFFDF;
+  width:90%;
+}
+
+.first-panel{
+  margin-top: 100px;
+}
+
+button.tag-title {
+  background-color: white;
+}
+
+button.tag-list {
+  border-radius: 45%;
+  background-color: #EE9344;
+}
+
+button a {
+  color: black;
+}
+
+.reco-icon {
+  height:24px;
+  width:24px;
+}
+
+.gold-button {
+ background-color: #FFD700;
+}
+
+.silver-button {
+ background-color: #C0C0C0;
+}
+
+.bronze-button {
+ background-color: #cd7f32;
+}
+
+.hack-fix {
+  height: 34px;
+  width: 44px;
+
+}
+.logo {
+  width: 120px;
+  height: auto;
+  position: relative;
+}
+
+.navbar-brand {
+  position: relative;
+  bottom: 21px;
+  right: 35px;
+  vertical-align: bottom;
+}
