@@ -1,16 +1,41 @@
-.btn-default{
-  background-color: #DFFFDF
-}
-
-.glyphicon-home{
-  color: #EE9344
+body {
+  width: auto;
+  height: auto;
+  background-color: #4caf50;
 }
 
 .job-feed {
-  background-color: #329344;
   float:right;
   height:auto;
   margin-top: 1.5%;
+}
+
+.filter-title {
+  line-height: 48px;
+}
+
+.filter-bar {
+  background-color: #DFFFDF;
+  position: fixed;
+  width: 102.7%;
+  margin-top: 1%;
+  margin-left: -0.77%;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  z-index: 1;
+}
+
+.filter-tags {
+  margin-left: 75%;
+}
+
+.job-title {
+  margin-top:-2%;
+}
+
+.job-list {
+  margin-top: 6%;
 }
 
 .panel {
@@ -19,67 +44,38 @@
   width:90%;
 }
 
+button.tag-title {
+  background-color: white;
+}
+
 button.tag-list {
   border-radius: 45%;
   background-color: #EE9344;
 }
 
-button.tag-list {
-  color: white;
-}
-
-button.tag-title {
-  background-color: white;
-}
-
-.filter-title {
-  line-height: 48px;
-}
-
-.job-title {
-  margin-top:-2%;
-}
-
-.tag-bar {
-  background-color: #DFFFDF;
-  width: 102.7%;
-  margin-top: 2.5%;
-  margin-left: -1.30%;
-}
-
-.navbar-default{
-/*  background-color: #227830 */
-background-color: #329344
-}
-
-.nav-pills li {
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.nav-pills li a{
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  background-color: #329344;
+button a {
   color: black;
 }
 
-.nav-pills li a:hover{
-  background-color: #DFFFDF;
-  box-shadow: 1px 1px 5px #555 inset
+.reco-icon {
+  height:24px;
+  width:24px;
 }
 
-.orange-btn{
-  background-color: #EE9344
+.gold-button {
+ background-color: #FFD700;
 }
 
-.side-bar {
-  padding-top: 50px;
-  padding-left: 40px;
-  position: fixed;
-  background-color: #DFFFDF;/*#EE9344;*/
+.silver-button {
+ background-color: #C0C0C0;
+}
+
+.bronze-button {
+ background-color: #cd7f32;
+}
+
+.hack-fix {
+  height: 34px;
+  width: 44px;
+
 }
