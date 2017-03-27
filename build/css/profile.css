@@ -54,6 +54,10 @@ background-color: #4caf50
   margin-top: 50px;
   height: 670px;
 }
+.banner-img {
+    max-width: 100%;
+    max-height: 100%;
+}
 .project-header{
   position: relative;
   height:25%;
@@ -71,6 +75,10 @@ background-color: #4caf50
 }
 .mid-col{
     padding-top: 45px;
+}
+.user-img{
+    height: 100%;
+    width: 100%;
 }
 .project-banner{
   position: absolute;
@@ -94,7 +102,6 @@ background-color: #4caf50
 .project-message{
   height: 100%;
   background-color: #DFFFDF;
-  overflow: scroll;
   text-align: center;
   border-left: 1px solid #4caf50;
 
