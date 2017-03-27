@@ -5,6 +5,7 @@ import React from 'react';
 
 // Each major browser view user interface must be imported.
 import MainFeed from './components/main-feed.js';
+import JobBoardMainFeed from './components/job-board-main-feed.js';
 import UI02 from './components/ui-02.js';
 
 
@@ -17,6 +18,11 @@ if (document.getElementById('main-feed') !== null) {
   ReactDOM.render(
     <MainFeed />,
     document.getElementById('main-feed')
+  );
+} else if (document.getElementById('job-board-main-feed') !== null) {
+  ReactDOM.render(
+    <JobBoardMainFeed />,
+    doucument.getElementById('job-board-main-feed')
   );
 } else if (document.getElementById('ui-02') !== null) {
   ReactDOM.render(
