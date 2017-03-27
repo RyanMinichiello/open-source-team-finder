@@ -72,6 +72,10 @@ background-color: #4caf50
 .mid-col{
     padding-top: 45px;
 }
+.user-img{
+    height: 100%; 
+    width: 100%;
+}
 .project-banner{
   position: absolute;
   z-index: 1;
@@ -94,7 +98,6 @@ background-color: #4caf50
 .project-message{
   height: 100%;
   background-color: #DFFFDF;
-  overflow: scroll;
   text-align: center;
   border-left: 1px solid #4caf50;
 
