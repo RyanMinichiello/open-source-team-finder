@@ -17,7 +17,8 @@ export default class Profile_Temp extends React.Component {
                     <Profile_Banner/>
                     <div className="project-container row">
                         <Profile_About/>
-                        <Profile_Skills/>
+                        <Profile_Skills
+                            name = "Lynda Doe"></Profile_Skills>
                         <Profile_Teams/>
                     </div>
                </div>

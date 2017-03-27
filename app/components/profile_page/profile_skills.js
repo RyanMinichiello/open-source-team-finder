@@ -6,7 +6,7 @@ export default class Profile_Skills extends React.Component {
             <div>
             <div className="project-message col-md-4 mid-col">
               <h3>
-                  Lynda Doe
+                  {this.props.name}
               </h3>
               <h3>Skills</h3>
               <button type="button" className="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
