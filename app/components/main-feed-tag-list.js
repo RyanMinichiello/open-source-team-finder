@@ -1,4 +1,5 @@
 import React from 'react';
+import MainFeedTagItem from './main-feed-tag-item.js';
 
 export default class MainFeedTagList extends React.Component {
   render() {

@@ -100,8 +100,24 @@
            </ul>
            <div style="height: 1000px;"></div>
         </div>
-        <div class="col-md-10 pull-right" id="main-feed">
-          //Main Feed in React
+        <div class="col-md-10 pull-right">
+          <div class="row navbar main-feed-header">
+            <h6> FILTERS: </h6>
+            <div class="checkbox">
+               <label><input type="checkbox"> Recommend Jobs</label>
+               <span class="glyphicon glyphicon-paperclip"></span>
+           </div>
+           <div class="checkbox">
+               <label><input checked value="" type="checkbox"> My Projects </label>
+               <span class="glyphicon glyphicon-folder-open"></span>
+           </div>
+           <div class="checkbox">
+               <label><input checked value="" type="checkbox"> Followed By Me </label>
+               <span class="glyphicon glyphicon-eye-open"></span>
+           </div>
+          </div>
+          <div id="main-feed"></div>
+
         </div>
     </div>
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -110,6 +126,8 @@
       <script src="js/bootstrap.min.js"></script>
       <!-- App code -->
       <script src="js/bundle.js"></script>
+
+      <script src="js/app.js"></script>
 
 
    </body>
