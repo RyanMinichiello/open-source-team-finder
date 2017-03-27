@@ -1,13 +1,13 @@
 import React from 'react';
 import MainFeedTagList from './main-feed-tag-list.js'
 
-export default class MainFeedItem extends React.Component {
+export default class MainFeedJobItem extends React.Component {
   render() {
     return (
         <div className="panel-body job-post">
           <div className="job-title">
             <h3>
-              <span className="glyphicon {this.props.glyph}"></span>
+              <span className="glyphicon glyphicon-paperclip"></span>
               <a href='#'> {this.props.feedItemName}</a>
             </h3>
           </div>

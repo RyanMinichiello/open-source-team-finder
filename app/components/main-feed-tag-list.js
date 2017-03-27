@@ -10,13 +10,21 @@ export default class MainFeedTagList extends React.Component {
         </button>
         {React.Children.map(this.props.children, function(child) {
           return (
-            <button type="button" className="btn btn-default tag_list">
-              {child}
-            </button>
+            <div>
+              <button type="button" className="btn btn-default tag_list">
+                {child}
+              </button>
+              <button type="button" className="btn btn-default tag_list">
+                {child}
+              </button>
+            </div>
           )
         })}
         <button type="button" className="btn btn-default tag_list">
-          <MainFeedTagItem />
+          <MainFeedTagItem tag='Tag1' />
+        </button>
+        <button type="button" className="btn btn-default tag_list">
+          <MainFeedTagItem tag='Tag1' />
         </button>
       </div>
     )
