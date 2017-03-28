@@ -8,7 +8,8 @@ import React from 'react';
 import ProjectPage from './components/project-page.js';
 import Profile_Temp from './components/profile_page/profile_temp.js';
 import MainFeed from './components/main-feed.js';
-import InboxPage from './components/inbox-inboxpage.js'
+import InboxPage from './components/inbox-inboxpage.js';
+import CreateProject from './components/createproject.js';
 
 
 // For each view conditionally determine which view to display
@@ -36,5 +37,10 @@ if (document.getElementById('main-feed') !== null) {
   ReactDOM.render(
     <InboxPage />,
     document.getElementById('inbox-page-zone')
+);
+} else if (document.getElementById('create-project') !== null) {
+  ReactDOM.render(
+    <CreateProject />,
+    document.getElementById('create-project')
 );
 }
