@@ -6,11 +6,11 @@ export default class Profile_About extends React.Component {
             <div>
             <div className="project-description col-md-4">
               <h3>Bio</h3>
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim cursus, vestibulum eros vel, suscipit lorem. Phasellus eget lacus ante. Fusce orci est, vestibulum et gravida vitae, feugiat eget est. Donec nulla tellus, suscipit non enim vitae, condimentum consequat nisl. Suspendisse potenti. Pellentesque accumsan tortor quis tellus vulputate bibendum. Quisque sit amet nulla vehicula, laoreet metus quis, hendrerit nunc.</div>
+              <div>{this.props.about}</div>
               <h3>Contact</h3>
-              <div className="skill-item">myemail@gmail.com
+              <div className="skill-item">{this.props.email}
               </div>
-              <div className="skill-item">linkedin.com/lynda
+              <div className="skill-item">{this.props.contact}
               </div>
             </div>
         </div>

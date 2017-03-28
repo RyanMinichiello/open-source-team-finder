@@ -5,7 +5,7 @@ export default class Profile_Banner extends React.Component {
         return (
             <div>
             <div className="project-header row">
-                <img className = "banner-img" src="img/new_banner.jpg"/>
+                <img className = "banner-img" src={this.props.user_banner}/>
               <div className="header-buttons">
                 <div className="container pull-right">
                     <button type="button" className="btn btn-info btn-lg pull-right"  id= "chat-pop" data-toggle="modal" data-target="#myModal">Message</button>
@@ -19,7 +19,7 @@ export default class Profile_Banner extends React.Component {
                             <h4 className="modal-title">Message</h4>
                           </div>
                           <div className="modal-body">
-                            <p>Hi Lynda, I'm Jane working with the Okra Project.  We are very impressed by your skillset and are hoping you'll join our team!</p>
+                            <p>{this.props.direct_message}</p>
                           </div>
                           <div className="modal-footer">
                             <button type="button" className="btn btn-default" data-dismiss="modal">Send</button>
@@ -33,7 +33,7 @@ export default class Profile_Banner extends React.Component {
               </div>
             </div>
             <div className="project-banner">
-                <img className = "user-img" src="img/jane.png"/>
+                <img className = "user-img" src={this.props.user_img}/>
             </div>
         </div>
         )
