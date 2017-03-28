@@ -16,8 +16,8 @@ body {
 
 .filter-bar {
   background-color: #DFFFDF;
-  position: fixed;
-  width: inherit;
+  position: absolute;
+  width: 100%;
   margin-top: 1%;
   margin-left: -0.77%;
   border-bottom: 1px solid black;
@@ -25,7 +25,7 @@ body {
   border-right: 1px solid black;
   z-index: 1;
   padding-top:5px;
-  left: 220px;
+  left: 8px;
 }
 
 .filter-tags {

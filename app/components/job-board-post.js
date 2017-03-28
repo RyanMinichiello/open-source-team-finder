@@ -6,15 +6,11 @@ export default class JobBoardPost extends React.Component {
       <div className="panel panel-default">
         <div className="panel-body job-post">
           <div className="job-title">
-            <h3>PROJECT1 - POSITION TITLE</h3>
+            <h3>{this.props.project} - {this.props.position_title}</h3>
           </div>
           <div className="job-desc">
             <p>
-              Description: Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Nam eleifend tristique nunc fermentum
-              malesuada. Praesent congue, elit ac tempus laoreet, dolor
-              augue vehicula massa, vitae eleifend sem nunc sit amet
-              diam. Maecenas dignissim suscipit purus id luctus.
+              {this.props.position_description}
             </p>
           </div>
           <div className="row">
