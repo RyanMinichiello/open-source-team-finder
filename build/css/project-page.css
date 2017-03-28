@@ -21,6 +21,7 @@ h1,h2,h3{
   position: relative;
   height:18%;
   border-bottom: 1px solid #4caf50;
+  overflow: hidden;
 }
 
 .header-buttons{
@@ -42,9 +43,9 @@ h1,h2,h3{
 .project-banner{
   position: absolute;
   z-index: 1;
-  height: 15%;
+  height: 13%;
   width: 40%;
-  top: 20%;
+  top: 12%;
   right: 30.8%;
   overflow: hidden;
   border: 2px solid #4caf50;
@@ -117,7 +118,7 @@ h1,h2,h3{
 }
 
 .banner-image{
-
+  width: 100%;
 }
 
 .banner-header{

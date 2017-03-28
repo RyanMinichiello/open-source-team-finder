@@ -10,6 +10,7 @@ export default class ProjectPage extends React.Component {
     return(
         <div className="project-container row">
           <ProjectBanner />
+          <div className="project-banner"><h1 className="banner-header">Project Okra</h1></div>
           <ProjectDescription />
           <ProjectMessages />
           <ProjectPositions />
