@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import FilterBar from './filter-bar.js'
 import JobBoardPost from './job-board-post.js'
 
@@ -39,8 +38,3 @@ export default class JobBoardMainFeed extends React.Component {
     );
   }
 }
-
-ReactDOM.render(
-  <JobBoardMainFeed />,
-  document.getElementById('job-board-main-feed')
-);
