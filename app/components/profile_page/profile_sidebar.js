@@ -7,10 +7,10 @@ export default class Profile_Sidebar extends React.Component {
             <div className="col-md-2 side-bar">
                <ul className="nav nav-pills nav-stacked">
                   <li role="presentation">PROJECTS</li>
-                  <li role="presentation"><a href="#"> Project 1 </a> </li>
-                  <li role="presentation"><a href="#"> Project 2 </a> </li>
-                  <li role="presentation"><a href="#"> Project 3 </a> </li>
-                  <li role="presentation"><a href="#"> Project 4 </a> </li>
+                  <li role="presentation"><a href="#"> {this.props.first_active} </a> </li>
+                  <li role="presentation"><a href="#"> {this.props.second_active} </a> </li>
+                  <li role="presentation"><a href="#"> {this.props.third_active} </a> </li>
+                  <li role="presentation"><a href="#"> {this.props.fourth_active}</a> </li>
                   <li role="presentation"><a href="#"><span className="glyphicon glyphicon-stats"></span>
                      Job Board</a>
                   </li>

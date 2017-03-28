@@ -34,7 +34,7 @@ export default class Profile_Nav extends React.Component{
                            <div className="btn-group" role="group">
                               <button type="button" className="btn btn-default navbar-btn" id="nav-btn">
                               <span className="glyphicon glyphicon-user"></span>
-                              Jane
+                              {this.props.self_name}
                               </button>
                            </div>
                            <div className="btn-group" role="group">

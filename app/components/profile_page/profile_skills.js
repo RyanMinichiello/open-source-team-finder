@@ -10,23 +10,23 @@ export default class Profile_Skills extends React.Component {
               </h3>
               <h3>Skills</h3>
               <button type="button" className="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
-              Agile Development
+              {this.props.first_skill}
               </button>
               <button type="button" className="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
-              Javascript
+              {this.props.second_skill}
               </button>
               <button type="button" className="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
-              Scala
+              {this.props.third_skill}
               </button>
               <button type="button" className="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
-              Node.js
+              {this.props.fourth_skill}
               </button>
               <h3>Interests</h3>
               <button type="button" className="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
-              Clean Energy
+              {this.props.first_interest}
               </button>
               <button type="button" className="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
-              Finance
+              {this.props.second_interest}
               </button>
 
             </div>
