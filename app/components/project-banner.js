@@ -6,7 +6,7 @@ export default class ProjectBanner extends React.Component {
       <div>
         <div className="project-header row">
 
-          <img src="img/okra.jpg"/>
+          <img className="banner-image" src="img/okra.jpg"/>
 
           <div className="header-buttons">
             <button className="header-button">Apply</button>
@@ -15,7 +15,7 @@ export default class ProjectBanner extends React.Component {
 
         </div>
 
-        <div className="project-banner"><h1>Project Okra</h1></div>
+        <div className="project-banner"><h1 className="banner-header">Project Okra</h1></div>
 
       </div>
 
