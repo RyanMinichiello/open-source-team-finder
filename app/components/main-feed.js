@@ -33,7 +33,7 @@ export default class MainFeed extends React.Component {
 
           <div className="row main-feed-row">
             <div className="col-md-10 job-feed">
-              
+
               {React.Children.map(this.props.children, function(child) {
                 return (
                   <div className="panel panel-default">
@@ -60,13 +60,15 @@ export default class MainFeed extends React.Component {
                 <MainFeedJobItem
                   feedItemName ='Software Engineer Position'
                   postData='Opportunity of a lifetime to work alongside Team Okra and
-                  the best developers the nation has to offer.'/>
+                  the best developers the nation has to offer.'
+                  rankingType='gold-button'/>
               </div>
 
               <div className="panel panel-default">
                 <MainFeedJobItem
                   feedItemName ='Quality Assurance Engineer Position'
-                  postData='TEST WITH THE BEST at Tim Richards Testing Emporium.'/>
+                  postData='TEST WITH THE BEST at Tim Richards Testing Emporium.'
+                  rankingType='silver-button'/>
               </div>
 
             </div>
