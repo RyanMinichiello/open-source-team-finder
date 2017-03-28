@@ -34,19 +34,19 @@ if (document.getElementById('main-feed') !== null) {
     document.getElementById('profile_temp')
   );
 
-} else if (document.getElementById('inbox-page-zone') !== null) {
+} else if (document.getElementById('inbox01') !== null) {
   ReactDOM.render(
     <InboxPage />,
-    document.getElementById('inbox-page-zone')
+    document.getElementById('inbox01')
 );
-}else if (document.getElementById('inbox-page-zone2') !== null) {
+}else if (document.getElementById('inbox02') !== null) {
   ReactDOM.render(
     <InboxPage2 />,
-    document.getElementById('inbox-page-zone2')
+    document.getElementById('inbox02')
 );
-}else if (document.getElementById('inbox-page-zone3') !== null) {
+}else if (document.getElementById('inbox03') !== null) {
   ReactDOM.render(
     <InboxPage3 />,
-    document.getElementById('inbox-page-zone3')
+    document.getElementById('inbox03')
   );
 }
