@@ -1,3 +1,9 @@
+body{
+  width: auto;
+  height: auto;
+}
+
+
 h1,h2,h3{
   color: #EE9344;
 }
@@ -42,7 +48,7 @@ h1,h2,h3{
   z-index: 1;
   height: 15%;
   width: 40%;
-  top: 11%;
+  top: 20%;
   right: 30.8%;
   overflow: hidden;
   border: 2px solid #4caf50;
@@ -112,4 +118,14 @@ h1,h2,h3{
   border-radius: 10px;
   background-color: #EE9344;
   border: 3px solid #4caf50;
+}
+
+.banner-image{
+
+}
+
+.banner-header{
+  text-align:center;
+  font-size:48px;
+  padding-top: 12px;
 }

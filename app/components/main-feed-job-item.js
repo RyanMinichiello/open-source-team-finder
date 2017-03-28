@@ -20,7 +20,7 @@ export default class MainFeedJobItem extends React.Component {
             <MainFeedTagList/>
             <div className="col-md-6">
               <div className="pull-right">
-                Ranking: <button type="button" className="btn btn-default gold-button">
+                Ranking: <button type="button" className={this.props.rankingType} >
                 <span><img src="img/favicon.ico" className="best-fit-ico"/></span>
                 </button>
               </div>
