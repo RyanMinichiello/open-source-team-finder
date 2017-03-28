@@ -61,14 +61,14 @@ export default class MainFeed extends React.Component {
                   feedItemName ='Software Engineer Position'
                   postData='Opportunity of a lifetime to work alongside Team Okra and
                   the best developers the nation has to offer.'
-                  rankingType='gold-button'/>
+                  rankingType='gold-button btn btn-default'/>
               </div>
 
               <div className="panel panel-default">
                 <MainFeedJobItem
                   feedItemName ='Quality Assurance Engineer Position'
                   postData='TEST WITH THE BEST at Tim Richards Testing Emporium.'
-                  rankingType='silver-button'/>
+                  rankingType='silver-button btn btn-default'/>
               </div>
 
             </div>
