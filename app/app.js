@@ -29,7 +29,6 @@ if (document.getElementById('main-feed') !== null) {
     <ProjectPage />,
     document.getElementById('project_page-zone')
   );
-
 } else if (document.getElementById('profile_temp') !== null) {
   ReactDOM.render(
     <Profile_Temp />,
