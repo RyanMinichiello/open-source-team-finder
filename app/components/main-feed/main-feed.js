@@ -2,8 +2,8 @@ import React from 'react';
 import MainFeedNotificationItem from './main-feed-notification-item.js';
 import MainFeedJobItem from './main-feed-job-item.js';
 import MainFeedProjectItem from './main-feed-project-item.js';
-import Profile_Nav from './profile_page/profile_nav.js';
-import Profile_Sidebar from './profile_page/profile_sidebar.js';
+import Profile_Nav from '../profile_page/profile_nav.js';
+import Profile_Sidebar from '../profile_page/profile_sidebar.js';
 import MainFeedFilter from './main-feed-filters.js';
 
 

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // Each major browser view user interface must be imported.
 import ProjectPage from './components/project-page.js';
 import Profile_Temp from './components/profile_page/profile_temp.js';
-import MainFeed from './components/main-feed.js';
+import MainFeed from './components/main-feed/main-feed.js';
 import JobBoardMainFeed from './components/job-board/job-board-main-feed.js';
 import CreateProject from './components/createproject.js';
 import InboxPage from './components/inbox-inboxpage.js'
