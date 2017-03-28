@@ -52,7 +52,7 @@ export default class Profile_Temp extends React.Component {
                             user_past_first = "Pear Team"
                             user_past_second = "Mango Team"
                             ></Profile_Teams>
-                        
+
                     </div>
                </div>
            </div>
