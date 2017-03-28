@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 
 // Each major browser view user interface must be imported.
 import MainFeed from './components/main-feed.js';
-import JobBoardMainFeed from './components/job-board-main-feed.js';
-import UI02 from './components/ui-02.js';
+import JobBoardMainFeed from './components/job-board/job-board-main-feed.js';
+//import UI02 from './components/ui-02.js';
 
 
 // For each view conditionally determine which view to display
