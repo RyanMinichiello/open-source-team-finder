@@ -5,7 +5,8 @@ import ReactDOM from 'react-dom';
 import ProjectPage from './components/project-page.js';
 import Profile_Temp from './components/profile_page/profile_temp.js';
 import MainFeed from './components/main-feed/main-feed.js';
-import JobBoardMainFeed from './components/job-board/job-board-main-feed.js';
+import JobBoard from './components/job-board/job-board.js'
+//import JobBoardMainFeed from './components/job-board/job-board-main-feed.js';
 import CreateProject from './components/createproject.js';
 import InboxPage from './components/inbox-inboxpage.js'
 import InboxPage2 from './components/inbox-inboxpage2.js'
@@ -19,10 +20,10 @@ if (document.getElementById('main-feed') !== null) {
     <MainFeed />,
     document.getElementById('main-feed')
   );
-} else if (document.getElementById('job-board-main-feed') !== null) {
+} else if (document.getElementById('job-board') !== null) {
   ReactDOM.render(
-    <JobBoardMainFeed />,
-    document.getElementById('job-board-main-feed')
+    <JobBoard />,
+    document.getElementById('job-board')
   );
 } else if (document.getElementById('project_page-zone') !== null) {
   ReactDOM.render(
