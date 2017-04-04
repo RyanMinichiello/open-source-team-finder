@@ -3,7 +3,6 @@ import React from 'react';
 export default class ProjectBanner extends React.Component {
   render(){
     return(
-      <div>
         <div className="project-header row">
 
           <img className="banner-image" src="img/okra.jpg"/>
@@ -13,9 +12,6 @@ export default class ProjectBanner extends React.Component {
             <button className="header-button">Follow</button>
           </div>
 
-        </div>
-
-        <div className="project-banner"><h1 className="banner-header">Project Okra</h1></div>
 
       </div>
 
