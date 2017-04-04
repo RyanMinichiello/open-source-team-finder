@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Each major browser view user interface must be imported.
-import ProjectPage from './components/project-page.js';
+import ProjectPage from './components/project-page/project-page.js';
 import Profile_Temp from './components/profile_page/profile_temp.js';
 import MainFeed from './components/main-feed/main-feed.js';
 import JobBoardMainFeed from './components/job-board/job-board-main-feed.js';
-import CreateProject from './components/createproject.js';
-import InboxPage from './components/inbox-inboxpage.js'
-import InboxPage2 from './components/inbox-inboxpage2.js'
-import InboxPage3 from './components/inbox-inboxpage3.js'
+import CreateProject from './components/createproject/createproject.js';
+import InboxPage from './components/inbox/inbox-inboxpage.js'
+import InboxPage2 from './components/inbox/inbox-inboxpage2.js'
+import InboxPage3 from './components/inbox/inbox-inboxpage3.js'
 
 // For each view conditionally determine which view to display
 // depending on if the ID is present in the HTML.
