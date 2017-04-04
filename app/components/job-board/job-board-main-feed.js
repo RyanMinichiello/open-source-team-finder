@@ -14,25 +14,29 @@ export default class JobBoardMainFeed extends React.Component {
                           adipiscing elit. Nam eleifend tristique nunc fermentum
                           malesuada. Praesent congue, elit ac tempus laoreet, dolor
                           augue vehicula massa, vitae eleifend sem nunc sit amet
-                          diam. Maecenas dignissim suscipit purus id luctus."/>
+                          diam. Maecenas dignissim suscipit purus id luctus."
+            rankingType="gold-button"/>
           <JobBoardPost project="PROJECT2" position_title="POSITION2"
             position_description="Description: Lorem ipsum dolor sit amet, consectetur
                           adipiscing elit. Nam eleifend tristique nunc fermentum
                           malesuada. Praesent congue, elit ac tempus laoreet, dolor
                           augue vehicula massa, vitae eleifend sem nunc sit amet
-                          diam. Maecenas dignissim suscipit purus id luctus."/>
+                          diam. Maecenas dignissim suscipit purus id luctus."
+            rankingType="silver-button"/>
           <JobBoardPost project="PROJECT3" position_title="POSITION3"
             position_description="Description: Lorem ipsum dolor sit amet, consectetur
                           adipiscing elit. Nam eleifend tristique nunc fermentum
                           malesuada. Praesent congue, elit ac tempus laoreet, dolor
                           augue vehicula massa, vitae eleifend sem nunc sit amet
-                          diam. Maecenas dignissim suscipit purus id luctus."/>
+                          diam. Maecenas dignissim suscipit purus id luctus."
+            rankingType="gold-button"/>
           <JobBoardPost project="PROJECT4" position_title="POSITION4"
             position_description="Description: Lorem ipsum dolor sit amet, consectetur
                           adipiscing elit. Nam eleifend tristique nunc fermentum
                           malesuada. Praesent congue, elit ac tempus laoreet, dolor
                           augue vehicula massa, vitae eleifend sem nunc sit amet
-                          diam. Maecenas dignissim suscipit purus id luctus."/>
+                          diam. Maecenas dignissim suscipit purus id luctus."
+            rankingType="silver-button"/>
         </div>
       </div>
     );

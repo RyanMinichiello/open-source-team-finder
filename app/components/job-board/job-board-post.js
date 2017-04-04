@@ -26,9 +26,9 @@ export default class JobBoardPost extends React.Component {
               </button>
             </div>
             <div className="col-md-6">
-              <div className="pull-right"> Ranking:
-                <button type="button" className="btn btn-default gold-button">
-                  <span><img src="img/favicon.ico" className="reco-icon"/></span>
+              <div className="pull-right">
+                Ranking: <button type="button" className={this.props.rankingType} >
+                <span><img src="img/favicon.ico" className="best-fit-ico"/></span>
                 </button>
               </div>
             </div>
