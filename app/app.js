@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 // Each major browser view user interface must be imported.
 import ProjectPage from './components/project-page/project-page.js';
-import Profile_Temp from './components/profile_page/profile_temp.js';
+import Profile_Temp from './components/profile-page/profile.js';
 import MainFeed from './components/main-feed/main-feed.js';
 import JobBoardMainFeed from './components/job-board/job-board-main-feed.js';
 import CreateProject from './components/createproject/createproject.js';
@@ -29,10 +29,10 @@ if (document.getElementById('main-feed') !== null) {
     <ProjectPage />,
     document.getElementById('project_page-zone')
   );
-} else if (document.getElementById('profile_temp') !== null) {
+} else if (document.getElementById('profile') !== null) {
   ReactDOM.render(
     <Profile_Temp />,
-    document.getElementById('profile_temp')
+    document.getElementById('profile')
   );
 
 } else if (document.getElementById('inbox01') !== null) {

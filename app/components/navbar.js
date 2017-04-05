@@ -32,24 +32,24 @@ export default class Navbar extends React.Component{
                      <div className="nav navbar-nav navbar-right">
                         <div className="btn-toolbar pull-right" role="toolbar">
                            <div className="btn-group" role="group">
-                              <button type="button" className="btn btn-default navbar-btn" id="nav-btn">
+                              <button type="button" className="btn btn-default navbar-btn">
                               <span className="glyphicon glyphicon-user"></span>
                               {this.props.self_name}
                               </button>
                            </div>
                            <div className="btn-group" role="group">
-                              <button type="button" className="btn btn-default navbar-btn" id="nav-btn">
+                              <button type="button" className="btn btn-default navbar-btn">
                               <span className="glyphicon glyphicon-envelope"></span>
                               </button>
                            </div>
                            <div className="btn-group" role="group">
-                              <button type="button" className="btn btn-default navbar-btn orange-btn" id="nav-btn-create">
+                              <button type="button" className="btn btn-create navbar-btn">
                               +Create Project
                               </button>
                            </div>
                            <div className="btn-group" role="group">
                               <div className="btn-group" role="group">
-                                 <button type="button" className="btn btn-default navbar-btn" id="nav-btn">
+                                 <button type="button" className="btn btn-default navbar-btn">
                                  Sign Out
                                  </button>
                               </div>
