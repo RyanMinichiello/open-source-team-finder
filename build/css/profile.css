@@ -75,11 +75,12 @@ background-color: #f4f7f6;
   border-left: 1px solid #e7e7e7;
 }
 .banner-img {
-    /*width: inherit;*/
+    width: inherit;
+    height:inherit;
 }
 .project-header{
   position: relative;
-  height:10%;
+  height:200px;
   width: 100%;
   background-color:#f4f7f6;
   border-bottom: 1px solid #e7e7e7;
