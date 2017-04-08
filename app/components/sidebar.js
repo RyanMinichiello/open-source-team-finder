@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default class Profile_Sidebar extends React.Component {
+export default class Sidebar extends React.Component {
     render() {
         return (
             <div>
-            <div className="col-md-2 side-bar">
+            <div className="text-center col-md-2 side-bar">
                <ul className="nav nav-pills nav-stacked">
                   <li role="presentation">PROJECTS</li>
                   <li role="presentation"><a href="#"> {this.props.first_active} </a> </li>
