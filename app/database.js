@@ -37,12 +37,11 @@ var initialData = {
 
     },
     "positions" : {
-      "1":{
-        "project_id" : 1,
 
         "open_positions" :{
           "1":{
             "id"         : 2,
+            "project_id" : 1,
             "status"     : "vacant",
             "title"      : "developer",
             "description": "develop things",
@@ -52,14 +51,14 @@ var initialData = {
 
         "filled_positions":{
           "1":{
-            "id"    : 1,
-            "status": "filled",
+            "id"         : 1,
+            "project_id" : 1,
+            "status"     : "filled",
             "title"      : "developer",
             "description": "develop things",
             "skillz"     : ["Java"]
           }
         }
-      }
 
     },
     "updates" : {
