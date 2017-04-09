@@ -21,7 +21,7 @@ export default class Profile extends React.Component {
                           third_active = "Garbanzo Bean Team"
                           fourth_active = "Apple Team"
                     ></Sidebar>
-
+                <div className = "col-md-2"></div>
                     <div className="project-zone col-md-10">
                      <Profile_Banner
                           user_banner = "img/new_banner.jpg"
