@@ -39,7 +39,7 @@ var initialData = {
     "positions" : {
 
         "open_positions" :{
-          "1":{
+          "2":{
             "id"         : 2,
             "project_id" : 1,
             "status"     : "vacant",
