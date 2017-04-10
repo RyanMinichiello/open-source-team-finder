@@ -4,7 +4,7 @@ export default class Profile_Temp extends React.Component {
     render() {
         return(
             <div>
-            <div className="project-positions col-md-4">
+            <div className="profile-teams col-md-4">
               <h3>Current Projects</h3>
               <ul className="nav nav-pills nav-stacked">
                  <li role="presentation"><a href="#"> {this.props.user_active_project} </a> </li>

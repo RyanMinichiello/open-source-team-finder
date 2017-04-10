@@ -4,7 +4,7 @@ export default class Profile_Skills extends React.Component {
     render() {
         return (
             <div>
-            <div className="project-message col-md-4 mid-col">
+            <div className="profile-skills col-md-4 mid-col">
               <h3>
                   {this.props.name}
               </h3>

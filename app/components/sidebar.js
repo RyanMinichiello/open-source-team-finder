@@ -11,7 +11,7 @@ export default class Sidebar extends React.Component {
                   <li role="presentation"><a href="#"> {this.props.second_active} </a> </li>
                   <li role="presentation"><a href="#"> {this.props.third_active} </a> </li>
                   <li role="presentation"><a href="#"> {this.props.fourth_active}</a> </li>
-                  <li role="presentation"><a href="#"><span className="glyphicon glyphicon-stats"></span>
+                  <li role="presentation"><a href="ostf-job-board.html"><span className="glyphicon glyphicon-stats"></span>
                      Job Board</a>
                   </li>
                </ul>

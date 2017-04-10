@@ -1,14 +1,30 @@
 .navbar-default{
-/*  background-color: #227830 */
-  background-color: #4caf50
+  background-color: #f4f7f6;
+  border-top: 1px solid #e7e7e7;
 }
 
 .btn-default{
-  background-color: #DFFFDF
+  color: #f5f5f5;
+  background-color: #66b9bf;
 }
-
-.orange-btn{
-  background-color: #EE9344
+.btn-default:hover {
+    color: #f5f5f5;
+    background-color: #07889b;
+}
+.btn-skill-interest{
+    color: #f5f5f5;
+    background-color: #66b9bf;
+}
+.btn-skill-interest:hover {
+    color: #f5f5f5;
+}
+.btn-create{
+    color: #f5f5f5;
+    background-color: #e37222;
+}
+.btn-create:hover{
+    color: #07889b;
+    background-color: #eeaa7b;
 }
 
 .glyphicon-home{
@@ -19,16 +35,17 @@
   padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: #4caf50;
-  color: black;
-
+  background-color: #eeaa7b;
+  color: #f5f5f5;
 }
-
+.nav-pills li a:hover{
+  background-color: #e37222;
+}
 .side-bar {
-  padding-top: 50px;
   position: fixed;
-  background-color: #DFFFDF/*#EE9344;*/
-}
+  background-color: #66b9bf;
+  height: 700px;
+  }
 
 .nav-pills li {
   padding-left: 5px;
@@ -36,11 +53,6 @@
   padding-top: 2px;
   padding-bottom: 2px;
 }
-.nav-pills li a:hover{
-  background-color: #DFFFDF;
-  box-shadow: 1px 1px 5px #555 inset
-}
-
 
 .best-fit-ico {
   height: 24px;

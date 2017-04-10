@@ -1,10 +1,12 @@
-body {
+/*body {
   width: auto;
   height: auto;
+  padding-top: 50px;
 }
 
 .side-bar {
-  height: 1000px;
+  height: 700px;
+  position: relative;
 }
 
 .main-feed-header {
@@ -20,11 +22,11 @@ body {
 .main-feed-posts {
   position: absolute;
   z-index: 2;
-  padding-top: 200px;
+  padding-top: 100px;
 }
 
 .main-feed-row {
-  padding-top: 70px;
+  padding-top: 20px;
 
 }
 .checkbox {
@@ -34,14 +36,13 @@ body {
 
 .job-title {
   margin-top:-2%;
-
-}
+}*/
 
 .glyphicon {
   padding-right: 2px;
 }
 
-.job-feed {
+/*.job-feed {
   background-color: #4caf50;
   margin-top: 5%;
   float: left;
@@ -62,7 +63,7 @@ body {
 
 .panel {
   background-color: #DFFFDF;
-}
+}*/
 
 button a {
   color: black;
@@ -80,7 +81,7 @@ button.tag_title {
   background-color: #EE9344
 }
 
-.gold-button {
+/*.gold-button {
   background-color: #FFD700;
 }
 

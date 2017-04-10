@@ -24,9 +24,7 @@ export default class MainFeed extends React.Component {
             fourth_active = "Project 4"
             ></Sidebar>
         </div>
-
-
-
+        
         <div className="col-md-10 pull-right">
 
           <MainFeedFilter />
