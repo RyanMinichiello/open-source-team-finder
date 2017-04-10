@@ -62,7 +62,7 @@ export default class MessageItems extends React.Component {
           </MessageThread>
 
         </div>
-
+    
         <MessageEntry>
         </MessageEntry>
       </div>

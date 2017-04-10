@@ -1,38 +1,53 @@
-body{
-    background: #DFFFDF;
+/*body{
+    width: auto;
+    height: auto;
+    background: #f4f7f6;
+    padding-top: 50px;
 }
 .navbar-default{
-/*  background-color: #227830 */
-background-color: #4caf50
+background-color: #f4f7f6;
+border-top: 1px solid #e7e7e7;
 }
 .side-bar {
-  padding-top: 50px;
-  background-color: #DFFFDF/*#EE9344;*/;
-  left: 15px;
+  background-color: #66b9bf;
+  position: relative;
+  height: 700px;
 }
+
+.row{
+    margin-right: 0px !important;
+}
+
+
 .btn-default{
-  background-color: #DFFFDF
+  color: #f5f5f5;
+  background-color: #66b9bf;
 }
-#nav-color{
-    background-color: ##4caf50 !important;
+.btn-default:hover {
+    color: #f5f5f5;
+    background-color: #07889b;
 }
-#nav-btn{
-    background-color: #DFFFDF !important;
+.btn-skill-interest{
+    color: #f5f5f5;
+    background-color: #66b9bf;
 }
-#nav-btn-create{
-    background-color: #EE9344 !important;
+.btn-skill-interest:hover {
+    color: #f5f5f5;
 }
-#chat-pop{
-  background-color: #EE9344 !important;
-  border-color: #EE9344 !important;
-  color: black;
+.btn-create{
+    color: #f5f5f5;
+    background-color: #e37222;
 }
+.btn-create:hover{
+    color: #07889b;
+    background-color: #eeaa7b;
+}*/
 .glyphicon-home{
   color: #EE9344
 }
-.nav-pills li {
+/*.nav-pills li {
   padding-left: 5px;
-  padding-right: 10px;
+  padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
 }
@@ -41,30 +56,27 @@ background-color: #4caf50
   padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: #4caf50;
-  color: black;
+  background-color: #eeaa7b;
+  color: #f5f5f5;
 }
 .nav-pills li a:hover{
-  background-color: #DFFFDF;
-  box-shadow: 1px 1px 5px #555 inset
+  background-color: #e37222;
 }
-.project-zone{
-  background-color: blue;
-  position: relative;
-  margin-top: 50px;
+.profile-zone {
+  background-color: #f4f7f6;
   height: 670px;
-  border-left: 1px solid #4caf50;
 }
 .banner-img {
-    max-width: 100%;
-    max-height: 100%;
+    width: inherit;
+    height:inherit;
 }
-.project-header{
-  position: relative;
-  height:25%;
-  background-color:#DFFFDF;
-  border-bottom: 1px solid #4caf50;
-}
+.profile-banner{
+    overflow:hidden;
+  height:200px;
+  width: 100%;
+  background-color:#f4f7f6;
+  border-bottom: 1px solid #e7e7e7;
+}*/
 .header-buttons{
   position: absolute;
   right: 2%;
@@ -74,14 +86,14 @@ background-color: #4caf50
 .header-button{
   position: relative;
 }
-.mid-col{
+/*.mid-col{
     padding-top: 45px;
 }
 .user-img{
     height: 100%;
     width: 100%;
 }
-.project-banner{
+.profile-image{
   position: absolute;
   z-index: 1;
   height: 25%;
@@ -90,23 +102,23 @@ background-color: #4caf50
   right: 43%;
   overflow: hidden;
 }
-.project-container{
-  background-color: #DFFFDF;
+.profile-container{
+  background-color: #f4f7f6;
   position: relative;
   height: 100%;
 }
-.project-description{
-  height: 100%;
-  background-color: #DFFFDF;
-  border-right: 1px solid #4caf50;
+.profile-about{
+  height: 670px;
+  background-color: #f4f7f6;
+  border-right: 1px solid #e7e7e7;
 }
-.project-message{
-  height: 100%;
-  background-color: #DFFFDF;
+.profile-skills{
+  height: 670px;
+  background-color: #f4f7f6;
   text-align: center;
-  border-right: 1px solid #4caf50;
+  border-right: 1px solid #e7e7e7;
 
-}
+}*/
 .message-item{
   border: 3px solid black;
   position:relative;
@@ -120,20 +132,18 @@ background-color: #4caf50
   bottom: 0;
   right: 0;
 }
-.project-positions{
-  height: 100%;
-  background-color: lightblue;
-  background-color: #DFFFDF;
-  /*border-left: 1px solid #4caf50;*/
+/*.profile-teams{
+  height: 670px;
+  background-color: #f4f7f6;
 }
 .logo{
   width:120px;
   height:auto;
-  position:relative;
+  position: relative;
 }
 .navbar-brand{
   position: relative;
   bottom:21px;
   right:35px;
   vertical-align:bottom;
-}
+}*/

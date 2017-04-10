@@ -2,8 +2,8 @@ import React from 'react';
 import MainFeedNotificationItem from './main-feed-notification-item.js';
 import MainFeedJobItem from './main-feed-job-item.js';
 import MainFeedProjectItem from './main-feed-project-item.js';
-import Profile_Nav from '../profile_page/profile_nav.js';
-import Profile_Sidebar from '../profile_page/profile_sidebar.js';
+import Navbar from '../navbar.js';
+import Sidebar from '../sidebar.js';
 import MainFeedFilter from './main-feed-filters.js';
 
 
@@ -12,17 +12,17 @@ export default class MainFeed extends React.Component {
   render() {
     return (
       <div>
-        <Profile_Nav
+        <Navbar
           self_name = "Jane"
-          ></Profile_Nav>
+          ></Navbar>
 
         <div>
-          <Profile_Sidebar
+          <Sidebar
             first_active = "Project 1"
             second_active = "Project 2"
             third_active = "Project 3"
             fourth_active = "Project 4"
-            ></Profile_Sidebar>
+            ></Sidebar>
         </div>
 
 

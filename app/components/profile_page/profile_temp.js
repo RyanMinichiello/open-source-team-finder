@@ -1,6 +1,6 @@
 import React from 'react';
-import Profile_Nav from './profile_nav.js';
-import Profile_Sidebar from './profile_sidebar.js';
+import Navbar from '../navbar.js';
+import Sidebar from '../sidebar.js';
 import Profile_Banner from './profile_banner.js';
 import Profile_About from './profile_about.js';
 import Profile_Skills from './profile_skills';
@@ -10,16 +10,16 @@ export default class Profile_Temp extends React.Component {
     render() {
         return(
             <div>
-                <Profile_Nav
+                <Navbar
                     self_name = "Jane"
-                    ></Profile_Nav>
+                    ></Navbar>
                <div className="row">
-                  <Profile_Sidebar
+                  <Sidebar
                       first_active = "Project 1"
                       second_active = "Project 2"
                       third_active = "Project 3"
                       fourth_active = "Project 4"
-                      ></Profile_Sidebar>
+                      ></Sidebar>
 
                   <div className="project-zone col-md-10">
 
@@ -51,7 +51,7 @@ export default class Profile_Temp extends React.Component {
                             user_active_project = "Lime Team"
                             user_past_first = "Pear Team"
                             user_past_second = "Mango Team"
-                            ></Profile_Teams>
+                        ></Profile_Teams>
 
                     </div>
                </div>
