@@ -14,11 +14,12 @@ a, a:visited{
   margin-left: 8%;
 }
 #add-more-tags-btn{
-  background-color: #ffffff;
+  background-color: #EE9344;
 }
 
 #add-more-tags-btn:hover{
-  background-color: #eee;
+  background-color: #EE8233;
+  transition: 0.1s;
 }
 .attribute-box{
   width: 84%;
@@ -581,6 +582,7 @@ position: relative;
 
 .attribute{
   font-size: 120%;
+
 }
 #add-more-btn{
   margin-bottom: 5%;

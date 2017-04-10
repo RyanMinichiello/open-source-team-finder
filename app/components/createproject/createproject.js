@@ -15,7 +15,7 @@ export default class CreateProject extends React.Component {
 
 
 
-      
+
         <Navbar
           self_name = "Jane"
           ></Navbar>
@@ -67,8 +67,8 @@ export default class CreateProject extends React.Component {
         </div>
 
           <div className = "progress attribute-box">
-          <div className = "attribute">In Progress:
-          <input type="checkbox" id="progress-checkbox"></input>
+          <div>In Progress:
+          <input type="checkbox" id="progress-checkbox" />
           </div>
         </div>
 
