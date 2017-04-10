@@ -16,6 +16,18 @@ var initialData = {
             "interests" : ["Finance", "Clean Energy"],
             "bio" : "Hi my name is Jane",
             "contact" : "myemail@email.com"
+        },
+        "2" : {
+            "_id" : 2,
+            "fullName" : "Joe Doe",
+            // ID of Jane's feed
+            "feed" : 2,
+            // ID of Jane's Inbox
+            "inbox" : 2,
+            "skills" : ["Java", "Numerical Graphing", "Agile Methodology", "Management"],
+            "interests" : ["Drones", "Robotics", "Sports"],
+            "bio" : "Joe, a deer, a female deer, Ray, a drop of golden sun, Me, a name, etc.",
+            "contact" : "JoesCarEmporiumComeOnDown@email.com"
         }
     },
     "project" : {
@@ -28,6 +40,33 @@ var initialData = {
           "description": "Welcome to the show",
           "skillz"     :["Java", "Social", "Sick Card Tricks"]
 
+        },
+        "2" : {
+          "identifier" : "Apple",
+          "id"         : 2,
+          "updates"    : 2,
+          "msgs"       : 2,
+          "pos"        : 2,
+          "description": "Nothing too fancy to do here.",
+          "skillz"     :["Java", "Social", "Extreme Apple Picking", "High Level Design"]
+        },
+        "3" : {
+          "identifier" : "Peach",
+          "id"         : 3,
+          "updates"    : 3,
+          "msgs"       : 3,
+          "pos"        : 3,
+          "description": "We're looking for our friend James. We believe he is in the ocean and we need to develop good drones to find him.",
+          "skillz"     :["Drones", "Artificial Intelligence", "Node.js", "Mongo"]
+        },
+        "4" : {
+          "identifier" : "Garbanzo Bean",
+          "id"         : 4,
+          "updates"    : 4,
+          "msgs"       : 4,
+          "pos"        : 4,
+          "description": "Our goal is too develop an onlign spell cheker that finds any errands you type.",
+          "skillz"     :["Natural Language Processing", "Excel", "Java", "Regex"]
         }
     },
     "inbox" : {
