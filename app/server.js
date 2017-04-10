@@ -11,6 +11,8 @@ function emulateServerReturn(data, cb) {
 }
 
 export function getProjectData(project_id, cb){
+
   var projectData = readDocument('project', project_id);
   emulateServerReturn(projectData, cb);
+
 }
