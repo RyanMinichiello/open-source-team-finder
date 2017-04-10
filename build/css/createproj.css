@@ -1,10 +1,10 @@
-body{
+/*body{
   width: auto;
   height: auto;
 }
 
 .navbar-default{
-/*  background-color: #227830 */
+
 background-color: #4caf50;
 width: 99%;
 
@@ -18,7 +18,7 @@ width: 99%;
   background-color: #EE9344;
 }
 
-
+*/
 
 #add-more-tags-btn{
   background-color: #ffffff;
@@ -69,7 +69,7 @@ width: 99%;
   background-color: #DFFFDF;
   box-shadow: 1px 1px 5px #555 inset
 }
-#create-project-title{
+/*#create-project-title{
   margin-left: 60%;
   z-index: 2;
   text-align: center;
@@ -113,15 +113,15 @@ width: 99%;
   float: right;
     height:100%;
   width: 43.5%;
-}
+}*/
 
 .attribute{
   font-size: 120%;
 }
 
-#add-more-btn{
-margin-bottom: 5%;
-margin-left: 8%;
+/*#add-more-btn{
+  margin-bottom: 5%;
+  margin-left: 8%;
 }
 
 #create{
@@ -167,7 +167,7 @@ input{
   padding-left: 4%;
   margin-left: 8%;
   margin-bottom: 2%;
-}
+}*/
 
 #logo{
   margin-top: -8% !important;

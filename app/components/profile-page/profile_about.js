@@ -4,7 +4,7 @@ export default class Profile_About extends React.Component {
     render() {
         return (
             <div>
-            <div className="project-description col-md-4">
+            <div className="profile-about col-md-4">
               <h3>Bio</h3>
               <div>{this.props.about}</div>
               <h3>Contact</h3>

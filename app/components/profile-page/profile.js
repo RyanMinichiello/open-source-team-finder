@@ -22,14 +22,14 @@ export default class Profile extends React.Component {
                           fourth_active = "Apple Team"
                     ></Sidebar>
                 <div className = "col-md-2"></div>
-                    <div className="project-zone col-md-10">
+                    <div className="profile-zone col-md-10">
                      <Profile_Banner
                           user_banner = "img/new_banner.jpg"
                           user_img = "img/jane.png"
                           direct_message = "Hi Lynda, I'm Jane working with the Okra Project.  We are very impressed by your skillset and are hoping you'll join our team!"
                       ></Profile_Banner>
 
-                      <div className="project-container row">
+                      <div className="profile-container row">
                           <Profile_About
                               about = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim cursus, vestibulum eros vel, suscipit lorem. Phasellus eget lacus ante. Fusce orci est, vestibulum et gravida vitae, feugiat eget est. Donec nulla tellus, suscipit non enim vitae, condimentum consequat nisl. Suspendisse potenti. Pellentesque accumsan tortor quis tellus vulputate bibendum. Quisque sit amet nulla vehicula, laoreet metus quis, hendrerit nunc."
                               email = "myemail@gmail.com"
