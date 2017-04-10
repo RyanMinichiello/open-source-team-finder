@@ -374,7 +374,7 @@ input{
 }
 
 #positions{
-  margin-top: 11.5%;
+  margin-top: 210.5%;
 }
 .position-item{
   border: 1px solid #EE9344;
@@ -492,6 +492,7 @@ input{
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 1%;
+  padding-top: 50%;
   background-color: #66b9bf;
   position: absolute;
   margin-left: 55.5%;
@@ -527,4 +528,109 @@ textarea{
 .user-img{
     height: 100%;
     width: 100%;
+}
+.logo {
+width: 120px;
+height: auto;
+position: relative;
+}
+#create-project-title{
+  margin-left: 60%;
+  z-index: 2;
+  text-align: center;
+  font-size: 170%;
+  margin-bottom: 3%;
+  padding-top: 3%;
+  padding-bottom: 1.5%;
+
+  margin-top: -2.85%;
+  height:10%;
+  border-bottom: 2px solid #DFFFDF;
+  border-left: 2px solid #DFFFDF;
+  border-right: 2px solid #DFFFDF;
+}
+#positions{
+  margin-top: 16%;
+}
+.leftmain{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 1%;
+  margin-top: .3%;
+
+  position: absolute;
+  margin-left: 17.25%;
+  float: right;
+    height:100%;
+  width: 38%;
+
+}
+.rightmain{
+  z-index: -1;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 1%;
+  margin-top: .3%;
+
+  position: absolute;
+  margin-left: 55.5%;
+  float: right;
+    height:100%;
+  width: 43.5%;
+}
+
+.attribute{
+  font-size: 120%;
+}
+#add-more-btn{
+  margin-bottom: 5%;
+  margin-left: 8%;
+}
+
+#create{
+  margin-left: 54%;
+/*  background-color: #EE9344; */
+  width: 30%;
+  margin-top: -16%;
+  height: 7%;
+  font-size: 130%;
+}
+
+#create:hover{
+/*  background-color: #EE8233;*/
+  transition: 0.1s;
+}
+
+
+.date{
+  padding-bottom: -1%;
+}
+
+input{
+  width: 60%;
+  margin-bottom: 5%;
+  padding-left: auto;
+  margin-right: 5%;
+}
+
+.progress{
+  padding-bottom: 6%;
+  width: 31% !important;
+}
+
+.attribute-box{
+  width: 84%;
+  border-radius: 10px;
+
+  padding-top: 2%;
+  padding-left: 4%;
+  margin-left: 8%;
+  margin-bottom: 2%;
+}
+
+#logo{
+  margin-top: -8% !important;
+  margin-left: -28%;
+  height: 50%;
+  width: auto;
 }
