@@ -78,6 +78,7 @@ var initialData = {
     "positions" : {
 
         "open_positions" :{
+
           "2":{
             "id"         : 2,
             "project_id" : 1,
@@ -107,6 +108,7 @@ var initialData = {
 
     },
     "feed-item" : {
+  
 
     }
 };
