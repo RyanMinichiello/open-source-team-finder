@@ -12,12 +12,12 @@ export default class InboxPage3 extends React.Component {
       <Navbar
           self_name = "Jane"
           ></Navbar>
-        <Sidebar
-            first_active = "Project 1"
-            second_active = "Project 2"
-            third_active = "Project 3"
-            fourth_active = "Project 4"
-            ></Sidebar>
+          <Sidebar
+              first_active = "Okra Team"
+              second_active = "Peach Team"
+              third_active = "Garbanzo Bean Team"
+              fourth_active = "Apple Team"
+              ></Sidebar>
 
         <div className = "col-md-2">
         </div>

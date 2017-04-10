@@ -1,15 +1,24 @@
-body{
-    background: #66b9bf;
+/*body{
+    width: auto;
+    height: auto;
+    background: #f4f7f6;
+    padding-top: 50px;
 }
 .navbar-default{
-/*  background-color: #227830 */
 background-color: #f4f7f6;
+border-top: 1px solid #e7e7e7;
 }
 .side-bar {
-  padding-top: 50px;
-  left: 15px;
-  border-right: 1px solid #e7e7e7;
+  background-color: #66b9bf;
+  position: relative;
+  height: 700px;
 }
+
+.row{
+    margin-right: 0px !important;
+}
+
+
 .btn-default{
   color: #f5f5f5;
   background-color: #66b9bf;
@@ -32,27 +41,13 @@ background-color: #f4f7f6;
 .btn-create:hover{
     color: #07889b;
     background-color: #eeaa7b;
-}
-/*#nav-color{
-    background-color: ##e7e7e7 !important;
-}
-#nav-btn{
-    background-color: #f4f7f6 !important;
-}
-#nav-btn-create{
-    background-color: #EE9344 !important;
-}
-#chat-pop{
-  background-color: #EE9344 !important;
-  border-color: #EE9344 !important;
-  color: black;
 }*/
 .glyphicon-home{
   color: #EE9344
 }
-.nav-pills li {
+/*.nav-pills li {
   padding-left: 5px;
-  padding-right: 10px;
+  padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
 }
@@ -67,24 +62,21 @@ background-color: #f4f7f6;
 .nav-pills li a:hover{
   background-color: #e37222;
 }
-.project-zone{
+.profile-zone {
   background-color: #f4f7f6;
-  position: relative;
-  margin-top: 50px;
   height: 670px;
-  border-left: 1px solid #e7e7e7;
 }
 .banner-img {
     width: inherit;
     height:inherit;
 }
-.project-header{
-  position: relative;
+.profile-banner{
+    overflow:hidden;
   height:200px;
   width: 100%;
   background-color:#f4f7f6;
   border-bottom: 1px solid #e7e7e7;
-}
+}*/
 .header-buttons{
   position: absolute;
   right: 2%;
@@ -94,14 +86,14 @@ background-color: #f4f7f6;
 .header-button{
   position: relative;
 }
-.mid-col{
+/*.mid-col{
     padding-top: 45px;
 }
 .user-img{
     height: 100%;
     width: 100%;
 }
-.project-banner{
+.profile-image{
   position: absolute;
   z-index: 1;
   height: 25%;
@@ -110,23 +102,23 @@ background-color: #f4f7f6;
   right: 43%;
   overflow: hidden;
 }
-.project-container{
+.profile-container{
   background-color: #f4f7f6;
   position: relative;
   height: 100%;
 }
-.project-description{
-  height: 100%;
+.profile-about{
+  height: 670px;
   background-color: #f4f7f6;
   border-right: 1px solid #e7e7e7;
 }
-.project-message{
-  height: 100%;
+.profile-skills{
+  height: 670px;
   background-color: #f4f7f6;
   text-align: center;
   border-right: 1px solid #e7e7e7;
 
-}
+}*/
 .message-item{
   border: 3px solid black;
   position:relative;
@@ -140,10 +132,9 @@ background-color: #f4f7f6;
   bottom: 0;
   right: 0;
 }
-.project-positions{
-  height: 100%;
+/*.profile-teams{
+  height: 670px;
   background-color: #f4f7f6;
-  /*border-left: 1px solid #e7e7e7;*/
 }
 .logo{
   width:120px;
@@ -153,6 +144,6 @@ background-color: #f4f7f6;
 .navbar-brand{
   position: relative;
   bottom:21px;
-  right:90px;
+  right:35px;
   vertical-align:bottom;
-}
+}*/

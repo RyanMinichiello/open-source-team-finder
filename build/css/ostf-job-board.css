@@ -1,13 +1,13 @@
 body {
   width: auto;
   height: auto;
-  background-color: #4caf50;
+  background-color: #f4f7f6;
+  padding-top: 50px;
 }
 
 .job-feed {
   float:right;
   height:auto;
-  margin-top: 1.5%;
 }
 
 .filter-title {
@@ -15,10 +15,9 @@ body {
 }
 
 .filter-bar {
-  background-color: #DFFFDF;
+  background-color: #eeaa7b;
   position: absolute;
   width: 100%;
-  margin-top: 1%;
   margin-left: -0.77%;
   border-bottom: 1px solid black;
   border-left: 1px solid black;
@@ -38,26 +37,25 @@ body {
 }
 
 .job-list {
-  margin-top: 6%;
+  margin-top: 3%;
 }
 
 .panel {
   margin-top: 20px;
-  background-color: #DFFFDF;
+  background-color: #eeaa7b;
   width:90%;
 }
 
-.first-panel{
-  margin-top: 100px;
-}
+
 
 button.tag-title {
-  background-color: white;
+  background-color: #66b9bf;
 }
 
 button.tag-list {
   border-radius: 45%;
-  background-color: #EE9344;
+  color: #f5f5f5;
+  background-color: #66b9bf;
 }
 
 button a {
