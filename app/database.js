@@ -43,8 +43,8 @@ var initialData = {
       "pos"        : 1,
       "description": "Welcome to the show",
       "skillz"     :["Java", "Social", "Sick Card Tricks"]
-    },
 
+    },
     "2" : {
       "identifier" : "Apple",
       "id"         : 2,
@@ -78,7 +78,6 @@ var initialData = {
       "chats": 1
     }
   },
-
 
   "chats" : {
     "1": {
@@ -149,6 +148,7 @@ var initialData = {
     }
 
   },
+
 
   "notificationItems" : {
     "1" : {

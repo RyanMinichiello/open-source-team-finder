@@ -1,7 +1,7 @@
 import React from 'react';
 import MemberItem from './project-member-item.js';
 import SkillItem from './project-skill-item.js';
-import {getfilled_positionData} from '../../server';
+import {getfilled_positionData} from '../../server.js';
 
 export default class ProjectDescription extends React.Component {
 

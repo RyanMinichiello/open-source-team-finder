@@ -48,6 +48,7 @@ function getMainFeedItemSync(feedItemId) {
     comment.author = readDocument('users', comment.author);
   });
   return feedItem;
+}
 
 export function getopen_positionData(pid, cb){
   var open_positions = readDocument('positions', 'open_positions');
