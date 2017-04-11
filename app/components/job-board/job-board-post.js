@@ -1,4 +1,5 @@
 import React from 'react';
+import JobBoardTagList from './job-board-tag-list.js'
 
 export default class JobBoardPost extends React.Component {
   render() {
@@ -14,17 +15,7 @@ export default class JobBoardPost extends React.Component {
             </p>
           </div>
           <div className="row">
-            <div className="col-md-6">
-              <button type="button" className="btn btn-default tag-title">
-                <span className="glyphicon glyphicon-tag"> Tags:</span>
-              </button>
-              <button type="button" className="btn btn-default tag-list">
-                <a href="#">Tag1</a>
-              </button>
-              <button type="button" className="btn btn-default tag-list">
-                <a href="#">Tag2</a>
-              </button>
-            </div>
+            <JobBoardTagList />
             <div className="col-md-6">
               <div className="pull-right">
                 Ranking: <button type="button" className={this.props.rankingType} >
