@@ -77,28 +77,36 @@ var initialData = {
     },
     "positions" : {
 
-        "open_positions" :{
-
-          "2":{
+        "open_positions" :[
+          {
             "id"         : 2,
             "project_id" : 1,
             "status"     : "vacant",
-            "title"      : "developer",
+            "title"      : "Developer",
             "description": "develop things",
             "skillz"     : ["Java"]
+          },
+          {
+            "id"         : 3,
+            "project_id" : 2,
+            "status"     : "vacant",
+            "title"      : "Developer",
+            "description": "develop things",
+            "skillz"     : ["Scala"]
           }
-        },
+        ],
 
-        "filled_positions":{
-          "1":{
+        "filled_positions":[
+          {
             "id"         : 1,
             "project_id" : 1,
             "status"     : "filled",
-            "title"      : "developer",
+            "name"       : "Nomar Garciaparra",
+            "title"      : "Software Developer",
             "description": "develop things",
             "skillz"     : ["Java"]
           }
-        }
+        ]
 
     },
     "updates" : {
@@ -108,7 +116,7 @@ var initialData = {
 
     },
     "feed-item" : {
-  
+
 
     }
 };

@@ -26,7 +26,7 @@ if (document.getElementById('main-feed') !== null) {
   );
 } else if (document.getElementById('project_page-zone') !== null) {
   ReactDOM.render(
-    <ProjectPage />,
+    <ProjectPage pid={1}/>,
     document.getElementById('project_page-zone')
   );
 } else if (document.getElementById('profile') !== null) {
