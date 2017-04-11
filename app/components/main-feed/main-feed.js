@@ -1,14 +1,37 @@
 import React from 'react';
-import MainFeedNotificationItem from './main-feed-notification-item.js';
-import MainFeedJobItem from './main-feed-job-item.js';
 import MainFeedProjectItem from './main-feed-project-item.js';
 import Navbar from '../navbar.js';
 import Sidebar from '../sidebar.js';
 import MainFeedFilter from './main-feed-filters.js';
+import {getMainFeedJobItemData} from '../../server.js';
+
 
 
 
 export default class MainFeed extends React.Component {
+  constructor(props) {
+    // super() calls the parent class constructor -- e.g. React.Component's constructor.
+    super(props);
+    // Set state's initial value.
+    // Note that the constructor is the ONLY place you should EVER set state directly!
+    // In all other places, use the `setState` method instead.
+    // Setting `state` directly in other places will not trigger `render()` to run, so your
+    // program will have bugs.
+    this.state = {
+      // Empty feed.
+      contents: []
+    };
+  }
+
+  componentDidMount() {
+    getMainFeedJobItemData(1, (feedData) => {
+      // Note: setState does a *shallow merge* of the current state and the new
+      // state. If state was currently set to {foo: 3}, and we setState({bar: 5}),
+      // state would then be {foo: 3, bar: 5}. This won't be a problem here.
+      this.setState(feedData);
+    });
+  }
+
   render() {
     return (
       <div>
@@ -25,8 +48,6 @@ export default class MainFeed extends React.Component {
             ></Sidebar>
         </div>
 
-
-
         <div className="col-md-10 pull-right">
 
           <MainFeedFilter />
@@ -34,42 +55,14 @@ export default class MainFeed extends React.Component {
           <div className="row main-feed-row">
             <div className="col-md-10 job-feed">
 
-              {React.Children.map(this.props.children, function(child) {
+              //Render feed items here
+              {this.state.contents.map((feedItems) => {
                 return (
-                  <div className="panel panel-default">
-                    {child}
-                  </div>
-                )
+                    <MainFeedProjectItem key={feedItems.projectItems.id} data={feedItems.projectItems}/>
+
+                );
               })}
 
-              <div className="panel panel-default">
-                <MainFeedNotificationItem
-                  feedItemName ='Update from Team Apple'
-                  postData='Team Apple will be closing down this fall after a failure
-                  to find any investment money from the grape vine.'/>
-              </div>
-
-              <div className="panel panel-default">
-                <MainFeedProjectItem
-                  feedItemName ='Work Update: Team Croissant'
-                  postData='Jim, we need you to start picking up the slack. You need to
-                  finish up the mock ups by tomorrow night.'/>
-              </div>
-
-              <div className="panel panel-default">
-                <MainFeedJobItem
-                  feedItemName ='Software Engineer Position'
-                  postData='Opportunity of a lifetime to work alongside Team Okra and
-                  the best developers the nation has to offer.'
-                  rankingType='gold-button btn btn-default'/>
-              </div>
-
-              <div className="panel panel-default">
-                <MainFeedJobItem
-                  feedItemName ='Quality Assurance Engineer Position'
-                  postData='TEST WITH THE BEST at Tim Richards Testing Emporium.'
-                  rankingType='silver-button btn btn-default'/>
-              </div>
 
             </div>
           </div>

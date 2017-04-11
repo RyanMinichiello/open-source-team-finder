@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Navbar from '../navbar.js';
+import Sidebar from '../sidebar.js';
 
 import CreateProjectTagSection from './createproject-tag-section.js';
 import CreateProjectPositionSection from './createproject-position-list.js';
@@ -10,6 +11,21 @@ export default class CreateProject extends React.Component {
 
 
       <div>
+
+        <Navbar
+          self_name = "Jane"
+          ></Navbar>
+
+        <div>
+          <Sidebar
+            first_active = "Project 1"
+            second_active = "Project 2"
+            third_active = "Project 3"
+            fourth_active = "Project 4"
+            ></Sidebar>
+        </div>
+
+
         <div className="col-md-4 leftmain">
          <div id = "create-project-title" className= "attribute-box attribute">Create Project</div>
          <div className= "attribute-box">
@@ -36,7 +52,7 @@ export default class CreateProject extends React.Component {
         <CreateProjectPositionSection />
 
           <div className = "attribute-box date">
-          <div className = "attribute">Start Date: 
+          <div className = "attribute">Start Date:
           <input type="date" />
           </div>
         </div>
