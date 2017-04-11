@@ -13,7 +13,6 @@ export default class ProjectBanner extends React.Component {
     //change to if they are an admin have edit button show up
     return (<div className="header-buttons">
       <button className="header-button" onClick={(e) => this.onApply(e)} >Apply</button>
-      <button className="header-button" onClick={(e) => this.onApply(e)} >Follow</button>
     </div>);
   }
   render(){
