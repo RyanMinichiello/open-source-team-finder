@@ -22,6 +22,11 @@ export function getProjectData(project_id, cb){
 
 }
 
+export function getUserInfo(user_id, cb) {
+  var userData = readDocument('users', user_id);
+  emulateServerReturn(userData, cb);
+}
+
 
 export function getMainFeedJobItemData(user, cb) {
   // Get the User object with the id "user".

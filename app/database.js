@@ -16,7 +16,7 @@ var initialData = {
       "interests" : ["Finance", "Clean Energy"],
       "bio" : "Hi my name is Jane",
       "contact" : "myemail@email.com",
-      "projects" : ["1", "2"]
+      "projects" : [1, 2]
     },
 
     "2" : {
@@ -30,7 +30,7 @@ var initialData = {
       "interests" : ["Drones", "Robotics", "Sports"],
       "bio" : "Joe, a deer, a female deer, Ray, a drop of golden sun, Me, a name, etc.",
       "contact" : "JoesCarEmporiumComeOnDown@email.com",
-      "projects" : ["2", "3"]
+      "projects" : [2, 3]
     },
 
     "3" : {
@@ -44,7 +44,7 @@ var initialData = {
       "interests" : ["Drones", "Robotics", "Music"],
       "bio" : "Hi, I'm Anna",
       "contact" : "annahall@email.com",
-      "projects" : ["1", "3"]
+      "projects" : [1, 3]
     }
   },
 
@@ -190,7 +190,7 @@ var initialData = {
 
 };
 
-var data = JSON.parse(localStorage.getItem('facebook_data'));
+var data = JSON.parse(localStorage.getItem('ostf_data'));
 if (data === null) {
   data = JSONClone(initialData);
 }
@@ -222,7 +222,7 @@ export function writeDocument(collection, changedDocument) {
   // Store a copy of the object into the database. Models a database's behavior.
   data[collection][id] = JSONClone(changedDocument);
   // Update our 'database'.
-  localStorage.setItem('facebook_data', JSON.stringify(data));
+  localStorage.setItem('ostf_data', JSON.stringify(data));
 }
 
 /**
@@ -243,7 +243,7 @@ export function addDocument(collectionName, newDoc) {
 * Reset our browser-local database.
 */
 export function resetDatabase() {
-  localStorage.setItem('facebook_data', JSON.stringify(initialData));
+  localStorage.setItem('ostf_data', JSON.stringify(initialData));
   data = JSONClone(initialData);
 }
 
