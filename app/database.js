@@ -31,6 +31,20 @@ var initialData = {
       "bio" : "Joe, a deer, a female deer, Ray, a drop of golden sun, Me, a name, etc.",
       "contact" : "JoesCarEmporiumComeOnDown@email.com",
       "projects" : ["2", "3"]
+    },
+
+    "3" : {
+      "_id" : 3,
+      "fullName" : "Anna Hall",
+      // ID of Jane's feed
+      "feed" : 3,
+      // ID of Jane's Inbox
+      "inboxId" : 3,
+      "skills" : ["Java", "Management"],
+      "interests" : ["Drones", "Robotics", "Music"],
+      "bio" : "Hi, I'm Anna",
+      "contact" : "annahall@email.com",
+      "projects" : ["1", "3"]
     }
   },
 
@@ -75,7 +89,7 @@ var initialData = {
   },
   "inbox" : {
     "1" : {
-      "chats": 1
+      "chats": [1,2]
     }
   },
 
@@ -83,6 +97,10 @@ var initialData = {
     "1": {
       "messages" : [1,2],
       "associated-users" : [1,2]
+    },
+    "2": {
+      "messages" : [3,4],
+      "associated-users" : [1,3]
     }
   },
 
