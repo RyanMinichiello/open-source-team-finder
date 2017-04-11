@@ -9,6 +9,19 @@ import MainFeedFilter from './main-feed-filters.js';
 
 
 export default class MainFeed extends React.Component {
+  constructor(props) {
+    // super() calls the parent class constructor -- e.g. React.Component's constructor.
+    super(props);
+    // Set state's initial value.
+    // Note that the constructor is the ONLY place you should EVER set state directly!
+    // In all other places, use the `setState` method instead.
+    // Setting `state` directly in other places will not trigger `render()` to run, so your
+    // program will have bugs.
+    this.state = {
+      // Empty feed.
+      contents: []
+    };
+  }
   render() {
     return (
       <div>
@@ -24,7 +37,7 @@ export default class MainFeed extends React.Component {
             fourth_active = "Project 4"
             ></Sidebar>
         </div>
-        
+
         <div className="col-md-10 pull-right">
 
           <MainFeedFilter />
@@ -32,13 +45,6 @@ export default class MainFeed extends React.Component {
           <div className="row main-feed-row">
             <div className="col-md-10 job-feed">
 
-              {React.Children.map(this.props.children, function(child) {
-                return (
-                  <div className="panel panel-default">
-                    {child}
-                  </div>
-                )
-              })}
 
               <div className="panel panel-default">
                 <MainFeedNotificationItem

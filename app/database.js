@@ -15,7 +15,8 @@ var initialData = {
             "skills" : ["Scala", "Node.js", "Agile Methodology"],
             "interests" : ["Finance", "Clean Energy"],
             "bio" : "Hi my name is Jane",
-            "contact" : "myemail@email.com"
+            "contact" : "myemail@email.com",
+            "projects" : ["1", "2"]
         },
         "2" : {
             "_id" : 2,
@@ -27,7 +28,8 @@ var initialData = {
             "skills" : ["Java", "Numerical Graphing", "Agile Methodology", "Management"],
             "interests" : ["Drones", "Robotics", "Sports"],
             "bio" : "Joe, a deer, a female deer, Ray, a drop of golden sun, Me, a name, etc.",
-            "contact" : "JoesCarEmporiumComeOnDown@email.com"
+            "contact" : "JoesCarEmporiumComeOnDown@email.com",
+            "projects" : ["2", "3"]
         }
     },
     "project" : {
@@ -115,7 +117,49 @@ var initialData = {
     "feeds" :{
 
     },
-    "feed-item" : {
+
+    "feed-items" : {
+      "job-items": {
+        "1" : {
+          "id" : 1,
+          "title" : "Software Engineering Position at Okra Team",
+          "description" : "apply within!!!!",
+          "tags" : ["Drones", "Finance"]
+        },
+        "2" : {
+          "id" : 2,
+          "title" : "Quality Assurance Position at Apple Team",
+          "description" : "Please taste our apples we are too afraid.",
+          "tags" : ["Apples", "Sports"]
+        }
+
+      },
+
+      "notification-items" : {
+        "1" : {
+          "id" : 1,
+          "title" : "Notification from Apple Team",
+          "description" : "Jane pleasae finish the mock UI today."
+        },
+        "2" : {
+          "id" : 2,
+          "title" : "Notification from Apple Team",
+          "description" : "We need a new CEO after Jim left. Send in recommendation for a potential bonus."
+        }
+      },
+
+      "update-items" : {
+        "1" : {
+          "id" : 1,
+          "title" : "Update on Garbanzo Bean Team",
+          "description" : "We are running out of bean steam and may be closing down in July :/."
+        },
+        "2" : {
+          "id" : 2,
+          "title" : "Update on Apple Team",
+          "description" : "Things couldn't be any better, but could we get more VC support?"
+        }
+      }
 
 
     }
