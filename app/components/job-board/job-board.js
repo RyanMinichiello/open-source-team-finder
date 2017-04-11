@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../navbar.js';
 import Sidebar from '../sidebar.js';
+import FilterBar from './filter-bar.js'
 import JobBoardMainFeed from './job-board-main-feed.js'
 
 export default class JobBoard extends React.Component {
@@ -18,7 +19,10 @@ export default class JobBoard extends React.Component {
               fourth_active = "Project 4"
               ></Sidebar>
           </div>
-        <JobBoardMainFeed />
+          <div className="col-md-10 job-feed">
+            <FilterBar />
+            <JobBoardMainFeed />
+        </div>
       </div>
     );
   }
