@@ -65,7 +65,7 @@ export function getfilled_positionData(pid, cb){
   var positions = readDocument('positions', 'positions');
   var filled = [];
   for(var i=0; i< positions.length; i++){
-    if( positions[i].project_id == pid && positions[i].status == 'open'){
+    if( positions[i].project_id == pid && positions[i].status == 'filled'){
       filled.push( positions[i]);
     }
   }
