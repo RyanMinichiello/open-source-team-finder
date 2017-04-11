@@ -16,7 +16,7 @@ var initialData = {
       "interests" : ["Finance", "Clean Energy"],
       "bio" : "Hi my name is Jane",
       "contact" : "myemail@email.com",
-      "projects" : ["1", "2"]
+      "projects" : [1, 2]
     },
 
     "2" : {
@@ -30,7 +30,7 @@ var initialData = {
       "interests" : ["Drones", "Robotics", "Sports"],
       "bio" : "Joe, a deer, a female deer, Ray, a drop of golden sun, Me, a name, etc.",
       "contact" : "JoesCarEmporiumComeOnDown@email.com",
-      "projects" : ["2", "3"]
+      "projects" : [2, 3]
     },
 
     "3" : {
@@ -44,7 +44,7 @@ var initialData = {
       "interests" : ["Drones", "Robotics", "Music"],
       "bio" : "Hi, I'm Anna",
       "contact" : "annahall@email.com",
-      "projects" : ["1", "3"]
+      "projects" : [1, 3]
     }
   },
 
