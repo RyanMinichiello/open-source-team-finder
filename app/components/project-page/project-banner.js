@@ -1,17 +1,27 @@
 import React from 'react';
 
 export default class ProjectBanner extends React.Component {
+
+  onApply(){
+
+  }
+
+  onFollow(){
+
+  }
+  getButtons(){
+    //change to if they are an admin have edit button show up
+    return (<div className="header-buttons">
+      <button className="header-button" onClick={(e) => this.onApply(e)} >Apply</button>
+      <button className="header-button" onClick={(e) => this.onApply(e)} >Follow</button>
+    </div>);
+  }
   render(){
     return(
         <div className="project-header row">
 
           <img className="banner-image" src="img/okra.jpg"/>
-
-          <div className="header-buttons">
-            <button className="header-button">Apply</button>
-            <button className="header-button">Follow</button>
-          </div>
-
+          {this.getButtons()}
 
       </div>
 
