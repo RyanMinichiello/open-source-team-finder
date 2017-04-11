@@ -1,5 +1,4 @@
 import React from 'react';
-//import JobBoardPost from './job-board-post.js'
 
 export default class JobBoardMainFeed extends React.Component {
   render() {
