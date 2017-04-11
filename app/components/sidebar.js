@@ -6,6 +6,7 @@ export default class Sidebar extends React.Component {
             <div>
             <div className="text-center col-md-2 side-bar">
                <ul className="nav nav-pills nav-stacked">
+                 //TODO: Render projects associated with user
                   <li role="presentation">PROJECTS</li>
                   <li role="presentation"><a href="#"> {this.props.first_active} </a> </li>
                   <li role="presentation"><a href="#"> {this.props.second_active} </a> </li>
