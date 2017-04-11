@@ -1,45 +1,23 @@
 import React from 'react';
-import { PropTypes } from 'react';
+/*import { PropTypes } from 'react';*/
 
 export default class Checkbox extends React.Component  {
-  constructor(props){
 
-    super(props);
-  this.state = {
-    isChecked: false
-  }
-}
-
-
-
-  toggleCheckboxChange() {
-    const { handleCheckboxChange } = this.props;
-
-    this.setState(({ isChecked }) => (
-      {
-        isChecked: !isChecked
+    constructor() {
+      super()
+      this.handleCheckBox = this.handleCheckBox.bind(this)
+      this.state = {
+        checked: false
       }
-    ));
+    }
 
-   handleCheckboxChange();
+    handleCheckBox(e) {
+      this.setState({
+        checked: e.target.checked
+      })
+    }
+
+    render(){
+      return <input type="checkbox" onChange={this.handleCheckBox} checked={this.state.checked} />
+    }
   }
-
-  render() {
-
-    const { isChecked } = this.state;
-
-    return (
-      <div className="checkbox">
-        <label>
-          <input type="checkbox" checked={isChecked} onChange={this.toggleCheckboxChange} />
-
-        </label>
-      </div>
-    );
-  }
-}
-
-Checkbox.propTypes = {
-
-  handleCheckboxChange: PropTypes.func.isRequired
-};

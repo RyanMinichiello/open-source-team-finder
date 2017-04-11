@@ -8,20 +8,9 @@ import CreateProjectPositionSection from './createproject-position-list.js';
 
 export default class CreateProject extends React.Component {
 
-  createCheckbox() {
-    <Checkbox handleCheckboxChange={this.toggleCheckbox } key='inprogress' />
-  }
-
   render() {
     return (
-
-
       <div>
-
-
-
-
-
         <Navbar
           self_name = "Jane"
           ></Navbar>
@@ -74,8 +63,8 @@ export default class CreateProject extends React.Component {
 
           <div className = "progress attribute-box">
           <div>In Progress:
-           <form onSubmit={this.handleFormSubmit}>
-              {this.createCheckbox()} </form>
+           <form onSubmit={this.handleFormSubmit} id= "progress-checkbox">
+            <Checkbox key='inprogress'></Checkbox> </form>
           </div>
         </div>
 
