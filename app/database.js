@@ -98,7 +98,9 @@ var initialData = {
 
   "positions" : {
 
-      "1":{
+    "positions" :[
+
+      {
         "id"         : 1,
         "status" : "filled",
         "userId" : 1,
@@ -108,7 +110,7 @@ var initialData = {
         "skillz"     : ["Java"]
       },
 
-      "2":{
+      {
         "id"         : 1,
         "status" : "open",
         "userId" : null,
@@ -117,6 +119,7 @@ var initialData = {
         "description": "develop things",
         "skillz"     : ["Java"]
       }
+    ]
 
   },
 
