@@ -1,44 +1,19 @@
 import React from 'react';
-import FilterBar from './filter-bar.js'
-import JobBoardPost from './job-board-post.js'
+//import JobBoardPost from './job-board-post.js'
 
 export default class JobBoardMainFeed extends React.Component {
   render() {
     return (
-      <div className="col-md-10 job-feed">
-        <FilterBar />
-        <div className="job-list">
+        <ul className="job-list">
           <br />
-          <JobBoardPost project="PROJECT1" position_title="POSITION1"
-            position_description="Description: Lorem ipsum dolor sit amet, consectetur
-                          adipiscing elit. Nam eleifend tristique nunc fermentum
-                          malesuada. Praesent congue, elit ac tempus laoreet, dolor
-                          augue vehicula massa, vitae eleifend sem nunc sit amet
-                          diam. Maecenas dignissim suscipit purus id luctus."
-            rankingType="gold-button"/>
-          <JobBoardPost project="PROJECT2" position_title="POSITION2"
-            position_description="Description: Lorem ipsum dolor sit amet, consectetur
-                          adipiscing elit. Nam eleifend tristique nunc fermentum
-                          malesuada. Praesent congue, elit ac tempus laoreet, dolor
-                          augue vehicula massa, vitae eleifend sem nunc sit amet
-                          diam. Maecenas dignissim suscipit purus id luctus."
-            rankingType="silver-button"/>
-          <JobBoardPost project="PROJECT3" position_title="POSITION3"
-            position_description="Description: Lorem ipsum dolor sit amet, consectetur
-                          adipiscing elit. Nam eleifend tristique nunc fermentum
-                          malesuada. Praesent congue, elit ac tempus laoreet, dolor
-                          augue vehicula massa, vitae eleifend sem nunc sit amet
-                          diam. Maecenas dignissim suscipit purus id luctus."
-            rankingType="silver-button"/>
-          <JobBoardPost project="PROJECT4" position_title="POSITION4"
-            position_description="Description: Lorem ipsum dolor sit amet, consectetur
-                          adipiscing elit. Nam eleifend tristique nunc fermentum
-                          malesuada. Praesent congue, elit ac tempus laoreet, dolor
-                          augue vehicula massa, vitae eleifend sem nunc sit amet
-                          diam. Maecenas dignissim suscipit purus id luctus."
-            rankingType="bronze-button"/>
-        </div>
-      </div>
+          {React.Children.map(this.props.children, function(child) {
+            return (
+              <li className="media">
+                {child}
+              </li>
+            )
+          })}
+        </ul>
     );
   }
 }
