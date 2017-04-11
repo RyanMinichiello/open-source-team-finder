@@ -103,6 +103,7 @@ var initialData = {
       {
         "id"         : 1,
         "status" : "filled",
+        "user_Name": "Nomar Garciaparra",
         "userId" : 1,
         "project_id" : 1,
         "title"      : "developer",
@@ -113,6 +114,7 @@ var initialData = {
       {
         "id"         : 1,
         "status" : "open",
+        "user_Name"  : null,
         "userId" : null,
         "project_id" : 1,
         "title"      : "developer",
