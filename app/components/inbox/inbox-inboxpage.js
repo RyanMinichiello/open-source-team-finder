@@ -3,8 +3,27 @@ import MessageItems from './inbox-messageitems';
 import InboxItems from './inbox-inboxitems';
 import Sidebar from '../sidebar.js';
 import Navbar from '../navbar.js';
+import {getInboxData} from '../../server.js';
 
 export default class InboxPage extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      contents:[]
+    };
+  }
+
+  refresh(){
+    getInboxData(1, (inboxData)=>{
+      this.setState(inboxData);
+    });
+  }
+
+  componentDidMount(){
+   this.refresh();
+  }
+
   render() {
     return (
     <div>
