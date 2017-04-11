@@ -1,5 +1,6 @@
 import React from 'react';
 import {getUserInfo, getProjectData} from '../server.js';
+import Link from './bar-link.js';
 
 export default class Sidebar extends React.Component {
 
@@ -24,14 +25,17 @@ export default class Sidebar extends React.Component {
 
    generateProjects() {
      if(this.state.projects){
-      return this.state.projects.map(this.getProject);
+      console.log(this.state.projects.map(this.getProject));
+      return <li>Hello</li>;
     }
    }
 
    getProject(item) {
-     var data = getProjectData(item.id);
-     return <li role="presentation"> {data.identifier} </li>;
+     getProjectData(item, (projectData) => {
+      return (projectData.identifier);
+    });
    }
+
 
     render() {
 
