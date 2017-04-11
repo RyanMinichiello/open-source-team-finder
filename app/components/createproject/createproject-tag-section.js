@@ -1,5 +1,6 @@
 import React from 'react';
-import TagItem from './createproject-tag-item.js'
+import CreateProjectTagItem from './createproject-tag-item.js';
+
 
 var inputs= [];
 export default class CreateProjectTagSection extends React.Component {
@@ -7,10 +8,13 @@ export default class CreateProjectTagSection extends React.Component {
 
         super(props);
         this.state = { inputs };
+
     }
 
-    addNewButton(){
-      var newInput = <createproject-tag-item />
+
+
+    addNewButton(value){
+      var newInput =  <CreateProjectTagItem tag={value} />
       inputs.push(newInput);
       this.setState({inputs})
     }
@@ -23,12 +27,17 @@ export default class CreateProjectTagSection extends React.Component {
 
         <div className= "attribute-box">
          <div className= "attribute">Areas of Interest (5 Max):</div>
-         <input placeholder="Add Tags" />
-           <button type="button" id="add-more-tags-btn" className="btn btn-default" onClick={ () => this.addNewButton() }>
+         <input placeholder="Add Tags" ref={node => {
+                 this.input = node;
+               }} />
+             <button type="button" id="add-more-tags-btn" className="btn btn-default" onClick={ () => this.addNewButton(this.input.value) }>
            Add Tag
            </button>
-           <TagItem />
+          <div>
+              {inputs}
+          </div>
         </div>
+
 
 </div>
 );

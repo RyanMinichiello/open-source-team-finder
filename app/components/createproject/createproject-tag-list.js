@@ -1,7 +1,7 @@
 import React from 'react';
-import CreateProjectTagItem from './main-feed-tag-item.js';
+import CreateProjectTagItem from './createproject-tag-item.js';
 
-export default class MainFeedTagList extends React.Component {
+export default class CreateprojectTagList extends React.Component {
   render() {
     return (
       <div className="col-md-6">

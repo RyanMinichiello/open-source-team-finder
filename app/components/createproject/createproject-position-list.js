@@ -17,11 +17,8 @@ export default class CreateProjectPositionSection extends React.Component {
       this.setState({inputs})
     }
 
-  showInputs(){
-    for (const CreateProjectSinglePosition of inputs) {
-      <CreateProjectSinglePosition />
-}
-}
+
+
 
   render() {
 
@@ -32,7 +29,10 @@ export default class CreateProjectPositionSection extends React.Component {
 
         <div className = "attribute-box" id="positions">
         <div className = "attribute">Positions:</div>
-        {this.showInputs()}
+        <div>
+          <CreateProjectSinglePosition />
+          {inputs}
+        </div>
       </div>
         <button type="button" id="add-more-btn" className="btn btn-default" onClick={ () => this.addNewButton() }>
         Add More...
