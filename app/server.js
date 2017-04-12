@@ -72,3 +72,10 @@ export function getfilled_positionData(pid, cb){
   emulateServerReturn(filled, cb);
 
 }
+
+export function getProfileData(id, cb){
+
+  var profileData = readDocument('users', id);
+  emulateServerReturn(profileData, cb);
+
+}

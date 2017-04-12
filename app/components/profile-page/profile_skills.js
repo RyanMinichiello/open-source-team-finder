@@ -1,6 +1,30 @@
 import React from 'react';
+import ProfileSkillItem from './profile_skill_item.js'
 
 export default class Profile_Skills extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            contents : [],
+            pid      : 1
+        };
+    }
+
+    generateSkills(list) {
+        if(list) {
+            return list.map(this.createSkill);
+        }
+    }
+
+    createSkill(item) {
+        return <ProfileSkillItem key={item} skill = {item}/>
+    }
+
+    refresh() {
+        this.setState({pid: this.props.profileID});
+    }
+
+
     render() {
         return (
             <div>
@@ -9,7 +33,9 @@ export default class Profile_Skills extends React.Component {
                   {this.props.name}
               </h3>
               <h3>Skills</h3>
-              <div className="btn-group">
+                {this.generateSkills(this.props.skills)}
+                <br/><br/>
+              /*<div className="btn-group">
                   <button type="button" className="btn btn-skill-interest" >
                   {this.props.first_skill}
                   </button>
@@ -22,7 +48,7 @@ export default class Profile_Skills extends React.Component {
                   <button type="button" className="btn btn-skill-interest  " >
                   {this.props.fourth_skill}
                   </button>
-              </div>
+              </div>*/
               <h3>Interests</h3>
               <div className="btn-group">
                   <button type="button" className="btn btn-skill-interest  " >

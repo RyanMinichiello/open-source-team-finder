@@ -31,7 +31,7 @@ if (document.getElementById('main-feed') !== null) {
   );
 } else if (document.getElementById('profile') !== null) {
   ReactDOM.render(
-    <Profile />,
+    <Profile pid={1}/>,
     document.getElementById('profile')
   );
 

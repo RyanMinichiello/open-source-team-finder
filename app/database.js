@@ -7,7 +7,9 @@ var initialData = {
     // This user has id "1" and it is Jane
     "1" : {
       "_id" : 1,
-      "fullName" : "Jane Doe",
+      "name" : "Jane Doe",
+      "image" : "img/jane.png",
+      "banner" : "img/new_banner.jpg",
       // ID of Jane's feed
       "feed" : 1,
       // ID of Jane's Inbox
@@ -170,6 +172,7 @@ if (data === null) {
   data = JSONClone(initialData);
 }
 
+
 /**
 * A dumb cloning routing. Serializes a JSON object as a string, then
 * deserializes it.
@@ -237,7 +240,7 @@ class ResetDatabase extends React.Component {
     }
   }
 
-  // ReactDOM.render(
-  //   <ResetDatabase />,
-  //   document.getElementById('fb-db-reset')
-  // );
+  ReactDOM.render(
+     <ResetDatabase />,
+     document.getElementById('db-reset')
+   );
