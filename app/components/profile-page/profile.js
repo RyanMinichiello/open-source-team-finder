@@ -57,18 +57,12 @@ export default class Profile extends React.Component {
 
                           <Profile_Skills
                                   name = {this.state.name}
-                                  first_skill = "Agile Development"
-                                  second_skill = "JavaScript"
-                                  third_skill = "Scala"
-                                  fourth_skill = "Node.js"
-                                  first_interest = "Clean Energy"
-                                  second_interest = "Finance"
+                                  skills = {this.state.skills}
+                                  interests = {this.state.interests}
                             ></Profile_Skills>
 
                             <Profile_Teams
-                                  user_active_project = "Lime Team"
-                                  user_past_first = "Pear Team"
-                                  user_past_second = "Mango Team"
+                                  teams = {this.state.dummyproj}
                             ></Profile_Teams>
                       </div>
 

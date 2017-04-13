@@ -18,7 +18,8 @@ var initialData = {
       "interests" : ["Finance", "Clean Energy"],
       "bio" : "Hi my name is Jane",
       "contact" : "myemail@email.com",
-      "projects" : ["1", "2"]
+      "projects" : ["1", "2"],
+      "dummyproj" : ["Okra Team", "Don't Talk About Okra Team"]
     },
 
     "2" : {
