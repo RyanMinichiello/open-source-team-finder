@@ -31,7 +31,7 @@ export default class Profile extends React.Component {
         return(
             <div>
                 <Navbar
-                    self_name = "Jane"
+                    name = {this.state.name}
                     ></Navbar>
                 <div className="row">
                     <Sidebar
