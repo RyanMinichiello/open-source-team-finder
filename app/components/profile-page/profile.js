@@ -35,10 +35,7 @@ export default class Profile extends React.Component {
                     ></Navbar>
                 <div className="row">
                     <Sidebar
-                          first_active = "Okra Team"
-                          second_active = "Peach Team"
-                          third_active = "Garbanzo Bean Team"
-                          fourth_active = "Apple Team"
+                        projects = {this.state.dummyproj}
                     ></Sidebar>
                 <div className = "col-md-2"></div>
                     <div className="profile-zone col-md-10">
