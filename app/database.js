@@ -24,7 +24,9 @@ var initialData = {
 
     "2" : {
       "_id" : 2,
-      "fullName" : "Joe Doe",
+      "name" : "Joe Doe",
+      "image" : "",
+      "banner" : "",
       // ID of Jane's feed
       "feed" : 2,
       // ID of Jane's Inbox
@@ -168,7 +170,7 @@ var initialData = {
 
 };
 
-var data = JSON.parse(localStorage.getItem('facebook_data'));
+var data = JSON.parse(localStorage.getItem('ostf_data'));
 if (data === null) {
   data = JSONClone(initialData);
 }
@@ -201,7 +203,7 @@ export function writeDocument(collection, changedDocument) {
   // Store a copy of the object into the database. Models a database's behavior.
   data[collection][id] = JSONClone(changedDocument);
   // Update our 'database'.
-  localStorage.setItem('facebook_data', JSON.stringify(data));
+  localStorage.setItem('ostf_data', JSON.stringify(data));
 }
 
 /**
@@ -222,7 +224,7 @@ export function addDocument(collectionName, newDoc) {
 * Reset our browser-local database.
 */
 export function resetDatabase() {
-  localStorage.setItem('facebook_data', JSON.stringify(initialData));
+  localStorage.setItem('ostf_data', JSON.stringify(initialData));
   data = JSONClone(initialData);
 }
 
