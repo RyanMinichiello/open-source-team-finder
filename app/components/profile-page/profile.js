@@ -49,7 +49,6 @@ export default class Profile extends React.Component {
                           <Profile_About
                               about = {this.state.bio}
                               email = {this.state.contact}
-                              contact = "linkedin.com/lynda"
                           ></Profile_About>
 
                           <Profile_Skills
