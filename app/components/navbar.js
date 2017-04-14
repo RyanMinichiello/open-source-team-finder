@@ -15,7 +15,6 @@ export default class Navbar extends React.Component{
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              //TODO: Need to render the user's main feed here
               <a className="navbar-brand" href="main-feed.html">
                 <span><img src="img/logo_notext.png" className="logo pull-left"/></span>
               </a>
@@ -25,6 +24,7 @@ export default class Navbar extends React.Component{
                 <div className="input-group">
                   <input type="text fb-search" className="form-control" placeholder="Search OSTF"/>
                   <span className="input-group-btn">
+
                     <button type="submit" className="btn btn-default">
                       <span className="glyphicon glyphicon-search"></span>
                     </button>
@@ -34,7 +34,6 @@ export default class Navbar extends React.Component{
               <div className="nav navbar-nav navbar-right">
                 <div className="btn-toolbar pull-right" role="toolbar">
                   <div className="btn-group" role="group">
-                    //TODO: Render user's profile here and their name
                     <a href="profile.html" >
                       <button type="button" className="btn btn-default navbar-btn">
                         <span className="glyphicon glyphicon-user"></span>
@@ -43,7 +42,6 @@ export default class Navbar extends React.Component{
                     </a>
                   </div>
                   <div className="btn-group" role="group">
-                    //TODO: Render user's inbox here
                     <a href="inbox.html">
                       <button type="button" className="btn btn-default navbar-btn">
 
@@ -52,7 +50,6 @@ export default class Navbar extends React.Component{
                     </a>
                   </div>
                   <div className="btn-group" role="group">
-                    //TODO: THis should be fine I think
                     <a href="createproj.html">
                       <button type="button" className="btn btn-create navbar-btn">
                         +Create Project
