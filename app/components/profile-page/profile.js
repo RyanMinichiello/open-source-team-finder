@@ -31,14 +31,11 @@ export default class Profile extends React.Component {
         return(
             <div>
                 <Navbar
-                    self_name = "Jane"
+                    name = {this.state.name}
                     ></Navbar>
                 <div className="row">
                     <Sidebar
-                          first_active = "Okra Team"
-                          second_active = "Peach Team"
-                          third_active = "Garbanzo Bean Team"
-                          fourth_active = "Apple Team"
+                        projects = {this.state.dummyproj}
                     ></Sidebar>
                 <div className = "col-md-2"></div>
                     <div className="profile-zone col-md-10">
@@ -52,23 +49,16 @@ export default class Profile extends React.Component {
                           <Profile_About
                               about = {this.state.bio}
                               email = {this.state.contact}
-                              contact = "linkedin.com/lynda"
                           ></Profile_About>
 
                           <Profile_Skills
                                   name = {this.state.name}
-                                  first_skill = "Agile Development"
-                                  second_skill = "JavaScript"
-                                  third_skill = "Scala"
-                                  fourth_skill = "Node.js"
-                                  first_interest = "Clean Energy"
-                                  second_interest = "Finance"
+                                  skills = {this.state.skills}
+                                  interests = {this.state.interests}
                             ></Profile_Skills>
 
                             <Profile_Teams
-                                  user_active_project = "Lime Team"
-                                  user_past_first = "Pear Team"
-                                  user_past_second = "Mango Team"
+                                  teams = {this.state.dummyproj}
                             ></Profile_Teams>
                       </div>
 

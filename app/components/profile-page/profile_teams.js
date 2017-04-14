@@ -1,7 +1,7 @@
 import React from 'react';
-import ProfilePill from 'profile_pill.js';
+import ProfilePill from './profile_pill.js';
 
-export default class Profile_Temp extends React.Component {
+export default class Profile_Teams extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -16,10 +16,11 @@ export default class Profile_Temp extends React.Component {
         }
     }
     createTeam(item){
+
         return<ProfilePill key={item} team = {item}/>
     }
     refresh() {
-        /*TODO*/
+
     }
     componentDidMount() {
         this.refresh();
@@ -32,7 +33,7 @@ export default class Profile_Temp extends React.Component {
             <div className="profile-teams col-md-4">
               <h3>Projects</h3>
               <ul className="nav nav-pills nav-stacked">
-                 {this.generateTeams(this.props.projects)}
+                 {this.generateTeams(this.props.teams)}
               </ul>
             </div>
         </div>

@@ -38,7 +38,7 @@ export default class Navbar extends React.Component{
                     <a href="profile.html" >
                       <button type="button" className="btn btn-default navbar-btn">
                         <span className="glyphicon glyphicon-user"></span>
-                        {this.props.self_name}
+                        {this.props.name}
                       </button>
                     </a>
                   </div>
