@@ -17,6 +17,11 @@ export function getProjectData(project_id, cb){
 
 }
 
+export function getUserInfo(user_id, cb) {
+  var userData = readDocument('users', user_id);
+  emulateServerReturn(userData, cb);
+}
+
 
 export function getMainFeedJobItemData(user, cb) {
   // Get the User object with the id "user".
@@ -51,22 +56,22 @@ function getMainFeedItemSync(feedItemId) {
 }
 
 export function getopen_positionData(pid, cb){
-  var open_positions = readDocument('positions', 'open_positions');
+  var positions = readDocument('positions', 'positions');
   var open = [];
-  for(var i=0; i<open_positions.length; i++){
-    if(open_positions[i].project_id == pid){
-      open.push(open_positions[i]);
+  for(var i=0; i< positions.length; i++){
+    if( positions[i].project_id == pid && positions[i].status == 'open'){
+      open.push(positions[i]);
     }
   }
   emulateServerReturn(open, cb);
 }
 
 export function getfilled_positionData(pid, cb){
-  var filled_positions = readDocument('positions', 'filled_positions');
+  var positions = readDocument('positions', 'positions');
   var filled = [];
-  for(var i=0; i<filled_positions.length; i++){
-    if(filled_positions[i].project_id == pid){
-      filled.push(filled_positions[i]);
+  for(var i=0; i< positions.length; i++){
+    if( positions[i].project_id == pid && positions[i].status == 'filled'){
+      filled.push( positions[i]);
     }
   }
   emulateServerReturn(filled, cb);

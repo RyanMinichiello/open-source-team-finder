@@ -18,7 +18,7 @@ var initialData = {
       "interests" : ["Finance", "Clean Energy"],
       "bio" : "Hi my name is Jane",
       "contact" : "myemail@email.com",
-      "projects" : ["1", "2"]
+      "projects" : [1, 2]
     },
 
     "2" : {
@@ -32,7 +32,21 @@ var initialData = {
       "interests" : ["Drones", "Robotics", "Sports"],
       "bio" : "Joe, a deer, a female deer, Ray, a drop of golden sun, Me, a name, etc.",
       "contact" : "JoesCarEmporiumComeOnDown@email.com",
-      "projects" : ["2", "3"]
+      "projects" : [2, 3]
+    },
+
+    "3" : {
+      "_id" : 3,
+      "fullName" : "Anna Hall",
+      // ID of Jane's feed
+      "feed" : 3,
+      // ID of Jane's Inbox
+      "inboxId" : 3,
+      "skills" : ["Java", "Management"],
+      "interests" : ["Drones", "Robotics", "Music"],
+      "bio" : "Hi, I'm Anna",
+      "contact" : "annahall@email.com",
+      "projects" : [1, 3]
     }
   },
 
@@ -40,9 +54,9 @@ var initialData = {
     "1":{
       "identifier" : "Okra",
       "id"         : 1,
-      "updates"    : 1,
+      "notificationItems"    : 1,
       "msgs"       : 1,
-      "pos"        : 1,
+      "positions"  : [1],
       "description": "Welcome to the show",
       "skillz"     :["Java", "Social", "Sick Card Tricks"]
 
@@ -52,7 +66,7 @@ var initialData = {
       "id"         : 2,
       "updates"    : 2,
       "msgs"       : 2,
-      "pos"        : 2,
+      "positions"  : [2],
       "description": "Nothing too fancy to do here.",
       "skillz"     :["Java", "Social", "Extreme Apple Picking", "High Level Design"]
     },
@@ -61,7 +75,7 @@ var initialData = {
       "id"         : 3,
       "updates"    : 3,
       "msgs"       : 3,
-      "pos"        : 3,
+      "positions"  : [1,2],
       "description": "We're looking for our friend James. We believe he is in the ocean and we need to develop good drones to find him.",
       "skillz"     :["Drones", "Artificial Intelligence", "Node.js", "Mongo"]
     },
@@ -70,14 +84,15 @@ var initialData = {
       "id"         : 4,
       "updates"    : 4,
       "msgs"       : 4,
-      "pos"        : 4,
+      "positions"        : 4,
       "description": "Our goal is too develop an onlign spell cheker that finds any errands you type.",
       "skillz"     :["Natural Language Processing", "Excel", "Java", "Regex"]
     }
   },
+
   "inbox" : {
     "1" : {
-      "chats": 1
+      "chats": [1,2]
     }
   },
 
@@ -85,6 +100,10 @@ var initialData = {
     "1": {
       "messages" : [1,2],
       "associated-users" : [1,2]
+    },
+    "2": {
+      "messages" : [3,4],
+      "associated-users" : [1,3]
     }
   },
 
@@ -99,9 +118,12 @@ var initialData = {
 
   "positions" : {
 
-      "1":{
+    "positions" :[
+
+      {
         "id"         : 1,
         "status" : "filled",
+        "user_Name": "Nomar Garciaparra",
         "userId" : 1,
         "project_id" : 1,
         "title"      : "developer",
@@ -109,15 +131,17 @@ var initialData = {
         "skillz"     : ["Java"]
       },
 
-      "2":{
+      {
         "id"         : 1,
         "status" : "open",
-        "userId" : 1,
+        "user_Name"  : null,
+        "userId" : null,
         "project_id" : 1,
         "title"      : "developer",
         "description": "develop things",
         "skillz"     : ["Java"]
       }
+    ]
 
   },
 
@@ -130,8 +154,9 @@ var initialData = {
     },
     "2" : {
       "id": 2,
-      "positions": [1,2],
-      "notificationItems": [1]
+      "notificationItems": [1],
+      "positions": [1,2]
+
     }
   },
 
@@ -167,7 +192,7 @@ var initialData = {
 
 };
 
-var data = JSON.parse(localStorage.getItem('facebook_data'));
+var data = JSON.parse(localStorage.getItem('ostf_data'));
 if (data === null) {
   data = JSONClone(initialData);
 }
@@ -200,7 +225,7 @@ export function writeDocument(collection, changedDocument) {
   // Store a copy of the object into the database. Models a database's behavior.
   data[collection][id] = JSONClone(changedDocument);
   // Update our 'database'.
-  localStorage.setItem('facebook_data', JSON.stringify(data));
+  localStorage.setItem('ostf_data', JSON.stringify(data));
 }
 
 /**
@@ -221,7 +246,7 @@ export function addDocument(collectionName, newDoc) {
 * Reset our browser-local database.
 */
 export function resetDatabase() {
-  localStorage.setItem('facebook_data', JSON.stringify(initialData));
+  localStorage.setItem('ostf_data', JSON.stringify(initialData));
   data = JSONClone(initialData);
 }
 
