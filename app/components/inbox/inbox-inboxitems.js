@@ -4,6 +4,22 @@ import Inbox from './inbox-inbox';
 
 
 export default class InboxItems extends React.Component {
+
+  constructor(props) {
+      super(props);
+  }
+
+  generateInbox(chats){
+    if(chats){
+      return chats.map(this.createInbox);
+    }
+  }
+
+  createInbox(chat){
+    return <Inbox key = {chat} chatId = {chat}></Inbox>
+  }
+
+
   render() {
     return (
       <div>
@@ -14,66 +30,10 @@ export default class InboxItems extends React.Component {
         <div className= "inbox-zone">
 
           <InboxThread>
-            <Inbox  author="Okra Team" icon=
-              {
-                <div>
-                <span className= "glyphicon glyphicon-user"></span>
-                <span className= "glyphicon glyphicon-user"></span>
-                </div>
-              }
-              curr= "message-current panel panel-default"
-              read = "read">
 
-            </Inbox>
+            {this.generateInbox(this.props.chatData)}
 
 
-
-
-            <Inbox author="John Smith"  curr= "message-preview panel panel-default" read = "unread">
-            </Inbox>
-
-
-
-            <Inbox author="Mango Team" icon=
-            {
-              <div>
-              <span className= "glyphicon glyphicon-user"></span>
-              <span className= "glyphicon glyphicon-user"></span>
-              </div>
-            }
-            curr= "message-preview panel panel-default"
-            read = "unread">
-            </Inbox>
-
-
-
-            <Inbox author="Apple Team" icon=
-            {
-              <div>
-              <span className= "glyphicon glyphicon-user"></span>
-              <span className= "glyphicon glyphicon-user"></span>
-              </div>
-            }
-            curr= "message-preview panel panel-default"
-            read = "read">
-            </Inbox>
-
-
-
-            <Inbox author="Anna Hall" curr= "message-preview panel panel-default" read = "read">
-            </Inbox>
-
-
-            <Inbox author="Kiwi Team" icon=
-              {
-                <div>
-                <span className= "glyphicon glyphicon-user"></span>
-                <span className= "glyphicon glyphicon-user"></span>
-                </div>
-              }
-              curr= "message-preview panel panel-default"
-              read = "read">
-            </Inbox>
           </InboxThread>
 
         </div>

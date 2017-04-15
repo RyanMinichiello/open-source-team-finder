@@ -1,37 +1,29 @@
 import React from 'react';
-import {getUserInfo, getProjectData} from '../server.js';
+import ProfilePill from './profile-page/profile_pill.js'
 
 export default class Sidebar extends React.Component {
-
-  constructor(props) {
-     super(props);
-     this.state = {
-        contents : []
-      };
-   }
-
-   refresh() {
-     getUserInfo(1, (userData) => {
-      this.setState(userData);
-    });
-
-   }
-
-
-   componentDidMount() {
-     this.refresh();
-   }
-
-   generateProjects() {
-     if(this.state.projects){
-      return this.state.projects.map(this.getProject);
+    constructor(props){
+        super(props);
+        this.state = {
+            contents: [],
+            pid : 1
+        };
     }
-   }
 
-   getProject(item) {
-     var data = getProjectData(item.id);
-     return <li role="presentation"> {data.identifier} </li>;
-   }
+    generateTeams(list) {
+        if(list) {
+            return list.map(this.createTeam);
+        }
+    }
+    createTeam(item){
+        return<ProfilePill key={item} team = {item}/>
+    }
+    refresh() {
+
+    }
+    componentDidMount() {
+        this.refresh();
+    }
 
     render() {
 
@@ -39,9 +31,10 @@ export default class Sidebar extends React.Component {
             <div>
             <div className="text-center col-md-2 side-bar">
                <ul className="nav nav-pills nav-stacked">
-                 //TODO: Render projects associated with users
                   <li role="presentation">PROJECTS</li>
-                  {this.generateProjects()}
+
+                    {this.generateTeams(this.props.projects)}
+
                   <li role="presentation"><a href="ostf-job-board.html"><span className="glyphicon glyphicon-stats"></span>
                      Job Board</a>
                   </li>

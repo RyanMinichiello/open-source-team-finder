@@ -7,21 +7,29 @@ var initialData = {
     // This user has id "1" and it is Jane
     "1" : {
       "_id" : 1,
-      "fullName" : "Jane Doe",
+      "name" : "Jane Doe",
+      "image" : "img/jane.png",
+      "banner" : "img/new_banner.jpg",
       // ID of Jane's feed
       "feed" : 1,
       // ID of Jane's Inbox
       "inboxId" : 1,
       "skills" : ["Scala", "Node.js", "Agile Methodology"],
       "interests" : ["Finance", "Clean Energy"],
-      "bio" : "Hi my name is Jane",
+      "bio" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "contact" : "myemail@email.com",
-      "projects" : [1, 2]
+
+      "projects" : [1, 2],
+
+      "dummyproj" : ["Okra Team", "Don't Talk About Okra Team"]
+
     },
 
     "2" : {
       "_id" : 2,
-      "fullName" : "Joe Doe",
+      "name" : "Joe Doe",
+      "image" : "",
+      "banner" : "",
       // ID of Jane's feed
       "feed" : 2,
       // ID of Jane's Inbox
@@ -97,11 +105,19 @@ var initialData = {
   "chats" : {
     "1": {
       "messages" : [1,2],
-      "associated-users" : [1,2]
+      "associated-users" : [1,2],
+      "curr": "message-current panel panel-default",
+      "icon": "",
+      "name": "Okra Team",
+      "color": "read"
     },
     "2": {
       "messages" : [3,4],
-      "associated-users" : [1,3]
+      "associated-users" : [1,3],
+      "curr": "message-preview panel panel-default",
+      "icon": "",
+      "name": "Anna Hall",
+      "color": "unread"
     }
   },
 
@@ -195,6 +211,7 @@ if (data === null) {
   data = JSONClone(initialData);
 }
 
+
 /**
 * A dumb cloning routing. Serializes a JSON object as a string, then
 * deserializes it.
@@ -262,7 +279,7 @@ class ResetDatabase extends React.Component {
     }
   }
 
-  // ReactDOM.render(
-  //   <ResetDatabase />,
-  //   document.getElementById('fb-db-reset')
-  // );
+  ReactDOM.render(
+     <ResetDatabase />,
+     document.getElementById('db-reset')
+   );

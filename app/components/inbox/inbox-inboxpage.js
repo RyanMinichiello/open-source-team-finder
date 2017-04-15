@@ -20,11 +20,12 @@ export default class InboxPage extends React.Component {
     });
   }
 
-  componentDidMount(){
+  componentWillMount(){
    this.refresh();
   }
 
   render() {
+
     return (
     <div>
 
@@ -40,7 +41,7 @@ export default class InboxPage extends React.Component {
 
         <div className = "col-md-2">
         </div>
-      <InboxItems />
+      <InboxItems   chatData = {this.state.chats} />
 
       <MessageItems />
 

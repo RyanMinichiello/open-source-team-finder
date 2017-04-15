@@ -5,51 +5,60 @@ import Profile_Banner from './profile_banner.js';
 import Profile_About from './profile_about.js';
 import Profile_Skills from './profile_skills';
 import Profile_Teams from './profile_teams.js';
+import {getProfileData} from '../../server.js'
 
 
 export default class Profile extends React.Component {
+    constructor(props) {
+       super(props);
+       this.state = {
+          contents : []
+        };
+     }
+
+     refresh() {
+       getProfileData(1, (profileData) => {
+        this.setState(profileData);
+      });
+
+     }
+
+     componentDidMount() {
+       this.refresh();
+     }
+
     render() {
         return(
             <div>
                 <Navbar
-                    self_name = "Jane"
+                    name = {this.state.name}
                     ></Navbar>
                 <div className="row">
                     <Sidebar
-                          first_active = "Okra Team"
-                          second_active = "Peach Team"
-                          third_active = "Garbanzo Bean Team"
-                          fourth_active = "Apple Team"
+                        projects = {this.state.dummyproj}
                     ></Sidebar>
                 <div className = "col-md-2"></div>
                     <div className="profile-zone col-md-10">
                      <Profile_Banner
-                          user_banner = "img/new_banner.jpg"
-                          user_img = "img/jane.png"
+                          user_banner = {this.state.banner}
+                          user_img = {this.state.image}
                           direct_message = "Hi Lynda, I'm Jane working with the Okra Project.  We are very impressed by your skillset and are hoping you'll join our team!"
                       ></Profile_Banner>
 
                       <div className="profile-container row">
                           <Profile_About
-                              about = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim cursus, vestibulum eros vel, suscipit lorem. Phasellus eget lacus ante. Fusce orci est, vestibulum et gravida vitae, feugiat eget est. Donec nulla tellus, suscipit non enim vitae, condimentum consequat nisl. Suspendisse potenti. Pellentesque accumsan tortor quis tellus vulputate bibendum. Quisque sit amet nulla vehicula, laoreet metus quis, hendrerit nunc."
-                              email = "myemail@gmail.com"
-                              contact = "linkedin.com/lynda"
+                              about = {this.state.bio}
+                              email = {this.state.contact}
                           ></Profile_About>
 
                           <Profile_Skills
-                                  name = "Lynda Doe"
-                                  first_skill = "Agile Development"
-                                  second_skill = "JavaScript"
-                                  third_skill = "Scala"
-                                  fourth_skill = "Node.js"
-                                  first_interest = "Clean Energy"
-                                  second_interest = "Finance"
+                                  name = {this.state.name}
+                                  skills = {this.state.skills}
+                                  interests = {this.state.interests}
                             ></Profile_Skills>
 
                             <Profile_Teams
-                                  user_active_project = "Lime Team"
-                                  user_past_first = "Pear Team"
-                                  user_past_second = "Mango Team"
+                                  teams = {this.state.dummyproj}
                             ></Profile_Teams>
                       </div>
 

@@ -15,6 +15,11 @@ export function getInboxData(inbox_id, cb){
   emulateServerReturn(inboxData, cb);
 }
 
+export function getChatData(chat_id, cb){
+  var chatData = readDocument('chats', chat_id);
+  emulateServerReturn(chatData, cb);
+}
+
 export function getProjectData(project_id, cb){
 
   var projectData = readDocument('project', project_id);
