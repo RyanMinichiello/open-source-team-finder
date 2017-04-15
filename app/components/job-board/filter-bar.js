@@ -1,4 +1,5 @@
 import React from 'react';
+import JobBoardTagList from './job-board-tag-list.js'
 
 export default class FilterBar extends React.Component {
   render() {
@@ -17,14 +18,7 @@ export default class FilterBar extends React.Component {
                   </div>
                 </form>
             </div>
-            <div className="filter-tags">
-              <button type="button" className="btn btn-default tag-list">
-                <a href="#">Tag1</a>
-              </button>
-              <button type="button" className="btn btn-default tag-list">
-                <a href="#">Tag2</a>
-              </button>
-            </div>
+              <JobBoardTagList />
           </h4>
         </div>
     );
