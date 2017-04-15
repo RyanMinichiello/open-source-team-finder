@@ -12,9 +12,7 @@ export default class MessageEntry extends React.Component {
                 </textarea>
               </div>
               <div className= "col-md-2">
-                <button type="button" className="btn btn-default">
-                  <span className="glyphicon glyphicon-paperclip"></span>
-                </button>
+                
                 <button type="button" className="btn btn-default">
                   <span className="glyphicon glyphicon-send"></span>
                 </button>

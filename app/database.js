@@ -98,35 +98,65 @@ var initialData = {
 
   "inbox" : {
     "1" : {
-      "chats": [1,2]
+      "chats": [1,2,3]
     }
   },
 
   "chats" : {
     "1": {
       "messages" : [1,2],
-      "associated-users" : [1,2],
+      "associated-users" : [1,2,3],
       "curr": "message-current panel panel-default",
-      "icon": "",
       "name": "Okra Team",
       "color": "read"
     },
     "2": {
       "messages" : [3,4],
+      "associated-users" : [1,2],
+      "curr": "message-preview panel panel-default",
+      "name": "Joe Doe",
+      "color": "unread"
+    },
+
+    "3": {
+      "messages" : [5,6],
       "associated-users" : [1,3],
       "curr": "message-preview panel panel-default",
-      "icon": "",
       "name": "Anna Hall",
-      "color": "unread"
+      "color": "read"
     }
   },
 
   "messages" : {
     "1" : {
-      "contents" : "hqwertwertwert"
+      "author": 2,
+      "contents" : "Hey guys, what should our main page feed look like?",
+      "side":""
     },
     "2" : {
-      "contents" : "alksdfasldhfhkjasd"
+      "author": 1,
+      "contents" : "idk any ideas?",
+      "side":""
+    },
+    "3" : {
+      "author": 2,
+      "contents" : "Hello",
+      "side":""
+    },
+    "4" : {
+      "author": 1,
+      "contents" : "Hi",
+      "side":""
+    },
+    "5" : {
+      "author":3,
+      "contents" : "Wanna join my project?",
+      "side":""
+    },
+    "6" : {
+      "author":1,
+      "contents" : "Can you tell me more about it?",
+      "side":""
     }
   },
 

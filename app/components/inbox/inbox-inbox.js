@@ -1,5 +1,6 @@
 import React from 'react';
 import {getChatData} from '../../server';
+import {getInboxData} from '../../server';
 
 
 export default class Inbox extends React.Component {
@@ -44,7 +45,6 @@ export default class Inbox extends React.Component {
         <a href="#" onClick={(e) => this.handleClickChat(e)}>
           <div className= "panel-body">
             <div className= "col-md-10 chat-name">
-              {this.state.icon}
               <b>{this.state.name}</b>
             </div>
             <div className= "col-md-2">
