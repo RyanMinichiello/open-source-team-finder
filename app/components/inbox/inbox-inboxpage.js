@@ -5,7 +5,29 @@ import Sidebar from '../sidebar.js';
 import Navbar from '../navbar.js';
 
 export default class InboxPage extends React.Component {
+<<<<<<< Updated upstream
+=======
+
+  constructor(props){
+    super(props);
+    this.state = {
+      contents:[]
+    };
+  }
+
+  refresh(){
+    getInboxData(1, (inboxData)=>{
+      this.setState(inboxData);
+    });
+  }
+
+  componentWillMount(){
+   this.refresh();
+  }
+
+>>>>>>> Stashed changes
   render() {
+    
     return (
     <div>
 
@@ -21,7 +43,7 @@ export default class InboxPage extends React.Component {
 
         <div className = "col-md-2">
         </div>
-      <InboxItems />
+      <InboxItems  var = {1} chatData = {this.state.chats} />
 
       <MessageItems />
 

@@ -10,6 +10,31 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
+<<<<<<< Updated upstream
+=======
+export function getInboxData(inbox_id, cb){
+  var inboxData = readDocument('inbox', inbox_id);
+  emulateServerReturn(inboxData, cb);
+}
+
+export function getChatData(chat_id, cb){
+  var chatData = readDocument('chats', chat_id);
+  emulateServerReturn(chatData,cb);
+}
+
+export function readChat(chatId, cb){
+  var chatItem = readDocument('chats', chatId);
+  // Normally, we would check if the user already liked this comment.
+  // But we will not do that in this mock server.
+  // ('push' modifies the array by adding userId to the end)
+  chatItem.color = "read";
+  writeDocument('chats', chatItem);
+  // Return a resolved version of the likeCounter
+  emulateServerReturn("success", cb);
+
+}
+
+>>>>>>> Stashed changes
 export function getProjectData(project_id, cb){
 
   var projectData = readDocument('project', project_id);

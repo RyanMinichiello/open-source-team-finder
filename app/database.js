@@ -96,12 +96,22 @@ var initialData = {
 
   "chats" : {
     "1": {
+      "id":1,
+      "curr": "message-current panel panel-default",
+      "icon" : "",
+      "name": "Okra Team",
       "messages" : [1,2],
-      "associated-users" : [1,2]
+      "associated-users" : [1,2,3],
+      "color": "read"
     },
     "2": {
+      "id":2,
+      "curr": "message-preview panel panel-default",
+      "icon": "",
+      "name": "Anna Hall",
       "messages" : [3,4],
-      "associated-users" : [1,3]
+      "associated-users" : [1,3],
+      "color": "unread"
     }
   },
 
@@ -111,6 +121,12 @@ var initialData = {
     },
     "2" : {
       "contents" : "alksdfasldhfhkjasd"
+    },
+    "3" : {
+      "contents" : "helllooooo"
+    },
+    "4" : {
+      "contents" : "byeeee"
     }
   },
 
@@ -263,6 +279,6 @@ class ResetDatabase extends React.Component {
   }
 
   // ReactDOM.render(
-  //   <ResetDatabase />,
-  //   document.getElementById('fb-db-reset')
-  // );
+//     <ResetDatabase />,
+//     document.getElementById('db-reset')
+//   );
