@@ -4,8 +4,27 @@ import MessageThread from './inbox-messagethread';
 import MessageReceive from './inbox-messagereceive';
 import MessageSent from './inbox-messagesent';
 import MessageEntry from './inbox-messageentry';
+import {getMessageData} from '../../server';
 
 export default class MessageItems extends React.Component {
+
+constructor(props){
+  super(props);
+  this.state = {
+    contents:[]
+  };
+}
+
+refresh(){
+  getMessageData(1, (messageData) =>{
+    this.setState(messageData);
+  })
+}
+
+componentWillMount(){
+  this.refresh();
+}
+
   render() {
     return (
       <div className= "col-md-7">
@@ -62,7 +81,7 @@ export default class MessageItems extends React.Component {
           </MessageThread>
 
         </div>
-    
+
         <MessageEntry>
         </MessageEntry>
       </div>

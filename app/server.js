@@ -15,6 +15,11 @@ export function getInboxData(inbox_id, cb){
   emulateServerReturn(inboxData, cb);
 }
 
+export function getMessageData(message_id, cb){
+  var messageData = readDocument('messages', message_id);
+  emulateServerReturn(messageData, cb);
+}
+
 export function getChatData(chat_id, cb){
   var chatData = readDocument('chats', chat_id);
   emulateServerReturn(chatData, cb);
@@ -85,5 +90,12 @@ export function getfilled_positionData(pid, cb){
     }
   }
   emulateServerReturn(filled, cb);
+
+}
+
+export function getProfileData(id, cb){
+
+  var profileData = readDocument('users', id);
+  emulateServerReturn(profileData, cb);
 
 }

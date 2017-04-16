@@ -98,7 +98,9 @@ var initialData = {
 
   "inbox" : {
     "1" : {
-      "chats": [1,2,3]
+      "chats": [1,2,3],
+      "dummyproj" : ["Okra Team", "Don't Talk About Okra Team"],
+      "name": "Jane Doe"
     }
   },
 
