@@ -95,7 +95,7 @@ createMessages(m){
           </MessageThread>
 
         </div>
-
+    
         <MessageEntry>
         </MessageEntry>
       </div>

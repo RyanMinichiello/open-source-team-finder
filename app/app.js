@@ -31,7 +31,11 @@ if (document.getElementById('main-feed') !== null) {
   );
 } else if (document.getElementById('profile') !== null) {
   ReactDOM.render(
+
     <Profile pid={1}/>,
+
+    <Profile />,
+
     document.getElementById('profile')
   );
 
@@ -48,4 +52,4 @@ if (document.getElementById('main-feed') !== null) {
     document.getElementById('create-project')
 );
 
-} 
+}

@@ -24,6 +24,7 @@ var initialData = {
       "dummyproj" : ["Okra Team", "Don't Talk About Okra Team"]
 
     },
+<<<<<<< HEAD
 
     "2" : {
       "_id" : 2,
@@ -39,6 +40,19 @@ var initialData = {
       "bio" : "Joe, a deer, a female deer, Ray, a drop of golden sun, Me, a name, etc.",
       "contact" : "JoesCarEmporiumComeOnDown@email.com",
       "projects" : [2, 3]
+=======
+    "project" : {
+        "1":{
+          "identifier" : "Okra",
+          "id"         : 1,
+          "updates"    : 1,
+          "msgs"       : 1,
+          "pos"        : 1,
+          "description": "Welcome to the show",
+          "skillz"     :["Java", "Social", "Sick Card Tricks"]
+
+        }
+>>>>>>> createprojjs
     },
 
     "3" : {
@@ -120,6 +134,7 @@ var initialData = {
       "color": "unread"
     },
 
+<<<<<<< HEAD
     "3": {
       "messages" : [5,6],
       "associated-users" : [1,3],
@@ -139,6 +154,30 @@ var initialData = {
       "author": 1,
       "contents" : "idk any ideas?",
       "side":""
+=======
+        "open_positions" :{
+          "2":{
+            "id"         : 2,
+            "project_id" : 1,
+            "status"     : "vacant",
+            "title"      : "developer",
+            "description": "develop things",
+            "skillz"     : ["Java"]
+          }
+        },
+
+        "filled_positions":{
+          "1":{
+            "id"         : 1,
+            "project_id" : 1,
+            "status"     : "filled",
+            "title"      : "developer",
+            "description": "develop things",
+            "skillz"     : ["Java"]
+          }
+        }
+
+>>>>>>> createprojjs
     },
     "3" : {
       "author": 2,
@@ -238,25 +277,43 @@ var initialData = {
 
 };
 
+<<<<<<< HEAD
 var data = JSON.parse(localStorage.getItem('ostf_data'));
+=======
+var data = JSON.parse(localStorage.getItem('facebook_data'));
+>>>>>>> createprojjs
 if (data === null) {
   data = JSONClone(initialData);
 }
 
+<<<<<<< HEAD
 
 /**
 * A dumb cloning routing. Serializes a JSON object as a string, then
 * deserializes it.
 */
+=======
+/**
+ * A dumb cloning routing. Serializes a JSON object as a string, then
+ * deserializes it.
+ */
+>>>>>>> createprojjs
 function JSONClone(obj) {
   return JSON.parse(JSON.stringify(obj));
 }
 
 /**
+<<<<<<< HEAD
 * Emulates reading a "document" from a NoSQL database.
 * Doesn't do any tricky document joins, as we will cover that in the latter
 * half of the course. :)
 */
+=======
+ * Emulates reading a "document" from a NoSQL database.
+ * Doesn't do any tricky document joins, as we will cover that in the latter
+ * half of the course. :)
+ */
+>>>>>>> createprojjs
 export function readDocument(collection, id) {
   // Clone the data. We do this to model a database, where you receive a
   // *copy* of an object and not the object itself.
@@ -264,19 +321,33 @@ export function readDocument(collection, id) {
 }
 
 /**
+<<<<<<< HEAD
 * Emulates writing a "document" to a NoSQL database.
 */
+=======
+ * Emulates writing a "document" to a NoSQL database.
+ */
+>>>>>>> createprojjs
 export function writeDocument(collection, changedDocument) {
   var id = changedDocument._id;
   // Store a copy of the object into the database. Models a database's behavior.
   data[collection][id] = JSONClone(changedDocument);
   // Update our 'database'.
+<<<<<<< HEAD
   localStorage.setItem('ostf_data', JSON.stringify(data));
 }
 
 /**
 * Adds a new document to the NoSQL database.
 */
+=======
+  localStorage.setItem('facebook_data', JSON.stringify(data));
+}
+
+/**
+ * Adds a new document to the NoSQL database.
+ */
+>>>>>>> createprojjs
 export function addDocument(collectionName, newDoc) {
   var collection = data[collectionName];
   var nextId = Object.keys(collection).length;
@@ -289,20 +360,33 @@ export function addDocument(collectionName, newDoc) {
 }
 
 /**
+<<<<<<< HEAD
 * Reset our browser-local database.
 */
 export function resetDatabase() {
   localStorage.setItem('ostf_data', JSON.stringify(initialData));
+=======
+ * Reset our browser-local database.
+ */
+export function resetDatabase() {
+  localStorage.setItem('facebook_data', JSON.stringify(initialData));
+>>>>>>> createprojjs
   data = JSONClone(initialData);
 }
 
 /**
+<<<<<<< HEAD
 * Reset database button.
 */
+=======
+ * Reset database button.
+ */
+>>>>>>> createprojjs
 class ResetDatabase extends React.Component {
   render() {
     return (
       <button className="btn btn-default" type="button" onClick={() => {
+<<<<<<< HEAD
           resetDatabase();
           window.alert("Database reset! Refreshing the page now...");
           document.location.reload(false);
@@ -315,3 +399,17 @@ class ResetDatabase extends React.Component {
      <ResetDatabase />,
      document.getElementById('db-reset')
    );
+=======
+        resetDatabase();
+        window.alert("Database reset! Refreshing the page now...");
+        document.location.reload(false);
+      }}>Reset Mock DB</button>
+    );
+  }
+}
+
+// ReactDOM.render(
+//   <ResetDatabase />,
+//   document.getElementById('fb-db-reset')
+// );
+>>>>>>> createprojjs

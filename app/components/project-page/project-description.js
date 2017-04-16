@@ -5,6 +5,7 @@ import {getfilled_positionData} from '../../server.js';
 
 export default class ProjectDescription extends React.Component {
 
+<<<<<<< HEAD
   constructor(props) {
      super(props);
      this.state = {
@@ -13,6 +14,8 @@ export default class ProjectDescription extends React.Component {
       };
    }
 
+=======
+>>>>>>> createprojjs
   generateSkills(list){
     if (list) {
       return list.map(this.createSkill);
@@ -23,6 +26,7 @@ export default class ProjectDescription extends React.Component {
     return <SkillItem key={item} skill={item}/>
   }
 
+<<<<<<< HEAD
   getListings(){
     if(this.state.listings){
       if(this.state.listings.length != 0){
@@ -51,6 +55,8 @@ export default class ProjectDescription extends React.Component {
 
 
 
+=======
+>>>>>>> createprojjs
   render(){
     return(
       <div className="project-description col-md-4">

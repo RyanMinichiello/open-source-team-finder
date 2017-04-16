@@ -2,14 +2,16 @@ import React from 'react';
 import Navbar from '../navbar.js';
 import Sidebar from '../sidebar.js';
 
+import Checkbox from './createproject-checkbox.js';
+
 import CreateProjectTagSection from './createproject-tag-section.js';
 import CreateProjectPositionSection from './createproject-position-list.js';
 
+
 export default class CreateProject extends React.Component {
+
   render() {
     return (
-
-
       <div>
 
         <Navbar
@@ -30,11 +32,11 @@ export default class CreateProject extends React.Component {
          <div id = "create-project-title" className= "attribute-box attribute">Create Project</div>
          <div className= "attribute-box">
          <div className= "attribute">Project Name:</div>
-         <input />
+         <input required/>
         </div>
         <div className= "attribute-box">
          <div className= "attribute">Description:</div>
-         <input />
+         <input required/>
         </div>
 
         <div className ="tag-section">
@@ -63,8 +65,9 @@ export default class CreateProject extends React.Component {
         </div>
 
           <div className = "progress attribute-box">
-          <div className = "attribute">In Progress:
-          <input type="checkbox" id="progress-checkbox"></input>
+          <div>In Progress:
+           <form onSubmit={this.handleFormSubmit} id= "progress-checkbox">
+            <Checkbox key='inprogress'></Checkbox> </form>
           </div>
         </div>
 
@@ -75,6 +78,7 @@ export default class CreateProject extends React.Component {
         </div>
 
       </div>
+
     )
   }
 }
