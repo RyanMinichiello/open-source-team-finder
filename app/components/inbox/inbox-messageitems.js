@@ -4,7 +4,8 @@ import MessageThread from './inbox-messagethread';
 import MessageReceive from './inbox-messagereceive';
 import MessageSent from './inbox-messagesent';
 import MessageEntry from './inbox-messageentry';
-import {getMessageData} from '../../server';
+import {getChatData} from '../../server.js';
+
 
 export default class MessageItems extends React.Component {
 
@@ -12,18 +13,31 @@ constructor(props){
   super(props);
   this.state = {
     contents:[]
-  };
+  }
 }
 
 refresh(){
-  getMessageData(1, (messageData) =>{
-    this.setState(messageData);
-  })
+  getChatData(1, (ch) => {
+    this.setState(ch);
+  });
 }
 
 componentWillMount(){
   this.refresh();
 }
+
+generateMessages(m){
+  if(m){
+    return m.map(this.createMessages);
+  }
+}
+
+createMessages(m){
+  return <MessageSent key = {m} chatId = {m}></MessageSent>
+}
+
+
+
 
   render() {
     return (

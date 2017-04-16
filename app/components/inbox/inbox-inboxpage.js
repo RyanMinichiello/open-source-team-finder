@@ -1,6 +1,6 @@
 import React from 'react';
-import MessageItems from './inbox-messageitems';
-import InboxItems from './inbox-inboxitems';
+import MessageItems from './inbox-messageitems.js';
+import InboxItems from './inbox-inboxitems.js';
 import Sidebar from '../sidebar.js';
 import Navbar from '../navbar.js';
 import {getInboxData} from '../../server.js';
@@ -24,6 +24,8 @@ export default class InboxPage extends React.Component {
    this.refresh();
   }
 
+
+
   render() {
 
     return (
@@ -40,7 +42,7 @@ export default class InboxPage extends React.Component {
         </div>
       <InboxItems   chatData = {this.state.chats} />
 
-      <MessageItems />
+      <MessageItems chatArr = {this.state.chats}/>
 
     </div>
 
