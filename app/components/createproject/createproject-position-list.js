@@ -17,7 +17,9 @@ export default class CreateProjectPositionSection extends React.Component {
       this.setState({inputs})
     }
 
-
+getPositions(){
+  return inputs;
+}
 
 
   render() {

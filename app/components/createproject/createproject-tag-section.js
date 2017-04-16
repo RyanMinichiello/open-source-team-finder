@@ -11,7 +11,9 @@ export default class CreateProjectTagSection extends React.Component {
 
     }
 
-
+getInputs(){
+  return inputs;
+}
 
     addNewButton(value){
       var newInput =  <CreateProjectTagItem tag={value} />
