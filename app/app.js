@@ -8,8 +8,7 @@ import MainFeed from './components/main-feed/main-feed.js';
 import JobBoard from './components/job-board/job-board.js'
 import CreateProject from './components/createproject/createproject.js';
 import InboxPage from './components/inbox/inbox-inboxpage.js'
-import InboxPage2 from './components/inbox/inbox-inboxpage2.js'
-import InboxPage3 from './components/inbox/inbox-inboxpage3.js'
+
 
 // For each view conditionally determine which view to display
 // depending on if the ID is present in the HTML.
@@ -49,14 +48,4 @@ if (document.getElementById('main-feed') !== null) {
     document.getElementById('create-project')
 );
 
-} else if (document.getElementById('inbox02') !== null) {
-  ReactDOM.render(
-    <InboxPage2 />,
-    document.getElementById('inbox02')
-);
-} else if (document.getElementById('inbox03') !== null) {
-  ReactDOM.render(
-    <InboxPage3 />,
-    document.getElementById('inbox03')
-  );
-}
+} 
