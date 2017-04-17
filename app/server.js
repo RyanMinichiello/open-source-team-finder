@@ -10,6 +10,7 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
+
 export function getInboxData(inbox_id, cb){
   var inboxData = readDocument('inbox', inbox_id);
   emulateServerReturn(inboxData, cb);

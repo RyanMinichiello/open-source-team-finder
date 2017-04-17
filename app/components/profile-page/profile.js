@@ -56,7 +56,7 @@ export default class Profile extends React.Component {
                             ></Profile_Skills>
 
                             <Profile_Teams
-                                  teams = {this.state.dummyproj}
+                                  teams = {this.state.projects}
                             ></Profile_Teams>
                       </div>
 
