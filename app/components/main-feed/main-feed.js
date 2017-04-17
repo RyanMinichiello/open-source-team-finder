@@ -1,42 +1,63 @@
 import React from 'react';
-import MainFeedProjectItem from './main-feed-project-item.js';
+import MainFeedJobItem from './main-feed-job-item.js';
+import MainFeedNotificationItem from './main-feed-notification-item.js';
+
 import Navbar from '../navbar.js';
 import Sidebar from '../sidebar.js';
 import MainFeedFilter from './main-feed-filters.js';
-import {getMainFeedJobItemData} from '../../server.js';
-
-
+import {getUserInfo, getNotificationFeedData} from '../../server.js';
 
 
 export default class MainFeed extends React.Component {
   constructor(props) {
-    // super() calls the parent class constructor -- e.g. React.Component's constructor.
-    super(props);
-    // Set state's initial value.
-    // Note that the constructor is the ONLY place you should EVER set state directly!
-    // In all other places, use the `setState` method instead.
-    // Setting `state` directly in other places will not trigger `render()` to run, so your
-    // program will have bugs.
-    this.state = {
-      // Empty feed.
-      contents: []
-    };
-  }
+     super(props);
+     this.state = {
+        contents : []
+      };
+   }
 
-  componentDidMount() {
-    getMainFeedJobItemData(1, (feedData) => {
-      // Note: setState does a *shallow merge* of the current state and the new
-      // state. If state was currently set to {foo: 3}, and we setState({bar: 5}),
-      // state would then be {foo: 3, bar: 5}. This won't be a problem here.
-      this.setState(feedData);
+   refresh() {
+     getUserInfo(1, (userData) => {
+      this.setState(userData);
     });
-  }
+
+   }
+
+
+   componentDidMount() {
+     this.refresh();
+   }
+
+   getNotificationList() {
+     getNotificationFeedData(1, (notifications) => {
+       this.setState({notifications : notifications});
+     }
+    );
+    }
+    genererateNotificationItems(){
+      var list = this.getNotificationList(1);
+      if(list) {
+        return list.map(this.createNotificationItem);
+      }
+    }
+
+
+    createNotificationItem(item) {
+      return <MainFeedNotificationItem key = {item} postData = {item.description} feedItemName = {item.title}/>
+    }
+
+    generateJobItem(item) {
+      return <MainFeedJobItem key = {item} postData = {item.description} feedItemName = {item.title} rankingType = {item.rankingType}/>
+    }
+
+
+
 
   render() {
     return (
       <div>
         <Navbar
-          self_name = "Jane"
+          self_name = {this.state.fullName}
           ></Navbar>
 
         <div>
@@ -55,14 +76,7 @@ export default class MainFeed extends React.Component {
           <div className="row main-feed-row">
             <div className="col-md-10 job-feed">
 
-              //Render feed items here
-              {this.state.contents.map((feedItems) => {
-                return (
-                    <MainFeedProjectItem key={feedItems.projectItems.id} data={feedItems.projectItems}/>
-
-                );
-              })}
-
+            {this.genererateNotificationItems()}
 
             </div>
           </div>
