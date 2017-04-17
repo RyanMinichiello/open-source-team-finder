@@ -271,7 +271,7 @@ export function readDocument(collection, id) {
 }
 
 /**
-<<<<<<< HEAD
+
 * Emulates writing a "document" to a NoSQL database.
 */
 
@@ -309,7 +309,7 @@ export function resetDatabase() {
 }
 
 /**
-<<<<<<< HEAD
+
 * Reset database button.
 */
 
@@ -325,7 +325,7 @@ class ResetDatabase extends React.Component {
   }
 }
 
-// ReactDOM.render(
-//   <ResetDatabase />,
-//   document.getElementById('fb-db-reset')
-// );
+ ReactDOM.render(
+   <ResetDatabase />,
+   document.getElementById('db-reset')
+ );

@@ -1,18 +1,12 @@
-/*body{
+body{
   width: auto;
   height: auto;
 }
 
 .navbar-default{
-
-<<<<<<< HEAD
 background-color: #4caf50;
-=======
-/*background-color: #4caf50;*/
->>>>>>> createprojjs
+background-color: #4caf50;
 width: 99%;
-
-
 }
 
 .btn-default{
@@ -22,7 +16,7 @@ width: 99%;
   background-color: #EE9344;
 }
 
-*/
+
 
 #add-more-tags-btn{
   background-color: #ffffff;
@@ -123,11 +117,11 @@ width: 99%;
   font-size: 120%;
 }
 
-<<<<<<< HEAD
+
 /*#add-more-btn{
-=======
+
 #add-more-btn{
->>>>>>> createprojjs
+
   margin-bottom: 5%;
   margin-left: 8%;
 }
