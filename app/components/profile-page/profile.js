@@ -31,11 +31,9 @@ export default class Profile extends React.Component {
         return(
             <div>
                 <Navbar
-                    name = {this.state.name}
                     ></Navbar>
                 <div className="row">
                     <Sidebar
-                        projects = {this.state.dummyproj}
                     ></Sidebar>
                 <div className = "col-md-2"></div>
                     <div className="profile-zone col-md-10">

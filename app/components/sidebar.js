@@ -32,7 +32,7 @@ export default class Sidebar extends React.Component {
             <div className="text-center col-md-2 side-bar">
                <ul className="nav nav-pills nav-stacked">
                   <li role="presentation">PROJECTS</li>
-                    {this.generateTeams(this.props.projects)}
+                    {this.generateTeams(["Swing Team", "Jazz Team", "The Smashing Corgans"])}
                   <li role="presentation"><a href="ostf-job-board.html"><span className="glyphicon glyphicon-stats"></span>
                      Job Board</a>
                   </li>
