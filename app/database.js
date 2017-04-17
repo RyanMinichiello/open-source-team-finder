@@ -172,7 +172,7 @@ var initialData = {
         "user_Name": "Nomar Garciaparra",
         "userId" : 1,
         "project_id" : 1,
-        "title"      : "developer",
+        "title"      : "Developer",
         "description": "develop things",
         "skillz"     : ["Java"]
       },
@@ -224,16 +224,20 @@ var initialData = {
 
 
   "notificationItems" : {
-    "1" : {
+    "1" : [
+      {
       "id" : 1,
       "title" : "Update on Garbanzo Bean Team",
       "description" : "We are running out of bean steam and may be closing down in July :/."
-    },
-    "2" : {
+    }
+  ],
+    "2" : [
+      {
       "id" : 2,
       "title" : "Update on Apple Team",
       "description" : "Things couldn't be any better, but could we get more VC support?"
     }
+  ]
   }
 
 };

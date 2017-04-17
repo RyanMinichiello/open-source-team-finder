@@ -101,3 +101,8 @@ export function getProfileData(id, cb){
   emulateServerReturn(profileData, cb);
 
 }
+
+export function getProjectUpdates(id, cb){
+  var notifications = readDocument('notificationItems', id)
+  emulateServerReturn(notifications, cb);
+}

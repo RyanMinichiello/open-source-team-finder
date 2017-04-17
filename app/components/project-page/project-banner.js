@@ -3,7 +3,7 @@ import React from 'react';
 export default class ProjectBanner extends React.Component {
 
   onApply(){
-
+    console.log("Hello");
   }
 
   getButtons(){

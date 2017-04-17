@@ -34,8 +34,6 @@ if (document.getElementById('main-feed') !== null) {
 
     <Profile pid={1}/>,
 
-    <Profile />,
-
     document.getElementById('profile')
   );
 
