@@ -1,6 +1,5 @@
 import React from 'react';
 import {getChatData} from '../../server';
-import {getInboxData} from '../../server';
 
 
 export default class Inbox extends React.Component {

@@ -1,6 +1,41 @@
 import React from 'react';
+import {getMessageData} from '../../server';
+import {getUserInfo} from '../../server';
 
 export default class MessageReceive extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state={
+      contents:[],
+      name:""
+    };
+
+  }
+
+  refresh(){
+    getMessageData(this.props.messageId, (messageData) =>{
+      this.setState({contents:messageData});
+    });
+
+  }
+
+  componentDidMount(){
+    this.refresh();
+  }
+
+  generateName(author){
+    if(author){
+      return this.createName(author);
+    }
+  }
+
+  createName(author){
+    getUserInfo(author,(n) =>{
+      this.setState({name: n.name});
+    });
+  }
+
   render() {
     return (
         <div className="row">
@@ -8,15 +43,10 @@ export default class MessageReceive extends React.Component {
             <div className= "panel panel-default message-talk" >
               <div className="panel-body">
                 <span className="glyphicon glyphicon-user"></span>
-                <b>{this.props.author}</b>
-                <p>{this.props.message}</p>
-                <div className={this.props.fileclass}>
-                  <div className={this.props.panel}>
-                    <div className={this.props.body}>
-                    {this.props.file}
-                    </div>
-                  </div>
-                </div>
+                {this.generateName(this.state.contents.author)}
+                <b>{this.state.name}</b>
+                <p>{this.state.contents.contents}</p>
+
               </div>
             </div>
           </div>
