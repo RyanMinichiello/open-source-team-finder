@@ -1,5 +1,6 @@
 import React from 'react';
-import ProfilePill from './profile-page/profile_pill.js'
+import ProfilePill from './profile-page/profile_pill.js';
+import { Link } from 'react-router';
 
 export default class Sidebar extends React.Component {
     constructor(props){
@@ -33,9 +34,11 @@ export default class Sidebar extends React.Component {
                <ul className="nav nav-pills nav-stacked">
                   <li role="presentation">PROJECTS</li>
                     {this.generateTeams(["Swing Team", "Jazz Team", "The Smashing Corgans"])}
+                  <Link to={"ostf-job-board"}>
                   <li role="presentation"><a href="ostf-job-board.html"><span className="glyphicon glyphicon-stats"></span>
                      Job Board</a>
                   </li>
+              </Link>
                </ul>
            </div>
        </div>

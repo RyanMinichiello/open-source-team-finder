@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class Navbar extends React.Component{
   render() {
@@ -14,9 +15,11 @@ export default class Navbar extends React.Component{
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="main-feed.html">
+              <Link to={"/main-feed/"}>
+              <a className="navbar-brand">
                 <span><img src="img/logo_notext.png" className="logo pull-left"/></span>
               </a>
+            </Link>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <form className="navbar-form navbar-left" role="search">
@@ -33,33 +36,35 @@ export default class Navbar extends React.Component{
               <div className="nav navbar-nav navbar-right">
                 <div className="btn-toolbar pull-right" role="toolbar">
                   <div className="btn-group" role="group">
-                    <a href="profile.html" >
+                    <Link to={"/profile/"}>
                       <button type="button" className="btn btn-default navbar-btn">
                         <span className="glyphicon glyphicon-user"></span>
                           Jane
                       </button>
-                    </a>
+                  </Link>
                   </div>
                   <div className="btn-group" role="group">
-                    <a href="inbox.html">
+                    <Link to ={"/inbox/"}>
                       <button type="button" className="btn btn-default navbar-btn">
 
                         <span className="glyphicon glyphicon-envelope"></span>
                       </button>
-                    </a>
+                  </Link>
                   </div>
                   <div className="btn-group" role="group">
-                    <a href="createproj.html">
+                    <Link to={"/createproject"}>
                       <button type="button" className="btn btn-create navbar-btn">
                         +Create Project
                       </button>
-                    </a>
+                  </Link>
                   </div>
                   <div className="btn-group" role="group">
                     <div className="btn-group" role="group">
+                      <Link to={"/project-page"}>
                       <button type="button" className="btn btn-default navbar-btn">
                         Sign Out
                       </button>
+                  </Link>
                     </div>
                   </div>
                 </div>
