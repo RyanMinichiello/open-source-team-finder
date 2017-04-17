@@ -120,6 +120,7 @@ h1,h2,h3{
 }
 
 .banner-image{
+  height: 200px;
   width: 100%;
 }
 
