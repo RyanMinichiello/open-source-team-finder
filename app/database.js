@@ -178,14 +178,15 @@ var initialData = {
       },
 
       {
-        "id"         : 1,
+        "id"         : 2,
         "status" : "open",
         "user_Name"  : null,
         "userId" : null,
         "project_id" : 1,
-        "title"      : "developer",
+        "title"      : "More Positions",
         "description": "develop things",
-        "skillz"     : ["Java"]
+        "skillz"     : ["Java", "Chrome"]
+
       }
     ]
 
@@ -211,13 +212,15 @@ var initialData = {
       "id" : 1,
       "title" : "Software Engineering Position at Okra Team",
       "description" : "apply within!!!!",
-      "tags" : ["Drones", "Finance"]
+      "tags" : ["Drones", "Finance"],
+      "rankingType" : "silver"
     },
     "2" : {
       "id" : 2,
       "title" : "Quality Assurance Position at Apple Team",
       "description" : "Please taste our apples we are too afraid.",
-      "tags" : ["Apples", "Sports"]
+      "tags" : ["Apples", "Sports"],
+      "rankingType" : "gold"
     }
 
   },
