@@ -102,6 +102,22 @@ export function getProfileData(id, cb){
 
 }
 
+export function getNotificationFeedData(user, cb) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  // Get the Feed object for the user.
+  var feedData = readDocument('feeds', userData.feed);
+
+  //This is a list... Should I change the way I save this????
+  var list = [];
+  for(var i = 0; i < feedData.notificationItems; i ++ ) {
+    list.push(readDocument('notificationItems', feedData.notificationItems[i]));
+  }
+
+  emulateServerReturn(list, cb)
+
+}
+
 export function getProjectUpdates(id, cb){
   var notifications = readDocument('notificationItems', id)
   emulateServerReturn(notifications, cb);
