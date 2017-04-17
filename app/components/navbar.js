@@ -60,11 +60,9 @@ export default class Navbar extends React.Component{
                   </div>
                   <div className="btn-group" role="group">
                     <div className="btn-group" role="group">
-                      <Link to={"/project-page"}>
                       <button type="button" className="btn btn-default navbar-btn">
                         Sign Out
-                      </button>
-                  </Link>
+                    </button>
                     </div>
                   </div>
                 </div>
