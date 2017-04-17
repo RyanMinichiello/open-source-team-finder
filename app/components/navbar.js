@@ -1,10 +1,6 @@
 import React from 'react';
 
 export default class Navbar extends React.Component{
-<<<<<<< HEAD
-
-=======
->>>>>>> createprojjs
   render() {
     return (
       <div>
@@ -40,11 +36,7 @@ export default class Navbar extends React.Component{
                     <a href="profile.html" >
                       <button type="button" className="btn btn-default navbar-btn">
                         <span className="glyphicon glyphicon-user"></span>
-<<<<<<< HEAD
                         {this.props.name}
-=======
-                        {this.props.self_name}
->>>>>>> createprojjs
                       </button>
                     </a>
                   </div>

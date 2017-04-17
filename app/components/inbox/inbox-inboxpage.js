@@ -35,17 +35,8 @@ export default class InboxPage extends React.Component {
           name = {this.state.name}
           ></Navbar>
         <Sidebar
-<<<<<<< HEAD
             projects = {this.state.dummyproj}
         ></Sidebar>
-=======
-            first_active = "Okra Team"
-            second_active = "Peach Team"
-            third_active = "Garbanzo Bean Team"
-            fourth_active = "Apple Team"
-            ></Sidebar>
->>>>>>> createprojjs
-
         <div className = "col-md-2">
         </div>
       <InboxItems   chatData = {this.state.chats} />

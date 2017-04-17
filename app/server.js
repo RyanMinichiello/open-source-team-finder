@@ -10,7 +10,6 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
-<<<<<<< HEAD
 export function getInboxData(inbox_id, cb){
   var inboxData = readDocument('inbox', inbox_id);
   emulateServerReturn(inboxData, cb);
@@ -26,15 +25,14 @@ export function getChatData(chat_id, cb){
   emulateServerReturn(chatData, cb);
 }
 
-=======
->>>>>>> createprojjs
+
 export function getProjectData(project_id, cb){
 
   var projectData = readDocument('project', project_id);
   emulateServerReturn(projectData, cb);
 
 }
-<<<<<<< HEAD
+
 
 export function getUserInfo(user_id, cb) {
   var userData = readDocument('users', user_id);
@@ -103,5 +101,3 @@ export function getProfileData(id, cb){
   emulateServerReturn(profileData, cb);
 
 }
-=======
->>>>>>> createprojjs
