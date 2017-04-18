@@ -26,10 +26,11 @@ export default class Navbar extends React.Component{
                 <div className="input-group">
                   <input type="text fb-search" className="form-control" placeholder="Search OSTF"/>
                   <span className="input-group-btn">
-
+                  <Link to="/ostf-job-board/">
                     <button type="submit" className="btn btn-default">
                       <span className="glyphicon glyphicon-search"></span>
                     </button>
+                    </Link>
                   </span>
                 </div>
               </form>

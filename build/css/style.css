@@ -82,6 +82,27 @@ a, a:visited{
     color: #07889b;
     background-color: #eeaa7b;
 }
+
+.btn-info {
+    background-color: #eeaa7b;
+    border-color: #eeaa7b;
+}
+
+.btn-info:active:focus {
+    background-color: #e37222;
+    border-color: #eeaa7b;
+}
+
+
+.btn-info:focus {
+    background-color: #e37222;
+    border-color: #eeaa7b;
+}
+
+.btn-info:hover{
+    background-color: #e37222;
+    border-color: #eeaa7b;
+}
 .change-color{
   color:navy;
 }
