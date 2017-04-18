@@ -10,6 +10,42 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
+/**
+ * Adds a new status update to the database.
+ */
+export function sendNewMessages(user, contents,cb) {
+  // If we were implementing this for real on an actual server, we would check
+  // that the user ID is correct & matches the authenticated user. But since
+  // we're mocking it, we can be less strict.
+
+  // Get the current UNIX time.
+  var time = new Date().getTime();
+  // The new status update. The database will assign the ID for us.
+  var newMessages = {
+
+      "author": user,
+      "contents": contents,
+      "side":"right"
+
+  };
+
+  // Add the status update to the database.
+  // Returns the status update w/ an ID assigned.
+  newMessages = addDocument('messagess', newMessages);
+
+  // Add the status update reference to the front of the current user's feed.
+  var userData = readDocument('users', user);
+  var inboxData = readDocument('inbox', userData.inboxId);
+  var chatData = readDocument('chats', inboxData.chats);
+  var messageData = readDocument('messages', chatData.messages);
+  messageData.contents.unshift(newMessages._id);
+
+  // Update the feed object.
+  writeDocument('messages', messageData);
+
+  // Return the newly-posted object.
+  emulateServerReturn(newMessages, cb);
+}
 
 export function getInboxData(inbox_id, cb){
   var inboxData = readDocument('inbox', inbox_id);

@@ -6,6 +6,7 @@ import MessageSent from './inbox-messagesent';
 import MessageEntry from './inbox-messageentry';
 import {getChatData} from '../../server.js';
 import {getMessageData} from '../../server.js';
+import {sendNewMessages} from '../../server.js';
 
 
 export default class MessageItems extends React.Component {
@@ -45,7 +46,15 @@ createMessages(m){
     }
 }
 
-
+onPost(mContents) {
+  // Send to server.
+  // We could use geolocation to get a location, but let's fix it to Amherst
+  // for now.
+  sendNewMessages(1, mContents,  () => {
+    // Database is now updated. Refresh the feed.
+    this.refresh();
+  });
+}
 
 
 
@@ -66,8 +75,7 @@ createMessages(m){
 
         </div>
 
-        <MessageEntry>
-        </MessageEntry>
+        <MessageEntry onPost={(postContents) => this.onPost(postContents)} />
       </div>
     )
   }
