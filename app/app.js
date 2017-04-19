@@ -18,7 +18,7 @@ ReactDOM.render((
     <Route path="/" components={MainFeed}/>
     <Route path="/main-feed" components={MainFeed}/>
     <Route path="/inbox" components={InboxPage}/>
-    <Route path="/profile" components={Profile}/>
+    <Route path="/profile/:id" components={Profile}/>
     <Route path="/createproject" components={CreateProject}/>
     <Route path="/ostf-job-board" components={JobBoard}/>
     <Route path="/project-page" components={ProjectPage}/>

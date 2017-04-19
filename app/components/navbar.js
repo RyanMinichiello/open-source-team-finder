@@ -37,7 +37,7 @@ export default class Navbar extends React.Component{
               <div className="nav navbar-nav navbar-right">
                 <div className="btn-toolbar pull-right" role="toolbar">
                   <div className="btn-group" role="group">
-                    <Link to={"/profile/"}>
+                    <Link to={"/profile/1"}>
                       <button type="button" className="btn btn-default navbar-btn">
                         <span className="glyphicon glyphicon-user"></span>
                           Jane

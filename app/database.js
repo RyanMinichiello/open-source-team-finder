@@ -34,9 +34,7 @@ var initialData = {
           "name" : "Joe Doe",
           "image" : "",
           "banner" : "",
-          // ID of Jane's feed
           "feed" : 2,
-          // ID of Jane's Inbox
           "inboxId" : 2,
           "skills" : ["Java", "Numerical Graphing", "Agile Methodology", "Management"],
           "interests" : ["Drones", "Robotics", "Sports"],
@@ -48,10 +46,10 @@ var initialData = {
 
         "3" : {
           "_id" : 3,
-          "fullName" : "Anna Hall",
-          // ID of Jane's feed
+          "name" : "Anna Hall",
+          "image" : "",
+          "banner" : "",
           "feed" : 3,
-          // ID of Jane's Inbox
           "inboxId" : 3,
           "skills" : ["Java", "Management"],
           "interests" : ["Drones", "Robotics", "Music"],
