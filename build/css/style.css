@@ -487,7 +487,7 @@ input{
 }
 .project-description{
   height: 100%;
-  border-right: 2px solid #4caf50;
+  border-right: 2px solid #66b9bf;
 }
 .project-header{
   position: relative;
@@ -510,7 +510,7 @@ input{
 .project-positions{
   height: 100%;
   margin-top: 4%;
-  border-left: 2px solid darkgreen;
+  border-left: 2px solid #66b9bf;
 }
 .project-zone{
   position: relative;
