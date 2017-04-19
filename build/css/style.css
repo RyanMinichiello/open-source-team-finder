@@ -19,7 +19,6 @@ a, a:visited{
 
 #add-more-tags-btn:hover{
   background-color: #eee;
-  background-color: #EE9344;
 }
 
 #add-more-tags-btn:hover{
@@ -83,6 +82,27 @@ a, a:visited{
     color: #07889b;
     background-color: #eeaa7b;
 }
+
+.btn-info {
+    background-color: #eeaa7b;
+    border-color: #eeaa7b;
+}
+
+.btn-info:active:focus {
+    background-color: #e37222;
+    border-color: #eeaa7b;
+}
+
+
+.btn-info:focus {
+    background-color: #e37222;
+    border-color: #eeaa7b;
+}
+
+.btn-info:hover{
+    background-color: #e37222;
+    border-color: #eeaa7b;
+}
 .change-color{
   color:navy;
 }
@@ -107,7 +127,6 @@ a, a:visited{
 }
 #create{
   margin-left: 54%;
-  background-color: #EE9344;
   width: 30%;
   margin-top: -16%;
   height: 7%;
@@ -126,7 +145,6 @@ a, a:visited{
   margin-bottom: 3%;
   padding-top: 3%;
   padding-bottom: 1.5%;
-  background-color: #EE9344;
   margin-top: -2.85%;
   height:10%;
   border-bottom: 2px solid #eeaa7b;
@@ -140,7 +158,6 @@ a, a:visited{
   height:90px;
 }
 .filter-bar {
-  background-color: #DFFFDF;
   position: absolute;
   width: 100%;
   margin-top: 1%;
@@ -222,7 +239,6 @@ input{
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 10px;
-  background-color: #EE9344;
   border: 3px solid #4caf50;
 }
 .header-buttons{
@@ -392,11 +408,9 @@ input{
   margin-top: 210.5%;
 }
 .position-item{
-  border: 1px solid #EE9344;
   padding: 5px;
   margin: 5px;
   border-radius: 10px;
-  background-color: #EE9344;
   border: 3px solid #4caf50;
 }
 .profile-about{
@@ -448,7 +462,6 @@ input{
   right: 30.8%;
   overflow: hidden;
   border: 2px solid #4caf50;
-  background-color: #DFFFDF;
 }
 .project-container{
   position: relative;
@@ -467,7 +480,6 @@ input{
 .project-member{
   margin: 5px;
   font-size: 20px;
-  background-color: #EE9344;
   border-radius: 10px;
   padding: 5px;
   border: 3px solid #4caf50;
@@ -483,9 +495,7 @@ input{
 }
 .project-zone{
   position: relative;
-  margin-top: 50px;
   height: 800px;
-  background-color: #DFFFDF;
   border-left: 2px solid black;
   overflow: hidden;
 }
@@ -563,9 +573,6 @@ position: relative;
 
   margin-top: -2.85%;
   height:10%;
-  border-bottom: 2px solid #DFFFDF;
-  border-left: 2px solid #DFFFDF;
-  border-right: 2px solid #DFFFDF;
 }
 #positions{
   margin-top: 16%;
@@ -608,7 +615,6 @@ position: relative;
 
 #create{
   margin-left: 54%;
-/*  background-color: #EE9344; */
   width: 30%;
   margin-top: -16%;
   height: 7%;

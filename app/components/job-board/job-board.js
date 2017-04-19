@@ -4,8 +4,8 @@ import Sidebar from '../sidebar.js';
 import FilterBar from './filter-bar.js'
 import JobBoardMainFeed from './job-board-main-feed.js'
 import JobBoardPost from './job-board-post'
-import JobBoardTagList from './job-board-tag-list'
-import JobBoardTagItem from './job-board-tag-item'
+//import JobBoardTagList from './job-board-tag-list'
+//import JobBoardTagItem from './job-board-tag-item'
 
 export default class JobBoard extends React.Component {
   render() {
@@ -14,15 +14,15 @@ export default class JobBoard extends React.Component {
         <Navbar
           self_name = "Jane"
           ></Navbar>
-          <div>
+            <div className="row">
             <Sidebar
               first_active = "Project 1"
               second_active = "Project 2"
               third_active = "Project 3"
               fourth_active = "Project 4"
               ></Sidebar>
-          </div>
-          <div className="col-md-10 job-feed">
+          <div className = "col-md-2"></div>
+        <div className="col-md-10 job-feed">
             <FilterBar />
             <JobBoardMainFeed>
               <JobBoardPost project="PROJECT1" position_title="POSITION1"
@@ -56,7 +56,9 @@ export default class JobBoard extends React.Component {
                   rankingType="bronze-button"/>
             </JobBoardMainFeed>
         </div>
-      </div>
+    </div>
+</div>
+
     );
   }
 }

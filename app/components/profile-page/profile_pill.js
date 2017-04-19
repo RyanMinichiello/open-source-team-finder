@@ -1,9 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class ProfilePill extends React.Component {
   render(){
     return(
-        <li role="presentation"><a href="#"> {this.props.team} </a> </li>
+        <Link to="project-page">
+            <li role="presentation"><a href="#"> {this.props.team} </a> </li>
+        </Link>
     )
   }
 }

@@ -16,7 +16,7 @@ export default class ProjectBanner extends React.Component {
     return(
         <div className="project-header row">
 
-          <img className="banner-image" src="img/okra.jpg"/>
+          <img className="profile-banner" src="img/okra.jpg"/>
           {this.getButtons()}
 
       </div>
