@@ -217,12 +217,17 @@ a, a:visited{
   z-index: 5;
 }
 .inbox-zone{
+  display: block;
+  position: fixed;
   padding-right: 0px !important;
   padding-left: 0px !important;
   background-color: #e6e6e6;
   overflow-y: scroll;
   margin-top:40px;
-  height:522px;
+  width: inherit;
+  height: auto;
+  bottom: 0;
+  top: 50px;
   border-right: 2px solid #66b9bf;
   /*border-left: 10px solid #e7e7e7;*/
 
@@ -351,17 +356,27 @@ input{
   position: relative;
 }
 .message-text{
-  height: 70px;
+  padding-bottom:0px !important;
+  /*position: fixed;*/
+  height: 100px;
+  position: fixed;
+  background-color: #e6e6e6;
+  bottom: 0;
+
 }
 .message-zone{
+
+  position: fixed;
+  width:inherit;
+  height: auto;
+  top:50px;
+  bottom:100px;
+  /*min-height: 100% !important;*/
   background-color: #e6e6e6;
   overflow-y: scroll;
   padding-right: 0px !important;
   padding-left: 0px !important;
   margin-top:40px;
-  height:452px;
-
-
 }
 
 .mid-col{
@@ -398,9 +413,7 @@ input{
   border-top: 1px solid #e7e7e7;
 }
 .panel{
-  border-width: medium;
-  background-color: #f4f7f6;
-  border-color: #07889b;
+  margin-bottom: 0px !important;
 }
 
 #positions{
