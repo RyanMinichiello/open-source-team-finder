@@ -144,7 +144,6 @@ export function getNotificationFeedData(user, cb) {
   var userData = readDocument('users', user);
   // Get the Feed object for the user.
   var feedData = readDocument('feeds', userData.feed);
-
   //This is a list... Should I change the way I save this????
   var list = [];
   for(var i = 0; i < feedData.notificationItems; i ++ ) {
