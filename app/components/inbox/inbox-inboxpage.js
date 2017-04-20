@@ -5,6 +5,7 @@ import Sidebar from '../sidebar.js';
 import Navbar from '../navbar.js';
 import {getInboxData} from '../../server.js';
 
+
 export default class InboxPage extends React.Component {
 
   constructor(props){
@@ -16,13 +17,14 @@ export default class InboxPage extends React.Component {
 
   refresh(){
     getInboxData(1, (inboxData)=>{
-      this.setState(inboxData);
+      this.setState({contents:inboxData});
     });
   }
 
   componentWillMount(){
    this.refresh();
   }
+
 
 
 
@@ -39,9 +41,8 @@ export default class InboxPage extends React.Component {
         ></Sidebar>
         <div className = "col-md-2">
         </div>
-      <InboxItems   chatData = {this.state.chats} />
-
-      <MessageItems chatArr = {this.state.chats}/>
+      <InboxItems   chatData = {this.state.contents.chats} />
+      <MessageItems chatArr = {this.state.contents.chats} />
 
     </div>
 

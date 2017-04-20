@@ -31,7 +31,7 @@ export function sendNewMessages(user, contents,cb) {
 
   // Add the status update to the database.
   // Returns the status update w/ an ID assigned.
-  newMessages = addDocument('messagess', newMessages);
+  newMessages = addDocument('messages', newMessages);
 
   // Add the status update reference to the front of the current user's feed.
   var userData = readDocument('users', user);

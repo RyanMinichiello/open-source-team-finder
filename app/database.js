@@ -133,40 +133,34 @@ var initialData = {
 
       "messages" : {
         "1" : {
-          "id":1,
           "author": 2,
           "contents" : "Hey guys, what should our main page feed look like?",
-          "side":"left"
+          "side":""
         },
         "2" : {
-          "id":2,
           "author": 1,
           "contents" : "idk any ideas?",
-          "side":"right"
+          "side":""
         },
         "3" : {
-          "id":3,
           "author": 2,
           "contents" : "Hello",
-          "side":"left"
+          "side":""
         },
         "4" : {
-          "id":4,
           "author": 1,
           "contents" : "Hi",
-          "side":"right"
+          "side":""
         },
         "5" : {
-          "id":5,
           "author":3,
           "contents" : "Wanna join my project?",
-          "side":"left"
+          "side":""
         },
         "6" : {
-          "id":6,
           "author":1,
           "contents" : "Can you tell me more about it?",
-          "side":"right"
+          "side":""
         }
       },
 
