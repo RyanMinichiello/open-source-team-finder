@@ -216,17 +216,20 @@ var initialData = {
 
       "jobItems": {
         "1" : {
-          "id" : 1,
+          "_id" : 1,
           "title" : "Software Engineering Position at Okra Team",
           "description" : "apply within!!!!",
-          "tags" : ["Drones", "Finance"]
+          "tags" : ["Drones", "Finance"],
+          "rankingType": "gold-button"
+
         },
 
         "2" : {
-          "id" : 2,
+          "_id" : 2,
           "title" : "Quality Assurance Position at Apple Team",
           "description" : "Please taste our apples we are too afraid.",
-          "tags" : ["Apples", "Sports"]
+          "tags" : ["Apples", "Sports"],
+          "rankingType": "bronze-button"
         }
 
       },

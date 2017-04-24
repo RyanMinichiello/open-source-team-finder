@@ -163,7 +163,6 @@ export function getJobFeedData(user, cb) {
 
   //This is a list... Should I change the way I save this????
   var jobList = [];
-
   for(var i = 0; i < feedData.jobItems.length; i ++ ) {
     jobList.push(readDocument('jobItems', feedData.jobItems[i]));
   }

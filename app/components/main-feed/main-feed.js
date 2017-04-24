@@ -67,7 +67,8 @@ export default class MainFeed extends React.Component {
     }
 
     createJobItem(item) {
-      return <MainFeedJobItem key = {item._id} postData = {item.description} feedItemName = {item.title} rankingType = {item.rankingType}/>
+      return <MainFeedJobItem key = {item._id} postData = {item.description}
+        feedItemName = {item.title} tags ={item.tags} rankingType = {item.rankingType} />
     }
 
 
