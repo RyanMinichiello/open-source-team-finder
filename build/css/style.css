@@ -295,7 +295,7 @@ input{
 }
 
 .main-feed-area{
-  background-color: #eeaa7b;
+  background-color: #e7e7e7;
   margin-top: 5%;
   float: left;
   width: 100%;
@@ -430,9 +430,16 @@ input{
   background-color: #f4f7f6;
   border-top: 1px solid #e7e7e7;
 }
-.panel{
+.panel {
   margin-bottom: 0px !important;
+  margin-top: 20px;
+  background-color: #eeaa7b;
+  width:100%;
+  border-width: medium;
+  border-color: #e37222;
 }
+
+
 
 #positions{
   margin-top: 11.5%;
