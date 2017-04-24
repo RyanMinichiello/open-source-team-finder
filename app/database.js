@@ -203,13 +203,13 @@ var initialData = {
         //Each feed has their own set of feed items
         "1" : {
           "id": 1,
-          "notificationItems": [1],
-          "positions":[1,2]
+          "notificationItems": [1,2],
+          "jobItems":[1,2]
         },
         "2" : {
           "id": 2,
           "notificationItems": [1],
-          "positions": [1,2]
+          "jobItems": [1,2]
 
         }
       },
@@ -221,6 +221,7 @@ var initialData = {
           "description" : "apply within!!!!",
           "tags" : ["Drones", "Finance"]
         },
+
         "2" : {
           "id" : 2,
           "title" : "Quality Assurance Position at Apple Team",
@@ -232,20 +233,17 @@ var initialData = {
 
 
       "notificationItems" : {
-        "1" : [
-          {
-          "id" : 1,
+        "1" : {
+          "_id" : 1,
           "title" : "Update on Garbanzo Bean Team",
           "description" : "We are running out of bean steam and may be closing down in July :/."
-        }
-      ],
-        "2" : [
-          {
-          "id" : 2,
-          "title" : "Update on Apple Team",
-          "description" : "Things couldn't be any better, but could we get more VC support?"
-        }
-      ]
+        } ,
+
+        "2" : {
+            "_id" : 2,
+            "title" : "Update on Apple Team",
+            "description" : "Things couldn't be any better, but could we get more VC support?"
+          }
       }
 
 };

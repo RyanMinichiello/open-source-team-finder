@@ -201,6 +201,11 @@ a, a:visited{
   padding-left: 50px;
 
 }
+
+.job-title {
+  margin-top:-2%;
+}
+
 .inbox01 {
     background-color: #66b9bf;
 }

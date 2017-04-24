@@ -3,6 +3,7 @@ import React from 'react';
 export default class MainFeedNotificationItem extends React.Component {
   render() {
     return (
+      <div>
         <div className="panel-body job-post">
           <div className="job-title">
             <h3>
@@ -12,13 +13,14 @@ export default class MainFeedNotificationItem extends React.Component {
           </div>
           <div className="job-desc">
             <p>
-               {this.props.postData}
+              {this.props.postData}
             </p>
           </div>
           <div className="row">
 
           </div>
         </div>
+      </div>
     )
   }
 }

@@ -4,6 +4,7 @@ import MainFeedTagList from './main-feed-tag-list.js'
 export default class MainFeedJobItem extends React.Component {
   render() {
     return (
+      <div>
         <div className="panel-body job-post">
           <div className="job-title">
             <h3>
@@ -27,6 +28,7 @@ export default class MainFeedJobItem extends React.Component {
             </div>
           </div>
         </div>
+      </div>
     )
   }
 }
