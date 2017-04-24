@@ -184,7 +184,7 @@ a, a:visited{
   background-color: #FFD700;
 }
 .job-feed {
-    position:relative;
+  position:relative;
   float:right;
   height:auto;
   margin-top: 1.5%;
@@ -288,6 +288,17 @@ input{
   height:auto;
   position: relative;
 }
+
+.main-feed-area{
+  background-color: #eeaa7b;
+  margin-top: 5%;
+  float: left;
+  width: 100%;
+  height:100vh;
+  padding-top: 20px;
+  position: absolute;
+}
+
 .main-feed-header {
   position: fixed;
   top: 50px;

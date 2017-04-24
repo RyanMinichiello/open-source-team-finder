@@ -74,7 +74,7 @@ export default class MainFeed extends React.Component {
           <MainFeedFilter />
 
           <div className="row main-feed-row">
-            <div className="col-md-10 job-feed">
+            <div className="col-md-10 main-feed-area">
 
             {this.genererateNotificationItems()}
 
