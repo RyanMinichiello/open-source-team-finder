@@ -143,30 +143,35 @@ var initialData = {
         },
         "2" : {
           "_id":2,
+
           "author": 1,
           "contents" : "idk any ideas?",
           "side":"right"
         },
         "3" : {
           "_id":3,
+
           "author": 2,
           "contents" : "Hello",
           "side":"left"
         },
         "4" : {
           "_id":4,
+
           "author": 1,
           "contents" : "Hi",
           "side":"right"
         },
         "5" : {
           "_id":5,
+
           "author":3,
           "contents" : "Wanna join my project?",
           "side":"left"
         },
         "6" : {
           "_id":6,
+
           "author":1,
           "contents" : "Can you tell me more about it?",
           "side":"right"
@@ -205,14 +210,15 @@ var initialData = {
       "feeds" :{
         //Each feed has their own set of feed items
         "1" : {
-          "_id": 1,
-          "notificationItems": [1],
-          "positions":[1,2]
+
+          "id": 1,
+          "notificationItems": [1,2],
+          "jobItems":[1,2]
         },
         "2" : {
           "_id": 2,
           "notificationItems": [1],
-          "positions": [1,2]
+          "jobItems": [1,2]
 
         }
       },
@@ -224,6 +230,7 @@ var initialData = {
           "description" : "apply within!!!!",
           "tags" : ["Drones", "Finance"]
         },
+
         "2" : {
           "_id" : 2,
           "title" : "Quality Assurance Position at Apple Team",
@@ -235,20 +242,17 @@ var initialData = {
 
 
       "notificationItems" : {
-        "1" : [
-          {
+        "1" : {
           "_id" : 1,
           "title" : "Update on Garbanzo Bean Team",
           "description" : "We are running out of bean steam and may be closing down in July :/."
-        }
-      ],
-        "2" : [
-          {
-          "_id" : 2,
-          "title" : "Update on Apple Team",
-          "description" : "Things couldn't be any better, but could we get more VC support?"
-        }
-      ]
+        } ,
+
+        "2" : {
+            "_id" : 2,
+            "title" : "Update on Apple Team",
+            "description" : "Things couldn't be any better, but could we get more VC support?"
+          }
       }
 
 };
