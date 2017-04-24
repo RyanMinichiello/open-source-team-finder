@@ -40,7 +40,6 @@ export default class Profile extends React.Component {
                      <Profile_Banner
                           user_banner = {this.state.banner}
                           user_img = {this.state.image}
-                          direct_message = "Hi Lynda, I'm Jane working with the Okra Project.  We are very impressed by your skillset and are hoping you'll join our team!"
                       ></Profile_Banner>
 
                       <div className="profile-container row">

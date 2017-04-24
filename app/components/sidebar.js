@@ -34,11 +34,11 @@ export default class Sidebar extends React.Component {
                <ul className="nav nav-pills nav-stacked">
                   <li role="presentation">PROJECTS</li>
                     {this.generateTeams(["Swing Team", "Jazz Team", "The Smashing Corgans"])}
-                  <Link to={"ostf-job-board"}>
-                  <li role="presentation"><a href="ostf-job-board.html"><span className="glyphicon glyphicon-stats"></span>
-                     Job Board</a>
+                <Link to="/ostf-job-board">
+                  <li className="nav-pills" role="presentation"><span className=" glyphicon glyphicon-stats"></span>
+                     Job Board
                   </li>
-              </Link>
+                 </Link>
                </ul>
            </div>
        </div>

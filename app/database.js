@@ -62,7 +62,7 @@ var initialData = {
       "project" : {
         "1":{
           "identifier" : "Okra",
-          "id"         : 1,
+          "_id"         : 1,
           "notificationItems"    : 1,
           "msgs"       : 1,
           "positions"  : [1],
@@ -72,7 +72,7 @@ var initialData = {
         },
         "2" : {
           "identifier" : "Apple",
-          "id"         : 2,
+          "_id"         : 2,
           "updates"    : 2,
           "msgs"       : 2,
           "positions"  : [2],
@@ -81,7 +81,7 @@ var initialData = {
         },
         "3" : {
           "identifier" : "Peach",
-          "id"         : 3,
+          "_id"         : 3,
           "updates"    : 3,
           "msgs"       : 3,
           "positions"  : [1,2],
@@ -90,7 +90,7 @@ var initialData = {
         },
         "4" : {
           "identifier" : "Garbanzo Bean",
-          "id"         : 4,
+          "_id"         : 4,
           "updates"    : 4,
           "msgs"       : 4,
           "positions"        : 4,
@@ -109,13 +109,15 @@ var initialData = {
 
       "chats" : {
         "1": {
-          "messages" : [1,2],
+            "_id" : 1,
+          "messages" : ["Hello","Hey how are you?"],
           "associated-users" : [1,2,3],
           "curr": "message-current panel panel-default",
           "name": "Okra Team",
           "color": "read"
         },
         "2": {
+            "_id" : 2,
           "messages" : [3,4],
           "associated-users" : [1,2],
           "curr": "message-preview panel panel-default",
@@ -123,6 +125,7 @@ var initialData = {
           "color": "unread"
         },
         "3": {
+            "_id" : 3,
           "messages" : [5,6],
           "associated-users" : [1,3],
           "curr": "message-preview panel panel-default",
@@ -133,37 +136,37 @@ var initialData = {
 
       "messages" : {
         "1" : {
-          "id":1,
+          "_id":1,
           "author": 2,
           "contents" : "Hey guys, what should our main page feed look like?",
           "side":"left"
         },
         "2" : {
-          "id":2,
+          "_id":2,
           "author": 1,
           "contents" : "idk any ideas?",
           "side":"right"
         },
         "3" : {
-          "id":3,
+          "_id":3,
           "author": 2,
           "contents" : "Hello",
           "side":"left"
         },
         "4" : {
-          "id":4,
+          "_id":4,
           "author": 1,
           "contents" : "Hi",
           "side":"right"
         },
         "5" : {
-          "id":5,
+          "_id":5,
           "author":3,
           "contents" : "Wanna join my project?",
           "side":"left"
         },
         "6" : {
-          "id":6,
+          "_id":6,
           "author":1,
           "contents" : "Can you tell me more about it?",
           "side":"right"
@@ -175,7 +178,7 @@ var initialData = {
         "positions" :[
 
           {
-            "id"         : 1,
+            "_id"         : 1,
             "status" : "filled",
             "user_Name": "Nomar Garciaparra",
             "userId" : 1,
@@ -186,7 +189,7 @@ var initialData = {
           },
 
           {
-            "id"         : 1,
+            "_id"         : 1,
             "status" : "open",
             "user_Name"  : null,
             "userId" : null,
@@ -202,12 +205,12 @@ var initialData = {
       "feeds" :{
         //Each feed has their own set of feed items
         "1" : {
-          "id": 1,
+          "_id": 1,
           "notificationItems": [1],
           "positions":[1,2]
         },
         "2" : {
-          "id": 2,
+          "_id": 2,
           "notificationItems": [1],
           "positions": [1,2]
 
@@ -216,13 +219,13 @@ var initialData = {
 
       "jobItems": {
         "1" : {
-          "id" : 1,
+          "_id" : 1,
           "title" : "Software Engineering Position at Okra Team",
           "description" : "apply within!!!!",
           "tags" : ["Drones", "Finance"]
         },
         "2" : {
-          "id" : 2,
+          "_id" : 2,
           "title" : "Quality Assurance Position at Apple Team",
           "description" : "Please taste our apples we are too afraid.",
           "tags" : ["Apples", "Sports"]
@@ -234,14 +237,14 @@ var initialData = {
       "notificationItems" : {
         "1" : [
           {
-          "id" : 1,
+          "_id" : 1,
           "title" : "Update on Garbanzo Bean Team",
           "description" : "We are running out of bean steam and may be closing down in July :/."
         }
       ],
         "2" : [
           {
-          "id" : 2,
+          "_id" : 2,
           "title" : "Update on Apple Team",
           "description" : "Things couldn't be any better, but could we get more VC support?"
         }

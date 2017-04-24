@@ -15,11 +15,11 @@ export default class Navbar extends React.Component{
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <Link to={"/main-feed/"}>
+              <Link to="/main-feed">
               <a className="navbar-brand">
-                <span><img src="img/logo_notext.png" className="logo pull-left"/></span>
+                      <span><img src="img/logo_notext.png" className="logo pull-left"/></span>
               </a>
-            </Link>
+              </Link>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <form className="navbar-form navbar-left" role="search">

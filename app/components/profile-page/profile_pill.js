@@ -5,7 +5,7 @@ export default class ProfilePill extends React.Component {
   render(){
     return(
         <Link to="project-page">
-            <li role="presentation"><a href="#"> {this.props.team} </a> </li>
+            <li className ="nav-pills" role="presentation"> {this.props.team}</li>
         </Link>
     )
   }

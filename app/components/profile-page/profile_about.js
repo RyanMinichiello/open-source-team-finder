@@ -1,6 +1,39 @@
 import React from 'react';
+import {sendMessage} from '../../server.js';
+import {getChatData} from '../../server.js';
+import {sendNewMessages} from '../../server.js'
 
 export default class Profile_About extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: "",
+            chatData : []
+        };
+    }
+
+    handleMessage(e) {
+        e.preventDefault();
+        var messageText = this.state.value.trim();
+        if(messageText !== "") {
+            sendMessage(1, messageText, () => {
+                this.refresh();
+            });
+            this.setState({value: ""});
+        }
+    }
+
+    handleChange(e) {
+        e.preventDefault();
+        this.setState({value: e.target.value});
+    }
+
+    refresh() {
+        getChatData(1, (chatData) => {
+            this.setState(chatData);
+        });
+    }
+
     render() {
         return (
             <div>
@@ -8,9 +41,9 @@ export default class Profile_About extends React.Component {
               <h3>Bio</h3>
               <div>{this.props.about}</div>
               <h3>Contact</h3>
-              <div className="skill-item">{this.props.email}
+              <div className="contact-item">{this.props.email}
               </div>
-              <div className="skill-item">{this.props.contact}
+              <div className="contact-item">{this.props.contact}
               </div>
               <div>
 
@@ -25,16 +58,16 @@ export default class Profile_About extends React.Component {
                           <h4 className="modal-title">Message</h4>
                         </div>
                         <div className="modal-body">
-                          <p>Hi Lynda, I'm Jane working with the Okra Project.  We are very impressed by your skillset and are hoping you'll join our team!</p>
+                            <div className="col-sm-12"><textarea className="form-control" id="inputBody" rows="6" value={this.state.value} onChange={(e) => this.handleChange(e)}></textarea></div>
                         </div>
                         <div className="modal-footer">
-                          <button type="button" className="btn btn-default" data-dismiss="modal">Send</button>
+                          <button type="button" className="btn btn-default" data-dismiss="modal" onClick={(e) => this.handleMessage(e)}>Send</button>
                         </div>
                       </div>
 
                     </div>
                   </div>
-              
+
 
                     </div>
                 </div>

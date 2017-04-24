@@ -13,6 +13,17 @@ function emulateServerReturn(data, cb) {
 /**
  * Adds a new status update to the database.
  */
+
+ export function sendMessage(chatId, contents, cb) {
+     var chatData = readDocument('chats', chatId);
+     chatData["messages"].push(contents);
+     console.log(chatData["messages"]); // IT IS ADDING THE NEW MESSAGE! in console though, not database
+
+     writeDocument('chats', chatData);
+     console.log(chatData["messages"]);
+     emulateServerReturn(chatData, cb);
+ }
+
 export function sendNewMessages(user, contents,cb) {
   // If we were implementing this for real on an actual server, we would check
   // that the user ID is correct & matches the authenticated user. But since
@@ -31,7 +42,7 @@ export function sendNewMessages(user, contents,cb) {
 
   // Add the status update to the database.
   // Returns the status update w/ an ID assigned.
-  newMessages = addDocument('messagess', newMessages);
+  newMessages = addDocument('messages', newMessages);
 
   // Add the status update reference to the front of the current user's feed.
   var userData = readDocument('users', user);
