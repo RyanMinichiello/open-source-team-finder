@@ -76,10 +76,7 @@ export default class MainFeed extends React.Component {
 
         <div>
           <Sidebar
-            first_active = "Project 1"
-            second_active = "Project 2"
-            third_active = "Project 3"
-            fourth_active = "Project 4"
+          
             ></Sidebar>
         </div>
 
