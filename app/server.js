@@ -19,7 +19,7 @@ export function sendNewMessages(user, contents,cb) {
   // we're mocking it, we can be less strict.
 
   // Get the current UNIX time.
-  var time = new Date().getTime();
+  //var time = new Date().getTime();
   // The new status update. The database will assign the ID for us.
   var newMessages = {
 
@@ -77,37 +77,6 @@ export function getUserInfo(user_id, cb) {
 }
 
 
-export function getMainFeedJobItemData(user, cb) {
-  // Get the User object with the id "user".
-  var userData = readDocument('users', user);
-  // Get the Feed object for the user.
-  var feedData = readDocument('feeds', userData.feed);
-  // Map the Feed's FeedItem references to actual FeedItem objects.
-  // Note: While map takes a callback function as an argument, it is
-  // synchronous, not asynchronous. It calls the callback immediately.
-  feedData.contents = feedData.contents.map(getMainFeedItemSync);
-  // Return FeedData with resolved references.
-  // emulateServerReturn will emulate an asynchronous server operation, which
-  // invokes (calls) the "cb" function some time in the future.
-  emulateServerReturn(feedData, cb);
-}
-
-function getMainFeedItemSync(feedItemId) {
-  var feedItem = readDocument('feedItems', feedItemId);
-  // Resolve 'like' counter.
-  feedItem.likeCounter =
-    feedItem.likeCounter.map((id) => readDocument('users', id));
-  // Assuming a StatusUpdate. If we had other types of
-  // FeedItems in the DB, we would
-  // need to check the type and have logic for each type.
-  feedItem.contents.author =
-    readDocument('users', feedItem.contents.author);
-  // Resolve comment author.
-  feedItem.comments.forEach((comment) => {
-    comment.author = readDocument('users', comment.author);
-  });
-  return feedItem;
-}
 
 export function getopen_positionData(pid, cb){
   var positions = readDocument('positions', 'positions');
@@ -168,6 +137,19 @@ export function getJobFeedData(user, cb) {
   }
   emulateServerReturn(jobList, cb)
 
+}
+
+export function getAllJobs(user, cb) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  //get the array of Job Data
+  var allJobData = readDocument('allJobItems', userData.allJobItems);
+  var jobList = [];
+
+  for(var i = 0; i < allJobData.jobItems.length; i ++ ) {
+    jobList.push(readDocument('jobItems', allJobData.jobItems[i]));
+  }
+  emulateServerReturn(jobList, cb);
 }
 
 export function getProjectUpdates(id, cb){

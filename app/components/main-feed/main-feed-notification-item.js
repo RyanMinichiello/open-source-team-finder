@@ -4,7 +4,7 @@ export default class MainFeedNotificationItem extends React.Component {
   render() {
     return (
       <div>
-        <div className="panel-post" >
+        <div className="panel-post panel" >
           <div className="panel-body job-post">
             <div className="job-title">
               <h3>

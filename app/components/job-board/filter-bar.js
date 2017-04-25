@@ -5,7 +5,7 @@ export default class FilterBar extends React.Component {
   render() {
     return (
       <div className="row navbar main-feed-header">
-          <h4> <span className="pull-left filter-title">FILTERS: </span>
+          <h4> <span className="pull-left filter-title">JOB BOARD FILTERS: </span>
             <div className="navbar-header">
               <form className="navbar-form navbar-left" role="search">
                 <div className="input-group">
