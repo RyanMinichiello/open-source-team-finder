@@ -4,10 +4,10 @@ import JobBoardTagList from './job-board-tag-list.js'
 export default class JobBoardPost extends React.Component {
   render() {
     return (
-      <div className="panel panel-default">
+      <div className="panel-post panel-default">
         <div className="panel-body job-post">
           <div className="job-title">
-            <h3>{this.props.project} - {this.props.position_title}</h3>
+            <h3>{this.props.position_title}</h3>
           </div>
           <div className="job-desc">
             <p>
@@ -15,7 +15,7 @@ export default class JobBoardPost extends React.Component {
             </p>
           </div>
           <div className="row">
-            <JobBoardTagList />
+            <JobBoardTagList tags= {this.props.tags}/>
             <div className="col-md-6">
               <div className="pull-right">
                 Ranking: <button type="button" className={this.props.rankingType} >
