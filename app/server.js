@@ -92,54 +92,15 @@ export function getChatData(chat_id, cb){
 }
 
 
-export function getProjectData(project_id, cb){
-
-  sendXHR('GET', '/user/1/project/'+project_id, undefined, (xhr) => {
-   cb(JSON.parse(xhr.responseText));
- });
-
-}
-
-
 export function getUserInfo(user_id, cb) {
   var userData = readDocument('users', user_id);
   emulateServerReturn(userData, cb);
-}
-
-
-
-export function getopen_positionData(pid, cb){
-  sendXHR('GET', '/user/1/open/pos_id/'+pid, undefined, (xhr) => {
-   cb(JSON.parse(xhr.responseText));
- });
-}
-
-export function getfilled_positionData(pid, cb){
-  sendXHR('GET', '/user/1/filled/pos_id/'+pid, undefined, (xhr) => {
-   cb(JSON.parse(xhr.responseText));
- });
 }
 
 export function getProfileData(id, cb){
 
   var profileData = readDocument('users', id);
   emulateServerReturn(profileData, cb);
-
-}
-
-export function getNotificationFeedData(user, cb) {
-  // Get the User object with the id "user".
-  var userData = readDocument('users', user);
-  // Get the Feed object for the user.
-  var feedData = readDocument('feeds', userData.feed);
-
-  //This is a list... Should I change the way I save this????
-  var notificationList = [];
-
-  for(var i = 0; i < feedData.notificationItems.length; i ++ ) {
-    notificationList.push(readDocument('notificationItems', feedData.notificationItems[i]));
-  }
-  emulateServerReturn(notificationList, cb)
 
 }
 
@@ -156,6 +117,59 @@ export function getProjectPillData(user, cb) {
 
 }
 
+//Job Board
+export function getAllJobs(user, cb) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  //get the array of Job Data
+  var allJobData = readDocument('allJobItems', userData.allJobItems);
+  var jobList = [];
+
+  for(var i = 0; i < allJobData.jobItems.length; i ++ ) {
+    jobList.push(readDocument('jobItems', allJobData.jobItems[i]));
+  }
+  emulateServerReturn(jobList, cb);
+}
+
+export function getProjectData(project_id, cb){
+
+  sendXHR('GET', '/user/1/project/'+project_id, undefined, (xhr) => {
+   cb(JSON.parse(xhr.responseText));
+ });
+
+}
+
+
+export function getopen_positionData(pid, cb){
+  sendXHR('GET', '/user/1/open/pos_id/'+pid, undefined, (xhr) => {
+   cb(JSON.parse(xhr.responseText));
+ });
+}
+
+export function getfilled_positionData(pid, cb){
+  sendXHR('GET', '/user/1/filled/pos_id/'+pid, undefined, (xhr) => {
+   cb(JSON.parse(xhr.responseText));
+ });
+}
+
+//MAIN FEED
+export function getNotificationFeedData(user, cb) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  // Get the Feed object for the user.
+  var feedData = readDocument('feeds', userData.feed);
+
+  //This is a list... Should I change the way I save this????
+  var notificationList = [];
+
+  for(var i = 0; i < feedData.notificationItems.length; i ++ ) {
+    notificationList.push(readDocument('notificationItems', feedData.notificationItems[i]));
+  }
+  emulateServerReturn(notificationList, cb)
+
+}
+
+//MAIN FEED
 export function getJobFeedData(user, cb) {
   // Get the User object with the id "user".
   var userData = readDocument('users', user);
@@ -171,18 +185,6 @@ export function getJobFeedData(user, cb) {
 
 }
 
-export function getAllJobs(user, cb) {
-  // Get the User object with the id "user".
-  var userData = readDocument('users', user);
-  //get the array of Job Data
-  var allJobData = readDocument('allJobItems', userData.allJobItems);
-  var jobList = [];
-
-  for(var i = 0; i < allJobData.jobItems.length; i ++ ) {
-    jobList.push(readDocument('jobItems', allJobData.jobItems[i]));
-  }
-  emulateServerReturn(jobList, cb);
-}
 
 export function getProjectUpdates(id, cb){
   sendXHR('GET', '/user/1/project/'+id, undefined, (xhr) => {

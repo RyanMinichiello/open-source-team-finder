@@ -2,6 +2,21 @@ import React from 'react';
 import {Link} from 'react-router';
 
 export default class Navbar extends React.Component{
+  constructor(props){
+      super(props);
+      this.state = {
+          contents: [],
+          pid : 1
+      };
+  }
+
+  refresh() {
+
+  }
+  componentDidMount() {
+      this.refresh();
+  }
+
   render() {
     return (
       <div>
@@ -16,10 +31,10 @@ export default class Navbar extends React.Component{
                 <span className="icon-bar"></span>
               </button>
 
-              <Link to={"/"}>
-              <a className="navbar-brand">
-                      <span><img src="img/logo_notext.png" className="logo pull-left"/></span>
-              </a>
+              <Link to={`/${this.state.pid}`}>
+                <a className="navbar-brand">
+                    <span><img src="img/logo_notext.png" className="logo pull-left"/></span>
+                </a>
               </Link>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -27,10 +42,10 @@ export default class Navbar extends React.Component{
                 <div className="input-group">
                   <input type="text fb-search" className="form-control" placeholder="Search OSTF"/>
                   <span className="input-group-btn">
-                  <Link to="/ostf-job-board">
-                    <button type="submit" className="btn btn-default">
-                      <span className="glyphicon glyphicon-search"></span>
-                    </button>
+                    <Link to="/ostf-job-board">
+                      <button type="submit" className="btn btn-default">
+                        <span className="glyphicon glyphicon-search"></span>
+                      </button>
                     </Link>
                   </span>
                 </div>
@@ -38,7 +53,7 @@ export default class Navbar extends React.Component{
               <div className="nav navbar-nav navbar-right">
                 <div className="btn-toolbar pull-right" role="toolbar">
                   <div className="btn-group" role="group">
-                    <Link to={"/profile/1"}>
+                    <Link to={ `/profile/${this.state.pid}` }>
                       <button type="button" className="btn btn-default navbar-btn">
                         <span className="glyphicon glyphicon-user"></span>
                           Jane
@@ -46,7 +61,7 @@ export default class Navbar extends React.Component{
                   </Link>
                   </div>
                   <div className="btn-group" role="group">
-                    <Link to ={"/inbox"}>
+                    <Link to ={`/inbox/${this.state.pid}`}>
                       <button type="button" className="btn btn-default navbar-btn">
 
                         <span className="glyphicon glyphicon-envelope"></span>
