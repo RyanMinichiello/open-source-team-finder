@@ -204,7 +204,7 @@ function sendXHR(verb, resource, body, cb) {
   // The below comment tells ESLint that FacebookError is a global.
   // Otherwise, ESLint would complain about it! (See what happens in Atom if
   // you remove the comment...)
-  /* global FacebookError */
+  /* global SiteError */
 
   // Response received from server. It could be a failure, though!
   xhr.addEventListener('load', function() {
