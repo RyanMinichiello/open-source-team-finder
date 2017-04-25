@@ -47,6 +47,18 @@ export function sendNewMessages(user, contents,cb) {
   emulateServerReturn(newMessages, cb);
 }
 
+
+export function getChatArrData(chat, cb) {
+  
+  var list = [];
+  for(var i = 1; i <= chat.length; i ++ ) {
+    list.push(readDocument('chats', i));
+  }
+
+  emulateServerReturn(list, cb)
+
+}
+
 export function getInboxData(inbox_id, cb){
   var inboxData = readDocument('inbox', inbox_id);
   emulateServerReturn(inboxData, cb);
