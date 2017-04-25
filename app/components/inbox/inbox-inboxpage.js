@@ -6,6 +6,8 @@ import Navbar from '../navbar.js';
 import {getInboxData} from '../../server.js';
 import {getChatArrData} from '../../server.js';
 import Inbox from './inbox-inbox.js';
+import {getChatData} from '../../server.js';
+import {getMessageArrData} from '../../server.js';
 
 
 export default class InboxPage extends React.Component {
@@ -14,13 +16,17 @@ export default class InboxPage extends React.Component {
     super(props);
     this.state = {
       contents:[],
-      chats:[]
+      chats:[],
+      activeChatId:"",
+      messages:[]
     };
   }
 
   refresh(){
     getInboxData(1, (inboxData)=>{
+      console.log(inboxData);
       this.setState({contents:inboxData});
+      console.log(this.state.contents);
       this.settingChat(inboxData.chats);
     });
   }
@@ -41,6 +47,25 @@ export default class InboxPage extends React.Component {
     }
   }
 
+/*handleClickChat(clickEvent, activeId){
+    console.log("entered into handleclickchat method!");
+    clickEvent.preventDefault();
+    if(clickEvent.button === 0){
+      var selectChat = this.state.chats[activeId];
+      var callbackFunction = (newColor, newCurr) =>{
+        selectChat.color = "read";
+        selectChat.curr = "message-current panel panel-default";
+        this.state.chats[activeId] = selectChat;
+        this.setState({chat: this.state.chats[activeId]});
+      };
+      getChatData(selectChat, callbackFunction);
+      this.setState({activeChatId: activeId});
+      getMessageArrData(this.state.activeChatId, (cb)=>{
+        this.setState({messages:cb});
+      });
+    }
+  }*/
+
 
 
 
@@ -58,7 +83,7 @@ export default class InboxPage extends React.Component {
         <div className = "col-md-2">
         </div>
 
-      <InboxItems   chatData = {this.state.contents.chats}  />
+      <InboxItems   chatData = {this.state.contents.chats}   />
 
 
 

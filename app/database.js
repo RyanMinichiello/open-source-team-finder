@@ -101,7 +101,7 @@ var initialData = {
 
       "inbox" : {
         "1" : {
-          "chats": [1,2,3],
+          "chats": [1],
           "dummyproj" : ["Okra Team", "Don't Talk About Okra Team"],
           "name": "Jane Doe"
         }
@@ -109,13 +109,15 @@ var initialData = {
 
       "chats" : {
         "1": {
+          "_id":1,
           "messages" : [1,2],
           "associated-users" : [1,2,3],
           "curr": "message-current panel panel-default",
           "name": "Okra Team",
           "color": "read"
-        },
+        }/*,
         "2": {
+          "_id":2,
           "messages" : [3,4],
           "associated-users" : [1,2],
           "curr": "message-preview panel panel-default",
@@ -123,12 +125,13 @@ var initialData = {
           "color": "unread"
         },
         "3": {
+          "_id":3,
           "messages" : [5,6],
           "associated-users" : [1,3],
           "curr": "message-preview panel panel-default",
           "name": "Anna Hall",
           "color": "read"
-        }
+        }*/
       },
 
       "messages" : {

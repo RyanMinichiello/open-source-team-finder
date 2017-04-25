@@ -44,10 +44,10 @@ export default class InboxItems extends React.Component {
   }
 
 
-  
+
 
   createInbox(chat){
-    return <Inbox key = {chat} chatId = {chat}></Inbox>
+    return <Inbox key = {chat} chatId = {chat} ></Inbox>
   }
 
 
