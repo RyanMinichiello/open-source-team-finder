@@ -44,23 +44,10 @@ export default class InboxItems extends React.Component {
   }
 
 
-  handleClickChat(clickEvent, id){
-    console.log("enter handle click chat !! WHAT IS ID: ? "+ id);
-    clickEvent.preventDefault();
-    if (clickEvent.button === 0) {
-    var callbackFunction = (newColor, newCurr) =>{
-      console.log(this.state.chats.id.color);
-      this.setState({chats:{id: {color:"read"}}});
-      this.setState({chats:{id:{curr: "message-current panel panel-default"}}});
-    };
-     getChatData(this.props.chatId,callbackFunction);
-
-   }
-
-  }
+  
 
   createInbox(chat){
-    return <a href="#" onClick={(e) => this.handleClickChat(e, chat)}><Inbox key = {chat} chatId = {chat}></Inbox></a>
+    return <Inbox key = {chat} chatId = {chat}></Inbox>
   }
 
 

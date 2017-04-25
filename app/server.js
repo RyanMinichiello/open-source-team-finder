@@ -49,7 +49,7 @@ export function sendNewMessages(user, contents,cb) {
 
 
 export function getChatArrData(chat, cb) {
-  
+
   var list = [];
   for(var i = 1; i <= chat.length; i ++ ) {
     list.push(readDocument('chats', i));
@@ -57,6 +57,14 @@ export function getChatArrData(chat, cb) {
 
   emulateServerReturn(list, cb)
 
+}
+
+export function getMessageArrData(mes, cb){
+  var list=[];
+  for(var i=1; i<=mes.length; i++){
+    list.push(readDocument('messages', i));
+  }
+  emulateServerReturn(list, cb);
 }
 
 export function getInboxData(inbox_id, cb){
