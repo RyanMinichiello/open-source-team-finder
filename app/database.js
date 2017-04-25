@@ -62,7 +62,7 @@ var initialData = {
         }
       },
 
-      "project" : {
+      "projects" : {
         "1":{
           "identifier" : "Okra",
           "_id"         : 1,
