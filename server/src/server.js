@@ -8,7 +8,7 @@ var writeDocument = database.writeDocument;
 var addDocument = database.addDocument;
 var readDocument = database.readDocument;
 
-app.use(express.static('../client/build'));
+app.use(express.static('../../build'));
 
 //app.use(bodyParser.text());
 //app.use(bodyParser.json());
@@ -41,12 +41,12 @@ function getUserIdFromToken(authorizationLine) {
   }
 }
 
-function getProjectData(project_id, cb){
+function getProjectData(project_id){
   var projectData = readDocument('project', project_id);
   return projectData;
 }
 
-function getopen_positionData(pid, cb){
+function getopen_positionData(pid){
   var positions = readDocument('positions', 'positions');
   var open = [];
   for(var i=0; i< positions.length; i++){
@@ -57,7 +57,7 @@ function getopen_positionData(pid, cb){
   return open;
 }
 
-function getfilled_positionData(pid, cb){
+function getfilled_positionData(pid){
   var positions = readDocument('positions', 'positions');
   var filled = [];
   for(var i=0; i< positions.length; i++){
@@ -69,7 +69,7 @@ function getfilled_positionData(pid, cb){
 
 }
 
-function getProjectUpdates(id, cb){
+function getProjectUpdates(id){
   var notifications = readDocument('notificationItems', id)
   return notifications;
 }
