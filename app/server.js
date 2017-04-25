@@ -155,6 +155,19 @@ export function getNotificationFeedData(user, cb) {
 
 }
 
+export function getProjectPillData(user, cb) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  // Get the Feed object for the user.
+
+  var projectList = [];
+  for(var i = 0; i < userData.projects.length; i ++ ) {
+    projectList.push(readDocument('projects', userData.projects[i]));
+  }
+  emulateServerReturn(projectList, cb)
+
+}
+
 export function getJobFeedData(user, cb) {
   // Get the User object with the id "user".
   var userData = readDocument('users', user);
