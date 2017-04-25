@@ -65,7 +65,7 @@ export function getChatData(chat_id, cb){
 
 export function getProjectData(project_id, cb){
 
-  sendXHR('GET', '/user/1/projectid/'+project_id, undefined, (xhr) => {
+  sendXHR('GET', '/user/1/project/'+project_id, undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
  });
 
@@ -161,7 +161,7 @@ export function getJobFeedData(user, cb) {
 }
 
 export function getProjectUpdates(id, cb){
-  sendXHR('GET', '/user/1/projectid/'+id, undefined, (xhr) => {
+  sendXHR('GET', '/user/1/project/'+id, undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
  });
 }
