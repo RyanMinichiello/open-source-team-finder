@@ -2,7 +2,7 @@
 var express = require('express');
 // Creates an Express server.
 var app = express();
-var bodyParser = require('body-parser');
+//var bodyParser = require('body-parser');
 var database = require('./database.js');
 var writeDocument = database.writeDocument;
 var addDocument = database.addDocument;
@@ -10,8 +10,8 @@ var readDocument = database.readDocument;
 
 app.use(express.static('../client/build'));
 
-app.use(bodyParser.text());
-app.use(bodyParser.json());
+//app.use(bodyParser.text());
+//app.use(bodyParser.json());
 
 //NON VERB FUNCTIONS
 
@@ -69,6 +69,10 @@ function getfilled_positionData(pid, cb){
 
 }
 
+function getProjectUpdates(id, cb){
+  var notifications = readDocument('notificationItems', id)
+  return notifications;
+}
 //END NON VERB FUNCTIONS
 
 //VERB FUNCTIONS
@@ -80,32 +84,27 @@ app.get('/user/:userid/project/:projectid', function(req,res){
 
   res.send(getProjectData(projectid));
 });
-
-app.get('/user/:userid/pos_id/:pos_id', function(req,res){
+//GET OPEN POSITIONS
+app.get('/user/:userid/open/pos_id/:pos_id', function(req,res){
   var userid = req.params.userid;
   var pos_id = req.params.pos_id;
 
   res.send(getopen_positionData(pos_id));
 });
-
-app.get('/user/:userid/pos_id/:pos_id', function(req,res){
+//GET FILLED POSITIONS
+app.get('/user/:userid/filled/pos_id/:pos_id', function(req,res){
   var userid = req.params.userid;
   var pos_id = req.params.pos_id;
 
   res.send(getfilled_positionData(pos_id));
 });
-
+//GET PROJECT UPDATES
 app.get('/user/:userid/projectid/:projectid', function(req,res){
   var userid = req.params.userid;
   var projectid = req.params.pos_id;
 
   res.send(getProjectUpdates(projectid));
 });
-
-function getProjectUpdates(id, cb){
-  var notifications = readDocument('notificationItems', id)
-  return notifications;
-}
 //END VERB FUNCTIONS
 
 // Starts the server on port 3000!
