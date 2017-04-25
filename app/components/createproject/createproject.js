@@ -32,7 +32,7 @@ export default class CreateProject extends React.Component {
          <div id = "create-project-title" className= "attribute-box attribute">Create Project</div>
          <div className= "attribute-box">
          <div className= "attribute">Project Name:</div>
-         <input required/>
+         <input id = "projectName" required/>
         </div>
         <div className= "attribute-box">
          <div className= "attribute">Description:</div>
