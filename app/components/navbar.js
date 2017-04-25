@@ -15,7 +15,8 @@ export default class Navbar extends React.Component{
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <Link to="/main-feed">
+
+              <Link to={"/"}>
               <a className="navbar-brand">
                       <span><img src="img/logo_notext.png" className="logo pull-left"/></span>
               </a>
@@ -26,7 +27,7 @@ export default class Navbar extends React.Component{
                 <div className="input-group">
                   <input type="text fb-search" className="form-control" placeholder="Search OSTF"/>
                   <span className="input-group-btn">
-                  <Link to="/ostf-job-board/">
+                  <Link to="/ostf-job-board">
                     <button type="submit" className="btn btn-default">
                       <span className="glyphicon glyphicon-search"></span>
                     </button>
@@ -45,7 +46,7 @@ export default class Navbar extends React.Component{
                   </Link>
                   </div>
                   <div className="btn-group" role="group">
-                    <Link to ={"/inbox/"}>
+                    <Link to ={"/inbox"}>
                       <button type="button" className="btn btn-default navbar-btn">
 
                         <span className="glyphicon glyphicon-envelope"></span>

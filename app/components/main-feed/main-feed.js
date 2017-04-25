@@ -5,7 +5,7 @@ import MainFeedNotificationItem from './main-feed-notification-item.js';
 import Navbar from '../navbar.js';
 import Sidebar from '../sidebar.js';
 import MainFeedFilter from './main-feed-filters.js';
-import {getUserInfo, getNotificationFeedData, getJobFeedData} from '../../server.js';
+import {getNotificationFeedData, getJobFeedData} from '../../server.js';
 
 
 export default class MainFeed extends React.Component {
@@ -22,30 +22,32 @@ export default class MainFeed extends React.Component {
    }
 
    refresh() {
-     getUserInfo(1, (userData) => {
-      this.setState(userData);
-    });
-
+     this.getNotificationList(this.state.pid);
+     this.getJobList(this.state.pid);
    }
-
 
    componentDidMount() {
      this.refresh();
    }
 
-   getNotificationList() {
-      getNotificationFeedData(this.state.pid, (notification) => {
-         this.setState({notifications: notification});
-         }
-      );
-    }
-
     genererateNotificationItems(){
-      this.getNotificationList(this.state.pid);
       if(this.state.notifications) {
         return this.state.notifications.map(this.createNotificationItem);
       }
     }
+
+    genererateJobItems(){
+      if(this.state.jobItems) {
+        return this.state.jobItems.map(this.createJobItem);
+      }
+    }
+
+    getNotificationList() {
+       getNotificationFeedData(this.state.pid, (notification) => {
+          this.setState({notifications: notification});
+          }
+       );
+     }
 
     getJobList() {
        getJobFeedData(this.state.pid, (jobItem) => {
@@ -54,20 +56,14 @@ export default class MainFeed extends React.Component {
        );
      }
 
-    genererateJobItems(){
-      this.getJobList(this.state.pid);
-      if(this.state.jobItems) {
-        return this.state.jobItems.map(this.createJobItem);
-      }
-    }
-
 
     createNotificationItem(item) {
       return <MainFeedNotificationItem key = {item._id} postData = {item.description} feedItemName = {item.title}/>
     }
 
     createJobItem(item) {
-      return <MainFeedJobItem key = {item._id} postData = {item.description} feedItemName = {item.title} rankingType = {item.rankingType}/>
+      return <MainFeedJobItem key = {item._id} postData = {item.description}
+        feedItemName = {item.title} tags ={item.tags} rankingType = {item.rankingType} />
     }
 
 

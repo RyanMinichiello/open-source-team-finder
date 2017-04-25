@@ -1,5 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+
 
 // Modify with your startup's name!
 var startupName = "Okra Team";
@@ -25,8 +24,7 @@ var initialData = {
 
           "projects" : [1, 2],
 
-          "dummyproj" : ["Okra Team", "Don't Talk About Okra Team"],
-          "allJobItems" : 1
+          "dummyproj" : ["Okra Team", "Don't Talk About Okra Team"]
 
         },
 
@@ -41,8 +39,7 @@ var initialData = {
           "interests" : ["Drones", "Robotics", "Sports"],
           "bio" : "Joe, a deer, a female deer, Ray, a drop of golden sun, Me, a name, etc.",
           "contact" : "JoesCarEmporiumComeOnDown@email.com",
-          "projects" : [2, 3],
-          "allJobItems" : 1
+          "projects" : [2, 3]
 
         },
 
@@ -57,15 +54,14 @@ var initialData = {
           "interests" : ["Drones", "Robotics", "Music"],
           "bio" : "Hi, I'm Anna",
           "contact" : "annahall@email.com",
-          "projects" : [1, 3],
-          "allJobItems" : 1
+          "projects" : [1, 3]
         }
       },
 
       "project" : {
         "1":{
           "identifier" : "Okra",
-          "_id"         : 1,
+          "id"         : 1,
           "notificationItems"    : 1,
           "msgs"       : 1,
           "positions"  : [1],
@@ -75,7 +71,7 @@ var initialData = {
         },
         "2" : {
           "identifier" : "Apple",
-          "_id"         : 2,
+          "id"         : 2,
           "updates"    : 2,
           "msgs"       : 2,
           "positions"  : [2],
@@ -84,7 +80,7 @@ var initialData = {
         },
         "3" : {
           "identifier" : "Peach",
-          "_id"         : 3,
+          "id"         : 3,
           "updates"    : 3,
           "msgs"       : 3,
           "positions"  : [1,2],
@@ -93,7 +89,7 @@ var initialData = {
         },
         "4" : {
           "identifier" : "Garbanzo Bean",
-          "_id"         : 4,
+          "id"         : 4,
           "updates"    : 4,
           "msgs"       : 4,
           "positions"        : 4,
@@ -112,7 +108,6 @@ var initialData = {
 
       "chats" : {
         "1": {
-            "_id" : 1,
           "messages" : [1,2],
           "associated-users" : [1,2,3],
           "curr": "message-current panel panel-default",
@@ -120,7 +115,6 @@ var initialData = {
           "color": "read"
         },
         "2": {
-            "_id" : 2,
           "messages" : [3,4],
           "associated-users" : [1,2],
           "curr": "message-preview panel panel-default",
@@ -128,7 +122,6 @@ var initialData = {
           "color": "unread"
         },
         "3": {
-            "_id" : 3,
           "messages" : [5,6],
           "associated-users" : [1,3],
           "curr": "message-preview panel panel-default",
@@ -139,42 +132,37 @@ var initialData = {
 
       "messages" : {
         "1" : {
-          "_id":1,
+          "id": 1,
           "author": 2,
           "contents" : "Hey guys, what should our main page feed look like?",
           "side":"left"
         },
         "2" : {
-          "_id":2,
-
+          "id": 2,
           "author": 1,
           "contents" : "idk any ideas?",
           "side":"right"
         },
         "3" : {
-          "_id":3,
-
+          "id": 3,
           "author": 2,
           "contents" : "Hello",
           "side":"left"
         },
         "4" : {
-          "_id":4,
-
+          "id": 4,
           "author": 1,
           "contents" : "Hi",
           "side":"right"
         },
         "5" : {
-          "_id":5,
-
+          "id": 5,
           "author":3,
           "contents" : "Wanna join my project?",
           "side":"left"
         },
         "6" : {
-          "_id":6,
-
+          "id": 6,
           "author":1,
           "contents" : "Can you tell me more about it?",
           "side":"right"
@@ -186,7 +174,7 @@ var initialData = {
         "positions" :[
 
           {
-            "_id"         : 1,
+            "id"         : 1,
             "status" : "filled",
             "user_Name": "Nomar Garciaparra",
             "userId" : 1,
@@ -197,7 +185,7 @@ var initialData = {
           },
 
           {
-            "_id"         : 1,
+            "id"         : 1,
             "status" : "open",
             "user_Name"  : null,
             "userId" : null,
@@ -213,13 +201,12 @@ var initialData = {
       "feeds" :{
         //Each feed has their own set of feed items
         "1" : {
-
           "id": 1,
           "notificationItems": [1,2],
-          "jobItems":[1,2,4]
+          "jobItems":[1,2]
         },
         "2" : {
-          "_id": 2,
+          "id": 2,
           "notificationItems": [1],
           "jobItems": [1,2]
 
@@ -242,20 +229,6 @@ var initialData = {
           "description" : "Please taste our apples we are too afraid.",
           "tags" : ["Apples", "Sports"],
           "rankingType": "bronze-button"
-        },
-        "3" : {
-          "_id" : 3,
-          "title" : "Quality Assurance Position at My Team",
-          "description" : "Just me, myself, and I.",
-          "tags" : ["Stuff", "Fun"],
-          "rankingType": "bronze-button"
-        },
-        "4" : {
-          "_id" : 4,
-          "title" : "Lab Rat at Maze Team",
-          "description" : "Don't get lost in the maze.",
-          "tags" : ["Walking", "Games"],
-          "rankingType": "silver-button"
         }
 
       },
@@ -273,19 +246,27 @@ var initialData = {
             "title" : "Update on Apple Team",
             "description" : "Things couldn't be any better, but could we get more VC support?"
           }
-      },
-
-      "allJobItems" : {
-        "1" : {
-          "_id" : 1,
-          "jobItems" : [1,2,3,4]
-        }
       }
 
 };
 
-var data = JSON.parse(localStorage.getItem(startupName));
-if (data === null) {
+var data;
+// If 'true', the in-memory object representing the database has changed,
+// and we should flush it to disk.
+var updated = false;
+// Pull in Node's file system and path modules.
+var fs = require('fs'),
+  path = require('path');
+
+try {
+  // ./database.json may be missing. The comment below prevents ESLint from
+  // complaining about it.
+  // Read more about configuration comments at the following URL:
+  // http://eslint.org/docs/user-guide/configuring#configuring-rules
+  /* eslint "node/no-missing-require": "off" */
+  data = require('./database.json');
+} catch (e) {
+  // ./database.json is missing. Use the seed data defined above
   data = JSONClone(initialData);
 }
 
@@ -302,29 +283,45 @@ function JSONClone(obj) {
  * Doesn't do any tricky document joins, as we will cover that in the latter
  * half of the course. :)
  */
-export function readDocument(collection, id) {
+function readDocument(collection, id) {
   // Clone the data. We do this to model a database, where you receive a
   // *copy* of an object and not the object itself.
+  var collectionObj = data[collection];
+  if (!collectionObj) {
+    throw new Error(`Object collection ${collection} does not exist in the database!`);
+  }
+  var obj = collectionObj[id];
+  if (obj === undefined) {
+    throw new Error(`Object ${id} does not exist in object collection ${collection} in the database!`);
+  }
   return JSONClone(data[collection][id]);
 }
+module.exports.readDocument = readDocument;
 
 /**
  * Emulates writing a "document" to a NoSQL database.
  */
-export function writeDocument(collection, changedDocument) {
+function writeDocument(collection, changedDocument) {
   var id = changedDocument._id;
+  if (id === undefined) {
+    throw new Error(`You cannot write a document to the database without an _id! Use AddDocument if this is a new object.`);
+  }
   // Store a copy of the object into the database. Models a database's behavior.
   data[collection][id] = JSONClone(changedDocument);
   // Update our 'database'.
-  localStorage.setItem(startupName, JSON.stringify(data));
+  updated = true;
 }
+module.exports.writeDocument = writeDocument;
 
 /**
  * Adds a new document to the NoSQL database.
  */
-export function addDocument(collectionName, newDoc) {
+function addDocument(collectionName, newDoc) {
   var collection = data[collectionName];
   var nextId = Object.keys(collection).length;
+  if (newDoc.hasOwnProperty('_id')) {
+    throw new Error(`You cannot add a document that already has an _id. addDocument is for new documents that do not have an ID yet.`);
+  }
   while (collection[nextId]) {
     nextId++;
   }
@@ -332,31 +329,43 @@ export function addDocument(collectionName, newDoc) {
   writeDocument(collectionName, newDoc);
   return newDoc;
 }
+module.exports.addDocument = addDocument;
 
 /**
- * Reset our browser-local database.
+ * Deletes a document from an object collection.
  */
-export function resetDatabase() {
-  localStorage.setItem(startupName, JSON.stringify(initialData));
-  data = JSONClone(initialData);
-}
-
-/**
- * Reset database button.
- */
-class ResetDatabase extends React.Component {
-  render() {
-    return (
-      <button className="btn btn-default" type="button" onClick={() => {
-        resetDatabase();
-        window.alert("Database reset! Refreshing the page now...");
-        document.location.reload(false);
-      }}>Reset Mock DB</button>
-    );
+function deleteDocument(collectionName, id) {
+  var collection = data[collectionName];
+  if (!collection[id]) {
+    throw new Error(`Collection ${collectionName} lacks an item with id ${id}!`);
   }
+  delete collection[id];
+  updated = true;
 }
+module.exports.deleteDocument = deleteDocument;
 
-ReactDOM.render(
-  <ResetDatabase />,
-  document.getElementById('db-reset')
-);
+/**
+ * Returns an entire object collection.
+ */
+function getCollection(collectionName) {
+  return JSONClone(data[collectionName]);
+}
+module.exports.getCollection = getCollection;
+
+/**
+ * Reset the database.
+ */
+function resetDatabase() {
+  data = JSONClone(initialData);
+  updated = true;
+}
+module.exports.resetDatabase = resetDatabase;
+
+// Periodically updates the database on the hard drive
+// when changed.
+setInterval(function() {
+  if (updated) {
+    fs.writeFileSync(path.join(__dirname, 'database.json'), JSON.stringify(data), { encoding: 'utf8' });
+    updated = false;
+  }
+}, 200);

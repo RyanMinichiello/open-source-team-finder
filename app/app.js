@@ -16,7 +16,6 @@ import InboxPage from './components/inbox/inbox-inboxpage.js'
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/" components={MainFeed}/>
-    <Route path="/main-feed" components={MainFeed}/>
     <Route path="/inbox" components={InboxPage}/>
     <Route path="/profile/:id" components={Profile}/>
     <Route path="/createproject" components={CreateProject}/>

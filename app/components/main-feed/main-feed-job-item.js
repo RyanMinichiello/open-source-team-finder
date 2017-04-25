@@ -1,11 +1,11 @@
 import React from 'react';
-import MainFeedTagList from './main-feed-tag-list.js'
+import MainFeedTagList from './main-feed-tag-list.js';
 
 export default class MainFeedJobItem extends React.Component {
   render() {
     return (
       <div>
-        <div className="panel">
+        <div className="panel-post panel">
           <div className="panel-body job-post">
             <div className="job-title">
               <h3>
@@ -19,7 +19,7 @@ export default class MainFeedJobItem extends React.Component {
               </p>
             </div>
             <div className="row">
-              <MainFeedTagList/>
+              <MainFeedTagList tags= {this.props.tags} />
               <div className="col-md-6">
                 <div className="pull-right">
                   Ranking: <button type="button" className={this.props.rankingType} >

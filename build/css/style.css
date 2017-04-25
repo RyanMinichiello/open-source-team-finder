@@ -318,6 +318,7 @@ li.nav-pills:hover{
   padding-left: 10px;
   background-color: #e37222;
   width: 100%;
+  height: 15%;
   z-index: 1;
 }
 
@@ -439,6 +440,11 @@ li.nav-pills:hover{
   border-top: 1px solid #e7e7e7;
 }
 .panel {
+  margin-bottom: 0px !important;
+
+}
+
+.panel-post {
   margin-bottom: 0px !important;
   margin-top: 20px;
   background-color: #eeaa7b;
