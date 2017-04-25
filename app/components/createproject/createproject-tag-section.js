@@ -3,6 +3,7 @@ import CreateProjectTagItem from './createproject-tag-item.js';
 
 
 var inputs= [];
+var numTags = 1;
 export default class CreateProjectTagSection extends React.Component {
   constructor(props) {
 
@@ -16,9 +17,14 @@ getInputs(){
 }
 
     addNewButton(value){
+      if (value != "" && numTags < 6){
       var newInput =  <CreateProjectTagItem tag={value} />
       inputs.push(newInput);
       this.setState({inputs})
+      numTags.setState(numTags++);
+    }
+
+      
     }
 
   render() {
