@@ -5,7 +5,7 @@ import MessageReceive from './inbox-messagereceive';
 import MessageSent from './inbox-messagesent';
 import MessageEntry from './inbox-messageentry';
 import {getChatData} from '../../server.js';
-import {getMessageData} from '../../server.js';
+import {getMessageArrData} from '../../server.js';
 import {sendNewMessages} from '../../server.js';
 
 
@@ -22,19 +22,26 @@ constructor(props){
 refresh(){
   getChatData(1, (ch) => {
     this.setState({chats:ch});
-  });
-  getMessageData(1, (mes) =>{
-    this.setState({messages: mes})
+    this.settingMessages(ch.messages);
   });
 }
 
 componentWillMount(){
   this.refresh();
+  this.settingMessages();
+}
+
+settingMessages(ms){
+  if(ms){
+    getMessageArrData(ms, cb=>{
+      this.setState({messages: cb});
+    });
+  }
 }
 
 generateMessages(m){
-  if(m.length !=0){
-    return this.createMessages(m);
+  if(m){
+    return m.map(this.createMessages);
   }
 }
 

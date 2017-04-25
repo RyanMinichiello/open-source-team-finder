@@ -65,7 +65,7 @@ var initialData = {
       "project" : {
         "1":{
           "identifier" : "Okra",
-          "_id"         : 1,
+          "id"         : 1,
           "notificationItems"    : 1,
           "msgs"       : 1,
           "positions"  : [1],
@@ -75,7 +75,7 @@ var initialData = {
         },
         "2" : {
           "identifier" : "Apple",
-          "_id"         : 2,
+          "id"         : 2,
           "updates"    : 2,
           "msgs"       : 2,
           "positions"  : [2],
@@ -84,7 +84,7 @@ var initialData = {
         },
         "3" : {
           "identifier" : "Peach",
-          "_id"         : 3,
+          "id"         : 3,
           "updates"    : 3,
           "msgs"       : 3,
           "positions"  : [1,2],
@@ -93,7 +93,7 @@ var initialData = {
         },
         "4" : {
           "identifier" : "Garbanzo Bean",
-          "_id"         : 4,
+          "id"         : 4,
           "updates"    : 4,
           "msgs"       : 4,
           "positions"        : 4,
@@ -112,7 +112,6 @@ var initialData = {
 
       "chats" : {
         "1": {
-
           "_id":1,
           "messages" : [1,2],
           "associated-users" : [1,2,3],
@@ -121,7 +120,6 @@ var initialData = {
           "color": "read"
         }/*,
         "2": {
-
           "_id":2,
           "messages" : [3,4],
           "associated-users" : [1,2],
@@ -130,7 +128,6 @@ var initialData = {
           "color": "unread"
         },
         "3": {
-
           "_id":3,
           "messages" : [5,6],
           "associated-users" : [1,3],
@@ -142,42 +139,37 @@ var initialData = {
 
       "messages" : {
         "1" : {
-          "_id":1,
+          "id": 1,
           "author": 2,
           "contents" : "Hey guys, what should our main page feed look like?",
           "side":"left"
         },
         "2" : {
-          "_id":2,
-
+          "id": 2,
           "author": 1,
           "contents" : "idk any ideas?",
           "side":"right"
         },
         "3" : {
-          "_id":3,
-
+          "id": 3,
           "author": 2,
           "contents" : "Hello",
           "side":"left"
         },
         "4" : {
-          "_id":4,
-
+          "id": 4,
           "author": 1,
           "contents" : "Hi",
           "side":"right"
         },
         "5" : {
-          "_id":5,
-
+          "id": 5,
           "author":3,
           "contents" : "Wanna join my project?",
           "side":"left"
         },
         "6" : {
-          "_id":6,
-
+          "id": 6,
           "author":1,
           "contents" : "Can you tell me more about it?",
           "side":"right"
@@ -189,7 +181,7 @@ var initialData = {
         "positions" :[
 
           {
-            "_id"         : 1,
+            "id"         : 1,
             "status" : "filled",
             "user_Name": "Nomar Garciaparra",
             "userId" : 1,
@@ -200,7 +192,7 @@ var initialData = {
           },
 
           {
-            "_id"         : 1,
+            "id"         : 1,
             "status" : "open",
             "user_Name"  : null,
             "userId" : null,
@@ -216,13 +208,12 @@ var initialData = {
       "feeds" :{
         //Each feed has their own set of feed items
         "1" : {
-
           "id": 1,
           "notificationItems": [1,2],
           "jobItems":[1,2,4]
         },
         "2" : {
-          "_id": 2,
+          "id": 2,
           "notificationItems": [1],
           "jobItems": [1,2]
 

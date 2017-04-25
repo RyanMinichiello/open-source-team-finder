@@ -25,10 +25,7 @@ export default class Inbox extends React.Component {
   }
 
   clickingChat(clickEvent, activeId){
-    console.log("this is clickingChat method");
-    console.log("ID FROM CLICK CHAT: "+this.state._id);
     if(activeId){
-        console.log("right before going to handleclickchat method");
         InboxPage.handleClickChat(clickEvent, activeId);
     }
   }
@@ -39,7 +36,6 @@ export default class Inbox extends React.Component {
   render() {
     return (
       <div className= {this.state.curr}>
-        {console.log("********: "+this.state._id)}
         <a href="#" onClick={(e) => this.clickingChat(e, this.state._id)}>
           <div className= "panel-body">
             <div className= "col-md-10 chat-name">

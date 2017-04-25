@@ -24,26 +24,36 @@ export default class InboxPage extends React.Component {
 
   refresh(){
     getInboxData(1, (inboxData)=>{
-      console.log(inboxData);
       this.setState({contents:inboxData});
-      console.log(this.state.contents);
-      this.settingChat(inboxData.chats);
+      getChatData(1, (cb) =>{
+        this.setState({chats: cb});
+        this.settingMessages(cb.messages);
+      })
     });
   }
 
   componentWillMount(){
    this.refresh();
    this.settingChat();
+   this.settingMessages();
   }
 
 
 
   settingChat(ch){
     if(ch){
-      getChatArrData(ch, (cb)=>{
+      getChatData(ch, (cb)=>{
         this.setState({chats: cb});
       });
 
+    }
+  }
+
+  settingMessages(ms){
+    if(ms){
+      getMessageArrData(ms, (cb) =>{
+        this.setState({messages: cb});
+      });
     }
   }
 
@@ -87,7 +97,7 @@ export default class InboxPage extends React.Component {
 
 
 
-      <MessageItems chatArr = {this.state.contents.chats} />
+      <MessageItems chatArr = {this.state.contents.chats} messArr = {this.state.messages}/>
 
     </div>
 
