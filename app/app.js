@@ -14,7 +14,7 @@ import InboxPage from './components/inbox/inbox-inboxpage.js'
 // depending on if the ID is present in the HTML.
 
 ReactDOM.render((
-  <Router history={browserHistory}>
+  <Router >
     <Route path="/" components={MainFeed}/>
     <Route path="/inbox" components={InboxPage}/>
     <Route path="/profile/:id" components={Profile}/>
