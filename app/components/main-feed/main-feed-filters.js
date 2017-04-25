@@ -10,7 +10,7 @@ export default class MainFeedFilter extends React.Component {
           </div>
 
           <div className="checkbox">
-            <h6> Team Updates <span className="glyphicon glyphicon-eye-open"></span> </h6>
+            <h12> Team Updates <span className="glyphicon glyphicon-eye-open"></span> </h12>
 
           </div>
         </div>
