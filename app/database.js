@@ -209,8 +209,8 @@ var initialData = {
         //Each feed has their own set of feed items
         "1" : {
           "id": 1,
-          "notificationItems": [1,2],
-          "jobItems":[1,2,4]
+          "notificationItems" : [1,2],
+          "jobItems" :[1,2,3,4]
         },
         "2" : {
           "id": 2,
@@ -237,6 +237,7 @@ var initialData = {
           "tags" : ["Apples", "Sports"],
           "rankingType": "bronze-button"
         },
+
         "3" : {
           "_id" : 3,
           "title" : "Quality Assurance Position at My Team",

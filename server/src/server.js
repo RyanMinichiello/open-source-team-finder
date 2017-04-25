@@ -4,8 +4,6 @@ var express = require('express');
 var app = express();
 //var bodyParser = require('body-parser');
 var database = require('./database.js');
-var writeDocument = database.writeDocument;
-var addDocument = database.addDocument;
 var readDocument = database.readDocument;
 
 app.use(express.static('../../build'));
@@ -16,9 +14,9 @@ app.use(express.static('../../build'));
 //NON VERB FUNCTIONS
 
 /**
- * Get the user ID from a token. Returns -1 (an invalid ID)
- * if it fails.
- */
+* Get the user ID from a token. Returns -1 (an invalid ID)
+* if it fails.
+*/
 function getUserIdFromToken(authorizationLine) {
   try {
     // Cut off "Bearer " from the header value.
@@ -40,6 +38,41 @@ function getUserIdFromToken(authorizationLine) {
     return -1;
   }
 }
+
+//MAIN FEED
+function getNotificationFeedData(user) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  // Get the Feed object for the user.
+  var feedData = readDocument('feeds', userData.feed);
+
+  //This is a list... Should I change the way I save this????
+  var notificationList = [];
+
+  for(var i = 0; i < feedData.notificationItems.length; i ++ ) {
+    notificationList.push(readDocument('notificationItems', feedData.notificationItems[i]));
+  }
+  return notificationList;
+
+}
+
+//MAIN FEED
+function getJobFeedData(user) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  // Get the Feed object for the user.
+  var feedData = readDocument('feeds', userData.feed);
+
+  //This is a list... Should I change the way I save this????
+  var jobList = [];
+  for(var i = 0; i < feedData.jobItems.length; i ++ ) {
+    jobList.push(readDocument('jobItems', feedData.jobItems[i]));
+  }
+  return jobList;
+
+}
+
+
 
 function getProjectData(project_id){
   var projectData = readDocument('project', project_id);
@@ -77,30 +110,40 @@ function getProjectUpdates(id){
 
 //VERB FUNCTIONS
 
-//GET PROJECT DATA
-app.get('/user/:userid/project/:projectid', function(req,res){
+//GET NOTIFICATION ITEMS
+app.get('/feed/:userid/notificationitems', function(req, res) {
   var userid = req.params.userid;
+  res.send(getNotificationFeedData(userid));
+});
+
+//GET JOB ITEMS
+app.get('/feed/:userid/jobitems', function(req, res) {
+  var userid = req.params.userid;
+  res.send(getJobFeedData(userid));
+});
+
+
+//GET PROJECT DATA
+app.get('/user/:userid/project/:projectid', function(req,res) {
   var projectid = req.params.projectid;
 
   res.send(getProjectData(projectid));
 });
+
 //GET OPEN POSITIONS
 app.get('/user/:userid/open/pos_id/:pos_id', function(req,res){
-  var userid = req.params.userid;
   var pos_id = req.params.pos_id;
 
   res.send(getopen_positionData(pos_id));
 });
 //GET FILLED POSITIONS
 app.get('/user/:userid/filled/pos_id/:pos_id', function(req,res){
-  var userid = req.params.userid;
   var pos_id = req.params.pos_id;
 
   res.send(getfilled_positionData(pos_id));
 });
 //GET PROJECT UPDATES
 app.get('/user/:userid/projectid/:projectid', function(req,res){
-  var userid = req.params.userid;
   var projectid = req.params.pos_id;
 
   res.send(getProjectUpdates(projectid));

@@ -203,7 +203,7 @@ var initialData = {
         "1" : {
           "id": 1,
           "notificationItems": [1,2],
-          "jobItems":[1,2]
+          "jobItems":[1,2,4]
         },
         "2" : {
           "id": 2,
@@ -229,6 +229,21 @@ var initialData = {
           "description" : "Please taste our apples we are too afraid.",
           "tags" : ["Apples", "Sports"],
           "rankingType": "bronze-button"
+        },
+
+        "3" : {
+          "_id" : 3,
+          "title" : "Quality Assurance Position at My Team",
+          "description" : "Just me, myself, and I.",
+          "tags" : ["Stuff", "Fun"],
+          "rankingType": "bronze-button"
+        },
+        "4" : {
+          "_id" : 4,
+          "title" : "Lab Rat at Maze Team",
+          "description" : "Don't get lost in the maze.",
+          "tags" : ["Walking", "Games"],
+          "rankingType": "silver-button"
         }
 
       },
