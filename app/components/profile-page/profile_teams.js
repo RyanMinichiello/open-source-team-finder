@@ -1,6 +1,7 @@
 import React from 'react';
 import ProfilePill from './profile_pill.js';
 import {getProfileData} from '../../server.js';
+import {getProjectData} from '../../server.js';
 import {Link} from 'react-router';
 
 export default class Profile_Teams extends React.Component {
@@ -11,6 +12,21 @@ export default class Profile_Teams extends React.Component {
             pid : 1
         };
     }
+
+    generateNames(list) {
+        if(list) {
+            return list.map(this.getName);
+        }
+        this.refresh();
+    }
+
+    getName(item) {
+        var dat = getProjectData(item, (projectData) => {
+         this.setState(projectData);
+     });
+        return dat["identifier"];
+    }
+
 
     generateTeams(list) {
         if(list) {
@@ -38,7 +54,7 @@ export default class Profile_Teams extends React.Component {
             <div className="profile-teams col-md-4">
               <h3>Projects</h3>
               <ul className="nav nav-pills nav-stacked">
-                 {this.generateTeams(["this.props.teams"])}
+                 {this.generateTeams(this.props.teams)}
              </ul>
             </div>
         </div>

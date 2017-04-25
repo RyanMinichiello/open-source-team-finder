@@ -16,7 +16,17 @@ function emulateServerReturn(data, cb) {
 
  export function sendMessage(chatId, contents, cb) {
      var chatData = readDocument('chats', chatId);
-     chatData["messages"].push(contents);
+
+     var newMessage = {
+         "author" : 1,
+         "contents" : contents,
+         "side" : "right"
+     }
+
+     newMessage = addDocument('messages', newMessage);
+
+
+     chatData["messages"].push(newMessage._id);
      console.log(chatData["messages"]); // IT IS ADDING THE NEW MESSAGE! in console though, not database
 
      writeDocument('chats', chatData);

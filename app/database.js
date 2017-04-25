@@ -110,7 +110,7 @@ var initialData = {
       "chats" : {
         "1": {
             "_id" : 1,
-          "messages" : ["Hello","Hey how are you?"],
+          "messages" : [1,2],
           "associated-users" : [1,2,3],
           "curr": "message-current panel panel-default",
           "name": "Okra Team",
