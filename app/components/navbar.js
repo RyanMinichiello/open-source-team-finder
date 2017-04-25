@@ -31,7 +31,7 @@ export default class Navbar extends React.Component{
                 <span className="icon-bar"></span>
               </button>
 
-              <Link to={`/${this.state.pid}`}>
+              <Link to={"/"}>
                 <a className="navbar-brand">
                     <span><img src="img/logo_notext.png" className="logo pull-left"/></span>
                 </a>
