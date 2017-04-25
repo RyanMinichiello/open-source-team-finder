@@ -6,9 +6,41 @@ import Checkbox from './createproject-checkbox.js';
 
 import CreateProjectTagSection from './createproject-tag-section.js';
 import CreateProjectPositionSection from './createproject-position-list.js';
+import {unixTimeToString} from '../util.js';
 
 
 export default class CreateProject extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      projectName : "",
+      description : "",
+      tags : [],
+      positions : [],
+      startDate : "",
+      endDate : "",
+      inProgress : 0
+
+    }
+
+    }
+
+
+
+    handleMessage(e) {
+        e.preventDefault();
+        var projectNameText = this.state.projectName.trim();
+        var descriptionText = this.state.description.trim();
+
+        if(projectNameText !== "") {
+            createProject(1, projectNameText, descriptionText, this.tags, this.positions, this.startDate.value, this.endDate.value, this.inProgress.value, () => {
+                this.refresh();
+            });
+            this.setState({value: ""});
+        }
+    }
+
 
   render() {
     return (
