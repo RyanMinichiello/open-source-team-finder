@@ -158,12 +158,27 @@ export function getNotificationFeedData(user, cb) {
   var feedData = readDocument('feeds', userData.feed);
 
   //This is a list... Should I change the way I save this????
-  var list = [];
-  for(var i = 0; i < feedData.notificationItems; i ++ ) {
-    list.push(readDocument('notificationItems', feedData.notificationItems[i]));
-  }
+  var notificationList = [];
 
-  emulateServerReturn(list, cb)
+  for(var i = 0; i < feedData.notificationItems.length; i ++ ) {
+    notificationList.push(readDocument('notificationItems', feedData.notificationItems[i]));
+  }
+  emulateServerReturn(notificationList, cb)
+
+}
+
+export function getJobFeedData(user, cb) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  // Get the Feed object for the user.
+  var feedData = readDocument('feeds', userData.feed);
+
+  //This is a list... Should I change the way I save this????
+  var jobList = [];
+  for(var i = 0; i < feedData.jobItems.length; i ++ ) {
+    jobList.push(readDocument('jobItems', feedData.jobItems[i]));
+  }
+  emulateServerReturn(jobList, cb)
 
 }
 

@@ -42,7 +42,7 @@
   padding-right: 2px;
 }
 
-/*.job-feed {
+.main-feed {
   background-color: #4caf50;
   margin-top: 5%;
   float: left;
@@ -52,18 +52,16 @@
   position: absolute;
 }
 
+
 .panel{
   border-width: medium;
   border-color: #EE9344;
 }
 
-.btn-default{
-  background-color: #DFFFDF
-}
 
 .panel {
   background-color: #DFFFDF;
-}*/
+}
 
 button a {
   color: black;
