@@ -27,10 +27,10 @@ function emulateServerReturn(data, cb) {
 
 
      chatData["messages"].push(newMessage._id);
-     console.log(chatData["messages"]); // IT IS ADDING THE NEW MESSAGE! in console though, not database
+     //console.log(chatData["messages"]); // IT IS ADDING THE NEW MESSAGE! in console though, not database
 
      writeDocument('chats', chatData);
-     console.log(chatData["messages"]);
+     //console.log(chatData["messages"]);
      writeDocument('messages', newMessage);
      emulateServerReturn(chatData, cb);
  }
@@ -48,10 +48,10 @@ export function sendNewMessages(chatId, contents,cb) {
 
 
   chatData["messages"].push(newMessage._id);
-  console.log(chatData["messages"]); // IT IS ADDING THE NEW MESSAGE! in console though, not database
+  //console.log(chatData["messages"]); // IT IS ADDING THE NEW MESSAGE! in console though, not database
 
   writeDocument('chats', chatData);
-  console.log(chatData["messages"]);
+  //console.log(chatData["messages"]);
   writeDocument('messages', newMessage);
   emulateServerReturn(chatData, cb);
 }
@@ -100,6 +100,16 @@ export function getProjectData(project_id, cb){
 
 }
 
+export function getProfileData(id, cb){
+
+    sendXHR('GET', '/user/1', undefined, (xhr) => {
+        cb(JSON.parse(xhr.responseText));
+    });
+  /*var profileData = readDocument('users', id);
+  emulateServerReturn(profileData, cb);*/
+
+}
+
 
 export function getUserInfo(user_id, cb) {
   var userData = readDocument('users', user_id);
@@ -120,12 +130,7 @@ export function getfilled_positionData(pid, cb){
  });
 }
 
-export function getProfileData(id, cb){
 
-  var profileData = readDocument('users', id);
-  emulateServerReturn(profileData, cb);
-
-}
 
 export function getNotificationFeedData(user, cb) {
   // Get the User object with the id "user".

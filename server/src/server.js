@@ -46,6 +46,8 @@ function getProjectData(project_id, cb){
   return projectData;
 }
 
+
+
 function getopen_positionData(pid, cb){
   var positions = readDocument('positions', 'positions');
   var open = [];
@@ -73,10 +75,22 @@ function getProjectUpdates(id, cb){
   var notifications = readDocument('notificationItems', id)
   return notifications;
 }
+
+function getProfileData(id, cb) {
+    var profileData = readDocument('users', id);
+    return profileData;
+}
 //END NON VERB FUNCTIONS
 
 //VERB FUNCTIONS
 
+// Get Profile DATA
+
+app.get('/user/:userid', function (req, res) {
+    var userId = req.params.userid;
+
+    res.send(getProfileData(userId));
+})
 //GET PROJECT DATA
 app.get('/user/:userid/project/:projectid', function(req,res){
   var userid = req.params.userid;
