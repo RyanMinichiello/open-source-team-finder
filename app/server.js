@@ -20,7 +20,7 @@ function emulateServerReturn(data, cb) {
      var newMessage = {
          "author" : 1,
          "contents" : contents,
-         "side" : "right"
+         "side" : "left"
      }
 
      newMessage = addDocument('messages', newMessage);
@@ -31,41 +31,29 @@ function emulateServerReturn(data, cb) {
 
      writeDocument('chats', chatData);
      console.log(chatData["messages"]);
+     writeDocument('messages', newMessage);
      emulateServerReturn(chatData, cb);
  }
 
-export function sendNewMessages(user, contents,cb) {
-  // If we were implementing this for real on an actual server, we would check
-  // that the user ID is correct & matches the authenticated user. But since
-  // we're mocking it, we can be less strict.
+export function sendNewMessages(chatId, contents,cb) {
+  var chatData = readDocument('chats', chatId);
 
-  // Get the current UNIX time.
-  //var time = new Date().getTime();
-  // The new status update. The database will assign the ID for us.
-  var newMessages = {
+  var newMessage = {
+      "author" : 1,
+      "contents" : contents,
+      "side" : "right"
+  }
 
-      "author": user,
-      "contents": contents,
-      "side":"right"
+  newMessage = addDocument('messages', newMessage);
 
-  };
 
-  // Add the status update to the database.
-  // Returns the status update w/ an ID assigned.
-  newMessages = addDocument('messages', newMessages);
+  chatData["messages"].push(newMessage._id);
+  console.log(chatData["messages"]); // IT IS ADDING THE NEW MESSAGE! in console though, not database
 
-  // Add the status update reference to the front of the current user's feed.
-  var userData = readDocument('users', user);
-  var inboxData = readDocument('inbox', userData.inboxId);
-  var chatData = readDocument('chats', inboxData.chats);
-  var messageData = readDocument('messages', chatData.messages);
-  messageData.contents.unshift(newMessages._id);
-
-  // Update the feed object.
-  writeDocument('messages', messageData);
-
-  // Return the newly-posted object.
-  emulateServerReturn(newMessages, cb);
+  writeDocument('chats', chatData);
+  console.log(chatData["messages"]);
+  writeDocument('messages', newMessage);
+  emulateServerReturn(chatData, cb);
 }
 
 
