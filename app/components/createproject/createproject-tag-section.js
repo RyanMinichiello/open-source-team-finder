@@ -18,13 +18,13 @@ getInputs(){
 
     addNewButton(value){
       if (value != "" && numTags < 6){
-      var newInput =  <CreateProjectTagItem tag={value} />
+      var newInput =  <div className = "singleTag"><CreateProjectTagItem tag={value} /></div>
       inputs.push(newInput);
       this.setState({inputs})
       numTags.setState(numTags++);
     }
 
-      
+
     }
 
   render() {
