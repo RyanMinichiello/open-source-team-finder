@@ -2,11 +2,16 @@
 var express = require('express');
 // Creates an Express server.
 var app = express();
-var bodyParser = require('body-parser');
+//var bodyParser = require('body-parser');
+var database = require('./database.js');
+var writeDocument = database.writeDocument;
+var addDocument = database.addDocument;
+var readDocument = database.readDocument;
 
 app.use(express.static('../client/build'));
 
-app.use(bodyParser.text());
+//app.use(bodyParser.text());
+//app.use(bodyParser.json());
 
 //NON VERB FUNCTIONS
 
@@ -36,10 +41,71 @@ function getUserIdFromToken(authorizationLine) {
   }
 }
 
+function getProjectData(project_id, cb){
+  var projectData = readDocument('project', project_id);
+  return projectData;
+}
+
+function getopen_positionData(pid, cb){
+  var positions = readDocument('positions', 'positions');
+  var open = [];
+  for(var i=0; i< positions.length; i++){
+    if( positions[i].project_id == pid && positions[i].status == 'open'){
+      open.push(positions[i]);
+    }
+  }
+  return open;
+}
+
+function getfilled_positionData(pid, cb){
+  var positions = readDocument('positions', 'positions');
+  var filled = [];
+  for(var i=0; i< positions.length; i++){
+    if( positions[i].project_id == pid && positions[i].status == 'filled'){
+      filled.push( positions[i]);
+    }
+  }
+  return filled;
+
+}
+
+function getProjectUpdates(id, cb){
+  var notifications = readDocument('notificationItems', id)
+  return notifications;
+}
+//END NON VERB FUNCTIONS
 
 //VERB FUNCTIONS
 
+//GET PROJECT DATA
+app.get('/user/:userid/project/:projectid', function(req,res){
+  var userid = req.params.userid;
+  var projectid = req.params.projectid;
 
+  res.send(getProjectData(projectid));
+});
+//GET OPEN POSITIONS
+app.get('/user/:userid/open/pos_id/:pos_id', function(req,res){
+  var userid = req.params.userid;
+  var pos_id = req.params.pos_id;
+
+  res.send(getopen_positionData(pos_id));
+});
+//GET FILLED POSITIONS
+app.get('/user/:userid/filled/pos_id/:pos_id', function(req,res){
+  var userid = req.params.userid;
+  var pos_id = req.params.pos_id;
+
+  res.send(getfilled_positionData(pos_id));
+});
+//GET PROJECT UPDATES
+app.get('/user/:userid/projectid/:projectid', function(req,res){
+  var userid = req.params.userid;
+  var projectid = req.params.pos_id;
+
+  res.send(getProjectUpdates(projectid));
+});
+//END VERB FUNCTIONS
 
 // Starts the server on port 3000!
 app.listen(3000, function () {
