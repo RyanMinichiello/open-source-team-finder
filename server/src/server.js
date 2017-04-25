@@ -8,7 +8,7 @@ var writeDocument = database.writeDocument;
 var addDocument = database.addDocument;
 var readDocument = database.readDocument;
 
-app.use(express.static('../../build'));
+app.use(express.static('../client/build'));
 
 //app.use(bodyParser.text());
 //app.use(bodyParser.json());
