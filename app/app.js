@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, browserHistory} from 'react-router';
+import {Router, Route} from 'react-router';
 // Each major browser view user interface must be imported.
 import ProjectPage from './components/project-page/project-page.js';
 import Profile from './components/profile-page/profile.js';
@@ -14,9 +14,9 @@ import InboxPage from './components/inbox/inbox-inboxpage.js'
 // depending on if the ID is present in the HTML.
 
 ReactDOM.render((
-  <Router>
+  <Router >
     <Route path="/" components={MainFeed}/>
-    <Route path="/inbox" components={InboxPage}/>
+    <Route path="/inbox/:pid" components={InboxPage}/>
     <Route path="/profile/:id" components={Profile}/>
     <Route path="/createproject" components={CreateProject}/>
     <Route path="/ostf-job-board" components={JobBoard}/>

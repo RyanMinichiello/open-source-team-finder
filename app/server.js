@@ -92,13 +92,11 @@ export function getChatData(chat_id, cb){
 }
 
 
-export function getProjectData(project_id, cb){
-
-  sendXHR('GET', '/user/1/project/'+project_id, undefined, (xhr) => {
-   cb(JSON.parse(xhr.responseText));
- });
-
+export function getUserInfo(user_id, cb) {
+  var userData = readDocument('users', user_id);
+  emulateServerReturn(userData, cb);
 }
+
 
 export function getProfileData(id, cb){
 
@@ -111,11 +109,40 @@ export function getProfileData(id, cb){
 }
 
 
-export function getUserInfo(user_id, cb) {
-  var userData = readDocument('users', user_id);
-  emulateServerReturn(userData, cb);
+export function getProjectPillData(user, cb) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  // Get the Feed object for the user.
+
+  var projectList = [];
+  for(var i = 0; i < userData.projects.length; i ++ ) {
+    projectList.push(readDocument('projects', userData.projects[i]));
+  }
+  emulateServerReturn(projectList, cb)
+
 }
 
+//Job Board
+export function getAllJobs(user, cb) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  //get the array of Job Data
+  var allJobData = readDocument('allJobItems', userData.allJobItems);
+  var jobList = [];
+
+  for(var i = 0; i < allJobData.jobItems.length; i ++ ) {
+    jobList.push(readDocument('jobItems', allJobData.jobItems[i]));
+  }
+  emulateServerReturn(jobList, cb);
+}
+
+export function getProjectData(project_id, cb){
+
+  sendXHR('GET', '/user/1/project/'+project_id, undefined, (xhr) => {
+   cb(JSON.parse(xhr.responseText));
+ });
+
+}
 
 
 export function getopen_positionData(pid, cb){
@@ -132,6 +159,8 @@ export function getfilled_positionData(pid, cb){
 
 
 
+
+//MAIN FEED
 export function getNotificationFeedData(user, cb) {
   // Get the User object with the id "user".
   var userData = readDocument('users', user);
@@ -148,19 +177,7 @@ export function getNotificationFeedData(user, cb) {
 
 }
 
-export function getProjectPillData(user, cb) {
-  // Get the User object with the id "user".
-  var userData = readDocument('users', user);
-  // Get the Feed object for the user.
-
-  var projectList = [];
-  for(var i = 0; i < userData.projects.length; i ++ ) {
-    projectList.push(readDocument('projects', userData.projects[i]));
-  }
-  emulateServerReturn(projectList, cb)
-
-}
-
+//MAIN FEED
 export function getJobFeedData(user, cb) {
   // Get the User object with the id "user".
   var userData = readDocument('users', user);
@@ -176,18 +193,6 @@ export function getJobFeedData(user, cb) {
 
 }
 
-export function getAllJobs(user, cb) {
-  // Get the User object with the id "user".
-  var userData = readDocument('users', user);
-  //get the array of Job Data
-  var allJobData = readDocument('allJobItems', userData.allJobItems);
-  var jobList = [];
-
-  for(var i = 0; i < allJobData.jobItems.length; i ++ ) {
-    jobList.push(readDocument('jobItems', allJobData.jobItems[i]));
-  }
-  emulateServerReturn(jobList, cb);
-}
 
 export function getProjectUpdates(id, cb){
   sendXHR('GET', '/user/1/project/'+id, undefined, (xhr) => {
@@ -209,7 +214,7 @@ function sendXHR(verb, resource, body, cb) {
   // The below comment tells ESLint that FacebookError is a global.
   // Otherwise, ESLint would complain about it! (See what happens in Atom if
   // you remove the comment...)
-  /* global FacebookError */
+  /* global SiteError */
 
   // Response received from server. It could be a failure, though!
   xhr.addEventListener('load', function() {

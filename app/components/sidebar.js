@@ -26,9 +26,9 @@ export default class Sidebar extends React.Component {
       );
     }
 
-  createProjectPillItem(item) {
-    return <ProfilePill key = {item._id} team={item.identifier}/>
-  }
+    createProjectPillItem(item) {
+      return <ProfilePill key = {item._id} team={item.identifier}/>
+    }
 
     refresh() {
       this.getProjectList(this.state.pid);

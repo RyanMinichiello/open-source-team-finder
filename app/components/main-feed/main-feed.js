@@ -15,7 +15,7 @@ export default class MainFeed extends React.Component {
      this.state = {
         contents : [],
         pid : 1,
-        feed : 1,
+        feed : null,
         notifications: null,
         jobItems: null
       };
@@ -75,9 +75,7 @@ export default class MainFeed extends React.Component {
           ></Navbar>
 
         <div>
-          <Sidebar
-          
-            ></Sidebar>
+          <Sidebar/>
         </div>
 
         <div className="col-md-10 pull-right">
