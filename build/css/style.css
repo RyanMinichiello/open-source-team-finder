@@ -433,6 +433,11 @@ input{
 }
 .panel {
   margin-bottom: 0px !important;
+
+}
+
+.panel-post {
+  margin-bottom: 0px !important;
   margin-top: 20px;
   background-color: #eeaa7b;
   width:100%;

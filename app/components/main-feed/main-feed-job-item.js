@@ -5,7 +5,7 @@ export default class MainFeedJobItem extends React.Component {
   render() {
     return (
       <div>
-        <div className="panel">
+        <div className="panel-post">
           <div className="panel-body job-post">
             <div className="job-title">
               <h3>
