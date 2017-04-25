@@ -6,7 +6,7 @@ var app = express();
 var database = require('./database.js');
 var readDocument = database.readDocument;
 
-app.use(express.static('../../build'));
+app.use(express.static('../client/build'));
 
 //app.use(bodyParser.text());
 //app.use(bodyParser.json());
@@ -79,6 +79,7 @@ function getProjectData(project_id){
   return projectData;
 }
 
+
 function getopen_positionData(pid){
   var positions = readDocument('positions', 'positions');
   var open = [];
@@ -105,6 +106,11 @@ function getfilled_positionData(pid){
 function getProjectUpdates(id){
   var notifications = readDocument('notificationItems', id)
   return notifications;
+}
+
+function getProfileData(id, cb) {
+    var profileData = readDocument('users', id);
+    return profileData;
 }
 //END NON VERB FUNCTIONS
 
