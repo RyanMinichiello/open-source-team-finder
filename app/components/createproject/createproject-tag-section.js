@@ -21,7 +21,7 @@ getInputs(){
       var newInput =  <div className = "singleTag"><CreateProjectTagItem tag={value} /></div>
       inputs.push(newInput);
       this.setState({inputs})
-      numTags.setState(numTags++);
+      this.numTags++;
     }
 
 
