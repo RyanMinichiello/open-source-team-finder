@@ -127,19 +127,7 @@ function getProfileData(id) {
 }
 
 
-//inbox
 
- function getChatListItems(user_id) {
-    var userData = readDocument('users', user_id);
-    var inboxData = readDocument('inbox', userData.inboxId);
-
-    var chatList = [];
-    for(var i = 0; i < inboxData.chats.length; i ++ ) {
-      chatList.push(readDocument('chats', inboxData.chats[i]));
-    }
-
-    return chatList;
-}
 
 //SIDEBAR
 function getProjectPillData(userid) {
