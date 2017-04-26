@@ -111,6 +111,21 @@ function getJobFeedData(user) {
   return jobList;
 
 }
+
+//Job Board
+function getAllJobs(user, cb) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  //get the array of Job Data
+  var allJobData = readDocument('allJobItems', userData.allJobItems);
+  var jobList = [];
+
+  for(var i = 0; i < allJobData.jobItems.length; i ++ ) {
+    jobList.push(readDocument('jobItems', allJobData.jobItems[i]));
+  }
+  return jobList;
+}
+
 //END NON VERB FUNCTIONS
 
 //VERB FUNCTIONS
@@ -163,6 +178,13 @@ app.get('/feed/:userid/jobitems', function(req, res) {
    var userid = req.params.userid;
   res.send(getJobFeedData(userid));
 });
+
+//GET ALL JOB ITEMS
+app.get('/job-board/:userid/jobitems', function(req, res) {
+  var userid = req.params.userid;
+  res.send(getAllJobs(userid));
+});
+
 //END VERB FUNCTIONS
 
 // Starts the server on port 3000!
