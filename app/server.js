@@ -58,9 +58,10 @@ export function sendNewMessages(chatId, contents,cb) {
 
 export function createProject(projectName, projectDescription, tags, positions, startDate, endDate, inProgress){
   var newProject = {
-    "title" : projectName,
+    "identifier" : projectName,
     "description" : projectDescription,
     "tags" : tags,
+    "skillz" : positions,
     "startDate" : startDate,
     "endDate" : endDate,
     "inProgress" : inProgress
@@ -68,7 +69,7 @@ export function createProject(projectName, projectDescription, tags, positions, 
 
 
 
-newProject = addDocument('jobItems', newProject);
+newProject = addDocument('projects', newProject);
 
 
 
@@ -144,6 +145,7 @@ export function getProfileData(id, cb){
   emulateServerReturn(profileData, cb);
 
 }
+
 
 export function getNotificationFeedData(user, cb) {
   // Get the User object with the id "user".

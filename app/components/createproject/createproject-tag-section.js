@@ -38,7 +38,7 @@ getInputs(){
          <input placeholder="Add Tags" ref={node => {
                  this.input = node;
                }} />
-             <button type="button" id="add-more-tags-btn" className="btn btn-default" onClick={ () => this.addNewButton(this.input.value) }>
+             <button type="button" id="add-more-tags-btn" className="btn btn-default" onClick={ () => this.addNewButton(this.input.value)  }>
            Add Tag
            </button>
           <div>

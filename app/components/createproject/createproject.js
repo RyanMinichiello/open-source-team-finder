@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../navbar.js';
 import Sidebar from '../sidebar.js';
+import {Link} from 'react-router';
 
 import Checkbox from './createproject-checkbox.js';
 
@@ -108,9 +109,13 @@ export default class CreateProject extends React.Component {
           </div>
         </div>
 
+        <div>
+          <Link to ={"/project-page"}>
           <button type="button" id="create" className="btn btn-default" onClick={ () => this.handleClick()}>
           Create
           </button>
+        </Link>
+        </div>
 
         </div>
 

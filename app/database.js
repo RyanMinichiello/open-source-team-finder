@@ -70,7 +70,11 @@ var initialData = {
           "msgs"       : 1,
           "positions"  : [1],
           "description": "Welcome to the show",
-          "skillz"     :["Java", "Social", "Sick Card Tricks"]
+          "skillz"     :["Java", "Social", "Sick Card Tricks"],
+          "startDate" : "2019-11-01",
+          "endDate" : "2020-01-01",
+          "inProgress" : 0,
+          "tags" : ["Java", "Front-end"]
 
         },
         "2" : {
@@ -80,7 +84,11 @@ var initialData = {
           "msgs"       : 2,
           "positions"  : [2],
           "description": "Nothing too fancy to do here.",
-          "skillz"     :["Java", "Social", "Extreme Apple Picking", "High Level Design"]
+          "skillz"     :["Java", "Social", "Extreme Apple Picking", "High Level Design"],
+          "startDate" : "2019-11-01",
+          "endDate" : "2020-01-01",
+          "inProgress" : 0,
+          "tags" : ["C", "Low Level"]
         },
         "3" : {
           "identifier" : "Peach",
@@ -89,7 +97,11 @@ var initialData = {
           "msgs"       : 3,
           "positions"  : [1,2],
           "description": "We're looking for our friend James. We believe he is in the ocean and we need to develop good drones to find him.",
-          "skillz"     :["Drones", "Artificial Intelligence", "Node.js", "Mongo"]
+          "skillz"     :["Drones", "Artificial Intelligence", "Node.js", "Mongo"],
+          "startDate" : "2019-11-01",
+          "endDate" : "2020-01-01",
+          "inProgress" : 0,
+          "tags" : ["Databases", "Back-end", "Team"]
         },
         "4" : {
           "identifier" : "Garbanzo Bean",
@@ -98,7 +110,11 @@ var initialData = {
           "msgs"       : 4,
           "positions"        : 4,
           "description": "Our goal is too develop an onlign spell cheker that finds any errands you type.",
-          "skillz"     :["Natural Language Processing", "Excel", "Java", "Regex"]
+          "skillz"     :["Natural Language Processing", "Excel", "Java", "Regex"],
+          "startDate" : "2019-11-01",
+          "endDate" : "2020-01-01",
+          "inProgress" : 0,
+          "tags" : []
         }
       },
 
@@ -226,10 +242,8 @@ var initialData = {
           "title" : "Software Engineering Position at Okra Team",
           "description" : "apply within!!!!",
           "tags" : ["Drones", "Finance"],
-          "startDate" : "2019-11-01",
-          "endDate" : "2020-01-01",
-          "rankingType": "gold-button",
-          "inProgress" : 0
+          "rankingType": "gold-button"
+
 
         },
 
@@ -238,30 +252,23 @@ var initialData = {
           "title" : "Quality Assurance Position at Apple Team",
           "description" : "Please taste our apples we are too afraid.",
           "tags" : ["Apples", "Sports"],
-          "startDate" : "2018-12-01",
-          "endDate" : "2020-11-01",
-          "rankingType": "bronze-button",
-          "inProgress" : 0
+          "rankingType": "bronze-button"
         },
         "3" : {
           "_id" : 3,
           "title" : "Quality Assurance Position at My Team",
           "description" : "Just me, myself, and I.",
           "tags" : ["Stuff", "Fun"],
-          "startDate" : "2012-01-01",
-          "endDate" : "2017-01-01",
-          "rankingType": "bronze-button",
-          "inProgress" : 1
+          "rankingType": "bronze-button"
+
         },
         "4" : {
           "_id" : 4,
           "title" : "Lab Rat at Maze Team",
           "description" : "Don't get lost in the maze.",
           "tags" : ["Walking", "Games"],
-          "startDate" : "2018-11-01",
-          "endDate" : "2018-12-12",
-          "rankingType": "silver-button",
-          "inProgress" : 0
+          "rankingType": "silver-button"
+
         }
 
       },
