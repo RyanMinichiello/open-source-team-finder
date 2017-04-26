@@ -56,7 +56,8 @@ export function sendNewMessages(chatId, contents,cb) {
   emulateServerReturn(chatData, cb);
 }
 
-export function createProject(projectName, projectDescription, tags, positions, startDate, endDate, inProgress){
+export function createProject(projectId,projectName, projectDescription, tags, positions, startDate, endDate, inProgress, cb){
+  var projectData = readDocument('projects', projectId)
   var newProject = {
     "identifier" : projectName,
     "description" : projectDescription,
@@ -69,10 +70,12 @@ export function createProject(projectName, projectDescription, tags, positions, 
 
 
 
+
+
 newProject = addDocument('projects', newProject);
 
 
-
+  emulateServerReturn(projectData, cb);
 }
 
 

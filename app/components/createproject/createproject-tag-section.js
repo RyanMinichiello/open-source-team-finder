@@ -18,10 +18,10 @@ getInputs(){
 
     addNewButton(value){
       if (value != "" && numTags < 6){
-      var newInput =  <div className = "singleTag"><CreateProjectTagItem tag={value} /></div>
+      var newInput =  <a href = "#"><div className = "singleTag"><CreateProjectTagItem tag={value} /></div></a>;
       inputs.push(newInput);
       this.setState({inputs})
-      this.numTags++;
+      numTags++;
     }
 
 

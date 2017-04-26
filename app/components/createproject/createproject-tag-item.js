@@ -5,7 +5,7 @@ export default class CreateProjectTagItem extends React.Component {
     return (
       <div>
         <div className="tag">
-        <a href="#">{this.props.tag}</a>
+        <div href="#">{this.props.tag}</div>
         </div>
       </div>
     );

@@ -3,6 +3,7 @@ import React from 'react';
 
 import CreateProjectSinglePosition from './createproject-single-position.js'
 var inputs= [];
+var positions = 1;
 export default class CreateProjectPositionSection extends React.Component {
 
   constructor(props) {
@@ -12,9 +13,12 @@ export default class CreateProjectPositionSection extends React.Component {
     }
 
     addNewButton(){
+      if (positions < 6){
       var newInput = <CreateProjectSinglePosition />
       inputs.push(newInput);
       this.setState({inputs})
+      positions++;
+    }
     }
 
 getPositions(){

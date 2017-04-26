@@ -14,7 +14,7 @@ a, a:visited{
   margin-left: 8%;
 }
 #add-more-tags-btn{
-  background-color: #ffffff;
+  background-color: #EE8233;
 }
 
 #add-more-tags-btn:hover{
@@ -27,7 +27,7 @@ a, a:visited{
 }
 
 .tag-section{
-  
+
 }
 .attribute-box{
   width: 84%;
@@ -635,11 +635,20 @@ textarea{
     width: 100%;
 }
 
+.tag{
+  text-align: center;
+}
+
 .singleTag{
-  background-color: red;
-  width: 10%;
-  padding-left: 3%;
+  background-color:  #e37222;
+  display: inline-block;
+  margin-right: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
   margin-bottom: 5%;
+  text-align: center;
 
 }
 
@@ -705,10 +714,11 @@ position: relative;
   margin-top: -16%;
   height: 7%;
   font-size: 130%;
+  background-color: #EE8233;
 }
 
 #create:hover{
-/*  background-color: #EE8233;*/
+  background-color: #e37222;
   transition: 0.1s;
 }
 
