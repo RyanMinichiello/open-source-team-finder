@@ -41,6 +41,21 @@ function getUserIdFromToken(authorizationLine) {
   }
 }
 
+ function getInboxData(inbox_id){
+  var inboxData = readDocument('inbox', inbox_id);
+  return inboxData;
+}
+
+function getMessageData(message_id){
+  var messageData = readDocument('messages', message_id);
+  return messageData;
+}
+
+function getChatData(chat_id){
+  var chatData = readDocument('chats', chat_id);
+  return chatData;
+}
+
 function getProjectData(project_id){
   var projectData = readDocument('project', project_id);
   return projectData;
@@ -114,6 +129,27 @@ function getJobFeedData(user) {
 //END NON VERB FUNCTIONS
 
 //VERB FUNCTIONS
+
+app.get('/user/:userid/inbox/:inboxid', function(req,res){
+  var userid = req.params.userid;
+  var inboxid = req.params.inboxid;
+
+  res.send(getInboxData(inboxid));
+})
+
+app.get('/user/:userid/messages/:messageid', function(req,res){
+  var userid = req.params.userid;
+  var messageid = req.params.messageid;
+
+  res.send(getMessageData(messageid));
+})
+
+app.get('/user/:userid/chats/:chatid', function(req,res){
+  var userid = req.params.userid;
+  var chatid = req.params.messageid;
+
+  res.send(getChatData(chatid));
+})
 
 // Get Profile DATA
 

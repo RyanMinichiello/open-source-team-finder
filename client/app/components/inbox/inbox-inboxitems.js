@@ -30,7 +30,8 @@ export default class InboxItems extends React.Component {
 
   generateInbox(chats){
     if(chats){
-      return chats.map(this.createInbox);
+      return (this.createInbox(chats[0]));
+      //return chats.map(this.createInbox);
     }
   }
 
