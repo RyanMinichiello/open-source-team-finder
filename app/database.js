@@ -226,7 +226,10 @@ var initialData = {
           "title" : "Software Engineering Position at Okra Team",
           "description" : "apply within!!!!",
           "tags" : ["Drones", "Finance"],
-          "rankingType": "gold-button"
+          "startDate" : "2019-11-01",
+          "endDate" : "2020-01-01",
+          "rankingType": "gold-button",
+          "inProgress" : 0
 
         },
 
@@ -235,21 +238,30 @@ var initialData = {
           "title" : "Quality Assurance Position at Apple Team",
           "description" : "Please taste our apples we are too afraid.",
           "tags" : ["Apples", "Sports"],
-          "rankingType": "bronze-button"
+          "startDate" : "2018-12-01",
+          "endDate" : "2020-11-01",
+          "rankingType": "bronze-button",
+          "inProgress" : 0
         },
         "3" : {
           "_id" : 3,
           "title" : "Quality Assurance Position at My Team",
           "description" : "Just me, myself, and I.",
           "tags" : ["Stuff", "Fun"],
-          "rankingType": "bronze-button"
+          "startDate" : "2012-01-01",
+          "endDate" : "2017-01-01",
+          "rankingType": "bronze-button",
+          "inProgress" : 1
         },
         "4" : {
           "_id" : 4,
           "title" : "Lab Rat at Maze Team",
           "description" : "Don't get lost in the maze.",
           "tags" : ["Walking", "Games"],
-          "rankingType": "silver-button"
+          "startDate" : "2018-11-01",
+          "endDate" : "2018-12-12",
+          "rankingType": "silver-button",
+          "inProgress" : 0
         }
 
       },
@@ -276,7 +288,7 @@ var initialData = {
         }
       }
 
-      
+
 
 };
 

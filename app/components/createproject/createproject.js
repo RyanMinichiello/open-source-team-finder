@@ -7,6 +7,7 @@ import Checkbox from './createproject-checkbox.js';
 import CreateProjectTagSection from './createproject-tag-section.js';
 import CreateProjectPositionSection from './createproject-position-list.js';
 import {unixTimeToString} from '../util.js';
+import {createProject} from '../../server.js';
 
 
 export default class CreateProject extends React.Component {
@@ -28,18 +29,22 @@ export default class CreateProject extends React.Component {
 
 
 
-    handleMessage(e) {
+    handleClick(e) {
         e.preventDefault();
         var projectNameText = this.state.projectName.trim();
         var descriptionText = this.state.description.trim();
 
-        if(projectNameText !== "") {
+
             createProject(1, projectNameText, descriptionText, this.tags, this.positions, this.startDate.value, this.endDate.value, this.inProgress.value, () => {
                 this.refresh();
             });
-            this.setState({value: ""});
-        }
-    }
+            }
+
+
+
+
+
+
 
 
   render() {
@@ -103,7 +108,7 @@ export default class CreateProject extends React.Component {
           </div>
         </div>
 
-          <button type="button" id="create" className="btn btn-default">
+          <button type="button" id="create" className="btn btn-default" onClick={ () => this.handleClick()}>
           Create
           </button>
 

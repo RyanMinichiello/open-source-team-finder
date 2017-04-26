@@ -56,6 +56,24 @@ export function sendNewMessages(chatId, contents,cb) {
   emulateServerReturn(chatData, cb);
 }
 
+export function createProject(projectName, projectDescription, tags, positions, startDate, endDate, inProgress){
+  var newProject = {
+    "title" : projectName,
+    "description" : projectDescription,
+    "tags" : tags,
+    "startDate" : startDate,
+    "endDate" : endDate,
+    "inProgress" : inProgress
+  }
+
+
+
+newProject = addDocument('jobItems', newProject);
+
+
+
+}
+
 
 export function getChatArrData(chat, cb) {
 

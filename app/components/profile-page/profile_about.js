@@ -1,7 +1,7 @@
 import React from 'react';
 import {sendMessage} from '../../server.js';
 import {getChatData} from '../../server.js';
-import {sendNewMessages} from '../../server.js'
+
 
 export default class Profile_About extends React.Component {
     constructor(props) {
