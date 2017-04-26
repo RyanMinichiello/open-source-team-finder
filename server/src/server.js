@@ -79,6 +79,38 @@ function getProfileData(id, cb) {
     var profileData = readDocument('users', id);
     return profileData;
 }
+
+//MAIN FEED
+function getNotificationFeedData(user) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  // Get the Feed object for the user.
+  var feedData = readDocument('feeds', userData.feed);
+
+  //This is a list... Should I change the way I save this????
+  var notificationList = [];
+
+  for(var i = 0; i < feedData.notificationItems.length; i ++ ) {
+    notificationList.push(readDocument('notificationItems', feedData.notificationItems[i]));
+  }
+  return notificationList;
+}
+
+//MAIN FEED
+function getJobFeedData(user) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  // Get the Feed object for the user.
+  var feedData = readDocument('feeds', userData.feed);
+
+  //This is a list... Should I change the way I save this????
+  var jobList = [];
+  for(var i = 0; i < feedData.jobItems.length; i ++ ) {
+    jobList.push(readDocument('jobItems', feedData.jobItems[i]));
+  }
+  return jobList;
+
+}
 //END NON VERB FUNCTIONS
 
 //VERB FUNCTIONS
@@ -89,7 +121,7 @@ app.get('/user/:userid', function (req, res) {
     var userId = req.params.userid;
 
     res.send(getProfileData(userId));
-})
+});
 //GET PROJECT DATA
 app.get('/user/:userid/project/:projectid', function(req,res){
   var userid = req.params.userid;
@@ -117,6 +149,19 @@ app.get('/user/:userid/projectid/:projectid', function(req,res){
   var projectid = req.params.pos_id;
 
   res.send(getProjectUpdates(projectid));
+});
+
+
+//GET NOTIFICATION ITEMS
+app.get('/feed/:userid/notificationitems', function(req, res) {
+  var userid = req.params.userid;
+  res.send(getNotificationFeedData(userid));
+});
+
+//GET JOB ITEMS
+app.get('/feed/:userid/jobitems', function(req, res) {
+   var userid = req.params.userid;
+  res.send(getJobFeedData(userid));
 });
 //END VERB FUNCTIONS
 
