@@ -35,6 +35,7 @@ function emulateServerReturn(data, cb) {
      emulateServerReturn(chatData, cb);
  }
 
+
 export function sendNewMessages(chatId, contents,cb) {
   var chatData = readDocument('chats', chatId);
 
@@ -57,38 +58,35 @@ export function sendNewMessages(chatId, contents,cb) {
 }
 
 
-export function getChatArrData(chat, cb) {
 
-  var list = [];
-  for(var i = 1; i <= chat.length; i ++ ) {
-    list.push(readDocument('chats', i));
-  }
-
-  emulateServerReturn(list, cb)
-
+export function getChatListItems(user_id, cb) {
+  sendXHR('GET', '/user/'+ user_id + '/chats', undefined, (xhr) => {
+   cb(JSON.parse(xhr.responseText));
+  });
 }
 
-export function getMessageArrData(mes, cb){
-  var list=[];
-  for(var i=1; i<=mes.length; i++){
-    list.push(readDocument('messages', i));
-  }
-  emulateServerReturn(list, cb);
+export function getMessageListItems(user_id, chat_id, cb){
+  sendXHR('GET', 'user/'+user_id+'/messages/'+chat_id, undefined, (xhr) =>{
+    cb(JSON.parse(xhr.responseText));
+  })
 }
 
 export function getInboxData(inbox_id, cb){
-  var inboxData = readDocument('inbox', inbox_id);
-  emulateServerReturn(inboxData, cb);
+  sendXHR('GET', 'user/1/inbox/'+inbox_id, undefined, (xhr) =>{
+    cb(JSON.parse(xhr.responseText));
+  });
 }
 
 export function getMessageData(message_id, cb){
-  var messageData = readDocument('messages', message_id);
-  emulateServerReturn(messageData, cb);
+  sendXHR('GET', 'user/1/message/'+message_id, undefined, (xhr) =>{
+    cb(JSON.parse(xhr.responseText));
+  });
 }
 
 export function getChatData(chat_id, cb){
-  var chatData = readDocument('chats', chat_id);
-  emulateServerReturn(chatData, cb);
+  sendXHR('GET', 'user/1/chats/'+chat_id, undefined, (xhr) =>{
+    cb(JSON.parse(xhr.responseText));
+  });
 }
 
 
