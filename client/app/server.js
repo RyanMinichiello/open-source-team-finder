@@ -162,16 +162,17 @@ export function getfilled_positionData(pid, cb){
 
 //MAIN FEED
 export function getJobFeedData(userid, cb) {
- 	 sendXHR('GET', '/feed/' + userid + '/jobitems', undefined, (xhr) => {
-    	cb(JSON.parse(xhr.responseText));
- });
+   sendXHR('GET', '/feed/' + userid + '/jobitems', undefined, (xhr) => {
+    cb(JSON.parse(xhr.responseText));
+   });
+ }
 
  //MAIN FEED
 export function getNotificationFeedData(userid, cb) {
-	sendXHR('GET', '/feed/' + userid + '/notificationitems', undefined, (xhr) => {
-		cb(JSON.parse(xhr.responseText));
-		});
-	}
+  sendXHR('GET', '/feed/' + userid + '/notificationitems', undefined, (xhr) => {
+    cb(JSON.parse(xhr.responseText));
+  });
+}
 
 
 export function getProjectUpdates(id, cb){
