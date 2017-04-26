@@ -56,6 +56,37 @@ function getChatData(chat_id){
   return chatData;
 }
 
+function getChatListItems(user_id) {
+    var userData = readDocument('users', user_id);
+    var inboxData = readDocument('inbox', userData.inboxId);
+
+    var chatList = [];
+    for(var i = 0; i < inboxData.chats.length; i ++ ) {
+      chatList.push(readDocument('chats', inboxData.chats[i]));
+    }
+
+    return chatList;
+}
+
+function getMessageListItems(user_id, chat_id){
+  var chatDataList = getChatListItems(user_id);
+  for(var i =0; i< chatDataList.length; i++){
+    if(chatDataList[i]._id == chat_id){
+      var chatData = chatDataList[i];
+    }
+  }
+  var messageList = [];
+  for(var j=0; j< chatData.messages.length; j++){
+    messageList.push(readDocument('messages', chatData.messages[j]));
+  }
+
+  return messageList;
+
+
+}
+
+
+
 function getProjectData(project_id){
   var projectData = readDocument('project', project_id);
   return projectData;
@@ -145,26 +176,36 @@ function getAllJobs(user, cb) {
 
 //VERB FUNCTIONS
 
+
 app.get('/user/:userid/inbox/:inboxid', function(req,res){
-  var userid = req.params.userid;
   var inboxid = req.params.inboxid;
 
   res.send(getInboxData(inboxid));
-})
+});
 
-app.get('/user/:userid/messages/:messageid', function(req,res){
+//GET ALL CHATS FOR user
+app.get('/user/:userid/chats', function(req, res) {
+ var userid = req.params.userid;
+ res.send(getChatListItems(userid));
+});
+
+app.get('/user/:userid/messages/:chatid', function(req, res){
   var userid = req.params.userid;
+  var chatid = req.params.chatid;
+  res.send(getMessageListItems(userid, chatid));
+});
+
+app.get('/user/:userid/message/:messageid', function(req,res){
   var messageid = req.params.messageid;
 
   res.send(getMessageData(messageid));
-})
+});
 
 app.get('/user/:userid/chats/:chatid', function(req,res){
-  var userid = req.params.userid;
-  var chatid = req.params.messageid;
+  var chatid = req.params.chatid;
 
   res.send(getChatData(chatid));
-})
+});
 
 // Get Profile DATA
 

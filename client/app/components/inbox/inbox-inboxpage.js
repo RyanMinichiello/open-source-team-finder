@@ -4,10 +4,10 @@ import InboxItems from './inbox-inboxitems.js';
 import Sidebar from '../sidebar.js';
 import Navbar from '../navbar.js';
 import {getInboxData} from '../../server.js';
-import {getChatArrData} from '../../server.js';
+import {getChatListItems} from '../../server.js';
 import Inbox from './inbox-inbox.js';
 import {getChatData} from '../../server.js';
-import {getMessageArrData} from '../../server.js';
+import {getMessageListItems} from '../../server.js';
 
 
 export default class InboxPage extends React.Component {
@@ -18,7 +18,8 @@ export default class InboxPage extends React.Component {
       contents:[],
       chats:[],
       activeChatId:"",
-      messages:[]
+      messages:[],
+      pid:1
     };
   }
 
@@ -27,7 +28,7 @@ export default class InboxPage extends React.Component {
       this.setState({contents:inboxData});
       getChatData(1, (cb) =>{
         this.setState({chats: cb});
-        this.settingMessages(cb.messages);
+        this.settingMessages;
       })
     });
   }
@@ -49,12 +50,12 @@ export default class InboxPage extends React.Component {
     }
   }
 
-  settingMessages(ms){
-    if(ms){
-      getMessageArrData(ms, (cb) =>{
+  settingMessages(){
+
+      getMessageListItems(this.state.pid, this.state.pid, (cb) =>{
         this.setState({messages: cb});
       });
-    }
+
   }
 
 /*handleClickChat(clickEvent, activeId){
