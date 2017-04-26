@@ -108,18 +108,11 @@ export function getProfileData(id, cb){
 
 }
 
-
-export function getProjectPillData(user, cb) {
-  // Get the User object with the id "user".
-  var userData = readDocument('users', user);
-  // Get the Feed object for the user.
-
-  var projectList = [];
-  for(var i = 0; i < userData.projects.length; i ++ ) {
-    projectList.push(readDocument('projects', userData.projects[i]));
-  }
-  emulateServerReturn(projectList, cb)
-
+//SIDEBAR Pills
+export function getProjectPillData(userid, cb) {
+  sendXHR('GET', '/users/'+ userid + '/sidebar-projects', undefined, (xhr) => {
+   cb(JSON.parse(xhr.responseText));
+  });
 }
 
 //Job Board

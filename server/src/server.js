@@ -75,9 +75,38 @@ function getProjectUpdates(id){
   return notifications;
 }
 
-function getProfileData(id, cb) {
+function getProfileData(id) {
     var profileData = readDocument('users', id);
     return profileData;
+}
+
+
+//inbox
+
+ function getChatListItems(user_id) {
+    var userData = readDocument('users', user_id);
+    var inboxData = readDocument('inbox', userData.inboxId);
+
+    var chatList = [];
+    for(var i = 0; i < inboxData.chats.length; i ++ ) {
+      chatList.push(readDocument('chats', inboxData.chats[i]));
+    }
+
+    return chatList;
+}
+
+//SIDEBAR
+function getProjectPillData(userid) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', userid);
+  // Get the Feed object for the user.
+
+  var projectList = [];
+  for(var i = 0; i < userData.projects.length; i ++ ) {
+    projectList.push(readDocument('project', userData.projects[i]));
+  }
+  return projectList;
+
 }
 
 //MAIN FEED
@@ -113,7 +142,7 @@ function getJobFeedData(user) {
 }
 
 //Job Board
-function getAllJobs(user, cb) {
+function getAllJobs(user) {
   // Get the User object with the id "user".
   var userData = readDocument('users', user);
   //get the array of Job Data
@@ -139,33 +168,34 @@ app.get('/user/:userid', function (req, res) {
 });
 //GET PROJECT DATA
 app.get('/user/:userid/project/:projectid', function(req,res){
-  var userid = req.params.userid;
   var projectid = req.params.projectid;
 
   res.send(getProjectData(projectid));
 });
 //GET OPEN POSITIONS
 app.get('/user/:userid/open/pos_id/:pos_id', function(req,res){
-  var userid = req.params.userid;
   var pos_id = req.params.pos_id;
 
   res.send(getopen_positionData(pos_id));
 });
 //GET FILLED POSITIONS
 app.get('/user/:userid/filled/pos_id/:pos_id', function(req,res){
-  var userid = req.params.userid;
   var pos_id = req.params.pos_id;
 
   res.send(getfilled_positionData(pos_id));
 });
 //GET PROJECT UPDATES
 app.get('/user/:userid/projectid/:projectid', function(req,res){
-  var userid = req.params.userid;
   var projectid = req.params.pos_id;
 
   res.send(getProjectUpdates(projectid));
 });
 
+//GET SIDEBAR PROJECTS
+app.get('/users/:userid/sidebar-projects', function(req, res) {
+  var userid = req.params.userid;
+  res.send(getProjectPillData(userid));
+});
 
 //GET NOTIFICATION ITEMS
 app.get('/feed/:userid/notificationitems', function(req, res) {
@@ -177,6 +207,13 @@ app.get('/feed/:userid/notificationitems', function(req, res) {
 app.get('/feed/:userid/jobitems', function(req, res) {
    var userid = req.params.userid;
   res.send(getJobFeedData(userid));
+});
+
+
+//GET ALL CHATS FOR user
+app.get('/users/:userid/chats', function(req, res) {
+  var userid = req.params.userid;
+  res.send(getChatListItems(userid));
 });
 
 //GET ALL JOB ITEMS
