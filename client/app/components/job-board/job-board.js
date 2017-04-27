@@ -5,6 +5,8 @@ import FilterBar from './filter-bar.js';
 import JobBoardMainFeed from './job-board-main-feed.js';
 import JobBoardPost from './job-board-post';
 import {getAllJobs} from '../../server.js'
+import {getProfileData} from '../../server.js'
+import {calculateRecommendation} from '../../util.js'
 //import JobBoardTagList from './job-board-tag-list'
 //import JobBoardTagItem from './job-board-tag-item'
 
@@ -40,9 +42,22 @@ export default class JobBoard extends React.Component {
      );
    }
 
+   getRecommendation(tags) {
+     var user_data;
+     getProfileData(this.state.pid, (profileData) => {
+        user_data = profileData;
+     });
+     var user_interests = user_data.interests;
+     var user_skills = user_data.skills;
+     var job_tags = tags;
+     var ranking = calculateRecommendation(user_interests, user_skills, job_tags);
+     return ranking;
+   }
+
    createJobItem(item) {
      return <JobBoardPost key = {item._id} position_description = {item.description}
-       position_title = {item.title} tags ={item.tags} rankingType = {item.rankingType} />
+       position_title = {item.title} tags = {item.tags}
+        rankingType = {() => this.getRecommendation(item.tags)} />
    }
 
 
