@@ -128,7 +128,11 @@ export function getUserInfo(user_id, cb) {
   emulateServerReturn(userData, cb);
 }
 
-
+export function postNewProject(project_id, cb){
+  sendXHR('POST', '/user/1/project'+project_id, undefined, (xhr) => {
+    cb(JSON.parse(xhr.responseText));
+  });
+}
 
 export function getopen_positionData(pid, cb){
   sendXHR('GET', '/user/1/open/pos_id/'+pid, undefined, (xhr) => {

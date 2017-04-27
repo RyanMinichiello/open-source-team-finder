@@ -7,7 +7,7 @@ import Checkbox from './createproject-checkbox.js';
 
 import CreateProjectTagSection from './createproject-tag-section.js';
 import CreateProjectPositionSection from './createproject-position-list.js';
-import {unixTimeToString} from '../util.js';
+
 import {createProject} from '../../server.js';
 
 
