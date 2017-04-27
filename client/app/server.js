@@ -117,13 +117,13 @@ export function getUserInfo(user_id, cb) {
   emulateServerReturn(userData, cb);
 }
 
-<<<<<<< HEAD:app/server.js
+
 export function postNewProject(project_id, cb){
   sendXHR('POST', '/user/1/project'+project_id, undefined, (xhr) => {
     cb(JSON.parse(xhr.responseText));
   });
 }
-=======
+
 
 export function getProfileData(id, cb){
 
@@ -132,7 +132,6 @@ export function getProfileData(id, cb){
     });
   /*var profileData = readDocument('users', id);
   emulateServerReturn(profileData, cb);*/
->>>>>>> 5256bd9a799e1ec41dd0f5bd61c279b4efda9103:client/app/server.js
 
 }
 
@@ -150,7 +149,7 @@ export function getAllJobs(userid, cb) {
   });
 }
 
-<<<<<<< HEAD:app/server.js
+
 
 export function getNotificationFeedData(user, cb) {
   // Get the User object with the id "user".
@@ -160,9 +159,9 @@ export function getNotificationFeedData(user, cb) {
 
   //This is a list... Should I change the way I save this????
   var notificationList = [];
-=======
+
 export function getProjectData(project_id, cb){
->>>>>>> 5256bd9a799e1ec41dd0f5bd61c279b4efda9103:client/app/server.js
+
 
   sendXHR('GET', '/user/1/project/'+project_id, undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
