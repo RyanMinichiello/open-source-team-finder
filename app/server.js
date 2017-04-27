@@ -56,27 +56,7 @@ export function sendNewMessages(chatId, contents,cb) {
   emulateServerReturn(chatData, cb);
 }
 
-export function createProject(projectId,projectName, projectDescription, tags, positions, startDate, endDate, inProgress, cb){
-  var projectData = readDocument('projects', projectId)
-  var newProject = {
-    "identifier" : projectName,
-    "description" : projectDescription,
-    "tags" : tags,
-    "skillz" : positions,
-    "startDate" : startDate,
-    "endDate" : endDate,
-    "inProgress" : inProgress
-  }
 
-
-
-
-
-newProject = addDocument('projects', newProject);
-
-
-  emulateServerReturn(projectData, cb);
-}
 
 
 export function getChatArrData(chat, cb) {
@@ -129,7 +109,7 @@ export function getUserInfo(user_id, cb) {
 }
 
 export function postNewProject(project_id, cb){
-  sendXHR('POST', '/user/1/project'+project_id, undefined, (xhr) => {
+  sendXHR('POST', '/user/1/project/'+project_id, undefined, (xhr) => {
     cb(JSON.parse(xhr.responseText));
   });
 }

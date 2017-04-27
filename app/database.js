@@ -65,8 +65,7 @@ var initialData = {
       "projects" : {
         "1":{
           "identifier" : "Okra",
-          "id"         : 1,
-          "notificationItems"    : 1,
+          "_id"         : 1,
           "msgs"       : 1,
           "positions"  : [1],
           "description": "Welcome to the show",
@@ -79,7 +78,7 @@ var initialData = {
         },
         "2" : {
           "identifier" : "Apple",
-          "id"         : 2,
+          "_id"         : 2,
           "updates"    : 2,
           "msgs"       : 2,
           "positions"  : [2],
@@ -92,7 +91,7 @@ var initialData = {
         },
         "3" : {
           "identifier" : "Peach",
-          "id"         : 3,
+          "_id"         : 3,
           "updates"    : 3,
           "msgs"       : 3,
           "positions"  : [1,2],
@@ -105,7 +104,7 @@ var initialData = {
         },
         "4" : {
           "identifier" : "Garbanzo Bean",
-          "id"         : 4,
+          "_id"         : 4,
           "updates"    : 4,
           "msgs"       : 4,
           "positions"        : 4,

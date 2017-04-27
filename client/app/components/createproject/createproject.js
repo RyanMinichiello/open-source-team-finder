@@ -34,9 +34,20 @@ export default class CreateProject extends React.Component {
         e.preventDefault();
         var projectNameText = this.state.projectName.trim();
         var descriptionText = this.state.description.trim();
+        var project = {"identifier" : projectNameText,
+        "description" : descriptionText,
+        "tags" : this.state.tags,
+        "skillz" : this.state.positions,
+        "startDate" : this.state.startDate.value,
+        "endDate" : this.state.endDate.value,
+        "inProgress" : this.state.inProgress.value,
 
-
-            createProject(1, projectNameText, descriptionText, this.tags, this.positions, this.startDate.value, this.endDate.value, this.inProgress.value, () => {
+        "_id"         : 5,
+        "updates"    : null,
+        "msgs"       : 4,
+        "positions"        : 4
+        };
+            createProject(1, project, () => {
                 this.refresh();
             });
             }

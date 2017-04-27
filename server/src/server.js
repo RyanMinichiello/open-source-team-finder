@@ -126,6 +126,12 @@ function getProfileData(id) {
     return profileData;
 }
 
+//createProject
+function createProject(projectId, project){
+  var newProject = addDocument("projects", project);
+  return newProject;
+}
+
 
 
 
@@ -191,105 +197,128 @@ function getAllJobs(user) {
 
 //END NON VERB FUNCTIONS
 
-//VERB FUNCTIONS
 
 
-app.get('/user/:userid/inbox/:inboxid', function(req,res){
-  var inboxid = req.params.inboxid;
+//MongoClient.connect(url, function(err, db) {
+  // Put everything that uses `app` into this callback function.
+  // from app.use(bodyParser.text());
+  // all the way to
+  // app.listen(3000, ...
+  // Also put all of the helper functions that use mock database
+  // methods like readDocument, writeDocument, ...
 
-  res.send(getInboxData(inboxid));
-});
+  //VERB FUNCTIONS
 
-//GET ALL CHATS FOR user
-app.get('/user/:userid/chats', function(req, res) {
- var userid = req.params.userid;
- res.send(getChatListItems(userid));
-});
 
-app.get('/user/:userid/messages/:chatid', function(req, res){
-  var userid = req.params.userid;
-  var chatid = req.params.chatid;
-  res.send(getMessageListItems(userid, chatid));
-});
+  app.get('/user/:userid/inbox/:inboxid', function(req,res){
+    var inboxid = req.params.inboxid;
 
-app.get('/user/:userid/message/:messageid', function(req,res){
-  var messageid = req.params.messageid;
+    res.send(getInboxData(inboxid));
+  });
 
-  res.send(getMessageData(messageid));
-});
-
-app.get('/user/:userid/chats/:chatid', function(req,res){
-  var chatid = req.params.chatid;
-
-  res.send(getChatData(chatid));
-});
-
-// Get Profile DATA
-
-app.get('/user/:userid', function (req, res) {
-    var userId = req.params.userid;
-
-    res.send(getProfileData(userId));
-});
-//GET PROJECT DATA
-app.get('/user/:userid/project/:projectid', function(req,res){
-  var projectid = req.params.projectid;
-
-  res.send(getProjectData(projectid));
-});
-//GET OPEN POSITIONS
-app.get('/user/:userid/open/pos_id/:pos_id', function(req,res){
-  var pos_id = req.params.pos_id;
-
-  res.send(getopen_positionData(pos_id));
-});
-//GET FILLED POSITIONS
-app.get('/user/:userid/filled/pos_id/:pos_id', function(req,res){
-  var pos_id = req.params.pos_id;
-
-  res.send(getfilled_positionData(pos_id));
-});
-//GET PROJECT UPDATES
-app.get('/user/:userid/projectid/:projectid', function(req,res){
-  var projectid = req.params.pos_id;
-
-  res.send(getProjectUpdates(projectid));
-});
-
-//GET SIDEBAR PROJECTS
-app.get('/users/:userid/sidebar-projects', function(req, res) {
-  var userid = req.params.userid;
-  res.send(getProjectPillData(userid));
-});
-
-//GET NOTIFICATION ITEMS
-app.get('/feed/:userid/notificationitems', function(req, res) {
-  var userid = req.params.userid;
-  res.send(getNotificationFeedData(userid));
-});
-
-//GET JOB ITEMS
-app.get('/feed/:userid/jobitems', function(req, res) {
+  //GET ALL CHATS FOR user
+  app.get('/user/:userid/chats', function(req, res) {
    var userid = req.params.userid;
-  res.send(getJobFeedData(userid));
-});
+   res.send(getChatListItems(userid));
+  });
+
+  app.get('/user/:userid/messages/:chatid', function(req, res){
+    var userid = req.params.userid;
+    var chatid = req.params.chatid;
+    res.send(getMessageListItems(userid, chatid));
+  });
+
+  app.get('/user/:userid/message/:messageid', function(req,res){
+    var messageid = req.params.messageid;
+
+    res.send(getMessageData(messageid));
+  });
+
+  app.get('/user/:userid/chats/:chatid', function(req,res){
+    var chatid = req.params.chatid;
+
+    res.send(getChatData(chatid));
+  });
+
+  // Get Profile DATA
+
+  app.get('/user/:userid', function (req, res) {
+      var userId = req.params.userid;
+
+      res.send(getProfileData(userId));
+  });
+  //GET PROJECT DATA
+  app.get('/user/:userid/project/:projectid', function(req,res){
+    var projectid = req.params.projectid;
+
+    res.send(getProjectData(projectid));
+  });
+  //GET OPEN POSITIONS
+  app.get('/user/:userid/open/pos_id/:pos_id', function(req,res){
+    var pos_id = req.params.pos_id;
+
+    res.send(getopen_positionData(pos_id));
+  });
+  //GET FILLED POSITIONS
+  app.get('/user/:userid/filled/pos_id/:pos_id', function(req,res){
+    var pos_id = req.params.pos_id;
+
+    res.send(getfilled_positionData(pos_id));
+  });
+  //GET PROJECT UPDATES
+  app.get('/user/:userid/projectid/:projectid', function(req,res){
+    var projectid = req.params.pos_id;
+
+    res.send(getProjectUpdates(projectid));
+  });
+
+  //GET SIDEBAR PROJECTS
+  app.get('/users/:userid/sidebar-projects', function(req, res) {
+    var userid = req.params.userid;
+    res.send(getProjectPillData(userid));
+  });
+
+  //GET NOTIFICATION ITEMS
+  app.get('/feed/:userid/notificationitems', function(req, res) {
+    var userid = req.params.userid;
+    res.send(getNotificationFeedData(userid));
+  });
+
+  //GET JOB ITEMS
+  app.get('/feed/:userid/jobitems', function(req, res) {
+     var userid = req.params.userid;
+    res.send(getJobFeedData(userid));
+  });
+
+  app.post('/user/:userid/project/:project_id', function (req, res){
+    var userid = req.params.userid;
+    var projectid = req.params.project_id;
+    console.log(req.body);
+    res.send(createProject(projectid, req.body));
+  })
 
 
-//GET ALL CHATS FOR user
-app.get('/users/:userid/chats', function(req, res) {
-  var userid = req.params.userid;
-  res.send(getChatListItems(userid));
-});
+  //GET ALL CHATS FOR user
+  app.get('/users/:userid/chats', function(req, res) {
+    var userid = req.params.userid;
+    res.send(getChatListItems(userid));
+  });
 
-//GET ALL JOB ITEMS
-app.get('/job-board/:userid/jobitems', function(req, res) {
-  var userid = req.params.userid;
-  res.send(getAllJobs(userid));
-});
+  //GET ALL JOB ITEMS
+  app.get('/job-board/:userid/jobitems', function(req, res) {
+    var userid = req.params.userid;
+    res.send(getAllJobs(userid));
+  });
 
-//END VERB FUNCTIONS
+  //END VERB FUNCTIONS
 
-// Starts the server on port 3000!
-app.listen(3000, function () {
-  console.log('Listening on port 3000!');
-});
+  // Starts the server on port 3000!
+  app.listen(3000, function () {
+    console.log('Listening on port 3000!');
+  });
+/*  var MongoDB = require('mongodb');
+  var MongoClient = MongoDB.MongoClient;
+  var ObjectID = MongoDB.ObjectID;
+  var url = 'mongodb://localhost:27017/facebook';
+*/
+// The file ends here. Nothing should be after this.
