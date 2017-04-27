@@ -88,7 +88,7 @@ function getMessageListItems(user_id, chat_id){
 
 
 function getProjectData(project_id){
-  var projectData = readDocument('project', project_id);
+  var projectData = readDocument('projects', project_id);
   return projectData;
 }
 
@@ -137,7 +137,7 @@ function getProjectPillData(userid) {
 
   var projectList = [];
   for(var i = 0; i < userData.projects.length; i ++ ) {
-    projectList.push(readDocument('project', userData.projects[i]));
+    projectList.push(readDocument('projects', userData.projects[i]));
   }
   return projectList;
 
