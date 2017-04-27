@@ -12,7 +12,7 @@ export default class ProjectMessages extends React.Component {
 
    generateMessages(list) {
      if(list){
-       return list.map(this.createMessage);
+       console.log(this.state.messages.length);
     }
    }
 
