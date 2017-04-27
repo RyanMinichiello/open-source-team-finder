@@ -5,7 +5,7 @@ import MessageReceive from './inbox-messagereceive';
 import MessageSent from './inbox-messagesent';
 import MessageEntry from './inbox-messageentry';
 import {getChatData} from '../../server.js';
-import {getMessageArrData} from '../../server.js';
+import {getMessageListItems} from '../../server.js';
 import {sendNewMessages} from '../../server.js';
 
 
@@ -15,14 +15,15 @@ constructor(props){
   super(props);
   this.state = {
     chats:[],
-    messages:[]
+    messages:[],
+    pid:1
   }
 }
 
 refresh(){
   getChatData(1, (ch) => {
     this.setState({chats:ch});
-    this.settingMessages(ch.messages);
+    this.settingMessages();
   });
 }
 
@@ -31,12 +32,12 @@ componentWillMount(){
   this.settingMessages();
 }
 
-settingMessages(ms){
-  if(ms){
-    getMessageArrData(ms, cb=>{
+settingMessages(){
+
+    getMessageListItems(this.state.pid, this.state.pid, cb=>{
       this.setState({messages: cb});
     });
-  }
+
 }
 
 generateMessages(m){

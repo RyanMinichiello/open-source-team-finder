@@ -2,7 +2,7 @@ import React from 'react';
 import InboxThread from './inbox-inboxthread';
 import Inbox from './inbox-inbox';
 import {getChatData} from '../../server';
-import {getChatArrData} from '../../server';
+import {getChatListItems} from '../../server';
 import {getInboxData} from '../../server';
 
 
@@ -28,26 +28,26 @@ export default class InboxItems extends React.Component {
    this.refresh();
   }
 
-  generateInbox(chats){
-    if(chats){
-      return chats.map(this.createInbox);
-    }
+  generateInbox(){
+      return (this.createInbox());
+      //return chats.map(this.createInbox);
+
   }
 
-  settingChat(ch){
-    if(ch){
-      getChatArrData(ch, (cb)=>{
+  settingChat(){
+
+      getChatListItems(1, (cb)=>{
         this.setState({chats: cb});
       });
 
-    }
+
   }
 
 
 
 
-  createInbox(chat){
-    return <Inbox key = {chat} chatId = {chat} ></Inbox>
+  createInbox(){
+    return <Inbox key = {1} chatId = {1} ></Inbox>
   }
 
 
@@ -62,7 +62,7 @@ export default class InboxItems extends React.Component {
 
           <InboxThread>
 
-            {this.generateInbox(this.props.chatData)}
+            {this.generateInbox()}
 
 
           </InboxThread>
