@@ -17,11 +17,15 @@ export default class JobBoard extends React.Component {
      this.state = {
         contents : [],
         pid : 1,
-        jobItems: null
+        jobItems: null,
+        profileData: null
       };
    }
 
    refresh() {
+     // Delete these comments when done debugging
+     //var check = this.getRecommendation(["Scala", "Finance"]);
+     //console.log(check);
      this.getJobList(this.state.pid);
    }
 
@@ -42,22 +46,30 @@ export default class JobBoard extends React.Component {
      );
    }
 
-   getRecommendation(tags) {
-     var user_data;
-     getProfileData(this.state.pid, (profileData) => {
-        user_data = profileData;
-     });
-     var user_interests = user_data.interests;
-     var user_skills = user_data.skills;
+ getRecommendation(tags) {
+    // var user_data;
+    //TODO: Find a way to store information on the profile in the state.
+    //getProfileData(this.state.pid, (profile-data) => {
+    //    this.setState(profileData: profile-data);
+    // });
+     //var user_interests = this.state.profileData;
+     //var user_skills = user_data.skills;
+     // Delete these lines once the profile data is properly gotten
+     var user_skills = ["Scala", "Node.js", "Agile Methodology"];
+     var user_interests = ["Finance", "Clean Energy"];
+     // End the delete
      var job_tags = tags;
      var ranking = calculateRecommendation(user_interests, user_skills, job_tags);
      return ranking;
    }
 
    createJobItem(item) {
+     //var rank = (item.tags) => {this.getRecommendation(item.tags)}
+     //console.log(rank);
+     //TODO: Find a way to call the recommendation function so that it is passed to the JobBoardPost
      return <JobBoardPost key = {item._id} position_description = {item.description}
        position_title = {item.title} tags = {item.tags}
-        rankingType = {() => this.getRecommendation(item.tags)} />
+       rankingType = {"gold-button"} />
    }
 
 
