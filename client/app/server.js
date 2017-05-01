@@ -1,20 +1,20 @@
-import {readDocument, writeDocument, addDocument} from './database.js';
+//import {readDocument, writeDocument, addDocument} from './database.js';
 
 /**
  * Emulates how a REST call is *asynchronous* -- it calls your function back
  * some time in the future with data.
  */
-function emulateServerReturn(data, cb) {
+/*function emulateServerReturn(data, cb) {
   setTimeout(() => {
     cb(data);
   }, 4);
-}
+}*/
 
 /**
  * Adds a new status update to the database.
  */
 
- export function sendMessage(chatId, contents, cb) {
+ /*export function sendMessage(chatId, contents, cb) {
      var chatData = readDocument('chats', chatId);
 
      var newMessage = {
@@ -77,7 +77,7 @@ newProject = addDocument('projects', newProject);
 
 
   emulateServerReturn(projectData, cb);
-}
+}*/
 
 
 
@@ -110,13 +110,6 @@ export function getChatData(chat_id, cb){
     cb(JSON.parse(xhr.responseText));
   });
 }
-
-
-export function getUserInfo(user_id, cb) {
-  var userData = readDocument('users', user_id);
-  emulateServerReturn(userData, cb);
-}
-
 
 export function postNewProject(project_id, cb){
   sendXHR('POST', '/user/1/project'+project_id, undefined, (xhr) => {

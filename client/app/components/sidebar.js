@@ -2,7 +2,7 @@ import React from 'react';
 import ProfilePill from './profile-page/profile_pill.js';
 import { Link } from 'react-router';
 import {getProjectPillData} from '../server.js';
-import {ResetDatabase} from '../database.js';
+import ResetDatabase from './resetdatabase';
 
 export default class Sidebar extends React.Component {
     constructor(props){
