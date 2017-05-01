@@ -16,7 +16,7 @@ export default class ProjectPage extends React.Component {
    }
 
    refresh() {
-     getProjectData(1, (projectData) => {
+     getProjectData("000000000000000000000001", (projectData) => {
       this.setState(projectData);
     });
 

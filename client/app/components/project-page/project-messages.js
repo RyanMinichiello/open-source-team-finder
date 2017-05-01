@@ -21,7 +21,7 @@ export default class ProjectMessages extends React.Component {
    }
 
    refresh() {
-     getProjectUpdates(1, (data) => {
+     getProjectUpdates("000000000000000000000001", (data) => {
       this.setState({messages : data});
     });
 

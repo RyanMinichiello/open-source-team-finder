@@ -17,7 +17,7 @@ export default class Profile extends React.Component {
      }
 
      refresh() {
-       getProfileData(1, (profileData) => {
+       getProfileData("000000000000000000000001", (profileData) => {
         this.setState(profileData);
       });
 

@@ -41,7 +41,7 @@ export default class ProjectDescription extends React.Component {
 
   refresh() {
     this.setState({pid : this.props.positionID});
-    getfilled_positionData(1, (listings) => {
+    getfilled_positionData("000000000000000000000001", (listings) => {
      this.setState({listings : listings});
    });
   }

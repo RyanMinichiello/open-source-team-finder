@@ -42,12 +42,12 @@ export default class CreateProject extends React.Component {
         "endDate" : this.state.endDate.value,
         "inProgress" : this.state.inProgress.value,
 
-        "_id"         : 5,
+        "_id"         : "000000000000000000000005",
         "updates"    : null,
-        "msgs"       : 4,
-        "positions"        : 4
+        "msgs"       : "000000000000000000000004",
+        "positions"        : "000000000000000000000004"
         };
-            createProject(1, project, () => {
+            createProject("000000000000000000000001", project, () => {
                 this.refresh();
             });
             }

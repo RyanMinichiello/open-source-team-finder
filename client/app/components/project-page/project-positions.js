@@ -27,7 +27,7 @@ export default class ProjectPositions extends React.Component {
 
    refresh() {
      this.setState({pid : this.props.positionID});
-     getopen_positionData(1, (listings) => {
+     getopen_positionData("000000000000000000000001", (listings) => {
       this.setState({listings : listings});
     });
    }

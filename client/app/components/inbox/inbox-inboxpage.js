@@ -19,14 +19,14 @@ export default class InboxPage extends React.Component {
       chats:[],
       activeChatId:"",
       messages:[],
-      pid:1
+      pid:"000000000000000000000001"
     };
   }
 
   refresh(){
-    getInboxData(1, (inboxData)=>{
+    getInboxData("000000000000000000000001", (inboxData)=>{
       this.setState({contents:inboxData});
-      getChatData(1, (cb) =>{
+      getChatData("000000000000000000000001", (cb) =>{
         this.setState({chats: cb});
         this.settingMessages;
       })

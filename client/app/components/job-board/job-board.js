@@ -47,7 +47,7 @@ export default class JobBoard extends React.Component {
      super(props);
      this.state = {
         contents : [],
-        pid : 1,
+        pid : "000000000000000000000001",
         jobItems: null,
         profileData: null,
         ranking: null
@@ -87,7 +87,6 @@ export default class JobBoard extends React.Component {
      //console.log(rank);
      //TODO: Find a way to call the recommendation function so that it is passed to the JobBoardPost
      var t =  getRecommendation(item.tags);
-     console.log(t);
        return <JobBoardPost key = {item._id} position_description = {item.description}
        position_title = {item.title} tags = {item.tags}
        rankingType = {t}/>

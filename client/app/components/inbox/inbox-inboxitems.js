@@ -13,12 +13,13 @@ export default class InboxItems extends React.Component {
       this.state = {
         contents:[],
         chats:[],
-        messages:[]
+        messages:[],
+        pid : "000000000000000000000001"
       };
   }
 
   refresh(){
-    getInboxData(1, (inboxData)=>{
+    getInboxData("000000000000000000000001", (inboxData)=>{
       this.setState({contents:inboxData});
       this.settingChat(inboxData.chats);
     });
@@ -36,7 +37,7 @@ export default class InboxItems extends React.Component {
 
   settingChat(){
 
-      getChatListItems(1, (cb)=>{
+      getChatListItems("000000000000000000000001", (cb)=>{
         this.setState({chats: cb});
       });
 
@@ -47,7 +48,7 @@ export default class InboxItems extends React.Component {
 
 
   createInbox(){
-    return <Inbox key = {1} chatId = {1} ></Inbox>
+    return <Inbox key = {this.state.pid} chatId = {this.state.pid} ></Inbox>
   }
 
 

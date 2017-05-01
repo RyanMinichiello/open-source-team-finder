@@ -2,23 +2,20 @@
 var express = require('express');
 // Creates an Express server.
 var app = express();
+var mongo_express = require('mongo-express/lib/middleware');
+var mongo_express_config = require('mongo-express/config.default.js');
+var MongoDB = require('mongodb');
+var MongoClient = MongoDB.MongoClient;
+var ObjectID = MongoDB.ObjectID;
+var url = 'mongodb://localhost:27017/ostf';
 //var bodyParser = require('body-parser');
 var database = require('./database.js');
 var writeDocument = database.writeDocument;
 var addDocument = database.addDocument;
 var readDocument = database.readDocument;
 
-app.use(express.static('../client/build'));
 
-// Reset database.
-app.post('/resetdb', function(req, res) {
-  console.log("Resetting database...");
-  // This is a debug route, so don't do any validation.
-  database.resetDatabase();
-  // res.send() sends an empty response with status code 200
-  res.send();
-});
-
+MongoClient.connect(url, function(err, db) {
 //app.use(bodyParser.text());
 //app.use(bodyParser.json());
 
@@ -218,6 +215,18 @@ function getAllJobs(user) {
 
   //VERB FUNCTIONS
 
+  app.use(express.static('../client/build'));
+
+  // Reset database.
+  app.post('/resetdb', function(req, res) {
+    console.log("Resetting database...");
+    // This is a debug route, so don't do any validation.
+    database.resetDatabase();
+    // res.send() sends an empty response with status code 200
+    res.send();
+  });
+
+app.use('/mongo_express', mongo_express(mongo_express_config));
 
   app.get('/user/:userid/inbox/:inboxid', function(req,res){
     var inboxid = req.params.inboxid;
@@ -331,3 +340,4 @@ function getAllJobs(user) {
   var url = 'mongodb://localhost:27017/facebook';
 */
 // The file ends here. Nothing should be after this.
+});

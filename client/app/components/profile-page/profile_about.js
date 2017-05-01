@@ -16,7 +16,7 @@ export default class Profile_About extends React.Component {
         e.preventDefault();
         var messageText = this.state.value.trim();
         if(messageText !== "") {
-            sendMessage(1, messageText, () => {
+            sendMessage("000000000000000000000001", messageText, () => {
                 this.refresh();
             });
             this.setState({value: ""});
@@ -29,7 +29,7 @@ export default class Profile_About extends React.Component {
     }
 
     refresh() {
-        getChatData(1, (chatData) => {
+        getChatData("000000000000000000000001", (chatData) => {
             this.setState(chatData);
         });
     }

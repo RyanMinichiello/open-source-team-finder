@@ -8,7 +8,7 @@ export default class Profile_Teams extends React.Component {
     super(props);
     this.state = {
       contents: [],
-      pid : 1,
+      pid : "000000000000000000000001",
       projects: []
     };
   }
@@ -28,11 +28,11 @@ export default class Profile_Teams extends React.Component {
   }
 
 createProjectPillItem(item) {
-  return <ProfilePill key = {item._id} team={item.identifier}/>
+  return <ProfilePill key = {item.id} team={item.identifier}/>
 }
 
 refresh() {
-  getProfileData(1, (profileData) => {
+  getProfileData("000000000000000000000001", (profileData) => {
     this.setState(profileData);
   });
   this.getProjectList(this.state.pid);

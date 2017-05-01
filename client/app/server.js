@@ -1,86 +1,3 @@
-//import {readDocument, writeDocument, addDocument} from './database.js';
-
-/**
- * Emulates how a REST call is *asynchronous* -- it calls your function back
- * some time in the future with data.
- */
-/*function emulateServerReturn(data, cb) {
-  setTimeout(() => {
-    cb(data);
-  }, 4);
-}*/
-
-/**
- * Adds a new status update to the database.
- */
-
- /*export function sendMessage(chatId, contents, cb) {
-     var chatData = readDocument('chats', chatId);
-
-     var newMessage = {
-         "author" : 1,
-         "contents" : contents,
-         "side" : "left"
-     }
-
-     newMessage = addDocument('messages', newMessage);
-
-
-     chatData["messages"].push(newMessage._id);
-     //console.log(chatData["messages"]); // IT IS ADDING THE NEW MESSAGE! in console though, not database
-
-     writeDocument('chats', chatData);
-     //console.log(chatData["messages"]);
-     writeDocument('messages', newMessage);
-     emulateServerReturn(chatData, cb);
- }
-
-
-export function sendNewMessages(chatId, contents,cb) {
-  var chatData = readDocument('chats', chatId);
-
-  var newMessage = {
-      "author" : 1,
-      "contents" : contents,
-      "side" : "right"
-  }
-
-  newMessage = addDocument('messages', newMessage);
-
-
-  chatData["messages"].push(newMessage._id);
-  //console.log(chatData["messages"]); // IT IS ADDING THE NEW MESSAGE! in console though, not database
-
-  writeDocument('chats', chatData);
-  //console.log(chatData["messages"]);
-  writeDocument('messages', newMessage);
-  emulateServerReturn(chatData, cb);
-}
-
-export function createProject(projectId,projectName, projectDescription, tags, positions, startDate, endDate, inProgress, cb){
-  var projectData = readDocument('projects', projectId)
-  var newProject = {
-    "identifier" : projectName,
-    "description" : projectDescription,
-    "tags" : tags,
-    "skillz" : positions,
-    "startDate" : startDate,
-    "endDate" : endDate,
-    "inProgress" : inProgress
-  }
-
-
-
-
-
-newProject = addDocument('projects', newProject);
-
-
-  emulateServerReturn(projectData, cb);
-}*/
-
-
-
 export function getChatListItems(user_id, cb) {
   sendXHR('GET', '/user/'+ user_id + '/chats', undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
@@ -94,25 +11,25 @@ export function getMessageListItems(user_id, chat_id, cb){
 }
 
 export function getInboxData(inbox_id, cb){
-  sendXHR('GET', 'user/1/inbox/'+inbox_id, undefined, (xhr) =>{
+  sendXHR('GET', 'user/000000000000000000000001/inbox/'+inbox_id, undefined, (xhr) =>{
     cb(JSON.parse(xhr.responseText));
   });
 }
 
 export function getMessageData(message_id, cb){
-  sendXHR('GET', 'user/1/message/'+message_id, undefined, (xhr) =>{
+  sendXHR('GET', 'user/000000000000000000000001/message/'+message_id, undefined, (xhr) =>{
     cb(JSON.parse(xhr.responseText));
   });
 }
 
 export function getChatData(chat_id, cb){
-  sendXHR('GET', 'user/1/chats/'+chat_id, undefined, (xhr) =>{
+  sendXHR('GET', 'user/000000000000000000000001/chats/'+chat_id, undefined, (xhr) =>{
     cb(JSON.parse(xhr.responseText));
   });
 }
 
 export function postNewProject(project_id, cb){
-  sendXHR('POST', '/user/1/project'+project_id, undefined, (xhr) => {
+  sendXHR('POST', '/user/000000000000000000000001/project'+project_id, undefined, (xhr) => {
     cb(JSON.parse(xhr.responseText));
   });
 }
@@ -120,7 +37,7 @@ export function postNewProject(project_id, cb){
 
 export function getProfileData(id, cb){
 
-    sendXHR('GET', '/user/1', undefined, (xhr) => {
+    sendXHR('GET', '/user/000000000000000000000001', undefined, (xhr) => {
         cb(JSON.parse(xhr.responseText));
     });
   /*var profileData = readDocument('users', id);
@@ -148,7 +65,7 @@ export function getAllJobs(userid, cb) {
 export function getProjectData(project_id, cb){
 
 
-  sendXHR('GET', '/user/1/project/'+project_id, undefined, (xhr) => {
+  sendXHR('GET', '/user/000000000000000000000001/project/'+project_id, undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
  });
 
@@ -156,13 +73,13 @@ export function getProjectData(project_id, cb){
 
 
 export function getopen_positionData(pid, cb){
-  sendXHR('GET', '/user/1/open/pos_id/'+pid, undefined, (xhr) => {
+  sendXHR('GET', '/user/000000000000000000000001/open/pos_id/'+pid, undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
  });
 }
 
 export function getfilled_positionData(pid, cb){
-  sendXHR('GET', '/user/1/filled/pos_id/'+pid, undefined, (xhr) => {
+  sendXHR('GET', '/user/000000000000000000000001/filled/pos_id/'+pid, undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
  });
 }
@@ -186,7 +103,7 @@ export function getNotificationFeedData(userid, cb) {
 
 
 export function getProjectUpdates(id, cb){
-  sendXHR('GET', '/user/1/project/'+id, undefined, (xhr) => {
+  sendXHR('GET', '/user/000000000000000000000001/project/'+id, undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
  });
 }
