@@ -277,8 +277,8 @@ var initialData = {
       "notificationItems" : {
         "1" : {
           "_id" : 1,
-          "title" : "Update on Garbanzo Bean Team",
-          "description" : "We are running out of bean steam and may be closing down in July :/."
+          "title" : "Update on Okra Bean Team",
+          "description" : "We are running out of money and may be closing down in July :/."
         } ,
 
         "2" : {
