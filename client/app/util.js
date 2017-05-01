@@ -9,11 +9,13 @@ export function calculateRecommendation(user_interests, user_skills, job_tags) {
     }
   }
   var similarityPercentage = shared_item_count / job_tags.length;
+  var ret = "";
   if (similarityPercentage >= 0.66){
-    return "gold-button";
+    ret =  "gold-button";
   } else if (similarityPercentage >= 0.33) {
-    return "silver-button";
+    ret =  "silver-button";
   } else {
-    return "bronze-button";
+    ret =  "bronze-button";
   }
+  return ret;
 }
