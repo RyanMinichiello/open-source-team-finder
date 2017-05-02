@@ -1,6 +1,6 @@
 var ObjectID = require('mongodb').ObjectID;
 
-var databaseName = "ostf";
+var databaseName = "OSTF";
 
 var initialData = {
       // The 'user' collection; contains all the users in our system

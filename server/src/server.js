@@ -5,12 +5,14 @@ var app = express();
 //var bodyParser = require('body-parser');
 var database = require('./database.js');
 var writeDocument = database.writeDocument;
-var addDocument = database.addDocument;
 var readDocument = database.readDocument;
 var ProjectSchema = require('./schemas/projects.json');
 var validate = require('express-jsonschema').validate;
-app.use(express.static('../client/build'));
+var mongo_express = require('mongo-express/lib/middleware');
+var mongo_express_config = require('mongo-express/config.default.js');
 
+app.use(express.static('../client/build'));
+app.use('/mongo_express', mongo_express(mongo_express_config));
 // Reset database.
 app.post('/resetdb', function(req, res) {
   console.log("Resetting database...");
