@@ -74,31 +74,31 @@ export function createProject(userId, identifier, description, tags, skillz, sta
 
 
 export function getChatListItems(user_id, cb) {
-  sendXHR('GET', '/user/' + user_id + '/chats', undefined, (xhr) => {
+  sendXHR('GET', '/users/' + user_id + '/chats', undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
   });
 }
 
 export function getMessageListItems(user_id, chat_id, cb){
-  sendXHR('GET', 'user/' + user_id + '/messages/' + chat_id, undefined, (xhr) =>{
+  sendXHR('GET', 'users/' + user_id + '/messages/' + chat_id, undefined, (xhr) =>{
     cb(JSON.parse(xhr.responseText));
   })
 }
 
 export function getInboxData(inbox_id, cb){
-  sendXHR('GET', 'user/1/inbox/'+inbox_id, undefined, (xhr) =>{
+  sendXHR('GET', 'users/000000000000000000000001/inbox/'+inbox_id, undefined, (xhr) =>{
     cb(JSON.parse(xhr.responseText));
   });
 }
 
 export function getMessageData(message_id, cb){
-  sendXHR('GET', 'user/1/message/'+message_id, undefined, (xhr) =>{
+  sendXHR('GET', 'users/0000000000000000000000011/message/'+message_id, undefined, (xhr) =>{
     cb(JSON.parse(xhr.responseText));
   });
 }
 
 export function getChatData(chat_id, cb){
-  sendXHR('GET', 'user/1/chats/'+chat_id, undefined, (xhr) =>{
+  sendXHR('GET', 'users/000000000000000000000001/chats/'+chat_id, undefined, (xhr) =>{
     cb(JSON.parse(xhr.responseText));
   });
 }
@@ -122,7 +122,7 @@ export function getProfileData(id, cb){
 
 export function getUserInfo(id, cb){
 
-    sendXHR('GET', '/user/' + id, undefined, (xhr) => {
+    sendXHR('GET', '/users/' + id, undefined, (xhr) => {
         cb(JSON.parse(xhr.responseText));
     });
 }
@@ -191,7 +191,7 @@ export function getProjectUpdates(id, cb){
 }
 
 //XHR HELPER FUNCTION
-var token = 'eyJpZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNCJ9'; // <-- Put your base64'd JSON token here
+var token = 'eyJpZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9'; // <-- Put your base64'd JSON token here
 /**
  * Properly configure+send an XMLHttpRequest with error handling,
  * authorization token, and other needed properties.

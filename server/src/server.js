@@ -1,5 +1,11 @@
 // Imports the express Node module.
 var express = require('express');
+var MongoDB = require('mongodb');
+var MongoClient = MongoDB.MongoClient;
+var ObjectID = MongoDB.ObjectID;
+var url = 'mongodb://localhost:27017/OSTF';
+
+MongoClient.connect(url, function(err,db){
 // Creates an Express server.
 var app = express();
 //var bodyParser = require('body-parser');
@@ -12,6 +18,7 @@ var NewMessageSchema = require('./schemas/newmessage.json');
 var validate = require('express-jsonschema').validate;
 var mongo_express = require('mongo-express/lib/middleware');
 var mongo_express_config = require('mongo-express/config.default.js');
+var ResetDatabase = require('./resetdatabase');
 
 app.use(express.static('../client/build'));
 app.use('/mongo_express', mongo_express(mongo_express_config));
@@ -19,9 +26,11 @@ app.use('/mongo_express', mongo_express(mongo_express_config));
 app.post('/resetdb', function(req, res) {
   console.log("Resetting database...");
   // This is a debug route, so don't do any validation.
-  database.resetDatabase();
+  ResetDatabase(db, function(){
+    res.send();
+  });
   // res.send() sends an empty response with status code 200
-  res.send();
+
 });
 
 //app.use(bodyParser.text());
@@ -43,7 +52,7 @@ function getUserIdFromToken(authorizationLine) {
     var tokenObj = JSON.parse(regularString);
     var id = tokenObj['id'];
     // Check that id is a number.
-    if (typeof id === 'number') {
+    if (typeof id === 'string') {
       return id;
     } else {
       // Not a number. Return -1, an invalid ID.
@@ -55,14 +64,38 @@ function getUserIdFromToken(authorizationLine) {
   }
 }
 
- function getInboxData(inbox_id){
-  var inboxData = readDocument('inbox', inbox_id);
-  return inboxData;
+ function getInboxData(inbox_id, callback){
+
+    // var inboxData = readDocument('inbox', inbox_id);
+    // return inboxData;
+  db.collection('inbox').findOne({
+    _id: inbox_id
+  }, function(err,inb){
+    if(err){
+      return callback(err);
+    }else if(inb === null){
+      return callback(null, null);
+    }
+    callback(null,inb);
+  });
 }
 
-function getMessageData(message_id){
-  var messageData = readDocument('messages', message_id);
-  return messageData;
+
+
+function getMessageData(message_id, callback){
+  // var messageData = readDocument('messages', message_id);
+  // return messageData;
+
+  db.collection('messages').findOne({
+    _id: message_id
+  }, function(err,inb){
+    if(err){
+      return callback(err);
+    }else if(inb === null){
+      return callback(null, null);
+    }
+    callback(null,inb);
+  });
 }
 
 function sendNewMessages(chatId, contents) {
@@ -87,9 +120,19 @@ writeDocument('messages', newMessage);
 return newMessage;
 }
 
-function getChatData(chat_id){
-  var chatData = readDocument('chats', chat_id);
-  return chatData;
+function getChatData(chat_id,callback){
+  // var chatData = readDocument('chats', chat_id);
+  // return chatData;
+  db.collection('chats').findOne({
+    _id: chat_id
+  }, function(err,inb){
+    if(err){
+      return callback(err);
+    }else if(inb === null){
+      return callback(null, null);
+    }
+    callback(null,inb);
+  });
 }
 
 function getChatListItems(user_id) {
@@ -99,6 +142,34 @@ function getChatListItems(user_id) {
     var chatList = [];
     for(var i = 0; i < inboxData.chats.length; i ++ ) {
       chatList.push(readDocument('chats', inboxData.chats[i]));
+
+    // db.collection('users').findOne({
+    //   _id: user_id
+    // }, function(err, userData){
+    //   if(err) {
+    //     return callback(err);
+    //   }
+    //   else if(userData === null){
+    //     return callback(null,null);
+    //   }
+    //
+    //   db.collection('inbox').findOne({
+    //     _id: userData.inbox
+    //   }, function(err, inboxData){
+    //     if(err) {
+    //       return callback(err);
+    //     }else if(inboxData === null){
+    //       return callback(null,null);
+    //     }
+    //
+    //     var chatList = [];
+    //
+    //     function processNextChatItem(i) {
+    //       getChatData(inboxData.conten)
+    //     }
+    //   })
+    // })
+
     }
 
     return chatList;
@@ -160,9 +231,20 @@ function getProfileData(id) {
     return profileData;
 }
 
-function getUserInfo(id) {
-    var profileData = readDocument('users', id);
-    return profileData;
+function getUserInfo(id, callback) {
+    // var profileData = readDocument('users', id);
+    // return profileData;
+
+    db.collection('users').findOne({
+      _id: id
+    }, function(err,inb){
+      if(err){
+        return callback(err);
+      }else if(inb === null){
+        return callback(null, null);
+      }
+      callback(null,inb);
+    });
 }
 
 //createProject
@@ -272,34 +354,76 @@ function getAllJobs(user) {
 
 
 
-  app.get('/user/:userid/inbox/:inboxid', function(req,res){
+  app.get('/users/:userid/inbox/:inboxid', function(req,res){
     var inboxid = req.params.inboxid;
-
-    res.send(getInboxData(inboxid));
+    var userid = req.params.userid;
+    var fromUser = getUserIdFromToken(req.get('Authorization'));
+    if(fromUser === userid){
+      getInboxData(new ObjectID(inboxid), function(err, inb){
+        if(err){
+          res.status(500).send("Database error: " + err);
+        }else if(inb === null){
+          res.status(400).send("Could not look up inbox for user " + userid);
+        }else{
+          res.send(inb);
+        }
+      });
+    }else{
+      res.status(403).end();
+    }
+  //res.send(getInboxData(inboxid));
   });
 
   //GET ALL CHATS FOR user
-  app.get('/user/:userid/chats', function(req, res) {
+  app.get('/users/:userid/chats', function(req, res) {
    var userid = req.params.userid;
    res.send(getChatListItems(userid));
   });
 
-  app.get('/user/:userid/messages/:chatid', function(req, res){
+  app.get('/users/:userid/messages/:chatid', function(req, res){
     var userid = req.params.userid;
     var chatid = req.params.chatid;
     res.send(getMessageListItems(userid, chatid));
   });
 
-  app.get('/user/:userid/message/:messageid', function(req,res){
+  app.get('/users/:userid/message/:messageid', function(req,res){
     var messageid = req.params.messageid;
-
-    res.send(getMessageData(messageid));
+    var userid = req.params.userid;
+    var fromUser = getUserIdFromToken(req.get('Authorization'));
+    if(fromUser === userid){
+      getMessageData(new ObjectID(messageid), function(err, inb){
+        if(err){
+          res.status(500).send("Database error: " + err);
+        }else if(inb === null){
+          res.status(400).send("Could not look up inbox for user " + userid);
+        }else{
+          res.send(inb);
+        }
+      });
+    }else{
+      res.status(403).end();
+    }
+    //res.send(getMessageData(messageid));
   });
 
-  app.get('/user/:userid/chats/:chatid', function(req,res){
+  app.get('/users/:userid/chats/:chatid', function(req,res){
     var chatid = req.params.chatid;
-
-    res.send(getChatData(chatid));
+    var userid = req.params.userid;
+    var fromUser = getUserIdFromToken(req.get('Authorization'));
+    if(fromUser === userid){
+      getChatData(new ObjectID(chatid), function(err, inb){
+        if(err){
+          res.status(500).send("Database error: " + err);
+        }else if(inb === null){
+          res.status(400).send("Could not look up inbox for user " + userid);
+        }else{
+          res.send(inb);
+        }
+      });
+    }else{
+      res.status(403).end();
+    }
+    //res.send(getChatData(chatid));
   });
 
   // Get Profile DATA
@@ -310,10 +434,23 @@ function getAllJobs(user) {
       res.send(getProfileData(userId));
   });
 
-  app.get('/user/:userid', function (req, res) {
-      var userId = req.params.userid;
-
-      res.send(getUserInfo(userId));
+  app.get('/users/:userid', function (req, res) {
+      var userid = req.params.userid;
+      var fromUser = getUserIdFromToken(req.get('Authorization'));
+      if(fromUser === userid){
+        getUserInfo(new ObjectID(userid), function(err, inb){
+          if(err){
+            res.status(500).send("Database error: " + err);
+          }else if(inb === null){
+            res.status(400).send("Could not look up inbox for user " + userid);
+          }else{
+            res.send(inb);
+          }
+        });
+      }else{
+        res.status(403).end();
+      }
+    //  res.send(getUserInfo(userId));
   });
 
   //GET PROJECT DATA
@@ -418,3 +555,4 @@ function getAllJobs(user) {
   var url = 'mongodb://localhost:27017/facebook';
 */
 // The file ends here. Nothing should be after this.
+});

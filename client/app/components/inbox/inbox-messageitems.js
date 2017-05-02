@@ -16,13 +16,13 @@ constructor(props){
   this.state = {
     chats:[],
     messages:[],
-    pid:1,
+    pid:"000000000000000000000001",
     chatName:""
   }
 }
 
 refresh(){
-  getChatData(1, (ch) => {
+  getChatData(this.state.pid, (ch) => {
     this.setState({chats:ch});
     this.settingMessages();
     this.setState({chatName: ch.name});
@@ -61,7 +61,7 @@ onPost(mContents) {
   // Send to server.
   // We could use geolocation to get a location, but let's fix it to Amherst
   // for now.
-  sendNewMessages(1, mContents,  () => {
+  sendNewMessages(this.state.pid, mContents,  () => {
     // Database is now updated. Refresh the feed.
     this.refresh();
   });
