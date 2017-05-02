@@ -61,14 +61,6 @@ export default class Navbar extends React.Component{
                   </Link>
                   </div>
                   <div className="btn-group" role="group">
-                    <Link to ={`/inbox/${this.state.pid}`}>
-                      <button type="button" className="btn btn-default navbar-btn">
-
-                        <span className="glyphicon glyphicon-envelope"></span>
-                      </button>
-                  </Link>
-                  </div>
-                  <div className="btn-group" role="group">
                     <Link to={"/createproject"}>
                       <button type="button" className="btn btn-create navbar-btn">
                         +Create Project

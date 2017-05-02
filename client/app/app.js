@@ -7,7 +7,6 @@ import Profile from './components/profile-page/profile.js';
 import MainFeed from './components/main-feed/main-feed.js';
 import JobBoard from './components/job-board/job-board.js'
 import CreateProject from './components/createproject/createproject.js';
-import InboxPage from './components/inbox/inbox-inboxpage.js'
 
 
 // For each view conditionally determine which view to display
@@ -16,7 +15,6 @@ import InboxPage from './components/inbox/inbox-inboxpage.js'
 ReactDOM.render((
   <Router >
     <Route path="/" components={MainFeed}/>
-    <Route path="/inbox/:pid" components={InboxPage}/>
     <Route path="/profile/:id" components={Profile}/>
     <Route path="/createproject" components={CreateProject}/>
     <Route path="/ostf-job-board" components={JobBoard}/>
