@@ -57,38 +57,38 @@ export function sendNewMessages(chatId, contents,cb) {
   emulateServerReturn(chatData, cb);
 }
 
-export function createProject(projectId,projectName, projectDescription, tags, positions, startDate, endDate, inProgress, cb){
-  var projectData = readDocument('projects', projectId)
-  var newProject = {
-    "identifier" : projectName,
-    "description" : projectDescription,
-    "tags" : tags,
-    "skillz" : positions,
-    "startDate" : startDate,
-    "endDate" : endDate,
-    "inProgress" : inProgress
-  }
+export function createProject(userId, identifier, description, tags, skillz, startDate, endDate,
+  inProgress, projId, updates, msgs, positions, cb) {
+  console.log("MADE IT TO EXPORT FUNCT");
+  console.log(identifier);
 
-
-
-
-
-newProject = addDocument('projects', newProject);
-
-
-  emulateServerReturn(projectData, cb);
+  sendXHR('POST', '/project', {
+    userId: userId,
+    identifier : identifier,
+    id : projId,
+    notificationItems : updates,
+    msgs : msgs,
+    positions : positions,
+    description : description,
+    skillz : skillz,
+    startDate : startDate,
+    endDate : endDate,
+    inProgress : inProgress,
+    tags : tags
+  }, (xhr) => {
+    cb(JSON.parse(xhr.responseText));
+  });
 }
 
 
-
 export function getChatListItems(user_id, cb) {
-  sendXHR('GET', '/user/'+ user_id + '/chats', undefined, (xhr) => {
+  sendXHR('GET', '/user/' + user_id + '/chats', undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
   });
 }
 
 export function getMessageListItems(user_id, chat_id, cb){
-  sendXHR('GET', 'user/'+user_id+'/messages/'+chat_id, undefined, (xhr) =>{
+  sendXHR('GET', 'user/' + user_id + '/messages/' + chat_id, undefined, (xhr) =>{
     cb(JSON.parse(xhr.responseText));
   })
 }

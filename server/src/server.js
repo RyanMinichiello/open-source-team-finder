@@ -7,7 +7,8 @@ var database = require('./database.js');
 var writeDocument = database.writeDocument;
 var addDocument = database.addDocument;
 var readDocument = database.readDocument;
-
+var ProjectSchema = require('./schemas/projects.json');
+var validate = require('express-jsonschema').validate;
 app.use(express.static('../client/build'));
 
 //app.use(bodyParser.text());
@@ -85,8 +86,6 @@ function getMessageListItems(user_id, chat_id){
 
 }
 
-
-
 function getProjectData(project_id){
   var projectData = readDocument('projects', project_id);
   return projectData;
@@ -127,8 +126,30 @@ function getProfileData(id) {
 }
 
 //createProject
-function createProject(projectId, project){
-  var newProject = addDocument("projects", project);
+function createProject(userId, identifier, description, tags, skillz, startDate, endDate,
+  inProgress, projId, notificationItems, msgs, positions) {
+  console.log("MADE IT TO SERVER");
+  console.log(identifier);
+  //Add project to associated user
+  var userData = readDocument('users', userId);
+  userData.projects.push(projId);
+
+  var newProject = {
+    "userId" : userId,
+    "identifier" : identifier,
+    "id"         : projId,
+    "notificationItems": notificationItems,
+    "msgs"       : msgs,
+    "positions"  : positions,
+    "description": description,
+    "skillz": skillz,
+    "startDate" : startDate,
+    "endDate" : endDate,
+    "inProgress" : inProgress,
+    "tags" : tags
+
+  }
+  writeDocument('projects', newProject);
   return newProject;
 }
 
@@ -290,12 +311,25 @@ function getAllJobs(user) {
     res.send(getJobFeedData(userid));
   });
 
-  app.post('/user/:userid/project/:project_id', function (req, res){
-    var userid = req.params.userid;
-    var projectid = req.params.project_id;
+  //CreateNewProject
+  app.post('/project', validate({body:ProjectSchema}), function (req, res) {
+    var project = req.body;
+    var fromUser = getUserIdFromToken(req.get('Authorization'));
     console.log(req.body);
-    res.send(createProject(projectid, req.body));
-  })
+    if(fromUser == project.userId) {
+      console.log("MADE IT TO APP.POST");
+      console.log(req.body.userId);
+      var newProject = createProject(project.userId, project.identifier, project.description, project.tags, project.skillz,
+         project.startDate, project.endDate, project.inProgress, project._id,
+          project.notificationItems, project.msgs, project.positions);
+      res.status(201);
+      console.log();
+      res.send(newProject);
+    } else {
+       // 401: Unauthorized.
+         res.status(401).end();
+     }
+  });
 
 
   //GET ALL CHATS FOR user

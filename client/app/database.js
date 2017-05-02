@@ -64,6 +64,7 @@ var initialData = {
 
       "projects" : {
         "1":{
+          "userId":1,
           "identifier" : "Okra",
           "id"         : 1,
           "notificationItems"    : 1,
@@ -78,6 +79,7 @@ var initialData = {
 
         },
         "2" : {
+          "userId":1,
           "identifier" : "Apple",
           "id"         : 2,
           "updates"    : 2,
@@ -91,6 +93,7 @@ var initialData = {
           "tags" : ["C", "Low Level"]
         },
         "3" : {
+          "userId":1,
           "identifier" : "Peach",
           "id"         : 3,
           "updates"    : 3,
@@ -104,6 +107,7 @@ var initialData = {
           "tags" : ["Databases", "Back-end", "Team"]
         },
         "4" : {
+          "userId":1,
           "identifier" : "Garbanzo Bean",
           "id"         : 4,
           "updates"    : 4,
