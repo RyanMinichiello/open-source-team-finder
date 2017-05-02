@@ -33,30 +33,21 @@
      //console.log(chatData["messages"]);
      writeDocument('messages', newMessage);
      emulateServerReturn(chatData, cb);
- }
+ }*/
 
 
 export function sendNewMessages(chatId, contents,cb) {
-  var chatData = readDocument('chats', chatId);
-
-  var newMessage = {
-      "author" : 1,
-      "contents" : contents,
-      "side" : "right"
-  }
-
-  newMessage = addDocument('messages', newMessage);
-
-
-  chatData["messages"].push(newMessage._id);
-  //console.log(chatData["messages"]); // IT IS ADDING THE NEW MESSAGE! in console though, not database
-
-  writeDocument('chats', chatData);
-  //console.log(chatData["messages"]);
-  writeDocument('messages', newMessage);
-  emulateServerReturn(chatData, cb);
+  console.log("sendnewmessages from client side");
+  sendXHR('POST', '/newmessages',{
+    author: 1,
+    contents: contents,
+    id: 20,
+    side:"right"
+  }, (xhr) => {
+    cb(JSON.parse(xhr.responseText));
+  });
 }
-*/
+
 
 export function createProject(userId, identifier, description, tags, skillz, startDate, endDate,
   inProgress, projId, updates, msgs, positions, cb) {
@@ -127,6 +118,13 @@ export function getProfileData(id, cb){
   /*var profileData = readDocument('users', id);
   emulateServerReturn(profileData, cb);*/
 
+}
+
+export function getUserInfo(id, cb){
+
+    sendXHR('GET', '/user/' + id, undefined, (xhr) => {
+        cb(JSON.parse(xhr.responseText));
+    });
 }
 
 //SIDEBAR Pills

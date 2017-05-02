@@ -6,7 +6,9 @@ var app = express();
 var database = require('./database.js');
 var writeDocument = database.writeDocument;
 var readDocument = database.readDocument;
+var addDocument = database.addDocument;
 var ProjectSchema = require('./schemas/projects.json');
+var NewMessageSchema = require('./schemas/newmessage.json');
 var validate = require('express-jsonschema').validate;
 var mongo_express = require('mongo-express/lib/middleware');
 var mongo_express_config = require('mongo-express/config.default.js');
@@ -61,6 +63,28 @@ function getUserIdFromToken(authorizationLine) {
 function getMessageData(message_id){
   var messageData = readDocument('messages', message_id);
   return messageData;
+}
+
+function sendNewMessages(chatId, contents) {
+
+  console.log("sendnnewmessages from serverside");
+  var chatData = readDocument('chats', chatId);
+  console.log("chatdata");
+  console.log(chatData);
+  var newMessage = {
+      "author" : 1,
+      "contents" : contents,
+      "side" : "right"
+  }
+
+newMessage = addDocument('messages', newMessage);
+console.log("newMess");
+console.log(newMessage);
+chatData.messages.shift(newMessage._id);
+writeDocument('chats',chatData);
+writeDocument('messages', newMessage);
+
+return newMessage;
 }
 
 function getChatData(chat_id){
@@ -132,6 +156,11 @@ function getProjectUpdates(id){
 }
 
 function getProfileData(id) {
+    var profileData = readDocument('users', id);
+    return profileData;
+}
+
+function getUserInfo(id) {
     var profileData = readDocument('users', id);
     return profileData;
 }
@@ -242,6 +271,7 @@ function getAllJobs(user) {
   //VERB FUNCTIONS
 
 
+
   app.get('/user/:userid/inbox/:inboxid', function(req,res){
     var inboxid = req.params.inboxid;
 
@@ -279,6 +309,13 @@ function getAllJobs(user) {
 
       res.send(getProfileData(userId));
   });
+
+  app.get('/user/:userid', function (req, res) {
+      var userId = req.params.userid;
+
+      res.send(getUserInfo(userId));
+  });
+
   //GET PROJECT DATA
   app.get('/user/:userid/project/:projectid', function(req,res){
     var projectid = req.params.projectid;
@@ -321,6 +358,20 @@ function getAllJobs(user) {
      var userid = req.params.userid;
     res.send(getJobFeedData(userid));
   });
+
+  app.post('/newmessages',validate({body: NewMessageSchema}), function(req,res){
+    console.log("POSTING");
+    var body = req.body;
+    console.log(body);
+    var fromUser = getUserIdFromToken(req.get('Authorization'));
+    if(fromUser === body.author){
+      var newMessage = sendNewMessages(1, body.contents);
+      res.status(201);
+      res.send(newMessage);
+    }else{
+      res.status(401).end();
+    }
+});
 
   //CreateNewProject
   app.post('/project', validate({body:ProjectSchema}), function (req, res) {

@@ -16,7 +16,8 @@ constructor(props){
   this.state = {
     chats:[],
     messages:[],
-    pid:1
+    pid:1,
+    chatName:""
   }
 }
 
@@ -24,6 +25,7 @@ refresh(){
   getChatData(1, (ch) => {
     this.setState({chats:ch});
     this.settingMessages();
+    this.setState({chatName: ch.name});
   });
 }
 
@@ -55,6 +57,7 @@ createMessages(m){
 }
 
 onPost(mContents) {
+  console.log("ONPOST");
   // Send to server.
   // We could use geolocation to get a location, but let's fix it to Amherst
   // for now.
@@ -62,6 +65,7 @@ onPost(mContents) {
     // Database is now updated. Refresh the feed.
     this.refresh();
   });
+  console.log("end of onpost");
 }
 
 
@@ -71,7 +75,7 @@ onPost(mContents) {
     return (
       <div className= "col-md-7">
 
-        <InboxHeader team="Okra Team">
+        <InboxHeader team={this.state.chatName}>
         </InboxHeader>
 
         <div className= "message-zone">

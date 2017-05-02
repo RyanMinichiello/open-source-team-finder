@@ -10,6 +10,7 @@ export default class MessageEntry extends React.Component {
   }
 
   handlePost(e){
+    console.log("HANDLEPOST FROM MESSAGE ENTRY");
     e.preventDefault();
     var messageUpdateText = this.state.value.trim();
     if(messageUpdateText !== ""){
@@ -18,6 +19,7 @@ export default class MessageEntry extends React.Component {
   }
 
   handleChange(e){
+    console.log("HANDLECHANGE FROM MESSAGE ENTRY");
     e.preventDefault();
     this.setState({value: e.target.value});
   }

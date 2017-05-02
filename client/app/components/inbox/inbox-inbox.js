@@ -30,13 +30,15 @@ export default class Inbox extends React.Component {
     }
   }
 
+  //onClick={(e) => this.clickingChat(e, this.state._id)}
+
 
 
 
   render() {
     return (
       <div className= {this.state.curr}>
-        <a href="#" onClick={(e) => this.clickingChat(e, this.state._id)}>
+        <a href="#/inbox" >
           <div className= "panel-body">
             <div className= "col-md-10 chat-name">
               <b>{this.state.name}</b>
