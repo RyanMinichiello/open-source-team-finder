@@ -36,17 +36,6 @@
  }*/
 
 
-export function sendNewMessages(chatId, contents,cb) {
-  console.log("sendnewmessages from client side");
-  sendXHR('POST', '/newmessages',{
-    author: 1,
-    contents: contents,
-    id: 20,
-    side:"right"
-  }, (xhr) => {
-    cb(JSON.parse(xhr.responseText));
-  });
-}
 
 
 export function createProject(userId, identifier, description, tags, skillz, startDate, endDate,
@@ -104,7 +93,7 @@ export function getChatData(chat_id, cb){
 }
 
 export function postNewProject(project_id, cb){
-  sendXHR('POST', '/user/1/project'+project_id, undefined, (xhr) => {
+  sendXHR('POST', '/user/000000000000000000000001/project'+project_id, undefined, (xhr) => {
     cb(JSON.parse(xhr.responseText));
   });
 }
@@ -112,7 +101,7 @@ export function postNewProject(project_id, cb){
 
 export function getProfileData(id, cb){
 
-    sendXHR('GET', '/user/1', undefined, (xhr) => {
+    sendXHR('GET', '/profile/000000000000000000000001', undefined, (xhr) => {
         cb(JSON.parse(xhr.responseText));
     });
   /*var profileData = readDocument('users', id);
@@ -129,7 +118,7 @@ export function getUserInfo(id, cb){
 
 //SIDEBAR Pills
 export function getProjectPillData(userid, cb) {
-  sendXHR('GET', '/users/'+ userid + '/sidebar-projects', undefined, (xhr) => {
+  sendXHR('GET', '/user/'+ userid + '/sidebar-projects', undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
   });
 }
@@ -147,7 +136,7 @@ export function getAllJobs(userid, cb) {
 export function getProjectData(project_id, cb){
 
 
-  sendXHR('GET', '/user/1/project/'+project_id, undefined, (xhr) => {
+  sendXHR('GET', '/user/000000000000000000000001/project/'+project_id, undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
  });
 

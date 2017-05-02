@@ -9,7 +9,7 @@ MongoClient.connect(url, function(err,db){
     // Creates an Express server.
     var app = express();
     //var bodyParser = require('body-parser');
-    var database = require('./database.js');
+    var database = require('./resetdatabase.js');
     var writeDocument = database.writeDocument;
     var readDocument = database.readDocument;
     var addDocument = database.addDocument;
@@ -226,9 +226,20 @@ MongoClient.connect(url, function(err,db){
       return notifications;
     }
 
-    function getProfileData(id) {
-        var profileData = readDocument('users', id);
-        return profileData;
+    function getProfileData(id, callback) {
+        // var profileData = readDocument('users', id);
+        // return profileData;
+
+        db.collection('users').findOne({
+          _id: id
+        }, function(err,inb){
+          if(err){
+            return callback(err);
+          }else if(inb === null){
+            return callback(null, null);
+          }
+          callback(null,inb);
+        });
     }
 
     function getUserInfo(id, callback) {
@@ -279,7 +290,7 @@ MongoClient.connect(url, function(err,db){
 
 
     //SIDEBAR
-    function getProjectPillData(userid) {
+    /*function getProjectPillData(userid) {
       // Get the User object with the id "user".
       var userData = readDocument('users', userid);
       // Get the Feed object for the user.
@@ -290,7 +301,7 @@ MongoClient.connect(url, function(err,db){
       }
       return projectList;
 
-    }
+  }*/
 
     //MAIN FEED
     function getNotificationFeedData(user) {
@@ -428,10 +439,23 @@ MongoClient.connect(url, function(err,db){
 
       // Get Profile DATA
 
-      app.get('/user/:userid', function (req, res) {
-          var userId = req.params.userid;
-
-          res.send(getProfileData(userId));
+      app.get('/profile/:userid', function (req, res) {
+          var userid = req.params.userid;
+          var fromUser = getUserIdFromToken(req.get('Authorization'));
+          if(fromUser === userid){
+            getProfileData(new ObjectID(userid), function(err, inb){
+              if(err){
+                res.status(500).send("Database error: " + err);
+              }else if(inb === null){
+                res.status(400).send("Could not look up inbox for user " + userid);
+              }else{
+                res.send(inb);
+              }
+            });
+          }else{
+            res.status(403).end();
+          }
+        //  res.send(getUserInfo(userId));
       });
 
       app.get('/users/:userid', function (req, res) {
@@ -479,10 +503,10 @@ MongoClient.connect(url, function(err,db){
       });
 
       //GET SIDEBAR PROJECTS
-      app.get('/users/:userid/sidebar-projects', function(req, res) {
+     /* app.get('/users/:userid/sidebar-projects', function(req, res) {
         var userid = req.params.userid;
         res.send(getProjectPillData(userid));
-      });
+    });*/
 
       //GET NOTIFICATION ITEMS
       app.get('/feed/:userid/notificationitems', function(req, res) {

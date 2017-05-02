@@ -21,7 +21,7 @@ export default class CreateProject extends React.Component {
       startDate : "",
       endDate : "",
       inProgress : 0,
-      pid : 1
+      pid : "000000000000000000000001"
     }
   }
   refresh() {
@@ -35,10 +35,10 @@ export default class CreateProject extends React.Component {
     var descriptionText = this.state.description.trim();
     var project = {
       "identifier" : "Okra2",
-      "id"         : 5,
-      "notificationItems": 3,
-      "msgs"       : 1,
-      "positions"  : [1],
+      "id"         : "000000000000000000000005",
+      "notificationItems": "000000000000000000000003",
+      "msgs"       : "000000000000000000000001",
+      "positions"  : ["000000000000000000000001"],
       "description": "Welcome to the show 2.0",
       "skillz"     :["Java", "Social", "Sick Card Tricks 2.0"],
       "startDate" : "2019-11-01",

@@ -6,7 +6,7 @@ export default class Navbar extends React.Component{
       super(props);
       this.state = {
           contents: [],
-          pid : 1
+          pid : "000000000000000000000001"
       };
   }
 
