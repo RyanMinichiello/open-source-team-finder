@@ -1,7 +1,8 @@
 import React from 'react';
 import ProfilePill from './profile-page/profile_pill.js';
 import { Link } from 'react-router';
-import {getProjectPillData} from '../server.js'
+import {getProjectPillData} from '../server.js';
+import ResetDatabase from './resetdatabase';
 
 export default class Sidebar extends React.Component {
     constructor(props){
@@ -52,6 +53,11 @@ export default class Sidebar extends React.Component {
                      Job Board
                   </li>
                 </Link>
+
+                <li role="presentation">
+                  <ResetDatabase />
+                </li>
+
                </ul>
            </div>
        </div>
