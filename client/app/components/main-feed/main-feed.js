@@ -6,6 +6,17 @@ import Navbar from '../navbar.js';
 import Sidebar from '../sidebar.js';
 import MainFeedFilter from './main-feed-filters.js';
 import {getNotificationFeedData, getJobFeedData} from '../../server.js';
+import {calculateRecommendation} from '../../util.js'
+
+function getRecommendation(tags) {
+    var user_skills = ["Scala", "Node.js", "Agile Methodology"];
+    var user_interests = ["Finance", "Clean Energy", "Drones", "Apples"];
+    // End the delete
+    var job_tags = tags;
+    var ranking = calculateRecommendation(user_interests, user_skills, job_tags);
+    console.log(ranking);
+    return ranking;
+}
 
 
 export default class MainFeed extends React.Component {
@@ -62,8 +73,9 @@ export default class MainFeed extends React.Component {
     }
 
     createJobItem(item) {
+        var t = getRecommendation(item.tags);
       return <MainFeedJobItem key = {item._id} postData = {item.description}
-        feedItemName = {item.title} tags ={item.tags} rankingType = {item.rankingType} />
+        feedItemName = {item.title} tags ={item.tags} rankingType = {t} />
     }
 
 
