@@ -394,7 +394,6 @@ MongoClient.connect(url, function(err,db){
     function getAllJobs(userid, callback) {
       db.collection('jobItems').find().toArray()
       .then(function(jobArray) {
-        console.log(jobArray);
         callback(null, jobArray);
       })
     }
