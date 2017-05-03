@@ -22,13 +22,17 @@ export default class Sidebar extends React.Component {
 
     getProjectList() {
       getProjectPillData(this.state.pid, (project) => {
+        console.log("getting proj list");
+        console.log(this.state.pid);
+        console.log(project);
         this.setState({projects: project});
         }
       );
     }
 
     createProjectPillItem(item) {
-      return <ProfilePill key = {item._id} team={item.identifier}/>
+      console.log(item);
+      return <ProfilePill key = {item.id} team={item.identifier}/>
     }
 
     refresh() {
