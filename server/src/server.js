@@ -197,7 +197,7 @@ MongoClient.connect(url, function(err,db){
       // return projectData;
 
       db.collection('projects').findOne({
-        _id: project_id
+        id: project_id
       }, function(err,inb){
         if(err){
           return callback(err);
@@ -302,48 +302,29 @@ MongoClient.connect(url, function(err,db){
 
     //SIDEBAR
     function getProjectPillData(userid, callback) {
-      // // Get the User object with the id "user".
-      // var userData = readDocument('users', userid);
-      // // Get the Feed object for the user.
-      //
-      // var projectList = [];
-      // for(var i = 0; i < userData.projects.length; i ++ ) {
-      //   projectList.push(readDocument('projects', userData.projects[i]));
-      // }
-      // return projectList;
-      console.log("ARE WE GETTING GET PROJECT PILL DATA");
 
       db.collection('users').findOne({
         _id: userid
       }, function(err, userData){
-        console.log("WHAT iS USERDATA");
-        console.log(userData);
         if(err) {
-          console.log("first err");
           return callback(err);
         }
         else if(userData === null){
-          console.log("userdata is null");
           return callback(null,null);
         }
-        console.log("*********");
-        console.log(userData.projects);
         //callback(null, userData.projects);
         var projectList = [];
 
         function processNextProjectItem(i){
-          console.log("before going into getprojdata");
-          console.log(userData.projects[i]);
           getProjectData(userData.projects[i], function(err, projItem){
             if(err){
               callback(err);
             }else{
               projectList.push(projItem);
               if(projectList.length === userData.projects.length){
-                userData.projects = projectList;
-                callback(null, projItem);
+                callback(null, projectList);
               }else{
-                processNextProjectItem(i + i);
+                processNextProjectItem(i + 1);
               }
             }
           });
