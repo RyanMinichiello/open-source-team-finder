@@ -392,40 +392,11 @@ MongoClient.connect(url, function(err,db){
 
     //Job Board
     function getAllJobs(userid, callback) {
-      //db.collection('allJobItems')
-      // Container for jobItems
-      var jobItemList = [];
-      // Get the entire collection of jobItems
-      var jobItemCollection = db.collection('jobItems').find();
-      // For every item in the collection
-      jobItemCollection.each(function(err, jobItem) {
-        if(err) {
-          callback(err);
-        } else if(jobItem !== null) {
-          // add them to the array container
-          console.log(jobItem);
-          jobItemList.push(jobItem._id);
-          console.log(jobItemList);
-        }
-      });
-      // all items in the array should be added. check in the console.
-      // will appear in terminal window.
-      console.log(jobItemList);
-      console.log("This should be after the logs of the jobItems.")
-      //Hard coding time.
-      jobItemList = [{ _id: "000000000000000000000001",
-  title: 'Software Engineering Position at Snapdragon Team',
-  description: 'apply within!!!!',
-  tags: [ 'Drones', 'Finance' ],
-  rankingType: 'gold-button' },
-  { _id: "000000000000000000000002",
-  title: 'Quality Assurance Position at Wombat Team',
-  description: 'Please taste our apples we are too afraid.',
-  tags: [ 'Apples', 'Sports' ],
-  rankingType: 'bronze-button' }
-  ];
-      //end hard code
-      callback(null, jobItemList);
+      db.collection('jobItems').find().toArray()
+      .then(function(jobArray) {
+        console.log(jobArray);
+        callback(null, jobArray);
+      })
     }
 
     //END NON VERB FUNCTIONS
