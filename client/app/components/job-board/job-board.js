@@ -11,24 +11,10 @@ import {calculateRecommendation} from '../../util.js'
 //import JobBoardTagItem from './job-board-tag-item'
 
 
-function getRecommendation(tags) {
-   // var user_data;
-   //TODO: Find a way to store information on the profile in the state.
-   //getProfileData(this.state.pid, (profile-data) => {
-   //    this.setState(profileData: profile-data);
-   // });
-    //var user_interests = this.state.profileData;
-    //var user_skills = user_data.skills;
-    // Delete these lines once the profile data is properly gotten
-    // RM - single user hardcode them?
-    var user_skills = ["Scala", "Node.js", "Agile Methodology"];
-    var user_interests = ["Finance", "Clean Energy", "Drones", "Apples"];
-    // End the delete
-    var job_tags = tags;
+function getRecommendation(user_skills, user_interests, job_tags) {
     var ranking = calculateRecommendation(user_interests, user_skills, job_tags);
     return ranking;
 }
-
 
 export default class JobBoard extends React.Component {
   constructor(props) {
@@ -38,16 +24,14 @@ export default class JobBoard extends React.Component {
         contents : [],
         pid : "000000000000000000000001",
         jobItems: null,
-        profileData: null,
-        ranking: null
+        userSkills: null,
+        userInterests: null
       };
 
    }
 
    refresh() {
-     // Delete these comments when done debugging
-     //var check = this.getRecommendation(["Scala", "Finance"]);
-     //console.log(check);
+     this.getUserData(this.state.pid);
      this.getJobList(this.state.pid);
    }
 
@@ -57,27 +41,32 @@ export default class JobBoard extends React.Component {
 
   genererateJobItems(){
     if(this.state.jobItems) {
-      return this.state.jobItems.map(this.createJobItem);
+      return this.state.jobItems.map((item) => {
+         return(this.createJobItem(item, this.state.userSkills, this.state.userInterests))
+    });
     }
   }
 
-  getJobList() {
-     getAllJobs(this.state.pid, (jobItem) => {
+  getUserData(pid) {
+    getProfileData(pid, (profileData) => {
+      this.setState({userSkills: profileData.skills});
+      this.setState({userInterests: profileData.interests});
+    });
+  }
+
+  getJobList(pid) {
+     getAllJobs(pid, (jobItem) => {
         this.setState({jobItems: jobItem});
         }
      );
    }
 
-
-
-
-   createJobItem(item) {
-     var t =  getRecommendation(item.tags);
+   createJobItem(item, user_skill, user_interest) {
+     var t =  getRecommendation(user_skill, user_interest, item.tags);
        return <JobBoardPost key = {item._id} position_description = {item.description}
        position_title = {item.title} tags = {item.tags}
        rankingType = {t}/>
    }
-
 
   render() {
     return (
@@ -102,7 +91,6 @@ export default class JobBoard extends React.Component {
             </JobBoardMainFeed>
         </div>
     </div>
-
     );
   }
 }
