@@ -118,7 +118,7 @@ export function getUserInfo(id, cb){
 
 //SIDEBAR Pills
 export function getProjectPillData(userid, cb) {
-  sendXHR('GET', '/user/'+ userid + '/sidebar-projects', undefined, (xhr) => {
+  sendXHR('GET', '/users/'+ userid + '/sidebar-projects', undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
   });
 }

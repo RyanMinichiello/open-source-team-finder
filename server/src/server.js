@@ -192,9 +192,20 @@ MongoClient.connect(url, function(err,db){
 
     }
 
-    function getProjectData(project_id){
-      var projectData = readDocument('projects', project_id);
-      return projectData;
+    function getProjectData(project_id, callback){
+      // var projectData = readDocument('projects', project_id);
+      // return projectData;
+
+      db.collection('projects').findOne({
+        _id: project_id
+      }, function(err,inb){
+        if(err){
+          return callback(err);
+        }else if(inb === null){
+          return callback(null, null);
+        }
+        callback(null,inb);
+      });
     }
 
 
@@ -290,18 +301,81 @@ MongoClient.connect(url, function(err,db){
 
 
     //SIDEBAR
-    /*function getProjectPillData(userid) {
-      // Get the User object with the id "user".
-      var userData = readDocument('users', userid);
-      // Get the Feed object for the user.
+    function getProjectPillData(userid, callback) {
+      // // Get the User object with the id "user".
+      // var userData = readDocument('users', userid);
+      // // Get the Feed object for the user.
+      //
+      // var projectList = [];
+      // for(var i = 0; i < userData.projects.length; i ++ ) {
+      //   projectList.push(readDocument('projects', userData.projects[i]));
+      // }
+      // return projectList;
+      console.log("ARE WE GETTING GET PROJECT PILL DATA");
 
-      var projectList = [];
-      for(var i = 0; i < userData.projects.length; i ++ ) {
-        projectList.push(readDocument('projects', userData.projects[i]));
-      }
-      return projectList;
+      db.collection('users').findOne({
+        _id: userid
+      }, function(err, userData){
+        console.log("WHAT iS USERDATA");
+        console.log(userData);
+        if(err) {
+          console.log("first err");
+          return callback(err);
+        }
+        else if(userData === null){
+          console.log("userdata is null");
+          return callback(null,null);
+        }
+        console.log("*********");
+        console.log(userData.projects);
+        //callback(null, userData.projects);
+        var projectList = [];
 
-  }*/
+        function processNextProjectItem(i){
+          console.log("before going into getprojdata");
+          console.log(userData.projects[i]);
+          getProjectData(userData.projects[i], function(err, projItem){
+            if(err){
+              callback(err);
+            }else{
+              projectList.push(projItem);
+              if(projectList.length === userData.projects.length){
+                userData.projects = projectList;
+                callback(null, projItem);
+              }else{
+                processNextProjectItem(i + i);
+              }
+            }
+          });
+        }
+        if(userData.projects.length === 0){
+          callback(null, userData);
+        }else{
+          processNextProjectItem(0);
+        }
+        // for(var i=0; i<userData.projects.length; i++){
+        //   console.log("i is: " + i);
+        //   db.collection('projects').findOne({
+        //     id: userData.projects[i]
+        //   }, function(err, projData){
+        //     console.log("what is projData???????");
+        //     console.log(projData);
+        //     if(err){
+        //       return callback(err);
+        //     }else if(projData === null){
+        //       return callback(null,null);
+        //     }
+        //     projectList.push(projData);
+        //   })
+        // }
+        // console.log("SO NOW THE ARRAY IS");
+        // console.log(projectList);
+        //
+        // callback(null, projectList);
+      });
+
+
+  }
 
     //MAIN FEED
     function getNotificationFeedData(user) {
@@ -479,9 +553,26 @@ MongoClient.connect(url, function(err,db){
 
       //GET PROJECT DATA
       app.get('/user/:userid/project/:projectid', function(req,res){
-        var projectid = req.params.projectid;
+        // var projectid = req.params.projectid;
+        //
+        // res.send(getProjectData(projectid));
 
-        res.send(getProjectData(projectid));
+        var projectid = req.params.projectid;
+        var userid = req.params.userid;
+        var fromUser = getUserIdFromToken(req.get('Authorization'));
+        if(fromUser === userid){
+          getProjectData(new ObjectID(projectid), function(err, inb){
+            if(err){
+              res.status(500).send("Database error: " + err);
+            }else if(inb === null){
+              res.status(400).send("Could not look up inbox for user " + userid);
+            }else{
+              res.send(inb);
+            }
+          });
+        }else{
+          res.status(403).end();
+        }
       });
       //GET OPEN POSITIONS
       app.get('/user/:userid/open/pos_id/:pos_id', function(req,res){
@@ -503,10 +594,25 @@ MongoClient.connect(url, function(err,db){
       });
 
       //GET SIDEBAR PROJECTS
-     /* app.get('/users/:userid/sidebar-projects', function(req, res) {
+      app.get('/users/:userid/sidebar-projects', function(req, res) {
+        // var userid = req.params.userid;
+        // res.send(getProjectPillData(userid));
         var userid = req.params.userid;
-        res.send(getProjectPillData(userid));
-    });*/
+        var fromUser = getUserIdFromToken(req.get('Authorization'));
+        if(fromUser === userid){
+          getProjectPillData(new ObjectID(userid), function(err, inb){
+            if(err){
+              res.status(500).send("Database error: " + err);
+            }else if(inb === null){
+              res.status(400).send("Could not look up inbox for user " + userid);
+            }else{
+              res.send(inb);
+            }
+          });
+        }else{
+          res.status(403).end();
+        }
+    });
 
       //GET NOTIFICATION ITEMS
       app.get('/feed/:userid/notificationitems', function(req, res) {
