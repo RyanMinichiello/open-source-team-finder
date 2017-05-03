@@ -72,9 +72,6 @@ export default class JobBoard extends React.Component {
 
 
    createJobItem(item) {
-     //var rank = (item.tags) => {this.getRecommendation(item.tags)}
-     //console.log(rank);
-     //TODO: Find a way to call the recommendation function so that it is passed to the JobBoardPost
      var t =  getRecommendation(item.tags);
        return <JobBoardPost key = {item._id} position_description = {item.description}
        position_title = {item.title} tags = {item.tags}

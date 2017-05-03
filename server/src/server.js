@@ -411,7 +411,20 @@ MongoClient.connect(url, function(err,db){
       // all items in the array should be added. check in the console.
       // will appear in terminal window.
       console.log(jobItemList);
-      console.log("THis should be after the logs of the jobItems.")
+      console.log("This should be after the logs of the jobItems.")
+      //Hard coding time.
+      jobItemList = [{ _id: "000000000000000000000001",
+  title: 'Software Engineering Position at Snapdragon Team',
+  description: 'apply within!!!!',
+  tags: [ 'Drones', 'Finance' ],
+  rankingType: 'gold-button' },
+  { _id: "000000000000000000000002",
+  title: 'Quality Assurance Position at Wombat Team',
+  description: 'Please taste our apples we are too afraid.',
+  tags: [ 'Apples', 'Sports' ],
+  rankingType: 'bronze-button' }
+  ];
+      //end hard code
       callback(null, jobItemList);
     }
 
