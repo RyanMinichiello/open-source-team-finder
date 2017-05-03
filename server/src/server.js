@@ -391,17 +391,28 @@ MongoClient.connect(url, function(err,db){
     }
 
     //Job Board
-    function getAllJobs(user) {
-      // Get the User object with the id "user".
-      var userData = readDocument('users', user);
-      //get the array of Job Data
-      var allJobData = readDocument('allJobItems', userData.allJobItems);
-      var jobList = [];
-
-      for(var i = 0; i < allJobData.jobItems.length; i ++ ) {
-        jobList.push(readDocument('jobItems', allJobData.jobItems[i]));
-      }
-      return jobList;
+    function getAllJobs(userid, callback) {
+      //db.collection('allJobItems')
+      // Container for jobItems
+      var jobItemList = [];
+      // Get the entire collection of jobItems
+      var jobItemCollection = db.collection('jobItems').find();
+      // For every item in the collection
+      jobItemCollection.each(function(err, jobItem) {
+        if(err) {
+          callback(err);
+        } else if(jobItem !== null) {
+          // add them to the array container
+          console.log(jobItem);
+          jobItemList.push(jobItem._id);
+          console.log(jobItemList);
+        }
+      });
+      // all items in the array should be added. check in the console.
+      // will appear in terminal window.
+      console.log(jobItemList);
+      console.log("THis should be after the logs of the jobItems.")
+      callback(null, jobItemList);
     }
 
     //END NON VERB FUNCTIONS
@@ -650,10 +661,25 @@ MongoClient.connect(url, function(err,db){
 
       //GET ALL JOB ITEMS
       app.get('/job-board/:userid/jobitems', function(req, res) {
-        var userid = req.params.userid;
-        res.send(getAllJobs(userid));
-      });
+        //var userid = req.params.userid;
+        //res.send(getAllJobs(userid));
 
+        var userid = req.params.userid;
+        var fromUser = getUserIdFromToken(req.get('Authorization'));
+        if(fromUser === userid) {
+          getAllJobs(new ObjectID(userid), function(err, inb){
+            if(err) {
+              res.status(500).send("Database error: " + err);
+            } else if (inb === null) {
+              res.status(400).send("Could not get all the jobs for user " + userid);
+            } else {
+              res.send(inb);
+            }
+          });
+        } else {
+          res.status(403).end();
+        }
+      });
       //END VERB FUNCTIONS
 
       // Starts the server on port 3000!
