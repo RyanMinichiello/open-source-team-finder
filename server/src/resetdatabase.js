@@ -1,6 +1,6 @@
 var ObjectID = require('mongodb').ObjectID;
 
-var databaseName = "ostf";
+var databaseName = "OSTF";
 
 var initialData = {
       // The 'user' collection; contains all the users in our system
@@ -16,13 +16,12 @@ var initialData = {
           // ID of Jane's Inbox
           "inboxId" : new ObjectID("000000000000000000000001"),
           "skills" : ["Scala", "Node.js", "Agile Methodology"],
-          "interests" : ["Finance", "Clean Energy"],
+          "interests" : ["Finance", "Clean Energy", "Drones", "Apples"],
           "bio" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "contact" : "myemail@email.com",
 
           "projects" : [new ObjectID("000000000000000000000001"), new ObjectID("000000000000000000000002")],
 
-          "dummyproj" : ["Okra Team", "Don't Talk About Okra Team"],
           "allJobItems" : new ObjectID("000000000000000000000001")
 
         },
@@ -118,7 +117,6 @@ var initialData = {
       "inbox" : {
         "1" : {
           "chats": [new ObjectID("000000000000000000000001")],
-          "dummyproj" : ["Okra Team", "Don't Talk About Okra Team"],
           "name": "Jane Doe"
         }
       },
@@ -236,7 +234,7 @@ var initialData = {
       "jobItems": {
         "1" : {
           "_id" : new ObjectID("000000000000000000000001"),
-          "title" : "Software Engineering Position at Okra Team",
+          "title" : "Software Engineering Position at Snapdragon Team",
           "description" : "apply within!!!!",
           "tags" : ["Drones", "Finance"],
           "rankingType": "gold-button"
@@ -245,14 +243,14 @@ var initialData = {
 
         "2" : {
           "_id" : new ObjectID("000000000000000000000002"),
-          "title" : "Quality Assurance Position at Apple Team",
+          "title" : "Quality Assurance Position at Wombat Team",
           "description" : "Please taste our apples we are too afraid.",
           "tags" : ["Apples", "Sports"],
           "rankingType": "bronze-button"
         },
         "3" : {
           "_id" : new ObjectID("000000000000000000000003"),
-          "title" : "Quality Assurance Position at My Team",
+          "title" : "Quality Assurance Position on Caligula's Team",
           "description" : "Just me, myself, and I.",
           "tags" : ["Stuff", "Fun"],
           "rankingType": "bronze-button"

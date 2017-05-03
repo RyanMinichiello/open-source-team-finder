@@ -1,29 +1,93 @@
+//import {readDocument, writeDocument, addDocument} from './database.js';
+
+/**
+ * Emulates how a REST call is *asynchronous* -- it calls your function back
+ * some time in the future with data.
+ */
+/*function emulateServerReturn(data, cb) {
+  setTimeout(() => {
+    cb(data);
+  }, 4);
+}*/
+
+/**
+ * Adds a new status update to the database.
+ */
+
+ /*export function sendMessage(chatId, contents, cb) {
+     var chatData = readDocument('chats', chatId);
+
+     var newMessage = {
+         "author" : 1,
+         "contents" : contents,
+         "side" : "left"
+     }
+
+     newMessage = addDocument('messages', newMessage);
+
+
+     chatData["messages"].push(newMessage._id);
+     //console.log(chatData["messages"]); // IT IS ADDING THE NEW MESSAGE! in console though, not database
+
+     writeDocument('chats', chatData);
+     //console.log(chatData["messages"]);
+     writeDocument('messages', newMessage);
+     emulateServerReturn(chatData, cb);
+ }*/
+
+
+
+
+export function createProject(userId, identifier, description, tags, skillz, startDate, endDate,
+  inProgress, projId, updates, msgs, positions, cb) {
+  console.log("MADE IT TO EXPORT FUNCT");
+  console.log(identifier);
+
+  sendXHR('POST', '/project', {
+    userId: userId,
+    identifier : identifier,
+    id : projId,
+    notificationItems : updates,
+    msgs : msgs,
+    positions : positions,
+    description : description,
+    skillz : skillz,
+    startDate : startDate,
+    endDate : endDate,
+    inProgress : inProgress,
+    tags : tags
+  }, (xhr) => {
+    cb(JSON.parse(xhr.responseText));
+  });
+}
+
+
 export function getChatListItems(user_id, cb) {
-  sendXHR('GET', '/user/'+ user_id + '/chats', undefined, (xhr) => {
+  sendXHR('GET', '/users/' + user_id + '/chats', undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
   });
 }
 
 export function getMessageListItems(user_id, chat_id, cb){
-  sendXHR('GET', 'user/'+user_id+'/messages/'+chat_id, undefined, (xhr) =>{
+  sendXHR('GET', 'users/' + user_id + '/messages/' + chat_id, undefined, (xhr) =>{
     cb(JSON.parse(xhr.responseText));
   })
 }
 
 export function getInboxData(inbox_id, cb){
-  sendXHR('GET', 'user/000000000000000000000001/inbox/'+inbox_id, undefined, (xhr) =>{
+  sendXHR('GET', 'users/000000000000000000000001/inbox/'+inbox_id, undefined, (xhr) =>{
     cb(JSON.parse(xhr.responseText));
   });
 }
 
 export function getMessageData(message_id, cb){
-  sendXHR('GET', 'user/000000000000000000000001/message/'+message_id, undefined, (xhr) =>{
+  sendXHR('GET', 'users/0000000000000000000000011/message/'+message_id, undefined, (xhr) =>{
     cb(JSON.parse(xhr.responseText));
   });
 }
 
 export function getChatData(chat_id, cb){
-  sendXHR('GET', 'user/000000000000000000000001/chats/'+chat_id, undefined, (xhr) =>{
+  sendXHR('GET', 'users/000000000000000000000001/chats/'+chat_id, undefined, (xhr) =>{
     cb(JSON.parse(xhr.responseText));
   });
 }
@@ -37,12 +101,19 @@ export function postNewProject(project_id, cb){
 
 export function getProfileData(id, cb){
 
-    sendXHR('GET', '/user/000000000000000000000001', undefined, (xhr) => {
+    sendXHR('GET', '/profile/000000000000000000000001', undefined, (xhr) => {
         cb(JSON.parse(xhr.responseText));
     });
   /*var profileData = readDocument('users', id);
   emulateServerReturn(profileData, cb);*/
 
+}
+
+export function getUserInfo(id, cb){
+
+    sendXHR('GET', '/users/' + id, undefined, (xhr) => {
+        cb(JSON.parse(xhr.responseText));
+    });
 }
 
 //SIDEBAR Pills
@@ -73,13 +144,13 @@ export function getProjectData(project_id, cb){
 
 
 export function getopen_positionData(pid, cb){
-  sendXHR('GET', '/user/000000000000000000000001/open/pos_id/'+pid, undefined, (xhr) => {
+  sendXHR('GET', '/user/1/open/pos_id/'+pid, undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
  });
 }
 
 export function getfilled_positionData(pid, cb){
-  sendXHR('GET', '/user/000000000000000000000001/filled/pos_id/'+pid, undefined, (xhr) => {
+  sendXHR('GET', '/user/1/filled/pos_id/'+pid, undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
  });
 }
@@ -103,13 +174,13 @@ export function getNotificationFeedData(userid, cb) {
 
 
 export function getProjectUpdates(id, cb){
-  sendXHR('GET', '/user/000000000000000000000001/project/'+id, undefined, (xhr) => {
+  sendXHR('GET', '/user/1/project/'+id, undefined, (xhr) => {
    cb(JSON.parse(xhr.responseText));
  });
 }
 
 //XHR HELPER FUNCTION
-var token = 'eyJpZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNCJ9'; // <-- Put your base64'd JSON token here
+var token = 'eyJpZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9'; // <-- Put your base64'd JSON token here
 /**
  * Properly configure+send an XMLHttpRequest with error handling,
  * authorization token, and other needed properties.

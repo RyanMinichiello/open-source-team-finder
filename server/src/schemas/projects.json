@@ -1,0 +1,67 @@
+{
+"$schema": "http://json-schema.org/draft-04/schema#",
+"type": "object",
+  "properties": {
+    "userId" : {
+      "id": "userId",
+      "type": "integer"
+    },
+    "identifier" : {
+      "id": "identifier",
+      "type": "string"
+    },
+    "id": {
+      "id": "id",
+      "type": "integer"
+    },
+    "notificationItems": {
+      "id": "notificationItems",
+      "type": "integer"
+    },
+    "msgs"       : {
+      "id": "msgs",
+      "type": "integer"
+    },
+    "positions"  : {
+      "id": "positions",
+      "type": "array"
+    },
+    "description": {
+      "id": "description",
+      "type": "string"
+    },
+    "skillz" :{
+      "id": "skillz",
+      "type": "array"
+    },
+    "startDate" : {
+      "id": "startDate",
+      "type": "string"
+    },
+    "endDate" : {
+      "id": "endDate",
+      "type": "string"
+    },
+    "inProgress" : {
+      "id": "inProgress",
+      "type": "integer"
+    },
+    "tags" : {
+      "id": "tags",
+      "type": "array"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "userId",
+    "identifier",
+    "notificationItems",
+    "msgs",
+    "positions",
+    "description",
+    "skillz",
+    "startDate",
+    "endDate",
+    "inProgress",
+    "tags"]
+}
