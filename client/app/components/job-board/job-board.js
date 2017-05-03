@@ -24,10 +24,10 @@ export default class JobBoard extends React.Component {
         userSkills: null,
         userInterests: null
       };
-
    }
 
    refresh() {
+
      this.getUserData(this.state.pid);
      this.getJobList(this.state.pid);
    }
