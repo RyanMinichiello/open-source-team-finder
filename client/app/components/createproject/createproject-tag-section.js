@@ -3,7 +3,7 @@ import CreateProjectTagItem from './createproject-tag-item.js';
 
 
 var inputs= [];
-var numTags = 1;
+var numTags = 0;
 export default class CreateProjectTagSection extends React.Component {
   constructor(props) {
 
@@ -17,15 +17,26 @@ getInputs(){
 }
 
     addNewButton(value){
-      if (value != "" && numTags < 6){
+      if (value != "" && numTags < 5){
       var newInput =  <a href = "#"><div className = "singleTag"><CreateProjectTagItem tag={value} /></div></a>;
       inputs.push(newInput);
       this.setState({inputs})
+      
       numTags++;
+
+    }
+  }
+
+    removeButton(){
+      if (numTags > 0){
+        inputs.splice((numTags-1), 1);
+        this.setState({inputs});
+        numTags--;
+      }
     }
 
 
-    }
+
 
   render() {
     return (
@@ -41,6 +52,9 @@ getInputs(){
              <button type="button" id="add-more-tags-btn" className="btn btn-default" onClick={ () => this.addNewButton(this.input.value)  }>
            Add Tag
            </button>
+           <button type="button" id="remove-tags-btn" className="btn btn-default" onClick={ () => this.removeButton()  }>
+         Remove Tag
+         </button>
           <div>
               {inputs}
           </div>

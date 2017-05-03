@@ -26,6 +26,12 @@ a, a:visited{
   transition: 0.1s;
 }
 
+#remove-tags-btn{
+    background-color: #EE8233;
+    margin-left: 60%;
+    margin-bottom: 5%;
+}
+
 .tag-section{
 
 }
@@ -117,6 +123,7 @@ a, a:visited{
 .checkbox {
   display: inline-block;
   padding-right: 10px;
+
 }
 .col-md-3{
   padding-left: 0px !important;
@@ -582,9 +589,9 @@ li.nav-pills:hover{
   width: 31% !important;
 }
 #progress-checkbox{
-  margin-left: -25%;
-  margin-left: 65%;
-  margin-top: -15%;
+
+  margin-left: 40%;
+  margin-top: -12%;
   padding-bottom: 1%;
 
 }
