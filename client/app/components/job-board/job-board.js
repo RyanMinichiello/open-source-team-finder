@@ -7,9 +7,6 @@ import JobBoardPost from './job-board-post';
 import {getAllJobs} from '../../server.js'
 import {getProfileData} from '../../server.js'
 import {calculateRecommendation} from '../../util.js'
-//import JobBoardTagList from './job-board-tag-list'
-//import JobBoardTagItem from './job-board-tag-item'
-
 
 function getRecommendation(user_skills, user_interests, job_tags) {
     var ranking = calculateRecommendation(user_interests, user_skills, job_tags);
